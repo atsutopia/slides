@@ -1,6 +1,7 @@
 const SmartBannerPlugin = require('smart-banner-webpack-plugin');
 const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const src = path.join(__dirname, 'src');
 const pkg = require('./package.json');

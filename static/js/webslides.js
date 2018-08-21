@@ -1,7 +1,7 @@
 /*!
  * Name: WebSlides
  * Version: 1.5.0
- * Date: 2018-01-01
+ * Date: 2018-08-21
  * Description: Making HTML presentations easy
  * URL: https://github.com/webslides/webslides#readme
  * Credits: @jlantunez, @LuisSacristan, @Belelros
@@ -2108,7 +2108,8 @@ var Scroll = function () {
     }
 
     if (!__WEBPACK_IMPORTED_MODULE_0__utils_mobile_detector__["a" /* default */].isAny()) {
-      this.scrollContainer_.addEventListener('wheel', this.onMouseWheel_.bind(this));
+      // this.scrollContainer_.addEventListener(
+      //       'wheel', this.onMouseWheel_.bind(this));
 
       if (!wsInstance.isVertical) {
         wsInstance.el.addEventListener('ws:slide-change', this.onSlideChange_.bind(this));
