@@ -46,8 +46,8 @@ export default class Scroll {
     }
 
     if (!MobileDetector.isAny()) {
-        this.scrollContainer_.addEventListener(
-            'wheel', this.onMouseWheel_.bind(this));
+      // this.scrollContainer_.addEventListener(
+      //       'wheel', this.onMouseWheel_.bind(this));
 
         if (!wsInstance.isVertical) {
           wsInstance.el.addEventListener(
