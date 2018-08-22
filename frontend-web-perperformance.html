@@ -500,6 +500,120 @@
         </section>
 
 
+        <section class="slide-top">
+          <!--.wrap = container (width: 90%) -->
+          <div class="wrap">
+            <div>
+              <h3>3.サブリソースダウンロード</h3>
+              <h5>キャッシュ (ブラウザキャッシュ)</h5>
+              <p>
+                Cache-Control
+              </p>
+              <table>
+                <thead>
+                  <tr>
+                    <th>ディレクティブ</th>
+                    <th>説明</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>max-age=86400</td>
+                    <td>レスポンスは、最大 1 日（60 秒 x 60 分 x 24 時間）、ブラウザおよび任意の中間キャッシュでキャッシュに保存可能（つまり、「public」）</td>
+                  </tr>
+                  <tr>
+                    <td>private, max-age=600</td>
+                    <td>レスポンスは、クライアントのブラウザで最大 10 分（60 秒 x 10 分）のみキャッシュに保存可能</td>
+                  </tr>
+                  <tr>
+                    <td>no-store</td>
+                    <td>レスポンスはキャッシュに保存することが許可されず、リクエストごとに完全に取得する必要がある。</td>
+                  </tr>
+                  <tr>
+                    <td>no-cache</td>
+                    <td>オリジンサーバでの確認無しにキャッシュを利用してはならない</td>
+                  </tr>
+                </tbody>
+              </table>
+              <p>Expires Header</p>
+              <p>キャッシュの有効期限を指定</p>
+              <p>ETag ヘッダ</p>
+              <p>同じファイルかどうか比較するための検証子です。</p>
+              <h5>ファイル圧縮 (画像圧縮)</h5>
+              <h6>メタデータの削除</h6>
+              <p>
+                撮影機器や編集ソフトの情報
+                GPS搭載のスマートフォンやデジタルカメラの場合は、撮影位置の情報が保存される場合はあります。
+                個人情報を含んでいる場合もあるし、容量も減るのでごっそり削除
+              </p>
+              <h6>減色/最適化</h6>
+              <p>
+                減色することで容量を下げることができるが、なるべく画像はきれいに保ちたい。
+                そんなときは専用圧縮ツールなどを使うことで、カラーパレットを整理したり、圧縮方法を変えたりと
+                画質を落とさずに容量を下げることができます。
+              </p>
+              <div class="flexblock">
+                <div>
+                  <p>圧縮前 [3.1MB]</p>
+                  <img src="http://localhost:4567/images/tiny/1511624537.png" width="480">
+                </div>
+                <div>
+                  <p>圧縮後 [969KB] -69%</p>
+                  <img src="http://localhost:4567/images/tiny/1511624537_tiny.png" width="480">
+                </div>
+              </div>
+              <h6>SVGデータ</h6>
+              <p>SVGは、PNGやJPEGなどとは異なり、バイナリではなくテキストのデータで容量は比較的少なくすむ。CSSで色を変更できたり、JSで操作できるなど、他の画像形式にはない特徴を持っている</p>
+              <h6>ファイル圧縮 (minify/gzip)</h6>
+              <p>
+                アーカイバと呼ばれるzipファイルと混在しないように注意<br>
+
+                圧縮前 (normal) [669KB]<br>
+                <a href="http://localhost:4567/images/tiny/react.js">images/tiny/react.js</a> <br>
+
+                圧縮後 (minify) [147KB]<br>
+                <a href="http://localhost:4567/images/tiny/react.min.js">images/tiny/react.min.js</a> <br>
+
+                圧縮後 (normal/gzip) [151KB]<br>
+                <a href="http://localhost:4567/images/tiny/react.js.gz">images/tiny/react.js.gz</a> <br>
+
+                圧縮後 (minify/gzip) [43KB]<br>
+                <a href="http://localhost:4567/images/tiny/react.min.js.gz">images/tiny/react.min.js.gz</a> <br>
+              </p>
+              <h6>WebFont</h6>
+              <p>
+                日本語のフォントがとにかく重い。NotoSansJPの例だと1フォント1.6MBくらい。
+                複数ウェイトを用意する場合は1.6MBがN倍となる。
+              </p>
+
+              <p>
+                <strong>対策1. ローカルフォントの使用</strong>
+              </p>
+              <p class="code">
+@font-face {
+  font-family: 'Noto Sans Japanese';
+  font-style: normal;
+  font-weight: 300;
+  src: local("Noto Sans Japanese Light"),
+       url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-DemiLight.woff2) format('woff2');
+}
+              </p>
+              <p>
+                <strong>対策2. フォントのサブセット化</strong><br>
+                一般的な日本語Fontは、5000-15000文字ぐらいを収録しているのですが、第1水準漢字だけで事足りるのであれば、3000文字ぐらいで済みます。3000文字分だけ収録された(Subsetの)Fontを作る事をSubset化と呼びます。<br>
+
+                アスキー文字 + 非漢字文字 + 第1水準漢字で700KBのフォントができる。<br>
+                <a href="https://github.com/minoryorg/Noto-Sans-CJK-JP">https://github.com/minoryorg/Noto-Sans-CJK-JP</a>
+              </p>
+              <p>
+                <strong>対策3. ダイナミックサブセット対応のフォントベンダーを使用</strong><br>
+                Web上に表示されている文字のみのフォントをダウンロードする
+              </p>
+            </div>
+          </div>
+          <!-- .end .wrap -->
+        </section>
+
         <section>
           <!--.wrap = container (width: 90%) -->
           <div class="wrap size-50">
