@@ -1,7 +1,7 @@
 /*!
  * Name: WebSlides
  * Version: 1.5.0
- * Date: 2018-08-21
+ * Date: 2018-08-22
  * Description: Making HTML presentations easy
  * URL: https://github.com/webslides/webslides#readme
  * Credits: @jlantunez, @LuisSacristan, @Belelros
@@ -3789,3 +3789,17 @@ Slides Index
 
 .text-slide-number {
   color: #abc; }
+
+.code {
+  background-color: #000;
+  border: 1px solid #123;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 1.4rem;
+  line-height: 1.8rem;
+  white-space: pre; }
+
+.desc {
+  font-size: 1.4rem;
+  line-height: 1.8rem;
+  white-space: pre-line; }

@@ -96,3 +96,20 @@
 @import 'modules/print';
 
 @import 'color';
+
+.code {
+  background-color: $black;
+  border: 1px solid $big-stone;
+  border-radius: 4px;
+  color: $white;
+  font-size: 1.4rem;
+  line-height: 1.8rem;
+  white-space: pre;
+}
+
+.desc {
+  font-size: 1.4rem;
+  line-height: 1.8rem;
+  white-space: pre-line;
+}
+

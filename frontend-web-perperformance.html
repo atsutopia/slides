@@ -396,6 +396,110 @@
           <!-- .end .wrap -->
         </section>
 
+
+        <section>
+          <!--.wrap = container (width: 90%) -->
+          <div class="wrap">
+            <div class="grid vertical-align">
+              <div class="column">
+                <h3><strong>レンダリングフロー</strong></h3>
+              </div>
+              <div class="column">
+                <p class="text-intro">
+                  <strong>1.DNSルックアップ</strong><br>
+                  <strong>2.HTMLダウンロード</strong><br>
+                  <strong>3.サブリソースダウンロード</strong><br>
+                  <strong>4.レンダリング</strong><br>
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- .end .wrap -->
+        </section>
+
+        <section class="slide-top">
+          <!--.wrap = container (width: 90%) -->
+          <div class="wrap">
+            <div>
+              <h3>1.DNSルックアップ</h3>
+              <p>
+                ブラウザがホスト名→ IPアドレスとするのに20~120msかかる<br>(1度接続すればPCがアドレスを覚えるので、両方のキャッシュが消えるまではDNSの問い合わせをしなくていい)<br>
+              </p>
+              <h5>Content delivery network</h5>
+              <p>
+								CDNを利用してユーザーから最短のエッジサーバーからコンテンツをダウンロードすることで高速化
+              </p>
+              <img src="https://www.cdnetworks.co.jp/wp/wp-content/uploads/2016/07/4949_1.png" width="880">
+              <a href="https://www.cdnetworks.co.jp/blog/4949/">参考</a>
+            </div>
+          </div>
+          <!-- .end .wrap -->
+        </section>
+
+
+        <section class="slide-top">
+          <!--.wrap = container (width: 90%) -->
+          <div class="wrap">
+            <div>
+              <h3>2.HTMLダウンロード</h3>
+              <h5>HTTP2</h5>
+              <p class="desc">
+                <code>
+                  HTTP/2の目標はHTTP/1.1のトランザクション・セマンティクスとの完全な後方互換性を維持したまま非同期な接続の多重化、ヘッダ圧縮、リクエストとレスポンスのパイプライン化を実現することである。Googleによって立ち上げられ[3]、全ての主要なウェブブラウザが対応しているHTTP互換のプロトコルSPDYの人気が高まっていることに対応するために開発された[4]。
+
+                  高速化技術
+                  下記の技術により従来より高速の通信を実現している。
+
+                  HTTPヘッダの圧縮。（HPACKで圧縮し[5]、二度目以降の通信は差分のみ送信する）
+                  HTTP/2サーバープッシュ通信。
+                  HTTPパイプライン
+                  HoL (Head-of-Line) ブロッキング問題（HTTP/1.1で発生していた）の解消。
+                  一つのTCPソケット上に複数のリクエストが発生した時に最適に通信を行う。
+                </code>
+              </p>
+              <a href="https://ja.wikipedia.org/wiki/HTTP/2">https://ja.wikipedia.org/wiki/HTTP/2</a>
+              <h5>HoLブロッキングの解決</h5>
+              <p>HTTP/1.1の場合</p>
+              <p class="code">
+|---a.png---|
+            |---b.png---|
+                        |---c.png---|
+              </p>
+              <p>もし a.png のリクエストが詰まってしまうと以下のようなことが起こる</p>
+              <p class="code">
+|-------------------------------a.png------------------|
+                                                                       |-b.png-|
+                                                                                |--c.png--|
+              </p>
+              <p>
+                ブラウザであれば、同時に 6 本程度のコネクションを貼っているが、リソースが 6 個以上あれば、<br>
+                結局個々のコネクションで同様のことが起こるのをさけることはできない。<br>
+              </p>
+              <p>
+                HTTP/2.0の場合<br>
+                実質 HTTP/1.1 での HOL Block は HTTP/2 では起こらないと言える。<br>
+                HTTP/2 の場合は、リクエストはコネクション上に多重化される。<br>
+              </p>
+              <p class="code">
+|-------------------------------a.png------------------|
+|-b.png-|
+|--c.png--|
+              </p>
+              <h5>クリティカルパスCSS</h5>
+              <p>
+                不要なスタイルによるレンダリングのブロックを無くす。<br>
+                ファーストビューのみスタイルをHTMLのインラインに記述し、他のスタイルは非同期で読み込む。<br>
+                Google PageSpeed Insightsで測定するとこの項目が出てくる。<br>
+
+                実装方法はモジュールをタスクランナーに組み込んで使ったりする
+              </p>
+              <a href="https://github.com/addyosmani/criticals">https://github.com/addyosmani/criticals</a>
+            </div>
+          </div>
+          <!-- .end .wrap -->
+        </section>
+
+
         <section>
           <!--.wrap = container (width: 90%) -->
           <div class="wrap size-50">
