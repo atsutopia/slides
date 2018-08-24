@@ -118,7 +118,7 @@
           <!--.wrap = container (width: 90%) -->
           <div class="wrap aligncenter">
             <h1>
-              <strong>FrontEnd Web Performance</strong>
+              <strong class="start">FrontEnd Web Performance</strong>
             </h1>
             <p class="text-symbols">* * * </p>
           </div>
@@ -138,8 +138,9 @@
               <li>パフォーマンス測定</li>
               <li>パフォーマンス・チューニング(ネットワーク編)</li>
               <li>パフォーマンス・チューニング(レンダリング編)</li>
-              <li>まとめ</li>
             </ol>
+            <h5>Room</h5>
+            <a href="https://talky.io/frontend" target="_blank">https://talky.io/frontend</a>
           </div>
           <!-- .end .wrap -->
         </section>
@@ -248,7 +249,7 @@
             <div class="bg-white shadow">
               <ul class="flexblock reasons">
                 <li>
-                  <h2>AMP(Application Performance Management)</h2>
+                  <h2>APM(Application Performance Management)</h2>
                   <p>一次ISPに計測・監視用サーバを設置して、定常的に表示速度や可用性を計測・監視する手法</p>
                 </li>
                 <li>
@@ -272,9 +273,9 @@
           <!--.wrap = container (width: 90%) -->
           <div class="wrap">
             <div>
-              <h3>AMP(Application Performance Management)</h3>
+              <h3>APM(Application Performance Management)</h3>
               <p>
-								一次ISPに計測・監視用サーバを設置して、定常的に表示速度や可用性を計測・監視する手法<br>
+								計測・監視用サーバを設置して、定常的に表示速度や可用性を計測・監視する手法<br>
 								一定間隔で、1ユーザとしてWebサイトにアクセスしてデータを取得<br>
               </p>
               <h5>強み</h5>
@@ -388,7 +389,7 @@
         </section>
 
         <section class="bg-trans-gradient">
-          <span class="background dark" style="background-image:url('../static/images/frontend-web-perperformance/chris-liverani-552652-unsplash.jpg')"></span>
+          <span class="background dark" style="background-image:url('../static/images/frontend-web-perperformance/pexels-photo-423367.jpeg')"></span>
           <!--.wrap = container (width: 90%) -->
           <div class="wrap aligncenter fadeInUp">
             <h3><strong>パフォーマンス・チューニング(ネットワーク編)</strong></h3>
@@ -407,7 +408,7 @@
               <div class="column">
                 <p class="text-intro">
                   <strong>1.DNSルックアップ</strong><br>
-                  <strong>2.HTMLダウンロード</strong><br>
+                  <strong>2.HTMLダウンロード(TCP3 way handshake)</strong><br>
                   <strong>3.サブリソースダウンロード</strong><br>
                   <strong>4.レンダリング</strong><br>
                 </p>
@@ -442,7 +443,7 @@
           <div class="wrap">
             <div>
               <h3>2.HTMLダウンロード</h3>
-              <h5>HTTP2</h5>
+              <h5>HTTP/2</h5>
               <p class="desc">
                 <code>
                   HTTP/2の目標はHTTP/1.1のトランザクション・セマンティクスとの完全な後方互換性を維持したまま非同期な接続の多重化、ヘッダ圧縮、リクエストとレスポンスのパイプライン化を実現することである。Googleによって立ち上げられ[3]、全ての主要なウェブブラウザが対応しているHTTP互換のプロトコルSPDYの人気が高まっていることに対応するために開発された[4]。
@@ -491,7 +492,10 @@
                 ファーストビューのみスタイルをHTMLのインラインに記述し、他のスタイルは非同期で読み込む。<br>
                 Google PageSpeed Insightsで測定するとこの項目が出てくる。<br>
 
-                実装方法はモジュールをタスクランナーに組み込んで使ったりする
+                実装方法はモジュールをタスクランナーに組み込んで使ったりする<br>
+
+                例<br>
+                <a href="https://dev.to/" target="_blank">https://dev.to/</a>
               </p>
               <a href="https://github.com/addyosmani/criticals">https://github.com/addyosmani/criticals</a>
             </div>
@@ -625,7 +629,7 @@
         </section>
 
         <section class="bg-trans-gradient">
-          <span class="background dark" style="background-image:url('../static/images/frontend-web-perperformance/chris-liverani-552652-unsplash.jpg')"></span>
+          <span class="background dark" style="background-image:url('../static/images/frontend-web-perperformance/500_F_44222667_luGu7k63raaIXi7MchHHrJVNrjfu16Hc.jpg')"></span>
           <!--.wrap = container (width: 90%) -->
           <div class="wrap aligncenter fadeInUp">
             <h3><strong>パフォーマンス・チューニング(レンダリング編)</strong></h3>
@@ -658,6 +662,12 @@
 
                 ただし、多用しすぎるとマシンのリソースを大量に消費することになるので、必要なときのみプロパティを付与<br>
                 するようにすること<br>
+              </p>
+
+              <h5>Example</h5>
+              <p>
+                <a href="https://pocke777.github.io/mock/2017/07/kado.html" target="_blank">https://pocke777.github.io/mock/2017/07/kado.html</a><br>
+                <a href="https://homunculus.jp/" target="_blank">https://homunculus.jp/</a><br>
               </p>
 
             </div>
@@ -699,10 +709,10 @@
         </section>
 
         <section class="bg-trans-gradient">
-          <span class="background dark" style="background-image:url('../static/images/frontend-web-perperformance/chris-liverani-552652-unsplash.jpg')"></span>
+          <span class="background dark" style="background-image:url('../static/images/frontend-web-perperformance/pexels-photo-844297.jpeg')"></span>
           <!--.wrap = container (width: 90%) -->
           <div class="wrap aligncenter fadeInUp">
-            <h3><strong>終わり</strong></h3>
+            <h3><strong class="end">End</strong></h3>
           </div>
           <!-- .end .wrap -->
         </section>

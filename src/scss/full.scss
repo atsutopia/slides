@@ -113,3 +113,44 @@
   white-space: pre-line;
 }
 
+@keyframes start {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  20% {
+    transform: rotate(0deg);
+  }
+
+  80% {
+    transform: rotate(1080deg);
+  }
+
+  100% {
+    transform: rotate(720deg);
+  }
+}
+
+@keyframes end {
+  0% {
+    transform: scale(0);
+  }
+
+  80% {
+    transform: scale(10);
+  }
+
+  100% {
+    transform: scale(8);
+  }
+}
+
+.start {
+  animation: start 10s infinite cubic-bezier(0.68, -0.55, 0.27, 1.55) 3s;
+  display: block;
+}
+
+.end {
+  animation: end 8s infinite ease-in-out;
+  display: block;
+}
