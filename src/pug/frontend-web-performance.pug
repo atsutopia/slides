@@ -1,619 +1,523 @@
-doctype html
-html(lang='en', prefix='og: http://ogp.me/ns#')
-  head
-    meta(charset='utf-8')
-    meta(name='viewport', content='width=device-width, initial-scale=1')
-    //
-      CLEAN MARKUP = GOOD KARMA.
-      Hi source code lover,
-      you're a curious person and a fast learner ;)
-      Let's make something beautiful together. Contribute on Github:
-      https://github.com/webslides/webslides
-      Thanks!
-    // SEO
-    title フロントエンドWebサイトパフォーマンス · TRUNK
-    meta(name='description', content='')
-    // URL CANONICAL
-    // <link rel="canonical" href="http://your-url.com/permalink">
-    // Google Fonts
-    link(href='https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,700,700i%7CMaitree:200,300,400,600,700&subset=latin-ext', rel='stylesheet')
-    // CSS Base
-    link(rel='stylesheet', type='text/css', media='all', href='./css/webslides.css')
-    // Optional - CSS SVG Icons (Font Awesome)
-    link(rel='stylesheet', type='text/css', media='all', href='./css/svg-icons.css')
-    // SOCIAL CARDS (ADD YOUR INFO)
-    // FACEBOOK
-    // EDIT
-    meta(property='og:url', content='http://your-url.com/permalink')
-    // EDIT
-    meta(property='og:type', content='article')
-    meta(property='og:title', content="WebSlides: Netflix's Culture")
-    meta(property='og:description', content="Patty McCord created Netflix's culture. This is a homage.")
-    // EDIT
-    meta(property='og:updated_time', content='2017-04-16T16:24:56')
-    // EDIT
-    meta(property='og:image', content='../static/images/share-webslides.jpg')
-    // EDIT
-    meta(property='og:image:width', content='800')
-    meta(property='og:image:height', content='429')
-    // TWITTER
-    meta(name='twitter:card', content='summary_large_image')
-    meta(name='twitter:site', content='@webslides')
-    // EDIT
-    meta(name='twitter:creator', content='@jlantunez')
-    // EDIT
-    meta(name='twitter:title', content="WebSlides: Netflix's Culture")
-    // EDIT
-    meta(name='twitter:description', content="Patty McCord created Netflix's culture. This is a homage.")
-    // EDIT
-    meta(name='twitter:image', content='../static/images/share-webslides.jpg')
-    // EDIT
-    // FAVICONS
-    link(rel='shortcut icon', sizes='16x16', href='../static/images/favicons/favicon.png')
-    link(rel='shortcut icon', sizes='32x32', href='../static/images/favicons/favicon-32.png')
-    link(rel='apple-touch-icon icon', sizes='76x76', href='../static/images/favicons/favicon-76.png')
-    link(rel='apple-touch-icon icon', sizes='120x120', href='../static/images/favicons/favicon-120.png')
-    link(rel='apple-touch-icon icon', sizes='152x152', href='../static/images/favicons/favicon-152.png')
-    link(rel='apple-touch-icon icon', sizes='180x180', href='../static/images/favicons/favicon-180.png')
-    link(rel='apple-touch-icon icon', sizes='192x192', href='../static/images/favicons/favicon-192.png')
-    // Android
-    meta(name='mobile-web-app-capable', content='yes')
-    meta(name='theme-color', content='#333333')
-  body
-    header(role='banner')
-      nav(role='navigation')
-        p.logo
-          a(href='../index.html', title='WebSlides') WebSlides
-        ul
-          li.github
-            a(rel='external', href='https://github.com/webslides/webslides', title='Github')
-              svg.fa-github
-                use(xlink:href='#fa-github')
-              em WebSlides
-          li.twitter
-            a(rel='external', href='https://twitter.com/webslides', title='Twitter')
-              svg.fa-twitter
-                use(xlink:href='#fa-twitter')
-              em @WebSlides
-          // <li class="dribbble"><a rel="external" href="http://dribbble.com/webslides" title="Dribbble"><svg class="fa-dribbble"><use xlink:href="#fa-dribbble"></use></svg> <em>webslides</em></a></li>
-    main(role='main')
-      article#webslides
-        //
-          Quick Guide
-          - Each parent <section> in the <article id="webslides"> element is an individual slide.
-          - Vertical sliding = <article id="webslides" class="vertical">
-          - <div class="wrap"> = container 90% / <div class="wrap size-50"> = 45%;
-        section.bg-red
-          span.background.dark(style="background-image:url('https://source.unsplash.com/R1J6Z1cnJZc/1600x800')")
-          // .wrap = container (width: 90%)
-          .wrap.aligncenter
-            h1
-              strong.start FrontEnd Web Performance
-            p.text-symbols * * * 
-          // .end .wrap
-        section
-          // .wrap = container (width: 90%)
-          .wrap.size-70
-            h2
-              strong Agenda
-            hr
-            ol.text-cols
-              li トレーニング概要
-              li 自己紹介
-              li なぜ高速化が必要?
-              li パフォーマンス測定
-              li パフォーマンス・チューニング(ネットワーク編)
-              li パフォーマンス・チューニング(レンダリング編)
-            h5 Room
-            a(href='https://talky.io/frontend', target='_blank') https://talky.io/frontend
-          // .end .wrap
-        section.slide-top
-          // .wrap = container (width: 90%)
-          .wrap
-            div
-              h3 トレーニング概要
-              h5 今回する話
-              p
-                | ・パフォーマンスの計測方法
-                br
-                | 								・フロントエンドに関するパフォーマンス・チューニングの話(ネットワーク・レンダリング)
-                br
-              h5 今回はしない話
-              p
-                | ・バックエンドに関するパフォーマンス・チューニングの話
-                br
-                | 								・AMPやWebAssemblyの話
-          // .end .wrap
-        section.fullscreen
-          // .wrap = container (width: 90%)
-          .card-50
-            figure
-              img(src='./images/projects/project.png', alt='')
-            // end figure
-            .flex-content
-              h2
-                | About Me
-              p Kawasaki Atsushi
-              p.text-intro
-                | Summary Statements About Experience 
-                br
-                br
-                |                 Frontend 
-                br
-                |                 - HTML5/CSS/Javascript 
-                br
-                |                 - React.js / Vue.js / Pixi.js / Three.js / jQuery 
-                br
-                |                 Backend 
-                br
-                |                 - Ruby/PHP  
-                br
-                |                 - RubyonRails/FuelPHP/Mysql/Redis  
-                br
-                |                 Infra 
-                br
-                |                 - AWS / GCP 
-                br
-                |                 - EC2/ CloudFront / ELB / S3 
-                br
-                |                 - Chef 
-                br
-            // end .flex-content
-        section.bg-trans-gradient
-          span.background.dark(style="background-image:url('./images/frontend-web-perperformance/chris-liverani-552652-unsplash.jpg')")
-          // .wrap = container (width: 90%)
-          .wrap.aligncenter.fadeInUp
-            h3
-              strong なぜ高速化が必要?
-          // .end .wrap
-        section.slide-top
-          // .wrap = container (width: 90%)
-          .wrap
-            div
-              h3 なぜ高速化が必要?
-              h5 ビジネスへの影響
-              p
-                | ・サイト表示0.1秒遅くなると、売上が1%減少 (Amazon)
-                br
-                | 								・表示速度 上位20%のサイトの検索順位を上げる。 しきい値は約1.4秒。(Google)
-                br
-              h5 サードパーティの増加
-              p
-                | ・BaasやSaasなど発展によりアプリケーションにサードパーティが増加した
-                br
-                | 								・インタラクティブなコンテンツや高解像度なディスプレイへの対応
-              h5 法律への対応
-              p
-                | ・2020年に民法債権法改正。品質に対しての保証が大切になる
-          // .end .wrap
-        section.bg-trans-gradient
-          span.background.dark(style="background-image:url('./images/frontend-web-perperformance/chris-liverani-552652-unsplash.jpg')")
-          // .wrap = container (width: 90%)
-          .wrap.aligncenter.fadeInUp
-            h3
-              strong パフォーマンス測定
-          // .end .wrap
-        section
-          // .wrap = container width: 90%
-          .wrap.size-50.aligncenter
-            h3
-              strong パフォーマンス測定
-            p.text-intro
-            .bg-white.shadow
-              ul.flexblock.reasons
-                li
-                  h2 APM(Application Performance Management)
-                  p 一次ISPに計測・監視用サーバを設置して、定常的に表示速度や可用性を計測・監視する手法
-                li
-                  h2 RUM(Real User Monitoring)
-                  p Navigation TimingやResource TimingのAPIを利用してデータを取得
-                li
-                  h2 分析ツール
-                  p Chrome Dev Tools/PageSpeed Insights
-            // .end .bg-white shadow
-          // .end .wrap
-        section.slide-top
-          // .wrap = container (width: 90%)
-          .wrap
-            div
-              h3 APM(Application Performance Management)
-              p
-                | 計測・監視用サーバを設置して、定常的に表示速度や可用性を計測・監視する手法
-                br
-                | 								一定間隔で、1ユーザとしてWebサイトにアクセスしてデータを取得
-                br
-              h5 強み
-              p
-                | ・Actionable Data(実行可能データ)が取得できる
-                br
-                | 								・ノイズが少ない
-                |                 ・信頼性の高さ
-                |                 ・実際のユーザーが用いる回線 (OCN の光とか docomo LTE とか) での計測結果が可能
-              h5 弱み
-              p
-                | ・それなりのお値段 (
-                a(href='https://spelldata.co.jp/catchpoint/pricing.html', target='_blank') https://spelldata.co.jp/catchpoint/pricing.html
-                | )
-              h5 サービス例
-              ul.flexblock
-                li
-                  a(href='http://www.catchpoint.com/', target='_blank')
-                    img(src='http://www.catchpoint.com/wp-content/uploads/2017/01/CP_brandguide-updated.png', width='250')
-                li
-                  a(href='https://newrelic.com/', target='_blank')
-                    img(src='data:image/png;base64,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', width='250')
-                li
-                  a(href='https://www.dynatrace.com/ja/', target='_blank')
-                    img(src='data:image/png;base64,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', width='250')
-                li
-                  a(href='https://jennifersoft.com/ja/', target='_blank')
-                    img(src='https://jennifersoft.com/ja/wp-content/themes/jennifer_jp/src/img/jennifer_ci_2.png', width='250')
-          // .end .wrap
-        section.slide-top
-          // .wrap = container (width: 90%)
-          .wrap
-            div
-              h3 RUM(Real User Monitoring)
-              p
-                | W3CのPerformance Working Groupが策定した、Navigation TimingやResource TimingのAPIを利用して
-                br
-                |                 データを取得
-                br
-              h5 強み
-              p
-                | ・個々のユーザからアクセスがあったページについて全て、表示速度を取得できる
-                br
-                |                 ・ユーザー体験している表示速度を取得する事が可能
-              h5 弱み
-              p
-                | ・表示速度の値にノイズが数多く含まれているのを分離できない
-                br
-                |                 ・エラーになった場合は検出できない
-                br
-                |                 ・表示速度が遅すぎて、ユーザがさっさとページ遷移した場合も、表示速度のデータを送る前にページ遷移をしてしまうため、欠損となる
-                br
-              h5 サービス例
-              ul.flexblock
-                li
-                  a(href='http://github.hubspot.com/bucky/', target='_blank')
-                    img(src='http://www.xtnd.it/marketplace/wp-content/uploads/2014/03/bucky.jpg', width='250')
-                li
-                  a(href='https://speedcurve.com/', target='_blank')
-                    img(src='https://pbs.twimg.com/media/DXPeX-8XcAE7R9Y.png', width='250')
-                li
-                  a(href='http://yahoo.github.io/boomerang/doc/ja/', target='_blank')
-                    img(src='../static/images/frontend-web-perperformance/boomerang.png', width='250')
-          // .end .wrap
-        section.slide-top
-          // .wrap = container (width: 90%)
-          .wrap
-            div
-              h3 分析ツール
-              h5 Chrome Dev Tools
-              p
-                | ウォーターフォールチャートを確認することで、どのファイルのダウンロードにどの程度時間がかかっているのか確認することが可能
-              img(src='./images/frontend-web-perperformance/network.png', width='870')
-              h3
-              p
-                | JavaScriptの実行分析からランタイムパフォーマンスを分析可能
-              img(src='./images/frontend-web-perperformance/performance.png', width='870')
-              h3
-              h5 PageSpeed Insights
-              p
-                | URLを入力するとページの速度やユーザ体験を改善できる項目をPCサイトとモバイルサイトの両方を検証
-                br
-                |                 レンダリング関係についての問題解決のヒントになる
-                br
-                a(href='https://developers.google.com/speed/pagespeed/insights/?hl=ja', target='_blank') https://developers.google.com/speed/pagespeed/insights/?hl=ja
-          // .end .wrap
-        section.bg-trans-gradient
-          span.background.dark(style="background-image:url('./images/frontend-web-perperformance/pexels-photo-423367.jpeg')")
-          // .wrap = container (width: 90%)
-          .wrap.aligncenter.fadeInUp
-            h3
-              strong パフォーマンス・チューニング(ネットワーク編)
-          // .end .wrap
-        section
-          // .wrap = container (width: 90%)
-          .wrap
-            .grid.vertical-align
-              .column
-                h3
-                  strong レンダリングフロー
-              .column
-                p.text-intro
-                  strong 1.DNSルックアップ
-                  br
-                  strong 2.HTMLダウンロード(TCP3 way handshake)
-                  br
-                  strong 3.サブリソースダウンロード
-                  br
-                  strong 4.レンダリング
-                  br
-          // .end .wrap
-        section.slide-top
-          // .wrap = container (width: 90%)
-          .wrap
-            div
-              h3 1.DNSルックアップ
-              p
-                | ブラウザがホスト名→ IPアドレスとするのに20~120msかかる
-                br
-                | (1度接続すればPCがアドレスを覚えるので、両方のキャッシュが消えるまではDNSの問い合わせをしなくていい)
-                br
-              h5 Content delivery network
-              p
-                | CDNを利用してユーザーから最短のエッジサーバーからコンテンツをダウンロードすることで高速化
-              img(src='https://www.cdnetworks.co.jp/wp/wp-content/uploads/2016/07/4949_1.png', width='880')
-              a(href='https://www.cdnetworks.co.jp/blog/4949/') 参考
-          // .end .wrap
-        section.slide-top
-          // .wrap = container (width: 90%)
-          .wrap
-            div
-              h3 2.HTMLダウンロード
-              h5 HTTP/2
-              p.desc
-                code
-                  | HTTP/2の目標はHTTP/1.1のトランザクション・セマンティクスとの完全な後方互換性を維持したまま非同期な接続の多重化、ヘッダ圧縮、リクエストとレスポンスのパイプライン化を実現することである。Googleによって立ち上げられ[3]、全ての主要なウェブブラウザが対応しているHTTP互換のプロトコルSPDYの人気が高まっていることに対応するために開発された[4]。
-                  | 高速化技術
-                  | 下記の技術により従来より高速の通信を実現している。
-                  | HTTPヘッダの圧縮。（HPACKで圧縮し[5]、二度目以降の通信は差分のみ送信する）
-                  | HTTP/2サーバープッシュ通信。
-                  | HTTPパイプライン
-                  | HoL (Head-of-Line) ブロッキング問題（HTTP/1.1で発生していた）の解消。
-                  | 一つのTCPソケット上に複数のリクエストが発生した時に最適に通信を行う。
-              a(href='https://ja.wikipedia.org/wiki/HTTP/2') https://ja.wikipedia.org/wiki/HTTP/2
-              h5 HoLブロッキングの解決
-              p HTTP/1.1の場合
-              p.code
-                | |---a.png---|
-                | |---b.png---|
-                | |---c.png---|
-              p もし a.png のリクエストが詰まってしまうと以下のようなことが起こる
-              p.code
-                | |-------------------------------a.png------------------|
-                | |-b.png-|
-                | |--c.png--|
-              p
-                | ブラウザであれば、同時に 6 本程度のコネクションを貼っているが、リソースが 6 個以上あれば、
-                br
-                |                 結局個々のコネクションで同様のことが起こるのをさけることはできない。
-                br
-              p
-                | HTTP/2.0の場合
-                br
-                |                 実質 HTTP/1.1 での HOL Block は HTTP/2 では起こらないと言える。
-                br
-                |                 HTTP/2 の場合は、リクエストはコネクション上に多重化される。
-                br
-              p.code
-                | |-------------------------------a.png------------------|
-                | |-b.png-|
-                | |--c.png--|
-              h5 クリティカルパスCSS
-              p
-                | 不要なスタイルによるレンダリングのブロックを無くす。
-                br
-                |                 ファーストビューのみスタイルをHTMLのインラインに記述し、他のスタイルは非同期で読み込む。
-                br
-                |                 Google PageSpeed Insightsで測定するとこの項目が出てくる。
-                br
-                |                 実装方法はモジュールをタスクランナーに組み込んで使ったりする
-                br
-                |                 例
-                br
-                a(href='https://dev.to/', target='_blank') https://dev.to/
-              a(href='https://github.com/addyosmani/criticals') https://github.com/addyosmani/criticals
-          // .end .wrap
-        section.slide-top
-          // .wrap = container (width: 90%)
-          .wrap
-            div
-              h3 3.サブリソースダウンロード
-              h5 キャッシュ (ブラウザキャッシュ)
-              p
-                | Cache-Control
-              table
-                thead
-                  tr
-                    th ディレクティブ
-                    th 説明
-                tbody
-                  tr
-                    td max-age=86400
-                    td レスポンスは、最大 1 日（60 秒 x 60 分 x 24 時間）、ブラウザおよび任意の中間キャッシュでキャッシュに保存可能（つまり、「public」）
-                  tr
-                    td private, max-age=600
-                    td レスポンスは、クライアントのブラウザで最大 10 分（60 秒 x 10 分）のみキャッシュに保存可能
-                  tr
-                    td no-store
-                    td レスポンスはキャッシュに保存することが許可されず、リクエストごとに完全に取得する必要がある。
-                  tr
-                    td no-cache
-                    td オリジンサーバでの確認無しにキャッシュを利用してはならない
-              p Expires Header
-              p キャッシュの有効期限を指定
-              p ETag ヘッダ
-              p 同じファイルかどうか比較するための検証子です。
-              h5 ファイル圧縮 (画像圧縮)
-              h6 メタデータの削除
-              p
-                | 撮影機器や編集ソフトの情報
-                | GPS搭載のスマートフォンやデジタルカメラの場合は、撮影位置の情報が保存される場合はあります。
-                | 個人情報を含んでいる場合もあるし、容量も減るのでごっそり削除
-              h6 減色/最適化
-              p
-                | 減色することで容量を下げることができるが、なるべく画像はきれいに保ちたい。
-                | そんなときは専用圧縮ツールなどを使うことで、カラーパレットを整理したり、圧縮方法を変えたりと
-                | 画質を落とさずに容量を下げることができます。
-              .flexblock
-                div
-                  p 圧縮前 [3.1MB]
-                  img(src='./images/frontend-web-perperformance/1511624537.png', width='480')
-                div
-                  p 圧縮後 [969KB] -69%
-                  img(src='./images/frontend-web-perperformance/1511624537_tiny.png', width='480')
-              h6 SVGデータ
-              p
-                | SVGは、PNGやJPEGなどとは異なり、バイナリではなくテキストのデータで容量は比較的少なくすむ。CSSで色を変更できたり、JSで操作できるなど、他の画像形式にはない特徴を持っている
-              h6 ファイル圧縮 (minify/gzip)
-              p
-                | アーカイバと呼ばれるzipファイルと混在しないように注意
-                br
-                |                 圧縮前 (normal) [669KB]
-                br
-                a(href='./images/frontend-web-perperformance/react.js' target="_blank") images/tiny/react.js
-                br
-                |                 圧縮後 (minify) [147KB]
-                br
-                a(href='./images/frontend-web-perperformance/react.min.js' target="_blank") images/tiny/react.min.js
-                br
-                |                 圧縮後 (normal/gzip) [151KB]
-                br
-                a(href='./images/frontend-web-perperformance/react.js.gz' target="_blank") images/tiny/react.js.gz
-                br
-                |                 圧縮後 (minify/gzip) [43KB]
-                br
-                a(href='./images/frontend-web-perperformance/react.min.js.gz' target="_blank") images/tiny/react.min.js.gz
-                br
-              h6 WebFont
-              p
-                | 日本語のフォントがとにかく重い。NotoSansJPの例だと1フォント1.6MBくらい。
-                | 複数ウェイトを用意する場合は1.6MBがN倍となる。
-              p
-                strong 対策1. ローカルフォントの使用
-              p.code
-                | @font-face {
-                | font-family: 'Noto Sans Japanese';
-                | font-style: normal;
-                | font-weight: 300;
-                | src: local("Noto Sans Japanese Light"),
-                | url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-DemiLight.woff2) format('woff2');
-                | }
-              p
-                strong 対策2. フォントのサブセット化
-                br
-                |                 一般的な日本語Fontは、5000-15000文字ぐらいを収録しているのですが、第1水準漢字だけで事足りるのであれば、3000文字ぐらいで済みます。3000文字分だけ収録された(Subsetの)Fontを作る事をSubset化と呼びます。
-                br
-                |                 アスキー文字 + 非漢字文字 + 第1水準漢字で700KBのフォントができる。
-                br
-                a(href='https://github.com/minoryorg/Noto-Sans-CJK-JP') https://github.com/minoryorg/Noto-Sans-CJK-JP
-              p
-                strong 対策3. ダイナミックサブセット対応のフォントベンダーを使用
-                br
-                |                 Web上に表示されている文字のみのフォントをダウンロードする
-              h5 Base64 Inline Image
-              p
-                | バイナリデータをBase64にエンコードしてHTML(CSS)に直接埋め込むことによってリクエスト数を削減する
-              h5 Css Sprite
-              p
-                | 複数画像を一つにまとめることで、リクエスト回数を削減する
-                br
-                |                 background-image と background-position で対応
-                br
-              img(src='https://parashuto.com/rriver/wp/wp-content/uploads/2011/06/nav_logo3.png')
-          // .end .wrap
-        section.bg-trans-gradient
-          span.background.dark(style="background-image:url('./images/frontend-web-perperformance/500_F_44222667_luGu7k63raaIXi7MchHHrJVNrjfu16Hc.jpg')")
-          // .wrap = container (width: 90%)
-          .wrap.aligncenter.fadeInUp
-            h3
-              strong パフォーマンス・チューニング(レンダリング編)
-          // .end .wrap
-        section.slide-top
-          // .wrap = container (width: 90%)
-          .wrap
-            div
-              h3 ハードウェア・アクセラレーション
-              p
-                | ハードウェア・アクセラレーションとは、GPUを使用してCPUの計算量を削減し、ブラウザのレンダリング処理を効率化すること
-                | レイアウトに影響を及ぼすプロパティ例
-                br
-              h5 対策.1 translateZ() （translate3d()） 
-              p
-                | 今まで広く使用されていたGPU計算をさせるためのCSSハック
-                br
-                |                 実際ニモは2次元空間でアニメーションさせる要素に対しても3D変形処理の指示を与えることで
-                br
-                |                 GPU計算処理上に乗っけることで高速化をする。
-                br
-                |                 ただし、3D変形処理によるコストは通常より大きくなりRAMやGPUのメモリ使用量が増えるので注意
-                br
-              h5 対策.2 will-change 
-              p
-                | 要素にどのような変更を加えるかを前もってブラウザに知らせるのことができるプロパティ
-                br
-                |                 これを用いることで変更が行われる前に、適切な最適化をセットアップすることができる。
-                br
-                |                 ただし、多用しすぎるとマシンのリソースを大量に消費することになるので、必要なときのみプロパティを付与
-                br
-                |                 するようにすること
-                br
-              h5 Example
-              p
-                a(href='https://pocke777.github.io/mock/2017/07/kado.html', target='_blank') https://pocke777.github.io/mock/2017/07/kado.html
-                br
-                a(href='https://homunculus.jp/', target='_blank') https://homunculus.jp/
-                br
-          // .end .wrap
-        section.slide-top
-          // .wrap = container (width: 90%)
-          .wrap
-            div
-              h3 throttle/debounce
-              p
-                | 連続処理の間引き（throttle）や連続処理後の遅延実行（debounce）を行う
-                br
-                |                 scroll/resize/mousemove などのイベント監視時に大量なコールバックが発生する。
-                br
-                |                 必要な間隔で処理を間引くときこういったテクニックを使用する
-          // .end .wrap
-        section.slide-top
-          // .wrap = container (width: 90%)
-          .wrap
-            div
-              h3 requestAnimationFrame vs setInterval
-              p
-                | 両方とも関数の繰り返し実行を行う
-                br
-                |                 requestAnimationFrameはブラウザのフレームレートに合わせて繰り返し処理を行ってくれる。
-                br
-                |                 setIntervalは任意のタイミングで繰り返し処理を行う。繰り返し間隔がブラウザFPSと合ってなくアニメーションが飛んだりしてしまう。
-                br
-                br
-                br
-                |                 タブが非アクティブ時にsetIntervalはある一定間隔に間引かれるが動き続ける。requestAnimationFrameは処理が止まってくれるのでエコに使える
-          // .end .wrap
-        section.slide-top
-          // .wrap = container (width: 90%)
-          .wrap
-            div
-              h3 告知
-              h5 バックエンド・フロントエンドブートキャンプ募集中
-              p
-                | ・実務によったに近いアプリケーションの作成<br>
-                | ・実践的なコードレビュ
-                | ・企業インターン・就職支援
-              <a href="mailto:support@trunk.fm">support@trunk.fm</a>
-        section.bg-trans-gradient
-          span.background.dark(style="background-image:url('./images/frontend-web-perperformance/pexels-photo-844297.jpeg')")
-          // .wrap = container (width: 90%)
-          .wrap.aligncenter.fadeInUp
-            h3
-              strong.end End
-          // .end .wrap
-    // main
-    footer
-      .wrap
+extends /layout/_application
+
+block content
+  section.bg-red
+    span.background.dark(style="background-image:url('https://source.unsplash.com/R1J6Z1cnJZc/1600x800')")
+    // .wrap = container (width: 90%)
+    .wrap.aligncenter
+      h1
+        strong.start FrontEnd Web Performance
+      p.text-symbols * * * 
+    // .end .wrap
+  section
+    // .wrap = container (width: 90%)
+    .wrap.size-70
+      h2
+        strong Agenda
+      hr
+      ol.text-cols
+        li トレーニング概要
+        li 自己紹介
+        li なぜ高速化が必要?
+        li パフォーマンス測定
+        li パフォーマンス・チューニング(ネットワーク編)
+        li パフォーマンス・チューニング(レンダリング編)
+      h5 Room
+      a(href='https://talky.io/frontend', target='_blank') https://talky.io/frontend
+    // .end .wrap
+  section.slide-top
+    // .wrap = container (width: 90%)
+    .wrap
+      div
+        h3 トレーニング概要
+        h5 今回する話
         p
-          span.alignright
-            a(href='https://trunk.fm/', title='Trunk')
-              img(src='./images/logos/trunk.svg', alt='Trunk')
-    // Required
-    script(src='./js/webslides.js')
-    script.
-      window.ws = new WebSlides();
-    // Autoslide? window.ws = new WebSlides({ autoslide: 8000 });
-    // OPTIONAL - svg-icons.js (fontastic.me - Font Awesome as svg icons)
-    script(defer='', src='../static/js/svg-icons.js')
+          | ・パフォーマンスの計測方法
+          br
+          | 								・フロントエンドに関するパフォーマンス・チューニングの話(ネットワーク・レンダリング)
+          br
+        h5 今回はしない話
+        p
+          | ・バックエンドに関するパフォーマンス・チューニングの話
+          br
+          | 								・AMPやWebAssemblyの話
+    // .end .wrap
+  section.fullscreen
+    // .wrap = container (width: 90%)
+    .card-50
+      figure
+        img(src='./images/projects/project.png', alt='')
+      // end figure
+      .flex-content
+        h2
+          | About Me
+        p Kawasaki Atsushi
+        p.text-intro
+          | Summary Statements About Experience 
+          br
+          br
+          |                 Frontend 
+          br
+          |                 - HTML5/CSS/Javascript 
+          br
+          |                 - React.js / Vue.js / Pixi.js / Three.js / jQuery 
+          br
+          |                 Backend 
+          br
+          |                 - Ruby/PHP  
+          br
+          |                 - RubyonRails/FuelPHP/Mysql/Redis  
+          br
+          |                 Infra 
+          br
+          |                 - AWS / GCP 
+          br
+          |                 - EC2/ CloudFront / ELB / S3 
+          br
+          |                 - Chef 
+          br
+      // end .flex-content
+  section.bg-trans-gradient
+    span.background.dark(style="background-image:url('./images/frontend-web-perperformance/chris-liverani-552652-unsplash.jpg')")
+    // .wrap = container (width: 90%)
+    .wrap.aligncenter.fadeInUp
+      h3
+        strong なぜ高速化が必要?
+    // .end .wrap
+  section.slide-top
+    // .wrap = container (width: 90%)
+    .wrap
+      div
+        h3 なぜ高速化が必要?
+        h5 ビジネスへの影響
+        p
+          | ・サイト表示0.1秒遅くなると、売上が1%減少 (Amazon)
+          br
+          | 								・表示速度 上位20%のサイトの検索順位を上げる。 しきい値は約1.4秒。(Google)
+          br
+        h5 サードパーティの増加
+        p
+          | ・BaasやSaasなど発展によりアプリケーションにサードパーティが増加した
+          br
+          | 								・インタラクティブなコンテンツや高解像度なディスプレイへの対応
+        h5 法律への対応
+        p
+          | ・2020年に民法債権法改正。品質に対しての保証が大切になる
+    // .end .wrap
+  section.bg-trans-gradient
+    span.background.dark(style="background-image:url('./images/frontend-web-perperformance/chris-liverani-552652-unsplash.jpg')")
+    // .wrap = container (width: 90%)
+    .wrap.aligncenter.fadeInUp
+      h3
+        strong パフォーマンス測定
+    // .end .wrap
+  section
+    // .wrap = container width: 90%
+    .wrap.size-50.aligncenter
+      h3
+        strong パフォーマンス測定
+      p.text-intro
+      .bg-white.shadow
+        ul.flexblock.reasons
+          li
+            h2 APM(Application Performance Management)
+            p 一次ISPに計測・監視用サーバを設置して、定常的に表示速度や可用性を計測・監視する手法
+          li
+            h2 RUM(Real User Monitoring)
+            p Navigation TimingやResource TimingのAPIを利用してデータを取得
+          li
+            h2 分析ツール
+            p Chrome Dev Tools/PageSpeed Insights
+      // .end .bg-white shadow
+    // .end .wrap
+  section.slide-top
+    // .wrap = container (width: 90%)
+    .wrap
+      div
+        h3 APM(Application Performance Management)
+        p
+          | 計測・監視用サーバを設置して、定常的に表示速度や可用性を計測・監視する手法
+          br
+          | 								一定間隔で、1ユーザとしてWebサイトにアクセスしてデータを取得
+          br
+        h5 強み
+        p
+          | ・Actionable Data(実行可能データ)が取得できる
+          br
+          | 								・ノイズが少ない
+          |                 ・信頼性の高さ
+          |                 ・実際のユーザーが用いる回線 (OCN の光とか docomo LTE とか) での計測結果が可能
+        h5 弱み
+        p
+          | ・それなりのお値段 (
+          a(href='https://spelldata.co.jp/catchpoint/pricing.html', target='_blank') https://spelldata.co.jp/catchpoint/pricing.html
+          | )
+        h5 サービス例
+        ul.flexblock
+          li
+            a(href='http://www.catchpoint.com/', target='_blank')
+              img(src='http://www.catchpoint.com/wp-content/uploads/2017/01/CP_brandguide-updated.png', width='250')
+          li
+            a(href='https://newrelic.com/', target='_blank')
+              img(src='data:image/png;base64,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', width='250')
+          li
+            a(href='https://www.dynatrace.com/ja/', target='_blank')
+              img(src='data:image/png;base64,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', width='250')
+          li
+            a(href='https://jennifersoft.com/ja/', target='_blank')
+              img(src='https://jennifersoft.com/ja/wp-content/themes/jennifer_jp/src/img/jennifer_ci_2.png', width='250')
+    // .end .wrap
+  section.slide-top
+    // .wrap = container (width: 90%)
+    .wrap
+      div
+        h3 RUM(Real User Monitoring)
+        p
+          | W3CのPerformance Working Groupが策定した、Navigation TimingやResource TimingのAPIを利用して
+          br
+          |                 データを取得
+          br
+        h5 強み
+        p
+          | ・個々のユーザからアクセスがあったページについて全て、表示速度を取得できる
+          br
+          |                 ・ユーザー体験している表示速度を取得する事が可能
+        h5 弱み
+        p
+          | ・表示速度の値にノイズが数多く含まれているのを分離できない
+          br
+          |                 ・エラーになった場合は検出できない
+          br
+          |                 ・表示速度が遅すぎて、ユーザがさっさとページ遷移した場合も、表示速度のデータを送る前にページ遷移をしてしまうため、欠損となる
+          br
+        h5 サービス例
+        ul.flexblock
+          li
+            a(href='http://github.hubspot.com/bucky/', target='_blank')
+              img(src='http://www.xtnd.it/marketplace/wp-content/uploads/2014/03/bucky.jpg', width='250')
+          li
+            a(href='https://speedcurve.com/', target='_blank')
+              img(src='https://pbs.twimg.com/media/DXPeX-8XcAE7R9Y.png', width='250')
+          li
+            a(href='http://yahoo.github.io/boomerang/doc/ja/', target='_blank')
+              img(src='../static/images/frontend-web-perperformance/boomerang.png', width='250')
+    // .end .wrap
+  section.slide-top
+    // .wrap = container (width: 90%)
+    .wrap
+      div
+        h3 分析ツール
+        h5 Chrome Dev Tools
+        p
+          | ウォーターフォールチャートを確認することで、どのファイルのダウンロードにどの程度時間がかかっているのか確認することが可能
+        img(src='./images/frontend-web-perperformance/network.png', width='870')
+        h3
+        p
+          | JavaScriptの実行分析からランタイムパフォーマンスを分析可能
+        img(src='./images/frontend-web-perperformance/performance.png', width='870')
+        h3
+        h5 PageSpeed Insights
+        p
+          | URLを入力するとページの速度やユーザ体験を改善できる項目をPCサイトとモバイルサイトの両方を検証
+          br
+          |                 レンダリング関係についての問題解決のヒントになる
+          br
+          a(href='https://developers.google.com/speed/pagespeed/insights/?hl=ja', target='_blank') https://developers.google.com/speed/pagespeed/insights/?hl=ja
+    // .end .wrap
+  section.bg-trans-gradient
+    span.background.dark(style="background-image:url('./images/frontend-web-perperformance/pexels-photo-423367.jpeg')")
+    // .wrap = container (width: 90%)
+    .wrap.aligncenter.fadeInUp
+      h3
+        strong パフォーマンス・チューニング(ネットワーク編)
+    // .end .wrap
+  section
+    // .wrap = container (width: 90%)
+    .wrap
+      .grid.vertical-align
+        .column
+          h3
+            strong レンダリングフロー
+        .column
+          p.text-intro
+            strong 1.DNSルックアップ
+            br
+            strong 2.HTMLダウンロード(TCP3 way handshake)
+            br
+            strong 3.サブリソースダウンロード
+            br
+            strong 4.レンダリング
+            br
+    // .end .wrap
+  section.slide-top
+    // .wrap = container (width: 90%)
+    .wrap
+      div
+        h3 1.DNSルックアップ
+        p
+          | ブラウザがホスト名→ IPアドレスとするのに20~120msかかる
+          br
+          | (1度接続すればPCがアドレスを覚えるので、両方のキャッシュが消えるまではDNSの問い合わせをしなくていい)
+          br
+        h5 Content delivery network
+        p
+          | CDNを利用してユーザーから最短のエッジサーバーからコンテンツをダウンロードすることで高速化
+        img(src='https://www.cdnetworks.co.jp/wp/wp-content/uploads/2016/07/4949_1.png', width='880')
+        a(href='https://www.cdnetworks.co.jp/blog/4949/') 参考
+    // .end .wrap
+  section.slide-top
+    // .wrap = container (width: 90%)
+    .wrap
+      div
+        h3 2.HTMLダウンロード
+        h5 HTTP/2
+        p.desc
+          code
+            | HTTP/2の目標はHTTP/1.1のトランザクション・セマンティクスとの完全な後方互換性を維持したまま非同期な接続の多重化、ヘッダ圧縮、リクエストとレスポンスのパイプライン化を実現することである。Googleによって立ち上げられ[3]、全ての主要なウェブブラウザが対応しているHTTP互換のプロトコルSPDYの人気が高まっていることに対応するために開発された[4]。
+            | 高速化技術
+            | 下記の技術により従来より高速の通信を実現している。
+            | HTTPヘッダの圧縮。（HPACKで圧縮し[5]、二度目以降の通信は差分のみ送信する）
+            | HTTP/2サーバープッシュ通信。
+            | HTTPパイプライン
+            | HoL (Head-of-Line) ブロッキング問題（HTTP/1.1で発生していた）の解消。
+            | 一つのTCPソケット上に複数のリクエストが発生した時に最適に通信を行う。
+        a(href='https://ja.wikipedia.org/wiki/HTTP/2') https://ja.wikipedia.org/wiki/HTTP/2
+        h5 HoLブロッキングの解決
+        p HTTP/1.1の場合
+        p.code
+          | |---a.png---|
+          | |---b.png---|
+          | |---c.png---|
+        p もし a.png のリクエストが詰まってしまうと以下のようなことが起こる
+        p.code
+          | |-------------------------------a.png------------------|
+          | |-b.png-|
+          | |--c.png--|
+        p
+          | ブラウザであれば、同時に 6 本程度のコネクションを貼っているが、リソースが 6 個以上あれば、
+          br
+          |                 結局個々のコネクションで同様のことが起こるのをさけることはできない。
+          br
+        p
+          | HTTP/2.0の場合
+          br
+          |                 実質 HTTP/1.1 での HOL Block は HTTP/2 では起こらないと言える。
+          br
+          |                 HTTP/2 の場合は、リクエストはコネクション上に多重化される。
+          br
+        p.code
+          | |-------------------------------a.png------------------|
+          | |-b.png-|
+          | |--c.png--|
+        h5 クリティカルパスCSS
+        p
+          | 不要なスタイルによるレンダリングのブロックを無くす。
+          br
+          |                 ファーストビューのみスタイルをHTMLのインラインに記述し、他のスタイルは非同期で読み込む。
+          br
+          |                 Google PageSpeed Insightsで測定するとこの項目が出てくる。
+          br
+          |                 実装方法はモジュールをタスクランナーに組み込んで使ったりする
+          br
+          |                 例
+          br
+          a(href='https://dev.to/', target='_blank') https://dev.to/
+        a(href='https://github.com/addyosmani/criticals') https://github.com/addyosmani/criticals
+    // .end .wrap
+  section.slide-top
+    // .wrap = container (width: 90%)
+    .wrap
+      div
+        h3 3.サブリソースダウンロード
+        h5 キャッシュ (ブラウザキャッシュ)
+        p
+          | Cache-Control
+        table
+          thead
+            tr
+              th ディレクティブ
+              th 説明
+          tbody
+            tr
+              td max-age=86400
+              td レスポンスは、最大 1 日（60 秒 x 60 分 x 24 時間）、ブラウザおよび任意の中間キャッシュでキャッシュに保存可能（つまり、「public」）
+            tr
+              td private, max-age=600
+              td レスポンスは、クライアントのブラウザで最大 10 分（60 秒 x 10 分）のみキャッシュに保存可能
+            tr
+              td no-store
+              td レスポンスはキャッシュに保存することが許可されず、リクエストごとに完全に取得する必要がある。
+            tr
+              td no-cache
+              td オリジンサーバでの確認無しにキャッシュを利用してはならない
+        p Expires Header
+        p キャッシュの有効期限を指定
+        p ETag ヘッダ
+        p 同じファイルかどうか比較するための検証子です。
+        h5 ファイル圧縮 (画像圧縮)
+        h6 メタデータの削除
+        p
+          | 撮影機器や編集ソフトの情報
+          | GPS搭載のスマートフォンやデジタルカメラの場合は、撮影位置の情報が保存される場合はあります。
+          | 個人情報を含んでいる場合もあるし、容量も減るのでごっそり削除
+        h6 減色/最適化
+        p
+          | 減色することで容量を下げることができるが、なるべく画像はきれいに保ちたい。
+          | そんなときは専用圧縮ツールなどを使うことで、カラーパレットを整理したり、圧縮方法を変えたりと
+          | 画質を落とさずに容量を下げることができます。
+        .flexblock
+          div
+            p 圧縮前 [3.1MB]
+            img(src='./images/frontend-web-perperformance/1511624537.png', width='480')
+          div
+            p 圧縮後 [969KB] -69%
+            img(src='./images/frontend-web-perperformance/1511624537_tiny.png', width='480')
+        h6 SVGデータ
+        p
+          | SVGは、PNGやJPEGなどとは異なり、バイナリではなくテキストのデータで容量は比較的少なくすむ。CSSで色を変更できたり、JSで操作できるなど、他の画像形式にはない特徴を持っている
+        h6 ファイル圧縮 (minify/gzip)
+        p
+          | アーカイバと呼ばれるzipファイルと混在しないように注意
+          br
+          |                 圧縮前 (normal) [669KB]
+          br
+          a(href='./images/frontend-web-perperformance/react.js' target="_blank") images/tiny/react.js
+          br
+          |                 圧縮後 (minify) [147KB]
+          br
+          a(href='./images/frontend-web-perperformance/react.min.js' target="_blank") images/tiny/react.min.js
+          br
+          |                 圧縮後 (normal/gzip) [151KB]
+          br
+          a(href='./images/frontend-web-perperformance/react.js.gz' target="_blank") images/tiny/react.js.gz
+          br
+          |                 圧縮後 (minify/gzip) [43KB]
+          br
+          a(href='./images/frontend-web-perperformance/react.min.js.gz' target="_blank") images/tiny/react.min.js.gz
+          br
+        h6 WebFont
+        p
+          | 日本語のフォントがとにかく重い。NotoSansJPの例だと1フォント1.6MBくらい。
+          | 複数ウェイトを用意する場合は1.6MBがN倍となる。
+        p
+          strong 対策1. ローカルフォントの使用
+        p.code
+          | @font-face {
+          | font-family: 'Noto Sans Japanese';
+          | font-style: normal;
+          | font-weight: 300;
+          | src: local("Noto Sans Japanese Light"),
+          | url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-DemiLight.woff2) format('woff2');
+          | }
+        p
+          strong 対策2. フォントのサブセット化
+          br
+          |                 一般的な日本語Fontは、5000-15000文字ぐらいを収録しているのですが、第1水準漢字だけで事足りるのであれば、3000文字ぐらいで済みます。3000文字分だけ収録された(Subsetの)Fontを作る事をSubset化と呼びます。
+          br
+          |                 アスキー文字 + 非漢字文字 + 第1水準漢字で700KBのフォントができる。
+          br
+          a(href='https://github.com/minoryorg/Noto-Sans-CJK-JP') https://github.com/minoryorg/Noto-Sans-CJK-JP
+        p
+          strong 対策3. ダイナミックサブセット対応のフォントベンダーを使用
+          br
+          |                 Web上に表示されている文字のみのフォントをダウンロードする
+        h5 Base64 Inline Image
+        p
+          | バイナリデータをBase64にエンコードしてHTML(CSS)に直接埋め込むことによってリクエスト数を削減する
+        h5 Css Sprite
+        p
+          | 複数画像を一つにまとめることで、リクエスト回数を削減する
+          br
+          |                 background-image と background-position で対応
+          br
+        img(src='https://parashuto.com/rriver/wp/wp-content/uploads/2011/06/nav_logo3.png')
+    // .end .wrap
+  section.bg-trans-gradient
+    span.background.dark(style="background-image:url('./images/frontend-web-perperformance/500_F_44222667_luGu7k63raaIXi7MchHHrJVNrjfu16Hc.jpg')")
+    // .wrap = container (width: 90%)
+    .wrap.aligncenter.fadeInUp
+      h3
+        strong パフォーマンス・チューニング(レンダリング編)
+    // .end .wrap
+  section.slide-top
+    // .wrap = container (width: 90%)
+    .wrap
+      div
+        h3 ハードウェア・アクセラレーション
+        p
+          | ハードウェア・アクセラレーションとは、GPUを使用してCPUの計算量を削減し、ブラウザのレンダリング処理を効率化すること
+          | レイアウトに影響を及ぼすプロパティ例
+          br
+        h5 対策.1 translateZ() （translate3d()） 
+        p
+          | 今まで広く使用されていたGPU計算をさせるためのCSSハック
+          br
+          |                 実際ニモは2次元空間でアニメーションさせる要素に対しても3D変形処理の指示を与えることで
+          br
+          |                 GPU計算処理上に乗っけることで高速化をする。
+          br
+          |                 ただし、3D変形処理によるコストは通常より大きくなりRAMやGPUのメモリ使用量が増えるので注意
+          br
+        h5 対策.2 will-change 
+        p
+          | 要素にどのような変更を加えるかを前もってブラウザに知らせるのことができるプロパティ
+          br
+          |                 これを用いることで変更が行われる前に、適切な最適化をセットアップすることができる。
+          br
+          |                 ただし、多用しすぎるとマシンのリソースを大量に消費することになるので、必要なときのみプロパティを付与
+          br
+          |                 するようにすること
+          br
+        h5 Example
+        p
+          a(href='https://pocke777.github.io/mock/2017/07/kado.html', target='_blank') https://pocke777.github.io/mock/2017/07/kado.html
+          br
+          a(href='https://homunculus.jp/', target='_blank') https://homunculus.jp/
+          br
+    // .end .wrap
+  section.slide-top
+    // .wrap = container (width: 90%)
+    .wrap
+      div
+        h3 throttle/debounce
+        p
+          | 連続処理の間引き（throttle）や連続処理後の遅延実行（debounce）を行う
+          br
+          |                 scroll/resize/mousemove などのイベント監視時に大量なコールバックが発生する。
+          br
+          |                 必要な間隔で処理を間引くときこういったテクニックを使用する
+    // .end .wrap
+  section.slide-top
+    // .wrap = container (width: 90%)
+    .wrap
+      div
+        h3 requestAnimationFrame vs setInterval
+        p
+          | 両方とも関数の繰り返し実行を行う
+          br
+          |                 requestAnimationFrameはブラウザのフレームレートに合わせて繰り返し処理を行ってくれる。
+          br
+          |                 setIntervalは任意のタイミングで繰り返し処理を行う。繰り返し間隔がブラウザFPSと合ってなくアニメーションが飛んだりしてしまう。
+          br
+          br
+          br
+          |                 タブが非アクティブ時にsetIntervalはある一定間隔に間引かれるが動き続ける。requestAnimationFrameは処理が止まってくれるのでエコに使える
+    // .end .wrap
+  section.slide-top
+    // .wrap = container (width: 90%)
+    .wrap
+      div
+        h3 告知
+        h5 バックエンド・フロントエンドブートキャンプ募集中
+        p
+          | ・実務によったに近いアプリケーションの作成<br>
+          | ・実践的なコードレビュ
+          | ・企業インターン・就職支援
+        <a href="mailto:support@trunk.fm">support@trunk.fm</a>
+  section.bg-trans-gradient
+    span.background.dark(style="background-image:url('./images/frontend-web-perperformance/pexels-photo-844297.jpeg')")
+    // .wrap = container (width: 90%)
+    .wrap.aligncenter.fadeInUp
+      h3
+        strong.end End
+    // .end .wrap

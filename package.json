@@ -56,7 +56,7 @@
   "scripts": {
     "start": "gulp",
     "prebuild": "rimraf static/js/webslide*",
-    "build": "npm-run-all -s lint build:*",
+    "build": "npm-run-all -s build:*",
     "build:min": "webpack --output-filename [name].min.js -p",
     "build:normal": "webpack",
     "lint": "npm-run-all -p lint:*",

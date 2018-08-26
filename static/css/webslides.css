@@ -1,7 +1,7 @@
 /*!
  * Name: WebSlides
  * Version: 1.5.0
- * Date: 2018-08-23
+ * Date: 2018-08-26
  * Description: Making HTML presentations easy
  * URL: https://github.com/webslides/webslides#readme
  * Credits: @jlantunez, @LuisSacristan, @Belelros
@@ -3855,11 +3855,32 @@ Slides Index
             transform: scale(8); } }
 
 .start {
-  -webkit-animation: start 10s infinite ease-in-out 3s;
-          animation: start 10s infinite ease-in-out 3s;
+  -webkit-animation: start 10s infinite cubic-bezier(0.68, -0.55, 0.27, 1.55) 3s;
+          animation: start 10s infinite cubic-bezier(0.68, -0.55, 0.27, 1.55) 3s;
   display: block; }
 
 .end {
   -webkit-animation: end 8s infinite ease-in-out;
           animation: end 8s infinite ease-in-out;
+  display: block; }
+
+@-webkit-keyframes start-photo-editor {
+  0% {
+    -webkit-transform: scale(0.8);
+            transform: scale(0.8); }
+  100% {
+    -webkit-transform: scale(0.1);
+            transform: scale(0.1); } }
+
+@keyframes start-photo-editor {
+  0% {
+    -webkit-transform: scale(0.8);
+            transform: scale(0.8); }
+  100% {
+    -webkit-transform: scale(0.1);
+            transform: scale(0.1); } }
+
+.canvas-editor .start {
+  -webkit-animation: start-photo-editor 10s infinite cubic-bezier(0.68, -0.55, 0.27, 1.55) 3s;
+          animation: start-photo-editor 10s infinite cubic-bezier(0.68, -0.55, 0.27, 1.55) 3s;
   display: block; }
