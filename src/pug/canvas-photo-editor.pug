@@ -22,7 +22,7 @@ block content
       ol.text-cols
         li トレーニング概要
         li 自己紹介
-        li Canvas基礎
+        li CanvasAPIの基礎
         li Canvasを利用したアプリケーション制作
       h5 共有ドキュメント
       a(href='https://bit.ly/2LtySoL', target='_blank') https://bit.ly/2LtySoL
@@ -36,8 +36,17 @@ block content
           | 今回のゴールはこちらのアプリケーション制作 <br>
           <a href="https://pocke777.github.io/pixi-photo-editor/">https://pocke777.github.io/pixi-photo-editor/</a>
 
-        p CodePenを使います <br>
-          <a href="https://codepen.io/" target="_blank">https://codepen.io/</a>
+        h5 利用するツール群
+        ul
+          li CodePen <br>
+            a(href="https://codepen.io/" target="_blank") https://codepen.io/ <br>
+            | CodePenとはフロントエンド言語 (HTML/CSS/JS)をブラウザ上で実行可能な無料オンラインツール <br>
+            | Pug,Slim,SCSS,Stylusなどのメタ言語にも対応している <br>
+          li node modules <br>
+            a(href="https://www.npmjs.com/" target="_blank") https://www.npmjs.com/ <br>
+            | フロントエンドのパッケージ管理システム <br>
+            | Bowerなどがあったが、現在はNPMに統合しつつある <br>
+            | こちらをつかいモジュールバンドラをインストールしてローカルにフロントエンド実行環境を構築する<br>
 
     // .end .wrap
   section.fullscreen
@@ -166,7 +175,7 @@ block content
           | READMEを読んで環境構築してみよう <br>
           | モジュールバンドラは Parcelを使っているよ <br>
 
-        h5 こんな感じの画面が表示されていればOK
+        h5 こんな感じの画面が表示されていればOK &#x1F436;
         iframe(src="https://pocke777.github.io/pixi-photo-editor/" width="1280" height="800")
 
   section.slide-top
