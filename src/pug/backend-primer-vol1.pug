@@ -1,0 +1,31 @@
+extends /layout/_application
+
+prepend Config
+  - title = 'バックエンド入門コース Vol.1'
+
+block content
+  section.bg-red
+    span.background.dark(style="background-image:url('https://source.unsplash.com/R1J6Z1cnJZc/1600x800')")
+    // .wrap = container (width: 90%)
+    .wrap.aligncenter
+      h1
+        strong バックエンドエンジニア入門コース Vol.1
+      p.text-symbols * * *
+    // .end .wrap
+  section
+    // .wrap = container (width: 90%)
+    .wrap.size-70
+      h2
+        strong Agenda
+      hr
+      ol.text-cols
+        li トレーニング概要
+        li TRUNKとは
+        li 自己紹介
+        li スキル領域と役割
+        li Ruby基礎
+        li Rubyハンズオン
+        li まとめ
+    // .end .wrap
+    // http://www.dt30.net/gachinko/?p=1008
+    // https://chiefmartec.com/post_images/marketing_technology_landscape.jpg
