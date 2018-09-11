@@ -2,9 +2,12 @@ extends /layout/_application
 
 prepend Config
   - title = 'バックエンド入門コース Vol.1'
-// Awesome Online IDE
-// https://ide.ceriously.com/
-// https://glot.io/
+  // Awesome Online IDE
+  // https://ide.ceriously.com/
+  // https://glot.io/
+  // https://codeanywhere.com/editor/#
+  // https://qiita.com/poly_soft/items/fb649573c19b7a5c0227
+  // https://www.itbook.info/study/p36.html
 block content
   section.bg-red
     span.background.dark(style="background-image:url('https://source.unsplash.com/R1J6Z1cnJZc/1600x800')")
@@ -25,9 +28,156 @@ block content
         li TRUNKとは
         li 自己紹介
         li スキル領域と役割
-        li Ruby基礎
-        li Rubyハンズオン
-        li まとめ
+        li Web概論
+        li Quick Start with Rails
+        li Ruby概論
+        li Rails概論
+        li ハンズオンズ (HTML編集)
     // .end .wrap
     // http://www.dt30.net/gachinko/?p=1008
     // https://chiefmartec.com/post_images/marketing_technology_landscape.jpg
+  section.bg-green
+    span.background.dark(style="background-image:url('https://images.unsplash.com/photo-1535219241072-7d3c28a49a5c')")
+    // .wrap = container (width: 90%)
+    .wrap.aligncenter.fadeInUp
+      h3
+        strong トレーニング概要
+    // .end .wrap
+  section.slide-top
+    // .wrap = container (width: 90%)
+    .wrap
+      div
+        h1 Twitterクローンを作成しよう
+      div(style="margin-top: 45px;")
+        h3(style="font-weight: bold;") Day1
+        p
+          | Rails環境の立ち上げから簡単なHTML編集まで行います。
+          ol
+            li Web概論
+            li Ruby/Rails概論
+            li Git基礎
+            li HTML基礎
+          img(src="./images/backend-primer/tw-capture.png")
+      div(style="margin-top: 45px;")
+        h3(style="font-weight: bold;") Day2
+        p
+          | Userの登録機能を作成します
+          ol
+            li データベース基礎
+            li MVCフレームワーク / ORマッパー解説
+            li 組み込み
+          img(src="./images/backend-primer/sign-up.png")
+      div(style="margin-top: 45px;")
+        h3(style="font-weight: bold;") Day3
+        p
+          | Tweet機能をデータベース設計からModel View Controllerなどを一通り作成します
+          ol
+            li データーベース設計
+            li Rails概論
+          img(src="./images/backend-primer/timeline.png")
+  section.bg-green
+    span.background.dark(style="background-image:url('./images/cover/0.jpg')")
+    // .wrap = container (width: 90%)
+    .wrap.aligncenter.fadeInUp
+      h3
+        strong TRUNKとは
+    // .end .wrap
+  section.slide-top
+    iframe(src="https://docs.google.com/presentation/d/e/2PACX-1vQn-Bh21l-m5bNi52n09dlQm1iS4lAbJkAdYa0QQ1T8VVHpummahqjw-pxXEJa-sbCyB6WfaT8P7-bB/embed?start=false&loop=false&delayms=3000" frameborder="0" width="1440" height="839" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;")
+  section.fullscreen
+    span.background.dark(style="background-image:url('./images/cover/profile.png'); width: 60%; height: 120%; top: 50%; left: 50%; transform: translate(-50%, -50%); opacity: .4;")
+    h2(style="position: relative; font-weight: bold;") WHAT I'M ABOUT
+    p(style="position: relative; font-weight: bold;")
+      | 株式会社TRUNK TL Kawasaki Atsushi<br>
+      | 2013年じげんグループHRメディア事業のPMやバックエンドを担当。<br>
+      | 新規事業立ち上げの経験を経てエンジニアリングユニットのマネージャーに従事。<br>
+      |
+      | 2015年に株式会社カヤックへ入社。<br>
+      | クライアントワークや自社サービス(Lobi)のフロントエンド、バックエンドおよびインフラ設計、構築、運用を担当。<br>
+  section.bg-green
+    span.background.dark(style="background-image:url('https://images.unsplash.com/photo-1535219241072-7d3c28a49a5c')")
+    // .wrap = container (width: 90%)
+    .wrap.aligncenter.fadeInUp
+      h3
+        strong バックエンドエンジニアのスキル領域と役割
+    // .end .wrap
+  section.slide-top
+    h3 エンジニアの職種とは?
+    ul
+      li バックエンドエンジニア
+      li インフラエンジニア
+      li フロントエンドエンジニア
+      li ネイティブエンジニア
+    div(style="margin-top: 45px;")
+      h4 バックエンドエンジニア
+      p(style="max-width: 800px;")
+        | バックエンドエンジニアの役割はサービスの土台を作ることになります。
+        | クライアントからのリクエストを受け付け、リクエスト別にデータベースへの読み書きを行い、最終的にクライアントに要求されたデータを返す処理を実装します。
+      h4 インフラエンジニア
+      p(style="max-width: 800px;")
+        | インフラエンジニアの役割はサービスのインフラ構成や監視機能の構築がメインになります。SREとも最近呼ばれています。
+        | 最近ではAWSやGCPなどのクラウド環境が台頭してきたこともあり、サーバーサイドエンジニアがインフラ構築をすることが多くなってきているのが現状です。
+      h4 フロントエンドエンジニア
+      p(style="max-width: 800px;")
+        | フロントエンドエンジニアの役割はサービスの見た目を作ることです。
+        | デザイナーが作ったホームページやサービスのデザインをHTMLやCSS、Javascriptを駆使して実現することと、サーバーへリクエストを実行し、必要な情報の取得と表示を行います。
+      h4 ネイティブエンジニア
+      p(style="max-width: 800px;")
+        | ネイティブエンジニアの役割はiOSアプリ、Androidアプリの実装になります。
+      small
+        | 参考:
+        a(target="_blank" href="https://tomokazu-kozuma.com/things-to-learn-and-necessary-skills-by-engineers-job-category/") https://tomokazu-kozuma.com/things-to-learn-and-necessary-skills-by-engineers-job-category/
+  section.bg-dark
+    span.background.dark(style="background-image:url('./images/cover/mercari.png')")
+    // .wrap = container (width: 90%)
+    .wrap.aligncenter.fadeInUp
+      h3
+        strong 例
+  section
+    span.background(style="background-image:url('./images/cover/mercari2.png')")
+  section
+    span.background(style="background-image:url('./images/cover/mercari3.png')")
+  section.slide-top
+    h3 スキル領域
+    ul
+      li アプリケーション層プロトコル (HTTP DHCP SMTP)
+      li プログラミング言語 (コンパイラ型: Golang Java, インタプリタ型: Perl Ruby Python)
+      li データベース設計
+      li Webセキュリティ
+    img(src="./images/backend-primer/68747470733a2f2f692e696d6775722e636f6d2f4f5a554f5574492e706e67.png" width="1200")
+    img(src="./images/backend-primer/backend.png" width="1200")
+    small
+      | 参考 
+      a(target="_blank" href="https://github.com/kamranahmedse/developer-roadmap" width="680") https://github.com/kamranahmedse/developer-roadmap
+
+  section.slide-top
+    h3 年収
+    img(src="./images/backend-primer/img_50c49d1c11ba86d08c144c30f53196a0504446.jpg" width="680")
+    small
+      | 参考:
+      a(target="_blank" href="https://toyokeizai.net/articles/-/212579?page=3" width="680") https://toyokeizai.net/articles/-/212579?page=3
+
+  section.bg-green
+    span.background.dark(style="background-image:url('./images/cover/1.jpg')")
+    // .wrap = container (width: 90%)
+    .wrap.aligncenter.fadeInUp
+      h3
+        strong Web概論
+    // .end .wrap
+  section
+    // .wrap = container (width: 90%)
+    .wrap
+      .grid.vertical-align
+        .column
+          h3
+            strong レンダリングフロー
+        .column
+          p.text-intro
+            strong 1.DNSルックアップ
+            br
+            strong 2.HTMLダウンロード(TCP3 way handshake)
+            br
+            strong 3.サブリソースダウンロード
+            br
+            strong 4.レンダリング
+            br
