@@ -15,7 +15,7 @@ block content
     .wrap.aligncenter
       h1
         strong バックエンドエンジニア入門コース Vol.1
-      p.text-symbols * * *
+      h5.text-symbols https://bit.ly/2Oegin3
     // .end .wrap
   section
     // .wrap = container (width: 90%)
@@ -445,15 +445,34 @@ block content
     // .end .wrap
   section.slide-top
     // .wrap = container (width: 90%)
-    h3 Railsとは?
+    h3 Ruby on Railsとは?
     p
-      | まつもとゆきひろ氏により開発されたオブジェクト指向スクリプト言語です。<br>
-      | 可読性を重視した構文となっている。Ruby においては整数や文字列なども含めデータ型はすべてがオブジェクトであり、純粋なオブジェクト指向言語といえる。<br>
+      | Ruby on Rails（ルビーオンレイルズ）は、オープンソースのWebアプリケーションフレームワークである。RoRまたは単にRailsと呼ばれる。その名にも示されているようにRubyで書かれている。
+      | またModel View Controller（MVC）アーキテクチャに基づいて構築されている。
     small wiki:
-      a(href="https://ja.wikipedia.org/wiki/Ruby") https://ja.wikipedia.org/wiki/Ruby
-    h3(style="margin-top: 80px;") 動かしてみよう
+      a(href="https://ja.wikipedia.org/wiki/Ruby_on_Rails" target="_blank") https://ja.wikipedia.org/wiki/Ruby_on_Rails
+
+    h4(style="margin-top: 80px;") Model, View, Controllerについて
+    h4 Model (モデル)
     p
-      a(href="https://repl.it/@pocke777/JudiciousTraumaticCores" target="_blank") https://repl.it/@pocke777/JudiciousTraumaticCores
+      pre
+        | 一般的にはビジネスロジックといわれているが、実態はだいたいの場合データベース処理を担う。
+    h4 View (ビュー)
+    p
+      pre
+        | 表示内容生成部分。いわゆる HTML 部分と思っておけば良い。
+    h4 Controller (コントローラ)
+    p
+      pre
+        | ユーザからのリクエストを処理するもの。処理といっても複雑な処理はここではしない。 複雑な処理は Model に委譲し、その結果を表示する HTML (等)を生成するために View を用いる。
+
+    img(src="./images/backend-primer/010_hello-mvc.png" width="800")
+
+    h4(style="margin-top: 80px;") ルート設定
+    img(src="./images/backend-primer/010_hello-routing.png" width="800")
+    small
+      a(href="https://aspnet-mvc.clock-up.jp/contents/quick/hello-mvc" target="_blank") https://aspnet-mvc.clock-up.jp/contents/quick/hello-mvc
+
   section.bg-green
     span.background.dark(style="background-image:url('https://images.unsplash.com/photo-1535219241072-7d3c28a49a5c')")
     // .wrap = container (width: 90%)

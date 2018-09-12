@@ -96,7 +96,7 @@
           <!-- .wrap = container (width: 90%)-->
           <div class="wrap aligncenter">
             <h1><strong>バックエンドエンジニア入門コース Vol.1</strong></h1>
-            <p class="text-symbols">* * *</p>
+            <h5 class="text-symbols">https://bit.ly/2Oegin3</h5>
           </div>
           <!-- .end .wrap-->
         </section>
@@ -531,13 +531,25 @@ bin/rails s -b 0.0.0.0</pre></code><img src="./images/backend-primer/codeanywher
         </section>
         <section class="slide-top">
           <!-- .wrap = container (width: 90%)-->
-          <h3>Railsとは?</h3>
+          <h3>Ruby on Railsとは?</h3>
           <p>
-            まつもとゆきひろ氏により開発されたオブジェクト指向スクリプト言語です。<br>
-            可読性を重視した構文となっている。Ruby においては整数や文字列なども含めデータ型はすべてがオブジェクトであり、純粋なオブジェクト指向言語といえる。<br>
-          </p><small>wiki:<a href="https://ja.wikipedia.org/wiki/Ruby">https://ja.wikipedia.org/wiki/Ruby</a></small>
-          <h3 style="margin-top: 80px;">動かしてみよう</h3>
-          <p><a href="https://repl.it/@pocke777/JudiciousTraumaticCores" target="_blank">https://repl.it/@pocke777/JudiciousTraumaticCores</a></p>
+            Ruby on Rails（ルビーオンレイルズ）は、オープンソースのWebアプリケーションフレームワークである。RoRまたは単にRailsと呼ばれる。その名にも示されているようにRubyで書かれている。
+            またModel View Controller（MVC）アーキテクチャに基づいて構築されている。
+          </p><small>wiki:<a href="https://ja.wikipedia.org/wiki/Ruby_on_Rails" target="_blank">https://ja.wikipedia.org/wiki/Ruby_on_Rails</a></small>
+          <h4 style="margin-top: 80px;">Model, View, Controllerについて</h4>
+          <h4>Model (モデル)</h4>
+          <p>
+            <pre>一般的にはビジネスロジックといわれているが、実態はだいたいの場合データベース処理を担う。</pre>
+          </p>
+          <h4>View (ビュー)</h4>
+          <p>
+            <pre>表示内容生成部分。いわゆる HTML 部分と思っておけば良い。</pre>
+          </p>
+          <h4>Controller (コントローラ)</h4>
+          <p>
+            <pre>ユーザからのリクエストを処理するもの。処理といっても複雑な処理はここではしない。 複雑な処理は Model に委譲し、その結果を表示する HTML (等)を生成するために View を用いる。</pre>
+          </p><img src="./images/backend-primer/010_hello-mvc.png" width="800">
+          <h4 style="margin-top: 80px;">ルート設定</h4><img src="./images/backend-primer/010_hello-routing.png" width="800"><small><a href="https://aspnet-mvc.clock-up.jp/contents/quick/hello-mvc" target="_blank">https://aspnet-mvc.clock-up.jp/contents/quick/hello-mvc</a></small>
         </section>
         <section class="bg-green"><span class="background dark" style="background-image:url('https://images.unsplash.com/photo-1535219241072-7d3c28a49a5c')"></span>
           <!-- .wrap = container (width: 90%)-->
