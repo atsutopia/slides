@@ -164,13 +164,23 @@ block content
       h3
         strong Web概論
     // .end .wrap
+  section.slide-top
+    .wrap
+      div
+        h3 World Wide Web
+        p
+          | World Wide Web（ワールド・ワイド・ウェブ、略名：WWW）とは、インターネット上で提供されるハイパーテキストシステム。Web、ウェブ、W3（ダブリュー スリー）[1]とも呼ばれる。俗には「インターネット」という表現がワールド・ワイド・ウェブを指す場合もある。
+        small
+          | wikipedia:
+          a(href="https://ja.wikipedia.org/wiki/World_Wide_Web") https://ja.wikipedia.org/wiki/World_Wide_Web
+        img(src="./images/backend-primer/WorldWideWebAroundWikipedia.png")
   section
     // .wrap = container (width: 90%)
     .wrap
       .grid.vertical-align
         .column
           h3
-            strong レンダリングフロー
+            strong Flow
         .column
           p.text-intro
             strong 1.DNSルックアップ
@@ -181,3 +191,276 @@ block content
             br
             strong 4.レンダリング
             br
+  section.slide-top
+    .wrap
+      div
+        h3 リクエストメソッド
+        h4 GET
+        img(src="./images/backend-primer/url.png")
+        ul
+          li HTTP通信で、サーバから情報を取得してくる時に使用する
+          li 他人に見られたくない情報は、GETでは送らない（後述する）
+          li 送信できるデータ量に制限がある
+
+    .wrap(style="margin-top: 90px;")
+        h4 POST
+        ul
+          li HTTP通信で、サーバへ情報を登録する時に使用する（データベースへの格納など）
+          li データ量が多い場合（GETでのデータ送信量制限を超えてしまう場合）
+          li バイナリデータを送信したい場合
+          li 他の人に見られたくない情報を送る場合（パスワードなど）
+        h5 POSTでのサーバからクライアントへのリクエスト例
+        code
+          pre
+            | POST /hoge/ HTTP/1.1
+            | Host: localhost:8080
+            | Connection: keep-alive
+            | Content-Length: 22
+            | Cache-Control: max-age=0
+            | Origin: http://localhost:8080
+            | Upgrade-Insecure-Requests: 1
+            | User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.98 Safari/537.36
+            | Content-Type: application/x-www-form-urlencoded
+            | Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+            | Referer: http://localhost:8080/hoge/
+            | Accept-Encoding: gzip, deflate, br
+            | Accept-Language: ja,en-US;q=0.8,en;q=0.6
+            | 
+            | name=hoge&comment=hoge
+  section.slide-top
+    .wrap
+      div
+        h3 レスポンス (ステータスコード)
+        p
+          | 通信の際、クライアントのリクエストに対して、サーバがどんな状態かを知らせる
+        table
+          thead
+            tr
+              th コード
+              th 意味
+              th 状態
+          tbody
+            tr
+              td 200
+              td OK (リクエスト成功)
+              td 『正常に応答しました！』
+            tr
+              td 403
+              td Forbidden
+              td アクセス権限がない
+            tr
+              td 404
+              td Not Found
+              td 『リソースがありません！』 例：ページが存在しない
+            tr
+              td 500
+              td Internal Server Error
+              td 障害発生中
+        small
+          | 参照:
+          a(href="http://www.webnote.info/internet/" target="_blank") http://www.webnote.info/internet/
+  section.bg-green
+    span.background.dark(style="background-image:url('https://images.unsplash.com/photo-1535219241072-7d3c28a49a5c')")
+    // .wrap = container (width: 90%)
+    .wrap.aligncenter.fadeInUp
+      h3
+        strong Quick Start with Rails
+    // .end .wrap
+  section.slide-top
+    // .wrap = container (width: 90%)
+    .wrap
+      h3 Tools
+      ol(style="font-size: 30px;")
+        li(style="margin-bottom: 30px;")
+          a(href="https://codeanywhere.com/") Codeanywhere
+        li
+          a(href="github.com") Github
+  section.slide-top
+    // .wrap = container (width: 90%)
+    .wrap
+      h3 Codeanywhere
+      p
+        | Meet your new go-to development environment
+      h4 プロジェクトの新規作成
+      img(src="./images/backend-primer/codeanywhere/1.png")
+      h4 プロジェクトの設定
+      img(src="./images/backend-primer/codeanywhere/2.png")
+      img(src="./images/backend-primer/codeanywhere/3.png")
+      img(src="./images/backend-primer/codeanywhere/4.png")
+  section.slide-top
+    // .wrap = container (width: 90%)
+    .wrap
+      h3 CLI(Command Line Interface)
+      p ユーザに対する情報の表示を文字によって行い、全ての操作はキーボードを用いて行うユーザイーンターフェースのこと
+      img(src="./images/backend-primer/codeanywhere/5.png")
+      h5 コマンド一例
+      table
+        thead
+          tr
+            th コマンド
+            th 説明
+            th 使用例
+        tbody
+          tr
+            td cd
+            td ディレクトリ（フォルダ）移動
+            td cd 移動したいフォルダ名
+          tr
+            td ls
+            td フォルダの内容をリスト形式で表示する
+            td 中身をみたいフォルダに移動して、ls
+          tr
+            td mv
+            td ファイルを移動
+            td mv (移動元ファイル名/フォルダ名) (移動先ファイル名/フォルダ名)
+          tr
+            td cp
+            td ファイルやフォルダをコピーする
+            td cp (移動元ファイル名/フォルダ名) (移動先ファイル名/フォルダ名)
+          tr
+            td mkdir
+            td フォルダを作成する
+            td mkdir フォルダ名
+          tr
+            td rm
+            td ファイルやフォルダを削除する
+            td rm ファイル名/フォルダ名
+      small
+        | 参考:
+        a(href="http://www.redout.net/data/command.html") http://www.redout.net/data/command.html
+  section.slide-top
+    // .wrap = container (width: 90%)
+    .wrap
+      h3 環境セットアップ
+      h5 rubyのアップデート
+      code
+        pre
+          | # 最新のrubyバージョン取得
+          | rvm get head
+          | # インストール可能なバージョン一覧表示
+          | rvm list known
+          | # 2.4をインストール
+          | rvm install 2.4
+          | # インストール済みのバージョンを表示
+          | rvm list
+          | # インストールした2.4のrubyを使用
+      video(src="./images/backend-primer/rmv.mp4" controls)
+          | rvm --default use ruby-2.4.4
+          | # 現在のrubyバージョンの表示
+          | ruby -v
+          | # パッケージマネージャーの表示
+          | gem install bundler
+  section.slide-top
+    // .wrap = container (width: 90%)
+    .wrap
+      h3 プロジェクトのCheckout
+      h5 Gitとは?
+      p
+        | gitは、プログラムのソースコードなどの変更履歴を記録・追跡するための分散型バージョン管理システムである。Linuxカーネルのソースコード管理に用いるためにリーナス・トーバルズによって開発され、それ以降ほかの多くのプロジェクトで採用されている。 <br>
+        | gitでは、各ユーザのワーキングディレクトリに、全履歴を含んだリポジトリの完全な複製が作られる。したがって、ネットワークにアクセスできないなどの理由で中心リポジトリにアクセスできない環境でも、履歴の調査や変更の記録といったほとんどの作業を行うことができる。これが「分散型」と呼ばれる理由である。
+      small 参考
+        a(href="https://ja.wikipedia.org/wiki/Git") https://ja.wikipedia.org/wiki/Git
+      h5 Githubとは?
+      p
+        | GitHubは、Gitの仕組みを利用して、世界中の人々が自分の作品(プログラムコードやデザインデータなど)を保存、公開することができるようにしたウェブサービスの名称
+      h5 Gitコマンド一例
+      table
+        thead
+          tr
+            th コマンド
+            th 説明
+        tbody
+          tr
+            td git add (ファイル名) or git add .
+            td ステージングエリアに追加
+          tr
+            td git commit -m "コミット名"
+            td ステージングの内容を、ローカルリポジトリに登録
+          tr
+            td git push origin  (ブランチ名)
+            td ローカルリポジトリの内容を、リモートリポジトリに反映させる
+          tr
+            td git status
+            td 変更ファイルの確認
+          tr
+            td git diff
+            td 変更内容の確認
+      small
+        a(href="https://qiita.com/kohga/items/dccf135b0af395f69144") https://qiita.com/kohga/items/dccf135b0af395f69144
+      h5 クローンするリポジトリ
+      code
+        pre
+          | git clone https://github.com/pocke777/twwwitter-clone-rails
+      img(src="./images/backend-primer/codeanywhere/6.png")
+
+  section.slide-top
+    // .wrap = container (width: 90%)
+    .wrap
+      h3 サーバーの立ち上げ
+      h5 依存ライブラリのインストール
+      code
+        pre
+          | cd twwwitter-clone-rails
+          | bundle install
+      img(src="./images/backend-primer/codeanywhere/7.png")
+      h5 Railsコマンドでサーバー起動 🎉🎉🎉
+      code
+        pre
+          | bin/rails db:migrate
+          | bin/rails s -b 0.0.0.0
+      img(src="./images/backend-primer/codeanywhere/8.png")
+
+  section.bg-green
+    span.background.dark(style="background-image:url('https://images.unsplash.com/photo-1535219241072-7d3c28a49a5c')")
+    // .wrap = container (width: 90%)
+    .wrap.aligncenter.fadeInUp
+      h3
+        strong Ruby概論
+    // .end .wrap
+  section.slide-top
+    // .wrap = container (width: 90%)
+    h3 Rubyとは?
+    p
+      | まつもとゆきひろ氏により開発されたオブジェクト指向スクリプト言語です。<br>
+      | 可読性を重視した構文となっている。Ruby においては整数や文字列なども含めデータ型はすべてがオブジェクトであり、純粋なオブジェクト指向言語といえる。<br>
+    small wiki:
+      a(href="https://ja.wikipedia.org/wiki/Ruby") https://ja.wikipedia.org/wiki/Ruby
+    h3(style="margin-top: 80px;") 動かしてみよう
+    p
+      a(href="https://repl.it/@pocke777/JudiciousTraumaticCores" target="_blank") https://repl.it/@pocke777/JudiciousTraumaticCores
+
+
+    h3(style="margin-top: 80px;") Gemとは?
+    p
+      | RubyGemsは、Ruby言語用のパッケージ管理システムであり、Rubyのプログラムと（"gem" と呼ばれる）ライブラリの配布用標準フォーマットを提供している。gemを容易に管理でき、gemを配布するサーバの機能も持つ。Rubyバージョン1.9以降では標準ライブラリの一部となっている。
+    small wiki:
+      a(href="https://ja.wikipedia.org/wiki/RubyGems") https://ja.wikipedia.org/wiki/RubyGems
+
+  section.bg-green
+    span.background.dark(style="background-image:url('https://images.unsplash.com/photo-1535219241072-7d3c28a49a5c')")
+    // .wrap = container (width: 90%)
+    .wrap.aligncenter.fadeInUp
+      h3
+        strong Rails概論
+    // .end .wrap
+  section.slide-top
+    // .wrap = container (width: 90%)
+    h3 Railsとは?
+    p
+      | まつもとゆきひろ氏により開発されたオブジェクト指向スクリプト言語です。<br>
+      | 可読性を重視した構文となっている。Ruby においては整数や文字列なども含めデータ型はすべてがオブジェクトであり、純粋なオブジェクト指向言語といえる。<br>
+    small wiki:
+      a(href="https://ja.wikipedia.org/wiki/Ruby") https://ja.wikipedia.org/wiki/Ruby
+    h3(style="margin-top: 80px;") 動かしてみよう
+    p
+      a(href="https://repl.it/@pocke777/JudiciousTraumaticCores" target="_blank") https://repl.it/@pocke777/JudiciousTraumaticCores
+  section.bg-green
+    span.background.dark(style="background-image:url('https://images.unsplash.com/photo-1535219241072-7d3c28a49a5c')")
+    // .wrap = container (width: 90%)
+    .wrap.aligncenter.fadeInUp
+      h3
+        strong Railsハンズオンズ (HTML編集)
+    // .end .wrap
+  section.slide-top
+    // .wrap = container (width: 90%)
+    h3 ルーティングを確認してリンクを繋いでみよう

@@ -249,18 +249,306 @@
           </div>
           <!-- .end .wrap-->
         </section>
+        <section class="slide-top">
+          <div class="wrap">
+            <div>
+              <h3>World Wide Web</h3>
+              <p>World Wide Web（ワールド・ワイド・ウェブ、略名：WWW）とは、インターネット上で提供されるハイパーテキストシステム。Web、ウェブ、W3（ダブリュー スリー）[1]とも呼ばれる。俗には「インターネット」という表現がワールド・ワイド・ウェブを指す場合もある。</p><small>wikipedia:<a href="https://ja.wikipedia.org/wiki/World_Wide_Web">https://ja.wikipedia.org/wiki/World_Wide_Web</a></small><img src="./images/backend-primer/WorldWideWebAroundWikipedia.png">
+            </div>
+          </div>
+        </section>
         <section>
           <!-- .wrap = container (width: 90%)-->
           <div class="wrap">
             <div class="grid vertical-align">
               <div class="column">
-                <h3><strong>レンダリングフロー</strong></h3>
+                <h3><strong>Flow</strong></h3>
               </div>
               <div class="column">
                 <p class="text-intro"><strong>1.DNSルックアップ</strong><br><strong>2.HTMLダウンロード(TCP3 way handshake)</strong><br><strong>3.サブリソースダウンロード</strong><br><strong>4.レンダリング</strong><br></p>
               </div>
             </div>
           </div>
+        </section>
+        <section class="slide-top">
+          <div class="wrap">
+            <div>
+              <h3>リクエストメソッド</h3>
+              <h4>GET</h4><img src="./images/backend-primer/url.png">
+              <ul>
+                <li>HTTP通信で、サーバから情報を取得してくる時に使用する</li>
+                <li>他人に見られたくない情報は、GETでは送らない（後述する）</li>
+                <li>送信できるデータ量に制限がある</li>
+              </ul>
+            </div>
+          </div>
+          <div class="wrap" style="margin-top: 90px;">
+            <h4>POST</h4>
+            <ul>
+              <li>HTTP通信で、サーバへ情報を登録する時に使用する（データベースへの格納など）</li>
+              <li>データ量が多い場合（GETでのデータ送信量制限を超えてしまう場合）</li>
+              <li>バイナリデータを送信したい場合</li>
+              <li>他の人に見られたくない情報を送る場合（パスワードなど）</li>
+            </ul>
+            <h5>POSTでのサーバからクライアントへのリクエスト例</h5><code>
+              <pre>POST /hoge/ HTTP/1.1
+Host: localhost:8080
+Connection: keep-alive
+Content-Length: 22
+Cache-Control: max-age=0
+Origin: http://localhost:8080
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.98 Safari/537.36
+Content-Type: application/x-www-form-urlencoded
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+Referer: http://localhost:8080/hoge/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: ja,en-US;q=0.8,en;q=0.6
+ 
+name=hoge&comment=hoge</pre></code>
+          </div>
+        </section>
+        <section class="slide-top">
+          <div class="wrap">
+            <div>
+              <h3>レスポンス (ステータスコード)</h3>
+              <p>通信の際、クライアントのリクエストに対して、サーバがどんな状態かを知らせる</p>
+              <table>
+                <thead>
+                  <tr>
+                    <th>コード</th>
+                    <th>意味</th>
+                    <th>状態</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>200</td>
+                    <td>OK (リクエスト成功)</td>
+                    <td>『正常に応答しました！』</td>
+                  </tr>
+                  <tr>
+                    <td>403</td>
+                    <td>Forbidden</td>
+                    <td>アクセス権限がない</td>
+                  </tr>
+                  <tr>
+                    <td>404</td>
+                    <td>Not Found</td>
+                    <td>『リソースがありません！』 例：ページが存在しない</td>
+                  </tr>
+                  <tr>
+                    <td>500</td>
+                    <td>Internal Server Error</td>
+                    <td>障害発生中</td>
+                  </tr>
+                </tbody>
+              </table><small>参照:<a href="http://www.webnote.info/internet/" target="_blank">http://www.webnote.info/internet/</a></small>
+            </div>
+          </div>
+        </section>
+        <section class="bg-green"><span class="background dark" style="background-image:url('https://images.unsplash.com/photo-1535219241072-7d3c28a49a5c')"></span>
+          <!-- .wrap = container (width: 90%)-->
+          <div class="wrap aligncenter fadeInUp">
+            <h3><strong>Quick Start with Rails</strong></h3>
+          </div>
+          <!-- .end .wrap-->
+        </section>
+        <section class="slide-top">
+          <!-- .wrap = container (width: 90%)-->
+          <div class="wrap">
+            <h3>Tools</h3>
+            <ol style="font-size: 30px;">
+              <li style="margin-bottom: 30px;"><a href="https://codeanywhere.com/">Codeanywhere</a></li>
+              <li><a href="github.com">Github</a></li>
+            </ol>
+          </div>
+        </section>
+        <section class="slide-top">
+          <!-- .wrap = container (width: 90%)-->
+          <div class="wrap">
+            <h3>Codeanywhere</h3>
+            <p>Meet your new go-to development environment</p>
+            <h4>プロジェクトの新規作成</h4><img src="./images/backend-primer/codeanywhere/1.png">
+            <h4>プロジェクトの設定</h4><img src="./images/backend-primer/codeanywhere/2.png"><img src="./images/backend-primer/codeanywhere/3.png"><img src="./images/backend-primer/codeanywhere/4.png">
+          </div>
+        </section>
+        <section class="slide-top">
+          <!-- .wrap = container (width: 90%)-->
+          <div class="wrap">
+            <h3>CLI(Command Line Interface)</h3>
+            <p>ユーザに対する情報の表示を文字によって行い、全ての操作はキーボードを用いて行うユーザイーンターフェースのこと</p><img src="./images/backend-primer/codeanywhere/5.png">
+            <h5>コマンド一例</h5>
+            <table>
+              <thead>
+                <tr>
+                  <th>コマンド</th>
+                  <th>説明</th>
+                  <th>使用例</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>cd</td>
+                  <td>ディレクトリ（フォルダ）移動</td>
+                  <td>cd 移動したいフォルダ名</td>
+                </tr>
+                <tr>
+                  <td>ls</td>
+                  <td>フォルダの内容をリスト形式で表示する</td>
+                  <td>中身をみたいフォルダに移動して、ls</td>
+                </tr>
+                <tr>
+                  <td>mv</td>
+                  <td>ファイルを移動</td>
+                  <td>mv (移動元ファイル名/フォルダ名) (移動先ファイル名/フォルダ名)</td>
+                </tr>
+                <tr>
+                  <td>cp</td>
+                  <td>ファイルやフォルダをコピーする</td>
+                  <td>cp (移動元ファイル名/フォルダ名) (移動先ファイル名/フォルダ名)</td>
+                </tr>
+                <tr>
+                  <td>mkdir</td>
+                  <td>フォルダを作成する</td>
+                  <td>mkdir フォルダ名</td>
+                </tr>
+                <tr>
+                  <td>rm</td>
+                  <td>ファイルやフォルダを削除する</td>
+                  <td>rm ファイル名/フォルダ名</td>
+                </tr>
+              </tbody>
+            </table><small>参考:<a href="http://www.redout.net/data/command.html">http://www.redout.net/data/command.html</a></small>
+          </div>
+        </section>
+        <section class="slide-top">
+          <!-- .wrap = container (width: 90%)-->
+          <div class="wrap">
+            <h3>環境セットアップ</h3>
+            <h5>rubyのアップデート</h5><code>
+              <pre># 最新のrubyバージョン取得
+rvm get head
+# インストール可能なバージョン一覧表示
+rvm list known
+# 2.4をインストール
+rvm install 2.4
+# インストール済みのバージョンを表示
+rvm list
+# インストールした2.4のrubyを使用</pre></code>
+            <video src="./images/backend-primer/rmv.mp4" controls>
+              rvm --default use ruby-2.4.4
+              # 現在のrubyバージョンの表示
+              ruby -v
+              # パッケージマネージャーの表示
+              gem install bundler
+            </video>
+          </div>
+        </section>
+        <section class="slide-top">
+          <!-- .wrap = container (width: 90%)-->
+          <div class="wrap">
+            <h3>プロジェクトのCheckout</h3>
+            <h5>Gitとは?</h5>
+            <p>
+              gitは、プログラムのソースコードなどの変更履歴を記録・追跡するための分散型バージョン管理システムである。Linuxカーネルのソースコード管理に用いるためにリーナス・トーバルズによって開発され、それ以降ほかの多くのプロジェクトで採用されている。 <br>
+              gitでは、各ユーザのワーキングディレクトリに、全履歴を含んだリポジトリの完全な複製が作られる。したがって、ネットワークにアクセスできないなどの理由で中心リポジトリにアクセスできない環境でも、履歴の調査や変更の記録といったほとんどの作業を行うことができる。これが「分散型」と呼ばれる理由である。
+            </p><small>参考<a href="https://ja.wikipedia.org/wiki/Git">https://ja.wikipedia.org/wiki/Git</a></small>
+            <h5>Githubとは?</h5>
+            <p>GitHubは、Gitの仕組みを利用して、世界中の人々が自分の作品(プログラムコードやデザインデータなど)を保存、公開することができるようにしたウェブサービスの名称</p>
+            <h5>Gitコマンド一例</h5>
+            <table>
+              <thead>
+                <tr>
+                  <th>コマンド</th>
+                  <th>説明</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>git add (ファイル名) or git add .</td>
+                  <td>ステージングエリアに追加</td>
+                </tr>
+                <tr>
+                  <td>git commit -m "コミット名"</td>
+                  <td>ステージングの内容を、ローカルリポジトリに登録</td>
+                </tr>
+                <tr>
+                  <td>git push origin  (ブランチ名)</td>
+                  <td>ローカルリポジトリの内容を、リモートリポジトリに反映させる</td>
+                </tr>
+                <tr>
+                  <td>git status</td>
+                  <td>変更ファイルの確認</td>
+                </tr>
+                <tr>
+                  <td>git diff</td>
+                  <td>変更内容の確認</td>
+                </tr>
+              </tbody>
+            </table><small><a href="https://qiita.com/kohga/items/dccf135b0af395f69144">https://qiita.com/kohga/items/dccf135b0af395f69144</a></small>
+            <h5>クローンするリポジトリ</h5><code>
+              <pre>git clone https://github.com/pocke777/twwwitter-clone-rails</pre></code><img src="./images/backend-primer/codeanywhere/6.png">
+          </div>
+        </section>
+        <section class="slide-top">
+          <!-- .wrap = container (width: 90%)-->
+          <div class="wrap">
+            <h3>サーバーの立ち上げ</h3>
+            <h5>依存ライブラリのインストール</h5><code>
+              <pre>cd twwwitter-clone-rails
+bundle install</pre></code><img src="./images/backend-primer/codeanywhere/7.png">
+            <h5>Railsコマンドでサーバー起動 🎉🎉🎉</h5><code>
+              <pre>bin/rails db:migrate
+bin/rails s -b 0.0.0.0</pre></code><img src="./images/backend-primer/codeanywhere/8.png">
+          </div>
+        </section>
+        <section class="bg-green"><span class="background dark" style="background-image:url('https://images.unsplash.com/photo-1535219241072-7d3c28a49a5c')"></span>
+          <!-- .wrap = container (width: 90%)-->
+          <div class="wrap aligncenter fadeInUp">
+            <h3><strong>Ruby概論</strong></h3>
+          </div>
+          <!-- .end .wrap-->
+        </section>
+        <section class="slide-top">
+          <!-- .wrap = container (width: 90%)-->
+          <h3>Rubyとは?</h3>
+          <p>
+            まつもとゆきひろ氏により開発されたオブジェクト指向スクリプト言語です。<br>
+            可読性を重視した構文となっている。Ruby においては整数や文字列なども含めデータ型はすべてがオブジェクトであり、純粋なオブジェクト指向言語といえる。<br>
+          </p><small>wiki:<a href="https://ja.wikipedia.org/wiki/Ruby">https://ja.wikipedia.org/wiki/Ruby</a></small>
+          <h3 style="margin-top: 80px;">動かしてみよう</h3>
+          <p><a href="https://repl.it/@pocke777/JudiciousTraumaticCores" target="_blank">https://repl.it/@pocke777/JudiciousTraumaticCores</a></p>
+          <h3 style="margin-top: 80px;">Gemとは?</h3>
+          <p>RubyGemsは、Ruby言語用のパッケージ管理システムであり、Rubyのプログラムと（"gem" と呼ばれる）ライブラリの配布用標準フォーマットを提供している。gemを容易に管理でき、gemを配布するサーバの機能も持つ。Rubyバージョン1.9以降では標準ライブラリの一部となっている。</p><small>wiki:<a href="https://ja.wikipedia.org/wiki/RubyGems">https://ja.wikipedia.org/wiki/RubyGems</a></small>
+        </section>
+        <section class="bg-green"><span class="background dark" style="background-image:url('https://images.unsplash.com/photo-1535219241072-7d3c28a49a5c')"></span>
+          <!-- .wrap = container (width: 90%)-->
+          <div class="wrap aligncenter fadeInUp">
+            <h3><strong>Rails概論</strong></h3>
+          </div>
+          <!-- .end .wrap-->
+        </section>
+        <section class="slide-top">
+          <!-- .wrap = container (width: 90%)-->
+          <h3>Railsとは?</h3>
+          <p>
+            まつもとゆきひろ氏により開発されたオブジェクト指向スクリプト言語です。<br>
+            可読性を重視した構文となっている。Ruby においては整数や文字列なども含めデータ型はすべてがオブジェクトであり、純粋なオブジェクト指向言語といえる。<br>
+          </p><small>wiki:<a href="https://ja.wikipedia.org/wiki/Ruby">https://ja.wikipedia.org/wiki/Ruby</a></small>
+          <h3 style="margin-top: 80px;">動かしてみよう</h3>
+          <p><a href="https://repl.it/@pocke777/JudiciousTraumaticCores" target="_blank">https://repl.it/@pocke777/JudiciousTraumaticCores</a></p>
+        </section>
+        <section class="bg-green"><span class="background dark" style="background-image:url('https://images.unsplash.com/photo-1535219241072-7d3c28a49a5c')"></span>
+          <!-- .wrap = container (width: 90%)-->
+          <div class="wrap aligncenter fadeInUp">
+            <h3><strong>Railsハンズオンズ (HTML編集)</strong></h3>
+          </div>
+          <!-- .end .wrap-->
+        </section>
+        <section class="slide-top">
+          <!-- .wrap = container (width: 90%)-->
+          <h3>ルーティングを確認してリンクを繋いでみよう</h3>
         </section>
       </article>
     </main>
