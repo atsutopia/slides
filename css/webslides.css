@@ -1,7 +1,7 @@
 /*!
  * Name: WebSlides
  * Version: 1.5.0
- * Date: 2018-08-27
+ * Date: 2018-09-18
  * Description: Making HTML presentations easy
  * URL: https://github.com/webslides/webslides#readme
  * Credits: @jlantunez, @LuisSacristan, @Belelros
@@ -339,6 +339,10 @@ footer:after,
 .wrap:after {
   clear: both; }
 
+.u-verx9 {
+  margin-top: 45px;
+  margin-bottom: 45px; }
+
 /*=========================================
 1. Base --> Baseline: 8px = .8rem
 =========================================== */
@@ -505,6 +509,9 @@ pre {
 
 code {
   padding: .4rem; }
+
+ul, li {
+  font-size: 30px; }
 
 /* === 1.2 Animations ================
 Just 5 basic animations:
@@ -2532,8 +2539,9 @@ CV / News
 11. Quotes
 =========================================== */
 blockquote {
-  display: inline-block;
-  position: relative; }
+  color: rgba(0, 0, 0, 0.64);
+  border-left: 3px solid rgba(0, 0, 0, 0.64);
+  padding-left: 18px; }
   blockquote p {
     font-size: 2.4rem;
     line-height: 4rem; }
@@ -2862,6 +2870,9 @@ button:disabled:hover {
     .longform .text-quote {
       margin-left: -4.8rem;
       margin-right: -4.8rem; } }
+
+p {
+  white-space: pre-line; }
 
 /*=========================================
 16. SAFARI BUGS (flex-wrap)
@@ -3599,11 +3610,6 @@ Cards
 /*=========================================
 Tables
 =========================================== */
-table td,
-th,
-thead {
-  border: 1px solid rgba(0, 0, 0, 0.5); }
-
 thead {
   background-color: rgba(0, 0, 0, 0.3); }
 
