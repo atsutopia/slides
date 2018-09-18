@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="4000px" height="3000px" viewBox="0 0 4000 3000" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.1 (57501) - http://www.bohemiancoding.com/sketch -->
+    <title>Custom Preset</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Custom-Preset" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect fill="#FFFFFF" x="0" y="0" width="4000" height="3000"></rect>
+        <g id="Group" transform="translate(1404.000000, 2645.555556)">
+            <rect id="Rectangle" stroke="#979797" fill="#D8D8D8" x="0.5" y="0.5" width="1192" height="257.888889" rx="8"></rect>
+            <text id="Working-Directory" font-family="NotoSansCJKjp-Bold, Noto Sans CJK JP" font-size="120" font-weight="bold" fill="#242424">
+                <tspan x="62.1" y="178.833333">Working Directory</tspan>
+            </text>
+        </g>
+        <g id="Group" transform="translate(1404.000000, 1822.222222)">
+            <rect id="Rectangle" stroke="#979797" fill="#D8D8D8" x="0.5" y="0.5" width="1192" height="257.888889" rx="8"></rect>
+            <text id="Stage-(Index)" font-family="NotoSansCJKjp-Bold, Noto Sans CJK JP" font-size="120" font-weight="bold" fill="#242424">
+                <tspan x="210.6" y="178.833333">Stage (Index)</tspan>
+            </text>
+        </g>
+        <g id="Group" transform="translate(1404.000000, 936.666667)">
+            <rect id="Rectangle" stroke="#979797" fill="#D8D8D8" x="0.5" y="0.5" width="1192" height="257.888889" rx="8"></rect>
+            <text id="Repository" font-family="NotoSansCJKjp-Bold, Noto Sans CJK JP" font-size="120" font-weight="bold" fill="#242424">
+                <tspan x="276.54" y="178.833333">Repository</tspan>
+            </text>
+        </g>
+        <g id="Group" transform="translate(1404.000000, 77.777778)">
+            <rect id="Rectangle" stroke="#979797" fill="#D8D8D8" x="0.5" y="0.5" width="1192" height="257.888889" rx="8"></rect>
+            <text id="Rmote-Repository" font-family="NotoSansCJKjp-Bold, Noto Sans CJK JP" font-size="120" font-weight="bold" fill="#242424">
+                <tspan x="67.36" y="159.944444">Rmote Repository</tspan>
+            </text>
+        </g>
+        <g id="Group-2" transform="translate(2207.000000, 1237.777778)" fill="#D6D6D6">
+            <path id="Line" d="M1.5,0.555555556 L-40.5,84.5555556 L43.5,84.5555556 L1.5,0.555555556 Z M9.5,541.666667 L9.5,76.5555556 L9.5,68.5555556 L-6.5,68.5555556 L-6.5,76.5555556 L-6.5,541.666667 L-6.5,549.666667 L9.5,549.666667 L9.5,541.666667 Z" fill-rule="nonzero"></path>
+            <text id="git-commit" font-family="NotoSansCJKjp-Bold, Noto Sans CJK JP" font-size="120" font-weight="bold">
+                <tspan x="59" y="355.5">git commit</tspan>
+            </text>
+        </g>
+        <g id="Group-2" transform="translate(1189.000000, 1262.000000)" fill="#D6D6D6">
+            <path id="Line" d="M675.5,527 L717.5,443 L633.5,443 L675.5,527 Z M667.5,0 L667.5,451 L667.5,459 L683.5,459 L683.5,451 L683.5,0 L683.5,-8 L667.5,-8 L667.5,0 Z" fill-rule="nonzero"></path>
+            <text id="git-reset" font-family="NotoSansCJKjp-Bold, Noto Sans CJK JP" font-size="120" font-weight="bold">
+                <tspan x="154.56" y="296">git reset</tspan>
+            </text>
+        </g>
+        <g id="Group-2" transform="translate(1199.000000, 2117.000000)" fill="#D6D6D6">
+            <path id="Line" d="M665.5,527 L707.5,443 L623.5,443 L665.5,527 Z M657.5,0 L657.5,451 L657.5,459 L673.5,459 L673.5,451 L673.5,0 L673.5,-8 L657.5,-8 L657.5,0 Z" fill-rule="nonzero"></path>
+            <text id="git-reset" font-family="NotoSansCJKjp-Bold, Noto Sans CJK JP" font-size="120" font-weight="bold">
+                <tspan x="154.56" y="332">git reset</tspan>
+            </text>
+        </g>
+        <g id="Group-2" transform="translate(2207.000000, 365.555556)" fill="#D6D6D6">
+            <path id="Line" d="M1.5,0.555555556 L-40.5,84.5555556 L43.5,84.5555556 L1.5,0.555555556 Z M9.5,541.666667 L9.5,76.5555556 L9.5,68.5555556 L-6.5,68.5555556 L-6.5,76.5555556 L-6.5,541.666667 L-6.5,549.666667 L9.5,549.666667 L9.5,541.666667 Z" fill-rule="nonzero"></path>
+            <text id="git-push" font-family="NotoSansCJKjp-Bold, Noto Sans CJK JP" font-size="120" font-weight="bold">
+                <tspan x="59" y="355.5">git push</tspan>
+            </text>
+        </g>
+        <g id="Group-2" transform="translate(2214.000000, 2117.000000)" fill="#D6D6D6">
+            <path id="Line" d="M1.5,0.5 L-40.5,84.5 L43.5,84.5 L1.5,0.5 Z M9.5,487.5 L9.5,76.5 L9.5,68.5 L-6.5,68.5 L-6.5,76.5 L-6.5,487.5 L-6.5,495.5 L9.5,495.5 L9.5,487.5 Z" fill-rule="nonzero"></path>
+            <text id="git-add" font-family="NotoSansCJKjp-Bold, Noto Sans CJK JP" font-size="120" font-weight="bold">
+                <tspan x="58" y="325">git add</tspan>
+            </text>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,111 @@
+extends /layout/_application
+
+prepend Config
+  - title = 'バックエンド入門コース Vol.3'
+
+
+block content
+  section.bg-red
+    span.background.dark(style="background-image:url('https://source.unsplash.com/R1J6Z1cnJZc/1600x800')")
+    // .wrap = container (width: 90%)
+    .wrap.aligncenter
+      h1
+        strong バックエンドエンジニア入門コース Vol.2
+      h5.text-symbols https://bit.ly/2Oegin3
+    // .end .wrap
+  section
+    // .wrap = container (width: 90%)
+    .wrap.size-70
+      h2
+        strong Agenda
+      hr
+      ol.text-cols
+        li トレーニング概要
+        li 前回の振り返り
+
+    // .end .wrap
+    // http://www.dt30.net/gachinko/?p=1008
+    // https://chiefmartec.com/post_images/marketing_technology_landscape.jpg
+  section.bg-green
+    span.background.dark(style="background-image:url('https://images.unsplash.com/photo-1535219241072-7d3c28a49a5c')")
+    // .wrap = container (width: 90%)
+    .wrap.aligncenter.fadeInUp
+      h3
+        strong トレーニング概要
+    // .end .wrap
+  section.slide-top
+    // .wrap = container (width: 90%)
+    .wrap
+      div
+        h1 Twitterクローンを作成しよう
+      div(style="margin-top: 45px;")
+        h3(style="font-weight: bold;") Day1
+        p
+          | Rails環境の立ち上げから簡単なHTML編集まで行います。
+          ol
+            li Web概論
+            li Ruby/Rails概論
+            li Git基礎
+            li HTML基礎
+          img(src="./images/backend-primer/tw-capture.png")
+      div(style="margin-top: 45px;")
+        h3(style="font-weight: bold;") Day2
+        p
+          | Userの登録機能を作成します
+          ol
+            li データベース基礎
+            li MVCフレームワーク / ORマッパー解説
+            li 組み込み
+          img(src="./images/backend-primer/sign-up.png")
+      div(style="margin-top: 45px;")
+        h3(style="font-weight: bold;") Day3
+        p
+          | Tweet機能をデータベース設計からModel View Controllerなどを一通り作成します
+          ol
+            li データーベース設計
+            li Rails概論
+          img(src="./images/backend-primer/timeline.png")
+  section.bg-green
+    span.background.dark(style="background-image:url('./images/cover/0.jpg')")
+    // .wrap = container (width: 90%)
+    .wrap.aligncenter.fadeInUp
+      h3
+        strong 前回の振り返り
+    // .end .wrap
+  section.slide-top
+    // .wrap = container (width: 90%)
+    h2 前回やったこと
+    ul
+      li Web概論
+      li Ruby概論
+      li Rails概論
+      li ハンズオンズ (HTML編集)
+    h4(style="margin-top: 45px;") Rubyの基本構文
+    p
+      iframe(height="800px" width="100%" src="https://repl.it/@pocke777/Wen-Fa-Ji-Chu?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals")
+
+  section.slide-top
+    h2 データストアとは
+    p
+      | 物理的なデータの保存先としてはコンピュータのメモリ上、ディスク上、ネットワークをまたいだ先のNASなどがあります。
+      | (コンピューターにおけるHDDやSSDなど)
+    h5 種別書き込み速度
+    table
+      thead
+        tr
+          th 種類
+          th 帯域
+      tbody
+        tr
+          td メモリ
+          td 10GB/sec 〜 35GB/sec
+        tr
+          td SSD
+          td 400MB/sec 〜 3GB/sec
+        tr
+          td HDD
+          td 10MB/sec 〜 150MB/sec
+        tr
+          td ネットワーク
+          td 12.5MB/sec 〜 125MB/sec
+

@@ -20,6 +20,7 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,700,700i%7CMaitree:200,300,400,600,700&amp;subset=latin-ext" rel="stylesheet">
     <!-- CSS Base-->
     <link rel="stylesheet" type="text/css" media="all" href="./css/webslides.css">
+    <link rel="stylesheet" type="text/css" media="all" href="./css/default.css">
     <!-- Optional - CSS SVG Icons (Font Awesome)-->
     <link rel="stylesheet" type="text/css" media="all" href="./css/svg-icons.css">
     <!-- SOCIAL CARDS (ADD YOUR INFO)-->
@@ -344,7 +345,11 @@
     </footer>
     <!-- Required-->
     <script src="./js/webslides.js"></script>
-    <script>window.ws = new WebSlides();</script>
+    <script src="./js/highlight.pack.js"></script>
+    <script>
+      window.ws = new WebSlides();
+      hljs.initHighlightingOnLoad();
+    </script>
     <!-- Autoslide? window.ws = new WebSlides({ autoslide: 8000 });-->
     <!-- OPTIONAL - svg-icons.js (fontastic.me - Font Awesome as svg icons)-->
     <script defer="" src="../static/js/svg-icons.js"></script>

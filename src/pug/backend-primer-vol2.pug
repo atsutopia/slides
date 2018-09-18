@@ -1,0 +1,504 @@
+extends /layout/_application
+
+prepend Config
+  - title = 'バックエンド入門コース Vol.2'
+  // Awesome Online IDE
+  // https://ide.ceriously.com/
+  // https://glot.io/
+  // https://codeanywhere.com/editor/#
+  // https://qiita.com/poly_soft/items/fb649573c19b7a5c0227
+  // https://www.itbook.info/study/p36.html
+  //
+  // TODO:
+  //   gitの説明強化 https://www.slideshare.net/matsukaz/git-17499005
+
+  // Ruby
+  // http://vipprog.net/wiki/exercise.html
+
+
+block content
+  section.bg-red
+    span.background.dark(style="background-image:url('https://source.unsplash.com/R1J6Z1cnJZc/1600x800')")
+    // .wrap = container (width: 90%)
+    .wrap.aligncenter
+      h1
+        strong バックエンドエンジニア入門コース Vol.2
+      h5.text-symbols https://bit.ly/2Oegin3
+    // .end .wrap
+  section
+    // .wrap = container (width: 90%)
+    .wrap.size-70
+      h2
+        strong Agenda
+      hr
+      ol.text-cols
+        li トレーニング概要
+        li 前回の振り返り
+        li データーベース概論 / ORマッパー
+        li ユーザー登録機能をつくろう
+        li 簡易ログイン機能
+
+    // .end .wrap
+    // http://www.dt30.net/gachinko/?p=1008
+    // https://chiefmartec.com/post_images/marketing_technology_landscape.jpg
+  section.bg-green
+    span.background.dark(style="background-image:url('https://images.unsplash.com/photo-1535219241072-7d3c28a49a5c')")
+    // .wrap = container (width: 90%)
+    .wrap.aligncenter.fadeInUp
+      h3
+        strong トレーニング概要
+    // .end .wrap
+  section.slide-top
+    // .wrap = container (width: 90%)
+    .wrap
+      div
+        h1 Twitterクローンを作成しよう
+      div(style="margin-top: 45px;")
+        h3(style="font-weight: bold;") Day1
+        p
+          | Rails環境の立ち上げから簡単なHTML編集まで行います。
+          ol
+            li Web概論
+            li Ruby/Rails概論
+            li Git基礎
+            li HTML基礎
+          img(src="./images/backend-primer/tw-capture.png")
+      div(style="margin-top: 45px;")
+        h3(style="font-weight: bold;") Day2
+        p
+          | Userの登録機能を作成します
+          ol
+            li データベース基礎
+            li MVCフレームワーク / ORマッパー解説
+            li 組み込み
+          img(src="./images/backend-primer/sign-up.png")
+      div(style="margin-top: 45px;")
+        h3(style="font-weight: bold;") Day3
+        p
+          | Tweet機能をデータベース設計からModel View Controllerなどを一通り作成します
+          ol
+            li データーベース設計
+            li Rails概論
+          img(src="./images/backend-primer/timeline.png")
+  section.bg-green
+    span.background.dark(style="background-image:url('./images/cover/0.jpg')")
+    // .wrap = container (width: 90%)
+    .wrap.aligncenter.fadeInUp
+      h3
+        strong 前回の振り返り
+    // .end .wrap
+  section.slide-top
+    // .wrap = container (width: 90%)
+    h2 前回やったこと
+    ul
+      li Web概論
+      li Ruby概論
+      li Rails概論
+      li ハンズオンズ (HTML編集)
+    h4(style="margin-top: 45px;") Rubyの基本構文
+    p
+      iframe(height="800px" width="100%" src="https://repl.it/@pocke777/Wen-Fa-Ji-Chu?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals")
+
+  section.slide-top
+    // .wrap = container (width: 90%)
+    h2 Ruby基本その2
+
+    h4(style="margin-top: 45px;") FizzBuzz問題
+    p
+      ol
+        li 1から100までの数を順番に出力
+        li 3で割り切れる数ならFizz
+        li 5で割り切れる数ならBuzzと出力
+        li 両方で割り切れるならFizzBuzzと出力
+      img(src="./images/backend-primer2/1.png")
+    h5 Try
+    a(href="https://repl.it/@pocke777/FizzBuzz-Template" target="_blank") https://repl.it/@pocke777/FizzBuzz-Template
+
+  section.slide-top
+    h4(style="margin-top: 45px;") FizzBuzz問題(回答例)
+    iframe(height="800px" width="100%" src="https://repl.it/@pocke777/FizzBuzz?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals")
+
+  section.slide-top#snippet
+    // .wrap = container (width: 90%)
+    h2 Ruby (Class)
+    p
+      | Rubyはオブジェクト指向言語で、数値、文字列、式などの値はすべてオブジェクトとして扱います。<br>
+      | また、クラスベースのオブジェクト指向言語を主にサポートしており、オブジェクトはそれぞれが特定のクラスに属します。<br>
+      | クラスの定義などクラスの基礎について説明します。<br>
+
+    h4 クラスの定義方法
+    p
+      | Rubyでは、classキーワードを使ってクラスを作る。
+      | 今回は座標データをもつPointというクラスを作成していく
+    pre: code
+      | class Point
+      | end
+    h4(style="margin-top: 45px;") インスタンスの生成
+    p まだ、Point クラスには何も入れていないが、インスタンスを作ることはできる
+    pre: code
+      | $ p = Point.new
+      | $ p.class # => Point
+      | $ p.is_a? Point # => true
+
+    h4(style="margin-top: 45px;") Point の初期化
+    p
+      | 多くのオブジェクト指向言語では、「コンストラクタ」を使ってこれを行うが、Ruby では、 initialize メソッドを使って行う
+    pre: code
+      | class Point
+      |   def initialize(x, y)
+      |     @x, @y = x, y
+      |   end
+    h4(style="margin-top: 45px;") インスタンスの生成
+    pre: code
+      | $ p = Point.new(1, 2) => #<Point:0x000055b156e60110 @x=1, @y=2>
+      |
+      | # インスタンス変数であるxは外からアクセスができない
+      | $ p.x => # undefined method `x' for #<Point:0x000055cec1d2f2e0 @x=1, @y=2>
+
+    h4(style="margin-top: 45px;") ゲッター/セッター
+    pre: code
+      | class Point
+      |   def initialize(x, y)
+      |     @x, @y = x, y
+      |   end
+      |
+      |   # インスタンス変数@xを取得するためのゲッター
+      |   def x
+      |     @x
+      |   end
+      |
+      |   # インスタンス変数@xに値をセットするためのセッター
+      |   def x=(val)
+      |     @x = val
+      |   end
+      | end
+
+    h5 例
+    pre: code
+      | $ p = point.new(1, 2)
+      | $ p.x => # 1
+      | $ p.x = 5
+      | $ p.x => # 5
+
+    h4(style="margin-top: 45px;") メソッド
+    pre: code
+      | class Point
+      |   def initialize(x, y)
+      |     @x, @y = x, y
+      |   end
+      |
+      |   # x座標に加算するメソッド
+      |   def increment
+      |     @x += 1
+      |   end
+      | end
+    h5 例
+    pre: code
+      | $ p = point.new(1,2)
+      | p.increment
+      | p.x => # 2
+
+  section.slide-top
+    h2 カレンダー問題
+    p
+      | 標準入力により年号と月を受け取り、その月のカレンダーを出力してみよう<br>
+      | 例 <br>
+      img(src="./images/backend-primer2/0.png" width="800")
+
+  section.slide-top
+    // .wrap = container (width: 90%)
+    h2 カレンダー問題 (回答)
+    script(src="https://gist.github.com/pocke777/de8fbb12ced1fa087f8b264c9ca1e36c.js")
+
+  section.bg-green
+    span.background.dark(style="background-image:url('./images/cover/0.jpg')")
+    // .wrap = container (width: 90%)
+    .wrap.aligncenter.fadeInUp
+      h3
+        strong データーベース概論 / ORマッパー
+    // .end .wrap
+
+  section.slide-top
+    // その他のデータストアとして kvsファイルなど追記
+    h2 データーベースとは?
+    p
+      blockquote
+        | データベース（英: database, DB）とは、検索や蓄積が容易にできるよう整理された情報の集まり。 通常はコンピュータによって実現されたものを指すが、紙の住所録などをデータベースと呼ぶ場合もある。コンピュータを使用したデータベース・システムでは、データベース管理用のソフトウェアであるデータベース管理システムを使用する場合も多い。
+      small: a(href="https://ja.wikipedia.org/wiki/%E3%83%87%E3%83%BC%E3%82%BF%E3%83%99%E3%83%BC%E3%82%B9" target="_blank") wiki(データーベース)
+    h4 データモデル
+    p
+      | データベースは、おもに「階層型データベース」「ネットワーク型データベース」「リレーショナル型データベース」の3つに分類できる.
+      ol
+        li(style="margin-top: 45px;") 階層型データベース
+          p
+            | 名前が示すとおりデータを階層型に格納/整理する仕組みをもったデータベース<br>
+            | 階層型データベースでは、データはツリー構造で表し、データにアクセスするためのルートは一通りしかない
+        li(style="margin-top: 45px;") ネットワーク型データベース
+          p
+            | ネットワーク型データベースでは、データは網の目の形で表現される。
+            | 階層型データベースと比べ、複数の親データへのアクセスが可能になった。
+          img(src="./images/backend-primer2/157380_ja.jpg")
+        li(style="margin-top: 45px;") リレーショナル型データベース (最も広く使われているデータモデル)
+          p
+            | リレーショナル型データベース（以下、リレーショナル・データベース）は、データを行と列から構成される2次元の表形式で表す。
+          img(src="./images/backend-primer2/157363_ja.jpg")
+      small: a(href="http://www.oracle.com/technetwork/jp/articles/index-155309-ja.html") http://www.oracle.com/technetwork/jp/articles/index-155309-ja.html
+    h5 データ構造例
+    img(src="./images/backend-primer2/sakila_full.svg")
+
+  section.slide-top
+    h2 データーベースを操作してみよう
+    pre: code
+      | データベース接続
+      | $ sqlite3 db/database.sqlite3
+      | > .tables # テーブル一覧を表示
+      | > .schema users # ユーザーテーブルのスキーマを確認
+      | > select * from users; # ユーザー情報を取得
+      | > insert into users (username, introduction, created_at, updated_at) values ('name', 'into', datetime('now'), datetime('now')); # ユーザー情報を追加
+      | > delete from users where id = 1; # id=1のユーザーを削除
+
+  section.slide-top
+    h2 ORマッパーとは?
+    p
+      | O/Rマッピングとは、「オブジェクト」と「リレーショナルデータベース」をマッピング（対応付け）する
+      | 実装時のデータベース操作にかかわる煩雑な作業を軽減し、バグリスクを下げる
+      |
+    h4 ORMフレームワークの種類
+    ol
+      li ActiveRecord （Ruby on Rails）
+        p
+          | 基本的に、1つのクラスがDBの1テーブルに対応している。
+          | クラスの属性は、テーブルの各カラムに対応。
+          | クラスの1インスタンス（オブジェクト）は、DBの1レコードに対応する。
+          | 各クラスは、ActiveRecord::Baseの派生クラスとして実装し、app/models下に格納する。
+      li.u-verx9 Core Data（Mac OS X、 iOS）
+        p
+          | Mac OS X、iOSで利用できる、Appleによって開発されたORMフレームワーク。
+          | データの永続化にSQLiteを使用している。
+      li.u-verx9 Iciql (Java)
+      li.u-verx9 Doctrine (PHP)
+
+  section.slide-top
+    h2 ORマッパーで操作してみよう
+    pre: code
+      | # コンソールの立ち上げ
+      | cabox@box-codeanywhere:~/workspace/twwwitter-clone-rails$ bin/rails c
+      | Loading development environment (Rails 5.1.6)
+      | [1] pry(main)>  User.superclass
+      | => ApplicationRecord(abstract)
+      | [5] pry(main)> User.superclass.superclass
+      | => ActiveRecord::Base
+      |
+      |
+      | # ユーザーの取得
+      | [6] pry(main)> User.all
+      |   User Load (5.6ms)  SELECT "users".* FROM "users"
+      | => []
+      |
+      |
+      | # ユーザーの作成
+      | [6] pry(main)> User.new({})
+      | [7] pry(main)> u = User.new({ username: "name", introduction: "intro" })
+      | => #<User:0x000000000519c0a8 id: nil, username: "name", introduction: "intro", icon_url: nil, cover_url: nil, created_at: nil, updated_at: nil>
+      | [8] pry(main)> u.save
+      |    (0.1ms)  begin transaction
+      |   SQL (1.6ms)  INSERT INTO "users" ("username", "introduction", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["username", "name"], ["introduction", "intro"],["created_at", "2018-09-18 06:12:00.759287"], ["updated_at", "2018-09-18 06:12:00.759287"]]
+      |    (34.4ms)  commit transaction
+      | => true
+      |
+      |
+      | # ユーザーの削除
+      | [10] pry(main)> u.destroy
+      |    (0.1ms)  begin transaction
+      |   SQL (1.2ms)  DELETE FROM "users" WHERE "users"."id" = ?  [["id", 2]]
+      |    (32.4ms)  commit transaction
+      | => #<User:0x000000000519c0a8
+      |  id: 2,
+      |  username: "name",
+      |  introduction: "intro",
+      |  icon_url: nil,
+      |  cover_url: nil,
+      |  created_at: Tue, 18 Sep 2018 06:12:00 UTC +00:00,
+      |  updated_at: Tue, 18 Sep 2018 06:12:00 UTC +00:00>
+  section.bg-green
+    span.background.dark(style="background-image:url('./images/cover/0.jpg')")
+    // .wrap = container (width: 90%)
+    .wrap.aligncenter.fadeInUp
+      h3
+        strong ユーザー登録機能をつくろう
+    // .end .wrap
+
+
+  section.slide-top
+    h3 前準備
+    ol
+      li.u-verx9 ソースコードを最新に更新
+        ol
+          li 自分の作業ブランチを作成 (ブランチ名は適当に)
+          li 今までの作業をコミット
+          li masterブランチから最新コード取ってくる
+    h5.u-verx9 コミットFlow
+    img(src="./images/backend-primer2/git-flow.svg")
+
+    h5.u-verx9 ブランチ作成Flow
+    img(src="./images/backend-primer2/git-branch.svg")
+
+    h5.u-verx9 マージFlow
+    img(src="./images/backend-primer2/git-merge.svg")
+
+    h5 例
+    pre: code
+      | # 以下では作業中のファイルあるためコードを取得してもエラー
+      | cabox@box-codeanywhere:~/workspace/twwwitter-clone-rails$ git pull origin master
+      | remote: Counting objects: 27, done.
+      | remote: Compressing objects: 100% (9/9), done.
+      | remote: Total 27 (delta 15), reused 27 (delta 15), pack-reused 0
+      | Unpacking objects: 100% (27/27), done.
+      | From https://github.com/pocke777/twwwitter-clone-rails
+      |  * branch            master     -> FETCH_HEAD
+      |    c2dd612..d376947  master     -> origin/master
+      | Updating c2dd612..d376947
+      | error: Your local changes to the following files would be overwritten by merge:
+      |         app/views/home/index.html.erb
+      |         db/schema.rb
+      | Please, commit your changes or stash them before you can merge.
+      | Aborting
+      |
+      | # ブランチの切り替え
+      | cabox@box-codeanywhere:~/workspace/twwwitter-clone-rails$ git branch
+      |   feature/0.0.1
+      | * master
+      |
+      | # ブランチの作成
+      | cabox@box-codeanywhere:~/workspace/twwwitter-clone-rails$ git checkout -b feature/ak
+      | M       app/views/home/index.html.erb
+      | M       db/schema.rb
+      | Switched to a new branch 'feature/ak'
+      | # 作業のコミット
+      | no changes added to commit (use "git add" and/or "git commit -a")
+      | cabox@box-codeanywhere:~/workspace/twwwitter-clone-rails$ git add .
+      | cabox@box-codeanywhere:~/workspace/twwwitter-clone-rails$ git commit -m "link connect"
+      |
+      | # マスターブランチのコードを取得
+      | cabox@box-codeanywhere:~/workspace/twwwitter-clone-rails$ git pull origin master
+    li.u-verx9 タイムゾーンの設定
+      pre: code
+        | # config/application.rb
+        | config.time_zone = 'Tokyo'
+        | config.active_record.default_timezone = :local
+    li.u-verx9 i18n設定
+      pre: code
+        | # config/application.rb
+        | config.i18n.default_locale = :ja
+
+  section.slide-top
+    h3.u-verx9 Controllerの作成
+    p
+      | 以下の手順を参考にユーザー登録機能を作成
+    ol
+      li ルーティングの確認
+      li コントローラーにアクションの設定
+      li フォームのPostを確認
+      li ActiveRecordを使ってユーザーの作成
+      li 作成成功後にタイムラインへリダイレクト (こちらもルーティングを使用して確認)
+    h3.u-verx9 ヒント
+    ol
+      li Strong Parameters
+        p
+          | DBへ入れたり更新したりするパラメータを制限してくれる仕組み
+          | 例
+          | 1.requireでPOSTで受け取る値のキーを設定
+          | 2.permitで許可するカラムを設定
+        pre: code
+          | params.require(:user).permit(:name, :email, :password)
+      li.u-verx9 redirect_to
+        p
+          | redirect_toとはコントローラーのアクション内でページに切り替えるためのメソッドです。
+          |
+          small: a(href="http://railsdoc.com/references/redirect_to") http://railsdoc.com/references/redirect_to
+
+  section.slide-top
+    h3.u-verx9 Controllerの実装例
+    pre: code
+      | class UsersController < ApplicationController
+      |   def new
+      |     @user = User.new
+      |   end
+      |
+      |   def create
+      |     @user = User.new(user_param)
+      |     if @user.save
+      |       redirect_to timeline_index_path
+      |     end
+      |   end
+      |
+      |   private
+      |   def user_param
+      |     params.require(:user).permit(:account, :username, :introduction, :icon_url, :cover_url)
+      |   end
+      | end
+
+  section.bg-green
+    span.background.dark(style="background-image:url('./images/cover/0.jpg')")
+    // .wrap = container (width: 90%)
+    .wrap.aligncenter.fadeInUp
+      h3
+        strong バリデーションを設定しよう
+    // .end .wrap
+
+  section.slide-top
+    h3 バリデーションとは?
+    p
+      | データのバリデーションといった場合、記述・入力されたデータが、あらかじめ規定された条件や仕様、形式などに適合しているかどうかを検証・確認することを表す。
+      | 形式的な妥当性の検証であり、意味論的に適切な内容かどうかは判断しない。
+    h5 今回の要求
+    ol
+      li アカウント名は必須
+      li ユーザー名は必須
+      li アカウント名は3文字以上
+  section.slide-top
+    h3.u-verx9 Controllerの実装
+    ol
+      li バリデーションの失敗したらnewテンプレートをレンダリングするように変更
+
+    h3.u-verx9 Modelの実装
+    ol
+      li Active Recordバリデーションヘルパーを使用してバリデーションの設定
+      a(href="https://railsguides.jp/active_record_validations.html") https://railsguides.jp/active_record_validations.html
+
+  section.slide-top
+    h3.u-verx9 Controllerの実装例
+    pre: code
+      | class UsersController < ApplicationController
+      |   def new
+      |     @user = User.new
+      |   end
+      |
+      |   def create
+      |     @user = User.new(user_param)
+      |     if @user.save
+      |       redirect_to timeline_index_path
+      |     else
+      |       render :new
+      |     end
+      |   end
+      |
+      |   private
+      |   def user_param
+      |     params.require(:user).permit(:account, :username, :introduction, :icon_url, :cover_url)
+      |   end
+      | end
+
+    h3.u-verx9 Modelの実装例
+    pre: code
+      | class User < ApplicationRecord
+      |   validates :account, presence: true, length: { minimum: 3 }
+      |   validates :username, presence: true
+      | end
+
+  section.bg-green
+    span.background.dark(style="background-image:url('./images/cover/0.jpg')")
+    // .wrap = container (width: 90%)
+    .wrap.aligncenter.fadeInUp
+      h3
+        strong まとめ
