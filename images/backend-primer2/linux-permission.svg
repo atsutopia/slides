@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1280px" height="900px" viewBox="0 0 1280 900" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.1 (57501) - http://www.bohemiancoding.com/sketch -->
+    <title>linux</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="linux" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect fill="#FFFFFF" x="0" y="0" width="1280" height="900"></rect>
+        <text id="-rw-r--r---1-pickrus" font-family="NotoSansCJKjp-Bold, Noto Sans CJK JP" font-size="67" font-weight="bold" letter-spacing="11.5" fill="#242424">
+            <tspan x="48" y="482">-rw-r--r--  1 pickrusu  staff</tspan>
+            <tspan x="1209.376" y="482"> </tspan>
+        </text>
+        <rect id="Rectangle-2" stroke="#650087" stroke-width="2" x="45" y="439" width="29" height="50"></rect>
+        <rect id="Rectangle-2" stroke="#650087" stroke-width="2" x="84" y="439" width="138" height="50"></rect>
+        <rect id="Rectangle-2" stroke="#650087" stroke-width="2" x="232" y="439" width="105" height="50"></rect>
+        <rect id="Rectangle-2" stroke="#650087" stroke-width="2" x="344" y="439" width="105" height="50"></rect>
+        <rect id="Rectangle-2" stroke="#650087" stroke-width="2" x="489" y="426" width="77" height="77"></rect>
+        <rect id="Rectangle-2" stroke="#650087" stroke-width="2" x="574" y="426" width="388" height="77"></rect>
+        <rect id="Rectangle-2" stroke="#650087" stroke-width="2" x="999" y="425" width="212" height="77"></rect>
+        <path d="M60.25,503.5 L60.25,533" id="Line-2" stroke="#000000" stroke-width="4" stroke-linecap="square"></path>
+        <path d="M145.208333,394.5 L145.208333,424" id="Line-2" stroke="#000000" stroke-width="4" stroke-linecap="square"></path>
+        <path d="M285.208333,503.5 L285.208333,533" id="Line-2" stroke="#000000" stroke-width="4" stroke-linecap="square"></path>
+        <path d="M397.208333,395.5 L397.208333,425" id="Line-2" stroke="#000000" stroke-width="4" stroke-linecap="square"></path>
+        <text id="ファイルタイプ" font-family="NotoSansCJKjp-Bold, Noto Sans CJK JP" font-size="20" font-weight="bold" fill="#242424">
+            <tspan x="5" y="556">ファイルタイプ</tspan>
+        </text>
+        <text id="所有ユーザの権限" font-family="NotoSansCJKjp-Bold, Noto Sans CJK JP" font-size="20" font-weight="bold" fill="#242424">
+            <tspan x="75" y="388">所有ユーザの権限</tspan>
+        </text>
+        <path d="M748.208333,382.5 L748.208333,412" id="Line-2" stroke="#000000" stroke-width="4" stroke-linecap="square"></path>
+        <path d="M528.208333,514.5 L528.208333,544" id="Line-2" stroke="#000000" stroke-width="4" stroke-linecap="square"></path>
+        <text id="所有者" font-family="NotoSansCJKjp-Bold, Noto Sans CJK JP" font-size="20" font-weight="bold" fill="#242424">
+            <tspan x="718" y="376">所有者</tspan>
+        </text>
+        <text id="ハードリンクの数-or-サブディレクトリ" font-family="NotoSansCJKjp-Bold, Noto Sans CJK JP" font-size="20" font-weight="bold" fill="#242424">
+            <tspan x="450.34" y="567">ハードリンクの数 or サブディレクトリ数</tspan>
+        </text>
+        <path d="M1105.20833,382.5 L1105.20833,412" id="Line-2" stroke="#000000" stroke-width="4" stroke-linecap="square"></path>
+        <text id="グループ" font-family="NotoSansCJKjp-Bold, Noto Sans CJK JP" font-size="20" font-weight="bold" fill="#242424">
+            <tspan x="1066" y="376">グループ</tspan>
+        </text>
+        <text id="グループの権限" font-family="NotoSansCJKjp-Bold, Noto Sans CJK JP" font-size="20" font-weight="bold" fill="#242424">
+            <tspan x="223" y="567">グループの権限</tspan>
+        </text>
+        <text id="その他ユーザーの権限" font-family="NotoSansCJKjp-Bold, Noto Sans CJK JP" font-size="20" font-weight="bold" fill="#242424">
+            <tspan x="328" y="388">その他ユーザーの権限</tspan>
+        </text>
+    </g>
+</svg>

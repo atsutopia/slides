@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns#">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--
+    CLEAN MARKUP = GOOD KARMA.
+    Hi source code lover,
+    you're a curious person and a fast learner ;)
+    Let's make something beautiful together. Contribute on Github:
+    https://github.com/webslides/webslides
+    Thanks!
+    -->
+    <!-- SEO-->
+    <title>Linux (user/group/cron)</title>
+    <meta name="description" content="">
+    <!-- URL CANONICAL-->
+    <!-- <link rel="canonical" href="http://your-url.com/permalink">-->
+    <!-- Google Fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,700,700i%7CMaitree:200,300,400,600,700&amp;subset=latin-ext" rel="stylesheet">
+    <!-- CSS Base-->
+    <link rel="stylesheet" type="text/css" media="all" href="./css/webslides.css">
+    <link rel="stylesheet" type="text/css" media="all" href="./css/default.css">
+    <!-- Optional - CSS SVG Icons (Font Awesome)-->
+    <link rel="stylesheet" type="text/css" media="all" href="./css/svg-icons.css">
+    <!-- SOCIAL CARDS (ADD YOUR INFO)-->
+    <!-- FACEBOOK-->
+    <!-- EDIT-->
+    <meta property="og:url" content="http://your-url.com/permalink">
+    <!-- EDIT-->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="WebSlides: Netflix's Culture">
+    <meta property="og:description" content="Patty McCord created Netflix's culture. This is a homage.">
+    <!-- EDIT-->
+    <meta property="og:updated_time" content="2017-04-16T16:24:56">
+    <!-- EDIT-->
+    <meta property="og:image" content="../static/images/share-webslides.jpg">
+    <!-- EDIT-->
+    <meta property="og:image:width" content="800">
+    <meta property="og:image:height" content="429">
+    <!-- TWITTER-->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@webslides">
+    <!-- EDIT-->
+    <meta name="twitter:creator" content="@jlantunez">
+    <!-- EDIT-->
+    <meta name="twitter:title" content="WebSlides: Netflix's Culture">
+    <!-- EDIT-->
+    <meta name="twitter:description" content="Patty McCord created Netflix's culture. This is a homage.">
+    <!-- EDIT-->
+    <meta name="twitter:image" content="../static/images/share-webslides.jpg">
+    <!-- EDIT-->
+    <!-- FAVICONS-->
+    <link rel="shortcut icon" sizes="16x16" href="../static/images/favicons/favicon.png">
+    <link rel="shortcut icon" sizes="32x32" href="../static/images/favicons/favicon-32.png">
+    <link rel="apple-touch-icon icon" sizes="76x76" href="../static/images/favicons/favicon-76.png">
+    <link rel="apple-touch-icon icon" sizes="120x120" href="../static/images/favicons/favicon-120.png">
+    <link rel="apple-touch-icon icon" sizes="152x152" href="../static/images/favicons/favicon-152.png">
+    <link rel="apple-touch-icon icon" sizes="180x180" href="../static/images/favicons/favicon-180.png">
+    <link rel="apple-touch-icon icon" sizes="192x192" href="../static/images/favicons/favicon-192.png">
+    <!-- Android-->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#333333">
+  </head>
+  <body>
+    <!-- header(role='banner')-->
+    <!--   nav(role='navigation')-->
+    <!--     p.logo-->
+    <!--       a(href='../index.html', title='WebSlides') WebSlides-->
+    <!--     ul-->
+    <!--       li.github-->
+    <!--         a(rel='external', href='https://github.com/webslides/webslides', title='Github')-->
+    <!--           svg.fa-github-->
+    <!--             use(xlink:href='#fa-github')-->
+    <!--           em WebSlides-->
+    <!--       li.twitter-->
+    <!--         a(rel='external', href='https://twitter.com/webslides', title='Twitter')-->
+    <!--           svg.fa-twitter-->
+    <!--             use(xlink:href='#fa-twitter')-->
+    <!--           em @WebSlides-->
+    <!--       // <li class="dribbble"><a rel="external" href="http://dribbble.com/webslides" title="Dribbble"><svg class="fa-dribbble"><use xlink:href="#fa-dribbble"></use></svg> <em>webslides</em></a></li>-->
+    <main role="main">
+      <article id="webslides">
+        <!--
+        Quick Guide
+        - Each parent <section> in the <article id="webslides"> element is an individual slide.
+        - Vertical sliding = <article id="webslides" class="vertical">
+        - <div class="wrap"> = container 90% / <div class="wrap size-50"> = 45%;
+        -->
+        <section class="bg-red"><span class="background dark" style="background-image:url('https://source.unsplash.com/R1J6Z1cnJZc/1600x800')"></span>
+          <div class="wrap aligncenter">
+            <h1><strong>Linux (user/group/cron)</strong></h1>
+            <h5 class="text-symbols">***</h5>
+          </div>
+        </section>
+        <section class="slide-top">
+          <h5>Linuxユーザーとは?</h5>
+          <p>
+            ユーザとはコンピュータに限らずに物を使用する人をさして「ユーザ」ということが多い。広義では使う形態を問わない。
+            今回はLinux環境にログインするためのアカウントをさしてユーザと呼ぶ
+          </p>
+          <h5 class="u-verx9-t">ログイン方法</h5>
+          <ol>
+            <li>ID/PWDによるログイン
+              <p>
+                Linuxは一般的なオペレーティングシステムと同じで、実際に使用するにはユーザとしてログインする必要がある。ログインに必要なものは
+                1.ユーザ名
+                2.パスワード
+                この二つが必要になる。
+              </p>
+            </li>
+            <li class="u-verx9-t">鍵交換によるログイン
+              <p>
+                秘密鍵と公開鍵を使用してパスワードなしでサーバー上にログイン可能にする
+                1.クライアント側で秘密鍵、公開鍵を生成 (最初の一回のみ)
+                2.サーバー側に公開鍵の設置 (ユーザーと公開鍵を結びつける)
+                3.鍵交換方式によりログイン可能となる
+              </p>
+            </li>
+          </ol>
+          <h5 class="u-verx9-t">ユーザーの種類</h5>
+          <ol>
+            <li>rootユーザー
+              <p>rootユーザであれば自分自身を削除するコマンドも受け付けてしまうし、他人のユーザアカウントを削除することも可能となっている。よってシステムの設定ファイルなどを変更するとき以外使用しないようにするのが一般的</p>
+            </li>
+            <li class="u-verx9-t">一般ユーザー
+              <p>
+                一般ユーザの場合自分専用のディレクトリが割り当てられ、その中で作業をすることになる
+                基本的にシステムに、変更を勝手にくわえることは出来ないようになっている。
+                もし一時的にroot権限をかりたい場合は「su」や「sudo」といったコマンドを使用することになる。
+              </p>
+            </li>
+          </ol>
+          <h5 class="u-verx9-t">Linuxグループとは？</h5>
+          <p>
+            Linuxは複数人のユーザが同時にアクセスできる
+            のため、同時に色々なところから、複数のユーザがログインすることになる。これらのユーザを管理する仕組みとして「グループ」という概念がある。
+            ファイルにアクセスするには「パーミション（権限）」という考え方がある。
+            Linuxではファイルやディレクトリは3つの権限に区分けされる。
+            1.所有者が実行出来る権限
+            2.グループが実行出来る権限
+            3.その他のユーザが実行出来る権限
+            もし、グループがなかったら、所有者とそれ以外しか権限の割り振りができなくなってしまう。複数人でファイルを管理することができなくなってしまう
+          </p>
+        </section>
+        <section class="slide-top">
+          <h5>パーミッションとは?</h5>
+          <p>
+            ファイルやディレクトリ一個一個に許可属性を与え、管理出来るようになっている。これを「パーミッション」という。
+            不意な誤動作をしてもシステムに与える影響を最小限とするため
+            パーミッションはセキュリティ上、重要である
+          </p>
+          <h5>パーミッションの見方</h5>
+          <pre><code> ❯ ls -la                                                                                                                                                                                        [09:17:38]
+total 208
+drwxr-xr-x  9 pickrusu  staff    288  9 19 09:17 .
+drwxr-xr-x  5 pickrusu  staff    160  8 21 13:22 ..
+-rw-r--r--  1 pickrusu  staff  21991  9 18 15:27 backend-primer-vol1.pug
+-rw-r--r--  1 pickrusu  staff  20384  9 18 23:10 backend-primer-vol2.pug
+-rw-r--r--  1 pickrusu  staff   3669  9 18 14:11 backend-primer-vol3.pug
+-rw-r--r--  1 pickrusu  staff  11198  8 27 17:23 canvas-photo-editor.pug
+-rw-r--r--  1 pickrusu  staff  37333  9  6 21:48 frontend-web-performance.pug
+drwxr-xr-x  3 pickrusu  staff     96  9 18 11:12 layout
+-rw-r--r--  1 pickrusu  staff   3679  9 19 09:17 linux-user-group.pug</code></pre>
+          <p>
+            基本的なパラメーターは以下となる
+            r:読み込み許可 ファイルを開くときなどに必要な権限である。これがないとファイルが開けない
+            w:書き込み許可 ファイルを編集変更する場合に必要な権限である。「r」と組み合わせて使用する。所有者には基本的に読み込み、書き込み両方の権限がわりあてられることが多い。
+            x:このフラグが設定されていると、ファイルに実行権限が与えられ実行可能となる。スクリプトなどの場合実行権限を割り当てることになる。
+          </p><img src="./images/backend-primer2/linux-permission.png">
+          <h5>パーミッションの設定</h5>
+          <table>
+            <thead>
+              <tr>
+                <th>コマンド</th>
+                <th>パラメーター</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th>0</th>
+                <th>---</th>
+              </tr>
+              <tr>
+                <th>1</th>
+                <th>--x</th>
+              </tr>
+              <tr>
+                <th>2</th>
+                <th>-w-</th>
+              </tr>
+              <tr>
+                <th>3</th>
+                <th>-wx</th>
+              </tr>
+              <tr>
+                <th>4</th>
+                <th>r--</th>
+              </tr>
+              <tr>
+                <th>5</th>
+                <th>r-x</th>
+              </tr>
+              <tr>
+                <th>6</th>
+                <th>rw-</th>
+              </tr>
+              <tr>
+                <th>7</th>
+                <th>rwx</th>
+              </tr>
+            </tbody>
+          </table>
+          <h6>例</h6>
+          <pre><code>❯ ls -la canvas-photo-editor.pug                                                                                                                                                                [10:12:53]
+-rw-r--r--  1 pickrusu  staff  11198  8 27 17:23 canvas-photo-editor.pug
+❯ chmod 740 canvas-photo-editor.pug
+❯ ls -la canvas-photo-editor.pug
+-rwxr-----  1 pickrusu  staff  11198  8 27 17:23 canvas-photo-editor.pug</code></pre>
+        </section>
+        <section class="slide-top">
+          <h3>Cronとは?</h3>
+          <p>
+            cronデーモンと呼ばれるバックグラウンドで動いているプログラムによって
+            スケジュールされたコマンドやスクリプトが実行される。
+          </p>
+        </section>
+      </article>
+    </main>
+    <!-- main-->
+    <footer>
+      <div class="wrap">
+        <p><span class="alignright"><a href="https://trunk.fm/" title="Trunk"><img src="./images/logos/trunk.svg" alt="Trunk"></a></span></p>
+      </div>
+    </footer>
+    <!-- Required-->
+    <script src="./js/webslides.js"></script>
+    <script src="./js/highlight.pack.js"></script>
+    <script>
+      window.ws = new WebSlides();
+      hljs.initHighlightingOnLoad();
+    </script>
+    <!-- Autoslide? window.ws = new WebSlides({ autoslide: 8000 });-->
+    <!-- OPTIONAL - svg-icons.js (fontastic.me - Font Awesome as svg icons)-->
+    <script defer="" src="../static/js/svg-icons.js"></script>
+  </body>
+</html>
