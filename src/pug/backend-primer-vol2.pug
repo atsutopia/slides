@@ -22,7 +22,7 @@ block content
     .wrap.aligncenter
       h1
         strong バックエンドエンジニア入門コース Vol.2
-      h5.text-symbols https://bit.ly/2Oegin3
+      h5.text-symbols https://bit.ly/2PN6K2p
     // .end .wrap
   section
     // .wrap = container (width: 90%)
@@ -35,7 +35,6 @@ block content
         li 前回の振り返り
         li データーベース概論 / ORマッパー
         li ユーザー登録機能をつくろう
-        li 簡易ログイン機能
 
     // .end .wrap
     // http://www.dt30.net/gachinko/?p=1008
@@ -389,6 +388,10 @@ block content
       pre: code
         | # config/application.rb
         | config.i18n.default_locale = :ja
+    li.u-verx9 日本語化
+      p
+        | config/locales 日本語ファイルを追加
+        | https://raw.githubusercontent.com/svenfuchs/rails-i18n/master/rails/locale/ja.yml
 
   section.slide-top
     h3.u-verx9 Controllerの作成
@@ -500,4 +503,4 @@ block content
     // .wrap = container (width: 90%)
     .wrap.aligncenter.fadeInUp
       h3
-        strong まとめ
+        strong End
