@@ -637,6 +637,15 @@ block content
     h5 ツイート機能の実装ステップ
     h2 タイムラインへ組み込み
     pre: code
+      | # app/controllers/timeline_controller.rb
+      | class TimelineController < ApplicationController
+      |   def index
+      |     # TODO: ユーザー仮
+      |     @user = User.first
+      |     @tweets = @user.tweets.order(created_at: :desc)
+      |   end
+      | end
+    pre: code
       :escape-html
         # app/views/timeline/index.html.erb
         <div class="timeline">
@@ -649,7 +658,7 @@ block content
               </div>
             </div>
             <div class="content">
-            <% @user.tweets.each do |val| %>
+            <% @tweets.each do |val| %>
                 <div class="tweet">
                   <div class="content">
                     <div class="avatar"><img class="img" src="https://pbs.twimg.com/profile_images/992619235850444800/NRV9dtxv_400x400.jpg" /></div>
