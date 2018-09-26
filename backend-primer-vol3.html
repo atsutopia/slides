@@ -21,6 +21,7 @@
     <!-- CSS Base-->
     <link rel="stylesheet" type="text/css" media="all" href="./css/webslides.css">
     <link rel="stylesheet" type="text/css" media="all" href="./css/default.css">
+    <!-- link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css")-->
     <!-- Optional - CSS SVG Icons (Font Awesome)-->
     <link rel="stylesheet" type="text/css" media="all" href="./css/svg-icons.css">
     <!-- SOCIAL CARDS (ADD YOUR INFO)-->
@@ -90,10 +91,16 @@
         <section class="bg-red"><span class="background dark" style="background-image:url('https://source.unsplash.com/R1J6Z1cnJZc/1600x800')"></span>
           <!-- .wrap = container (width: 90%)-->
           <div class="wrap aligncenter">
-            <h1><strong>バックエンドエンジニア入門コース Vol.2</strong></h1>
-            <h5 class="text-symbols">https://bit.ly/2Oegin3</h5>
+            <h1><strong>🐟バックエンドエンジニア入門コース Vol.3</strong></h1>
+            <h5 class="text-symbols">***</h5>
           </div>
           <!-- .end .wrap-->
+        </section>
+        <section class="slide-top">
+          <div class="cta-cover">
+            <h2>本日のスライド</h2>
+            <h1 style="font-size: 100px;">https://bit.ly/2DeXgMa</h1>
+          </div>
         </section>
         <section>
           <!-- .wrap = container (width: 90%)-->
@@ -103,6 +110,8 @@
             <ol class="text-cols">
               <li>トレーニング概要</li>
               <li>前回の振り返り</li>
+              <li>ユーザー認証機能を作ろう</li>
+              <li>ツイート機能を作ろう</li>
             </ol>
           </div>
           <!-- .end .wrap-->
@@ -127,8 +136,7 @@
               <p>Rails環境の立ち上げから簡単なHTML編集まで行います。
                 <ol>
                   <li>Web概論</li>
-                  <li>Ruby/Rails概論</li>
-                  <li>Git基礎</li>
+                  <li>Ruby/Rails概論 li Git基礎</li>
                   <li>HTML基礎</li>
                 </ol><img src="./images/backend-primer/tw-capture.png">
               </p>
@@ -165,49 +173,537 @@
           <!-- .wrap = container (width: 90%)-->
           <h2>前回やったこと</h2>
           <ul>
-            <li>Web概論</li>
-            <li>Ruby概論</li>
-            <li>Rails概論</li>
-            <li>ハンズオンズ (HTML編集)</li>
+            <li>Ruby基礎その2</li>
+            <li>データーベース概論 / ORマッパー</li>
+            <li>ユーザー登録機能をつくろう</li>
+            <li>バリデーションを設定しよう</li>
           </ul>
-          <h4 style="margin-top: 45px;">Rubyの基本構文</h4>
-          <p>
-            <iframe height="800px" width="100%" src="https://repl.it/@pocke777/Wen-Fa-Ji-Chu?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
-          </p>
+        </section>
+        <!-- section.slide-top-->
+        <!--   h2 Ruby基礎その3-->
+        <!--   // TODO-->
+        <!--   // ここでカレンダー問題をしたほうが良さそう-->
+        <section class="bg-green"><span class="background dark" style="background-image:url('https://images.unsplash.com/photo-1535219241072-7d3c28a49a5c')">
+            <!-- .wrap = container (width: 90%)--></span>
+          <div class="wrap aligncenter fadeInUp">
+            <h3><strong>ユーザー認証機能を作ろう</strong></h3>
+          </div>
+          <!-- .end .wrap-->
         </section>
         <section class="slide-top">
-          <h2>データストアとは</h2>
-          <p>
-            物理的なデータの保存先としてはコンピュータのメモリ上、ディスク上、ネットワークをまたいだ先のNASなどがあります。
-            (コンピューターにおけるHDDやSSDなど)
-          </p>
-          <h5>種別書き込み速度</h5>
+          <h2>ログインの仕組み</h2>
+          <p>HTTP/HTTPSは基本的にステートレスなプロトコルで前後の通信の状態を持っていない</p><img src="./images/backend-primer3/ステートレス.svg">
+        </section>
+        <section class="slide-top">
+          <h2>ログインの仕組み</h2>
+          <p>クッキーに認証情報を保存しておくことで、サーバー側でログイン許可などを実現</p><img src="./images/backend-primer3/クッキー.svg">
+        </section>
+        <section class="slide-top">
+          <h2>クッキーについて</h2>
           <table>
             <thead>
               <tr>
-                <th>種類</th>
-                <th>帯域</th>
+                <th>カラム名</th>
+                <th>値 (例)</th>
+                <th>説明</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td>メモリ</td>
-                <td>10GB/sec 〜 35GB/sec</td>
+                <td>Name</td>
+                <td>_twitter</td>
+                <td>クッキー名</td>
               </tr>
               <tr>
-                <td>SSD</td>
-                <td>400MB/sec 〜 3GB/sec</td>
+                <td>Value</td>
+                <td>BAh7CSIKZmxhc2hJ...</td>
+                <td>クッキー値 (暗号化したデータをセット)<br>セキュリティ上、以下のようなことを気をつける必要があります<br>・暗号化したデータをセットする<br>・パスワードなどの機密情報をクッキーにセットしない</td>
               </tr>
               <tr>
-                <td>HDD</td>
-                <td>10MB/sec 〜 150MB/sec</td>
+                <td>domain</td>
+                <td>.twitter.com</td>
+                <td>クッキーが届くドメインを指定<br>.twitter.comと指定することによりサブドメイン間との共有もできる</td>
               </tr>
               <tr>
-                <td>ネットワーク</td>
-                <td>12.5MB/sec 〜 125MB/sec</td>
+                <td>path</td>
+                <td>/</td>
+                <td>クッキーを読み込めるパスを指定する<br>「/」 と指定することで全ページから読み込める</td>
+              </tr>
+              <tr>
+                <td>Expires / Max-Age</td>
+                <td>2028-09-09T01:13:08.543Z</td>
+                <td>クッキーの有効期限<br> 省略するとブラウザを終了させるまでが有効期限となる</td>
+              </tr>
+              <tr>
+                <td>HttpOnly</td>
+                <td>true</td>
+                <td>CookieをJavaScriptからアクセスできないように制限</td>
+              </tr>
+              <tr>
+                <td>Secure</td>
+                <td>true</td>
+                <td>HTTPSで通信している場合にのみCookieを送信する</td>
               </tr>
             </tbody>
           </table>
+        </section>
+        <section class="slide-top">
+          <h2>Railsでのクッキーの種類</h2>
+          <table>
+            <tbody>
+              <tr>
+                <th>名前</th>
+                <th>仕組み</th>
+                <th>メリット</th>
+                <th>デメリット</th>
+              </tr>
+              <tr>
+                <td>CookieStore</td>
+                <td>Session情報を全てsecret_key_baseで暗号化し、クライアントのCookieに保存する</td>
+                <td>Railsのデフォルトで用意されているセッション管理方式<br>サーバ処理の際にDBにアクセスする必要がないため、処理が高速</td>
+                <td>セッション再生攻撃をされる恐れがある<br>サーバでSession情報を保持していないので、Session情報を変更したいタイミングで変更できない</td>
+              </tr>
+              <tr>
+                <td>Redis（インメモリ方式）</td>
+                <td>SessionIdを生成し、クライアントのCookieに保存する<br>クライアントから受け取ったSessionIdをもとにRedisから保存情報を取得</td>
+                <td>インメモリのため、処理が早い<br>クライアントにはIDしか保存しないため、情報漏洩のリスクが低い</td>
+                <td>Redisサーバを立てる必要があるため、コストが掛かる</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+        <section class="slide-top">
+          <h2>認証機能の実装ステップ</h2>
+          <p>簡易認証機能ではアカウント名のみでログイン可能なものとする<br>クッキー保存の仕組みはデフォルトのクッキーストアを使用</p>
+          <h5>ログイン機能</h5>
+          <ol>
+            <li>Viewの組み込み作業</li>
+            <li>コントローラーにログインロジックの実装</li>
+            <li>エラー処理</li>
+          </ol>
+          <h5 class="u-verx9-t">タイムライン</h5>
+          <ol>
+            <li>セッションからユーザー情報の呼び出し</li>
+            <li>タイムラインへ変数の組み込み</li>
+          </ol>
+          <h5 class="u-verx9-t">ログアウト</h5>
+          <ol>
+            <li>delete用のルーティング追加</li>
+            <li>コントローラーへログアウトロジックの実装</li>
+            <li>フォームの組み込み</li>
+          </ol>
+        </section>
+        <section class="slide-top">
+          <h2>ログイン機能</h2>
+          <h4 class="u-verx9-t">Viewの組み込み作業</h4>
+          <ol>
+            <li>form_forでviewの必要箇所を囲う</li>
+            <li>buttonタグをf.text_fieldやf.submitに置き換えて正しく、フォームが送信されるように調整</li>
+          </ol>
+          <pre><code class="hljs html"># app/views/sessions/new.html.erb
+&lt;div class=&quot;content&quot;&gt;
+  &lt;header class=&quot;header&quot;&gt;
+    &lt;div class=&quot;content&quot;&gt;&lt;img class=&quot;logo&quot; src=&quot;/assets/images/icons/tw-icon.svg&quot;&gt;
+      &lt;button class=&quot;submit btn primary&quot;&gt;ログイン&lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/header&gt;
+  &lt;div class=&quot;form&quot;&gt;
+    &lt;h1 class=&quot;title&quot;&gt;Twitterにログイン&lt;/h1&gt;
+    &lt;input type=&quot;text&quot; class=&quot;input&quot; placeholder=&quot;アカウント名&quot;&gt;
+    &lt;button&gt;アカウント名&lt;/button
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+        </section>
+        <section class="slide-top">
+          <h2>ログイン機能</h2>
+          <h4 class="u-verx9-t">Viewの組み込み作業[解説]</h4>
+          <pre><code>&lt;div class=&quot;content&quot;&gt;
+  &lt;%= form_for @form, url: session_path do |f|%&gt;
+    &lt;header class=&quot;header&quot;&gt;
+      &lt;div class=&quot;content&quot;&gt;&lt;img class=&quot;logo&quot; src=&quot;/assets/images/icons/tw-icon.svg&quot;&gt;
+        &lt;%= f.submit &quot;ログイン&quot;, { class: &quot;submit btn primary&quot; }%&gt;
+      &lt;/div&gt;
+    &lt;/header&gt;
+    &lt;div class=&quot;form&quot;&gt;
+      &lt;h1 class=&quot;title&quot;&gt;Twitterにログイン&lt;/h1&gt;
+      &lt;%= f.text_field :account, { class: &quot;input&quot;, placeholder: &quot;アカウント名&quot; }%&gt;
+    &lt;/div&gt;
+  &lt;% end %&gt;
+&lt;/div&gt;
+</code></pre>
+        </section>
+        <section class="slide-top">
+          <h2>ログイン機能</h2>
+          <h4 class="u-verx9-t">コントローラーにログインロジックの実装</h4>
+          <ol>
+            <li>フォームオブジェクトの生成</li>
+            <li>パラメーターの受け取り</li>
+            <li>ログイン処理</li>
+            <li>ログイン成功時にタイムラインへリダイレクト</li>
+          </ol>
+          <p><a href="https://github.com/pocke777/twwwitter-clone-rails/blob/0819b34f80953ef2f27ed620fb5ab32deba1a44c/app/forms/session_form.rb" target="_blank">SessionForm</a></p>
+          <pre><code class="hljs">#app/controllers/sessions_controller.rb
+class SessionsController < ApplicationController
+  def new
+    @form = SessionForm.new
+  end
+
+  def create
+    # ここにログイン処理を実装
+  end
+end</code></pre>
+        </section>
+        <section class="slide-top">
+          <h2>ログイン機能</h2>
+          <h4 class="u-verx9-t">コントローラーにログインロジックの実装[解説]</h4>
+          <pre><code class="hljs">#app/controllers/sessions_controller.rb
+class SessionsController < ApplicationController
+  def new
+    @form = SessionForm.new
+  end
+
+  def create
+    # パラメータの受け取り
+    @form = SessionForm.new(session_params)
+
+    if @form.valid?
+      # ログイン処理 (セッション情報の追加)
+      session[:user_id] = @form.user.id
+      # タイムラインへリダイレクト
+      redirect_to timeline_index_path
+    end
+  end
+
+  private
+  def session_params
+    params.require(:session_form).permit(:account)
+  end
+end</code></pre>
+        </section>
+        <section class="slide-top">
+          <h2>ログイン機能</h2>
+          <h4 class="u-verx9-t">エラー処理</h4>
+          <ol>
+            <li>バリデーション失敗時にフォームをレンダリング</li>
+            <li>エラーメッセージを出力するようviewに組み込み</li>
+          </ol>
+        </section>
+        <section class="slide-top">
+          <h2>ログイン機能</h2>
+          <h4 class="u-verx9-t">エラー処理[解説]</h4>
+          <pre><code># app/controllers/sessions_controller.rb
+class SessionsController < ApplicationController
+  def new
+    @form = SessionForm.new
+  end
+
+  def create
+    # パラメータの受け取り
+    @form = SessionForm.new(session_params)
+
+    if @form.valid?
+      # ログイン処理 (セッション情報の追加)
+      session[:user_id] = @form.user.id
+      # タイムラインへリダイレクト
+      redirect_to timeline_index_path
+    else
+      # バリデーション失敗時にフォームをレンダリング
+      render :new
+    end
+  end
+
+  private
+  def session_params
+    params.require(:session_form).permit(:account)
+  end
+end</code></pre>
+          <pre class="u-verx9-t">app/views/sessions/new.html.erb<code>&lt;div class=&quot;content&quot;&gt;
+  &lt;%= form_for @form, url: session_path do |f|%&gt;
+    &lt;header class=&quot;header&quot;&gt;
+      &lt;div class=&quot;content&quot;&gt;&lt;img class=&quot;logo&quot; src=&quot;/assets/images/icons/tw-icon.svg&quot;&gt;
+        &lt;%= f.submit &quot;ログイン&quot;, { class: &quot;submit btn primary&quot; }%&gt;
+      &lt;/div&gt;
+    &lt;/header&gt;
+    &lt;div class=&quot;form&quot;&gt;
+      &lt;h1 class=&quot;title&quot;&gt;Twitterにログイン&lt;/h1&gt;
+      &lt;ul class=&quot;errors&quot;&gt;&lt;% @form.errors.full_messages.each do |msg| %&gt;&lt;li class=&quot;errors-item&quot;&gt; &lt;%= msg %&gt; &lt;/li&gt;&lt;% end %&gt;&lt;/ul&gt;
+      &lt;%= f.text_field :account, { class: &quot;input&quot;, placeholder: &quot;アカウント名&quot; }%&gt;
+    &lt;/div&gt;
+  &lt;% end %&gt;
+&lt;/div&gt;
+</code></pre>
+        </section>
+        <section class="slide-top">
+          <h2>タイムライン</h2>
+          <h4 class="u-verx9-t">セッションからユーザー情報の呼び出し</h4>
+          <ol>
+            <li>保存されたセッションからユーザーの呼び出し</li>
+            <li>変数へ代入</li>
+            <li>保存されたセッションがなければトップへリダイレクト</li>
+          </ol>
+          <pre><code># app/controllers/timeline_controller.rb
+class TimelineController < ApplicationController
+  def index
+    # ここで呼び出し処理
+  end
+end</code></pre>
+        </section>
+        <section class="slide-top">
+          <h2>タイムライン</h2>
+          <h4 class="u-verx9-t">セッションからユーザー情報の呼び出し[解説]</h4>
+          <pre><code># app/controllers/timeline_controller.rb
+class TimelineController < ApplicationController
+  def index
+    @user = User.find_by(id: session[:user_id])
+    redirect_to new_session_path if @user.blank?
+  end
+end</code></pre>
+        </section>
+        <section class="slide-top">
+          <h2>タイムライン</h2>
+          <h4 class="u-verx9-t">タイムラインへ変数の組み込み</h4>
+          <ol>
+            <li>「ユーザー名」 「@account」 「自己紹介」の部分を変数化していく</li>
+          </ol>
+          <pre><code>&lt;div class=&quot;content&quot;&gt;
+  # ...省略
+  &lt;div class=&quot;timeline&quot;&gt;
+    &lt;div class=&quot;main&quot;&gt;
+      &lt;div class=&quot;sidebar&quot;&gt;
+        &lt;div class=&quot;profile&quot;&gt;
+          &lt;h1 class=&quot;name&quot;&gt;ユーザー名&lt;/h1&gt;
+          &lt;h2 class=&quot;account&quot;&gt;@account&lt;/h2&gt;
+          &lt;div class=&quot;description&quot;&gt;これは紹介文テキストこれは紹介文テキストこれは紹介文テキストこれは紹介文テキストこれは紹介文テキストこれは紹介文テキスト&lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;content&quot;&gt;
+        &lt;% (1..10).each do |i| %&gt;
+          &lt;div class=&quot;tweet&quot;&gt;
+            &lt;div class=&quot;content&quot;&gt;
+              &lt;div class=&quot;avatar&quot;&gt;&lt;img class=&quot;img&quot; src=&quot;https://pbs.twimg.com/profile_images/992619235850444800/NRV9dtxv_400x400.jpg&quot; /&gt;&lt;/div&gt;
+              &lt;div class=&quot;main&quot;&gt;
+                &lt;div class=&quot;header&quot;&gt;
+                  &lt;div class=&quot;item name&quot;&gt;ユーザー名&lt;/div&gt;
+                  &lt;div class=&quot;item account&quot;&gt;@account&lt;/div&gt;
+                &lt;div class=&quot;item date&quot;&gt;2017年10月9日&lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;text&quot;&gt;本日全ての開発者の皆さんにAccount Activity APIを公開しました。なお、User StreamsとSite Streamsとともに、ダイレクトメッセージの使われていないエンドポイントは本日から3ヶ月後の2018年8月16日（米国時間）に廃止されるよう変更になります。詳細は以下ブログをご覧ください。&lt;/div&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;% end %&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+        </section>
+        <section class="bg-green"><span class="background dark" style="background-image:url('./images/cover/0.jpg')"></span>
+          <!-- .wrap = container (width: 90%)-->
+          <div class="wrap aligncenter fadeInUp">
+            <h3><strong>ツイート機能を作ろう</strong></h3>
+          </div>
+          <!-- .end .wrap-->
+        </section>
+        <section class="slide-top">
+          <h2>ツイート機能の実装ステップ</h2>
+          <ol>
+            <li>DB設計</li>
+            <li>テーブル作成</li>
+            <li>スケルトン作成</li>
+            <li>ツイート機能実装</li>
+            <li>タイムラインへ組み込み</li>
+          </ol>
+        </section>
+        <section class="slide-top">
+          <h5>ツイート機能の実装ステップ</h5>
+          <h2>DB設計</h2>
+          <ul>
+            <li>ツイートの必要情報</li>
+            <li>ツイートとユーザーの関連情報</li>
+          </ul>
+        </section>
+        <section class="slide-top">
+          <h5>ツイート機能の実装ステップ</h5>
+          <h2>DB設計</h2><img src="/images/backend-primer3/tweet-table.svg">
+        </section>
+        <section class="slide-top">
+          <h5>ツイート機能の実装ステップ</h5>
+          <h2>テーブル作成</h2>
+          <ul>
+            <li class="u-verx3">マイグレーションコマンドでファイルの作成
+              <pre><code># マイグレーションの作成
+bin/rails g migration Tweet
+
+# db/migrate/20180926023850_tweet.rb
+class Tweet < ActiveRecord::Migration[5.1]
+  def change
+    create_table :tweets do |t|
+      # ...こちらにスキーマ定義
+
+      t.timestamps null: false
+    end
+  end
+end</code></pre><small><a href="https://railsguides.jp/active_record_migrations.html#マイグレーションを作成する" target="_blank">https://railsguides.jp/active_record_migrations.html#マイグレーションを作成する</a></small>
+            </li>
+          </ul>
+        </section>
+        <section class="slide-top">
+          <h5>ツイート機能の実装ステップ</h5>
+          <h2>テーブル作成</h2>
+          <pre><code># マイグレーションの作成
+bin/rails g migration Tweet
+
+# db/migrate/20180926023850_tweet.rb
+class Tweet < ActiveRecord::Migration[5.1]
+  def change
+    create_table :tweets do |t|
+      t.references :user
+      t.text :tweet
+      t.timestamps null: false
+    end
+  end
+end</code></pre>
+        </section>
+        <section class="slide-top">
+          <h5>ツイート機能の実装ステップ</h5>
+          <h2>スケルトン作成</h2>
+          <ol>
+            <li>モデルの作成
+              <p>クラスの作成<br>リレーションの定義</p>
+            </li>
+            <li>Controllerの作成
+              <p>クラスの作成<br>アクションの作成</p>
+            </li>
+            <li>ルーティングの設定
+              <p>ルーティングの設定 (編集/削除はなし)</p>
+            </li>
+          </ol>
+        </section>
+        <section class="slide-top">
+          <h5>ツイート機能の実装ステップ</h5>
+          <h2>スケルトン作成</h2>
+          <h5 class="u-verx9-t">モデルの作成</h5>
+          <pre><code># app/models/tweet.rb
+class Tweet < ApplicationRecord
+  belongs_to :user
+end
+
+# app/models/user.rb
+class User < ApplicationRecord
+  has_many :tweets
+end</code></pre>
+          <h5 class="u-verx9-t">Controllerの作成</h5>
+          <pre><code># app/controllers/tweets_controller.rb
+class TweetsController < ApplicationController
+  def new
+  end
+
+  def create
+  end
+end</code></pre>
+          <h5 class="u-verx9-t">ルーティングの設定 (編集/削除はなし)</h5>
+          <pre><code># config/routes.rb
+Rails.application.routes.draw do
+  # ...省略
+  resources :tweets, only: [:new, :create]
+end</code></pre>
+        </section>
+        <section class="slide-top">
+          <h5>ツイート機能の実装ステップ</h5>
+          <h2>ツイート機能の実装</h2>
+          <ol>
+            <li>newアクションの定義
+              <p>Tweetモデルのインスタンス生成</p>
+            </li>
+            <li>viewの組み込み
+              <p>form_forによるフォームの生成</p>
+            </li>
+            <li>createアクションの定義
+              <p>パラメーターの受け取り<br>ツイート保存処理<br>成功時はタイムラインへリダイレクト<br>※ ツイートに紐づくユーザーは仮で設定する (最初のユーザー)</p>
+            </li>
+          </ol>
+        </section>
+        <section class="slide-top">
+          <h5>ツイート機能の実装ステップ</h5>
+          <h2>ツイート機能の実装</h2>
+          <h5 class="u-verx9-t">newアクションの定義</h5>
+          <pre><code># app/controllers/tweets_controller.rb
+class TweetsController < ApplicationController
+  def new
+    @tweet = Tweet.new
+  end
+end</code></pre>
+          <h5 class="u-verx9-t">viewの組み込み</h5>
+          <pre><code># app/views/tweets/new.html.erb
+&lt;div class=&quot;content&quot;&gt;
+  &lt;header class=&quot;header&quot;&gt;
+    &lt;div class=&quot;content wide&quot;&gt;
+      &lt;img class=&quot;logo&quot; src=&quot;/assets/images/icons/tw-icon.svg&quot; /&gt;
+    &lt;/div&gt;
+    &lt;%= form_for @tweet do |f|%&gt;
+      &lt;div class=&quot;share&quot;&gt;
+        &lt;div class=&quot;title&quot;&gt;リンクをあなたのフォロワーに共有する&lt;/div&gt;
+          &lt;%= f.text_area :tweet, { class: &quot;input&quot; }%&gt;
+          &lt;%= f.submit &quot;ツイート&quot;, { class: &quot;submit btn primary&quot; }%&gt;
+      &lt;/div&gt;
+    &lt;% end %&gt;
+  &lt;/header&gt;
+&lt;/div&gt;
+</code></pre>
+          <h5 class="u-verx9-t">createアクションの定義</h5>
+          <pre><code># app/controllers/tweets_controller.rb
+class TweetsController < ApplicationController
+  def create
+    ## TODO: 仮ユーザー
+    user = User.first
+    @tweet = user.tweets.build(tweet_params)
+    if @tweet.save
+      redirect_to timeline_index_path
+    end
+  end
+
+  private
+  def tweet_params
+    params.require(:tweet).permit(
+      :tweet
+    )
+  end
+end</code></pre>
+        </section>
+        <section class="slide-top">
+          <h5>ツイート機能の実装ステップ</h5>
+          <h2>タイムラインへ組み込み</h2>
+          <pre><code># app/views/timeline/index.html.erb
+&lt;div class=&quot;timeline&quot;&gt;
+  &lt;div class=&quot;main&quot;&gt;
+    &lt;div class=&quot;sidebar&quot;&gt;
+      &lt;div class=&quot;profile&quot;&gt;
+        &lt;h1 class=&quot;name&quot;&gt;&lt;%= @user.username %&gt;&lt;/h1&gt;
+        &lt;h2 class=&quot;account&quot;&gt;&lt;%= &quot;@#{@user.account }&quot; %&gt;&lt;/h2&gt;
+        &lt;div class=&quot;description&quot;&gt;&lt;%= @user.introduction %&gt;&lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;content&quot;&gt;
+    &lt;% @user.tweets.each do |val| %&gt;
+        &lt;div class=&quot;tweet&quot;&gt;
+          &lt;div class=&quot;content&quot;&gt;
+            &lt;div class=&quot;avatar&quot;&gt;&lt;img class=&quot;img&quot; src=&quot;https://pbs.twimg.com/profile_images/992619235850444800/NRV9dtxv_400x400.jpg&quot; /&gt;&lt;/div&gt;
+            &lt;div class=&quot;main&quot;&gt;
+              &lt;div class=&quot;header&quot;&gt;
+                &lt;div class=&quot;item name&quot;&gt;&lt;%= @user.username %&gt;&lt;/div&gt;
+                &lt;div class=&quot;item account&quot;&gt;&lt;%= @user.account %&gt;&lt;/div&gt;
+                &lt;div class=&quot;item date&quot;&gt;2017年10月9日&lt;/div&gt;
+              &lt;/div&gt;
+              &lt;div class=&quot;text&quot;&gt; &lt;%= val.tweet %&gt;&lt;/div&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;% end %&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
         </section>
       </article>
     </main>
