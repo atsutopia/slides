@@ -675,6 +675,14 @@ end</code></pre>
         <section class="slide-top">
           <h5>ツイート機能の実装ステップ</h5>
           <h2>タイムラインへ組み込み</h2>
+          <pre><code># app/controllers/timeline_controller.rb
+class TimelineController < ApplicationController
+  def index
+    # TODO: ユーザー仮
+    @user = User.first
+    @tweets = @user.tweets.order(created_at: :desc)
+  end
+end</code></pre>
           <pre><code># app/views/timeline/index.html.erb
 &lt;div class=&quot;timeline&quot;&gt;
   &lt;div class=&quot;main&quot;&gt;
@@ -686,7 +694,7 @@ end</code></pre>
       &lt;/div&gt;
     &lt;/div&gt;
     &lt;div class=&quot;content&quot;&gt;
-    &lt;% @user.tweets.each do |val| %&gt;
+    &lt;% @tweets.each do |val| %&gt;
         &lt;div class=&quot;tweet&quot;&gt;
           &lt;div class=&quot;content&quot;&gt;
             &lt;div class=&quot;avatar&quot;&gt;&lt;img class=&quot;img&quot; src=&quot;https://pbs.twimg.com/profile_images/992619235850444800/NRV9dtxv_400x400.jpg&quot; /&gt;&lt;/div&gt;
