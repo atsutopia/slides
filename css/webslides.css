@@ -1,7 +1,7 @@
 /*!
  * Name: WebSlides
  * Version: 1.5.0
- * Date: 2018-09-19
+ * Date: 2018-09-26
  * Description: Making HTML presentations easy
  * URL: https://github.com/webslides/webslides#readme
  * Credits: @jlantunez, @LuisSacristan, @Belelros
@@ -345,6 +345,10 @@ footer:after,
 
 .u-verx9-t {
   margin-top: 45px; }
+
+.u-verx3 {
+  margin-top: 15px;
+  margin-bottom: 15px; }
 
 /*=========================================
 1. Base --> Baseline: 8px = .8rem
@@ -3232,8 +3236,8 @@ Slides - Backgrounds <section class="bg-primary">
 
 /*Covers/Longforms...*/
 .bg-trans-gradient {
-  background: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.8)), to(transparent));
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, transparent 100%); }
+  background: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.8)), to(rgba(0, 0, 0, 0)));
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 100%); }
 
 /*Horizontal Gradient*/
 .bg-gradient-h {
@@ -3597,8 +3601,8 @@ Cards
 /*== Ficaption Cards === */
 [class*='card'] figcaption,
 [class*='card'] figcaption a {
-  background: -webkit-gradient(linear, left top, left bottom, from(transparent), to(rgba(0, 0, 0, 0.2)));
-  background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.2) 100%);
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0.2)));
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.2) 100%);
   color: #fff; }
 
 /*===CTA (Call to Action - Numbers, Price, Promo...)  ===== */
@@ -3613,9 +3617,6 @@ Cards
 /*=========================================
 Tables
 =========================================== */
-thead {
-  background-color: rgba(0, 0, 0, 0.3); }
-
 tr:nth-child(even) > td {
   background: rgba(0, 0, 0, 0.1); }
 
