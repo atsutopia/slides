@@ -441,6 +441,22 @@ block content
           </div>
         </div>
 
+  section.slide-top
+    h2 ログアウト
+    pre: code.hljs
+      | # config/routes.rb
+      | resource :session, only: [:new, :create, :destroy]
+
+    pre: code.hljs
+      | # app/controllers/sessions_controller.rb
+      | def destroy
+      |   session.delete(:user_id)
+      |   redirect_to root_path
+      | end
+    pre: code.hljs
+      | # app/views/timeline/index.html.erb
+      | <%= link_to "ログアウト", session_path, method: :delete, class: "submit btn default logout" %>
+
   section.bg-green
     span.background.dark(style="background-image:url('./images/cover/0.jpg')")
     // .wrap = container (width: 90%)
@@ -676,3 +692,9 @@ block content
             </div>
           </div>
         </div>
+  section.bg-green
+    span.background.dark(style="background-image:url('./images/cover/0.jpg')")
+    // .wrap = container (width: 90%)
+    .wrap.aligncenter.fadeInUp
+      h3
+        strong End

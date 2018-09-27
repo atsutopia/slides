@@ -499,6 +499,18 @@ end</code></pre>
 &lt;/div&gt;
 </code></pre>
         </section>
+        <section class="slide-top">
+          <h2>ログアウト</h2>
+          <pre><code class="hljs"># config/routes.rb
+resource :session, only: [:new, :create, :destroy]</code></pre>
+          <pre><code class="hljs"># app/controllers/sessions_controller.rb
+def destroy
+  session.delete(:user_id)
+  redirect_to root_path
+end</code></pre>
+          <pre><code class="hljs"># app/views/timeline/index.html.erb
+<%= link_to "ログアウト", session_path, method: :delete, class: "submit btn default logout" %></code></pre>
+        </section>
         <section class="bg-green"><span class="background dark" style="background-image:url('./images/cover/0.jpg')"></span>
           <!-- .wrap = container (width: 90%)-->
           <div class="wrap aligncenter fadeInUp">
@@ -712,6 +724,12 @@ end</code></pre>
     &lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;</code></pre>
+        </section>
+        <section class="bg-green"><span class="background dark" style="background-image:url('./images/cover/0.jpg')"></span>
+          <!-- .wrap = container (width: 90%)-->
+          <div class="wrap aligncenter fadeInUp">
+            <h3><strong>End</strong></h3>
+          </div>
         </section>
       </article>
     </main>
