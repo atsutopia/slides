@@ -501,6 +501,8 @@ end</code></pre>
         </section>
         <section class="slide-top">
           <h2>ログアウト</h2>
+          <pre><code class="hljs"># config/routes.rb
+resource :session, only: [:new, :create, :destroy]</code></pre>
           <pre><code class="hljs"># app/controllers/sessions_controller.rb
 def destroy
   session.delete(:user_id)
