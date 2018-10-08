@@ -1,7 +1,7 @@
 /*!
  * Name: WebSlides
  * Version: 1.5.0
- * Date: 2018-09-26
+ * Date: 2018-10-08
  * Description: Making HTML presentations easy
  * URL: https://github.com/webslides/webslides#readme
  * Credits: @jlantunez, @LuisSacristan, @Belelros
@@ -349,6 +349,10 @@ footer:after,
 .u-verx3 {
   margin-top: 15px;
   margin-bottom: 15px; }
+
+.vertxcenter {
+  margin-left: auto;
+  margin-right: auto; }
 
 /*=========================================
 1. Base --> Baseline: 8px = .8rem

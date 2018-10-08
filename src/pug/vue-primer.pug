@@ -10,6 +10,125 @@ block content
     // .wrap = container (width: 90%)
     .wrap.aligncenter
       h1
-        strong Vue.js
+        strong Vue.js入門
       h5.text-symbols ***
     // .end .wrap
+  section
+    // .wrap = container (width: 90%)
+    .wrap.size-70
+      h2
+        strong Agenda
+      hr
+      ol.text-cols
+        li トレーニング概要
+        li 自己紹介
+        li Vue.js解説
+        li 実践Vue.jsアプリケーション
+  section.bg-green
+    span.background.dark(style="background-image:url('https://images.unsplash.com/photo-1535219241072-7d3c28a49a5c')")
+    // .wrap = container (width: 90%)
+    .wrap.aligncenter.fadeInUp
+      h3
+        strong トレーニング概要
+    // .end .wrap
+  section.slide-top
+    // .wrap = container (width: 90%)
+    .wrap
+      div
+        h1 Vue.jsを使ってSlackを作ってみよう
+
+  section.fullscreen
+    span.background.dark(style="background-image:url('./images/cover/profile.png'); width: 60%; height: 120%; top: 50%; left: 50%; transform: translate(-50%, -50%); opacity: .4;")
+    h2(style="position: relative; font-weight: bold;") WHAT I'M ABOUT
+    p(style="position: relative; font-weight: bold;")
+      | 株式会社TRUNK TL Kawasaki Atsushi<br>
+      | 2013年じげんグループHRメディア事業のPMやバックエンドを担当。<br>
+      | 新規事業立ち上げの経験を経てエンジニアリングユニットのマネージャーに従事。<br>
+      |
+      | 2015年に株式会社カヤックへ入社。<br>
+      | クライアントワークや自社サービス(Lobi)のフロントエンド、バックエンドおよびインフラ設計、構築、運用を担当。<br>
+
+  section.bg-green
+    span.background.dark(style="background-image:url('https://images.unsplash.com/photo-1535219241072-7d3c28a49a5c')")
+    // .wrap = container (width: 90%)
+    .wrap.aligncenter.fadeInUp
+      h3
+        strong Vue.js解説
+    // .end .wrap
+
+  section.slide-top
+    h3 Vue.jsとは?
+    p
+      | Vue.jsはインタラクティブなUIを構築するためのJavaScriptフレームワークの一種。
+      | 2013年にEvan You氏の個人プロジェクトとして開始，2014年2月にバージョン0.8が正式に公開
+      | JavaScript ベスト・オブ・ザ・イヤーでは2年連続でVue.jsがベストプロジェクトに選ばれている <br>
+      a(href="https://risingstars.js.org/2017/ja/#section-all") https://risingstars.js.org/2017/ja/#section-all
+  section.slide-top
+    h4 Vue.jsの特徴
+    ul
+      li 学習コストが低い(API/テンプレート)
+      li リアクティブなデータバインディング
+      li コンポーネント指向UI
+      li ファイルサイズが軽量
+
+    h4.u-verx9-t React vs Vue.js
+    p
+      | React では、すべてのコンポーネントは JSX を用いた 描画関数 (render) の中でそれらの UI を表現を行う。
+      | これにより、完全なプログラミング言語 (JavaScript) の力を活用してビューを構築することができる。
+      | 一方Vue.jsではJSXサポートがありながら、HTML/Pugのようなテンプレートでビューを構築していくことが可能
+
+    h4.u-verx9-t AngularJS vs Vue.js
+    p
+      | AngularJSはフルスタックフレームワークであり、開発に必要なものはすべて含まれている。
+      | 標準でルーティング機能が備わっていたり、ユニットテストやE2Eテストも組み込みやすくなっている。
+      | 一方、Vue.jsはビューに焦点を絞ったフレームワークで学習コストが低いことが特徴
+
+
+  section.slide-top
+    h4 Example(Pure Javascript)
+    <p data-height="465" data-theme-id="0" data-slug-hash="aRmRXw" data-default-tab="js,result" data-user="pickrusu" data-pen-title="JS Sample Form" class="codepen">See the Pen <a href="https://codepen.io/pickrusu/pen/aRmRXw/">JS Sample Form</a> by pickrusu (<a href="https://codepen.io/pickrusu">@pickrusu</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+
+  section.slide-top
+    h4 Example(Vue.js)
+    <p data-height="465" data-theme-id="0" data-slug-hash="oazaQp" data-default-tab="html,result" data-user="pickrusu" data-pen-title="Vue.js Sample Form" class="codepen">See the Pen <a href="https://codepen.io/pickrusu/pen/oazaQp/">Vue.js Sample Form</a> by pickrusu (<a href="https://codepen.io/pickrusu">@pickrusu</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+
+  section.slide-top
+    h4 基本操作 (Loop / if / method / onclick)
+    h3 Loop
+    <p data-height="265" data-theme-id="0" data-slug-hash="NOdPNb" data-default-tab="js,result" data-user="pickrusu" data-pen-title="NOdPNb" class="codepen">See the Pen <a href="https://codepen.io/pickrusu/pen/NOdPNb/">NOdPNb</a> by pickrusu (<a href="https://codepen.io/pickrusu">@pickrusu</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+
+    h3 if
+    <p data-height="265" data-theme-id="0" data-slug-hash="aRpzNa" data-default-tab="html,result" data-user="pickrusu" data-pen-title="Vue.js if" class="codepen">See the Pen <a href="https://codepen.io/pickrusu/pen/aRpzNa/">Vue.js if</a> by pickrusu (<a href="https://codepen.io/pickrusu">@pickrusu</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+
+    h3 method / onclick
+    <p data-height="265" data-theme-id="0" data-slug-hash="NOdPdd" data-default-tab="html,result" data-user="pickrusu" data-pen-title="Vue.js method" class="codepen">See the Pen <a href="https://codepen.io/pickrusu/pen/NOdPdd/">Vue.js method</a> by pickrusu (<a href="https://codepen.io/pickrusu">@pickrusu</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+
+  section.slide-top
+    h4 Vue.jsを触ってみよう
+    ul
+      li Hello World! となっている部分を Hello Vue!に変更してみよう
+      li 入力されている文字数が20文字以上になったら `alert('not more than 20')` とアラートを表示しよう
+
+    <p data-height="465" data-theme-id="0" data-slug-hash="oazaQp" data-default-tab="html,result" data-user="pickrusu" data-pen-title="Vue.js Sample Form" class="codepen">See the Pen <a href="https://codepen.io/pickrusu/pen/oazaQp/">Vue.js Sample Form</a> by pickrusu (<a href="https://codepen.io/pickrusu">@pickrusu</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+
+  section.slide-top
+    h4 Vue.jsの裏側
+    h5 ライフサイクル
+    img.vertxcenter(src="images/vue-primer/lifecycle.png" width="800")
+
+  section.slide-top
+    h5 仮想DOM
+    p
+      | Vue.jsはDOMとJavaScriptのデータを同期するためにリアクティブなデータバインディングを持っている
+      | データの変更後に仮想DOMに反映され、仮想DOMと実際のDOMの差分を計算して変更部分を実際のDOMに反映し、Viewが変更される
+    img.vertxcenter(src="images/vue-primer/1_hwlyMTnboUp9Mk0mUYhpdQ.png" width="800")
+
+  section.bg-green
+    span.background.dark(style="background-image:url('https://images.unsplash.com/photo-1535219241072-7d3c28a49a5c')")
+    // .wrap = container (width: 90%)
+    .wrap.aligncenter.fadeInUp
+      h3
+        strong 実践Vue.jsアプリケーション
+    // .end .wrap
+
+  script(async src="https://static.codepen.io/assets/embed/ei.js")
