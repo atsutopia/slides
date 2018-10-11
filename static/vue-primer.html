@@ -208,6 +208,97 @@
           </div>
           <!-- .end .wrap-->
         </section>
+        <section class="slide-top">
+          <h1>今回作成するアプリケーションはこちら</h1><img class="vertxcenter" src="images/vue-primer/sample.gif" width="800">
+        </section>
+        <section class="slide-top">
+          <h1 class="u-verx3">ソースコードはこちらを利用</h1>
+          <iframe src="https://codesandbox.io/embed/j4j6jxoy9y" style="width:100%; height:800px; border:0; border-radius: 4px; overflow:hidden;" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"></iframe>
+        </section>
+        <section class="slide-top">
+          <h1 class="u-verx3">ツールの説明</h1><img class="vertxcenter" src="images/vue-primer/sandbox.png" width="1200">
+        </section>
+        <section class="slide-top">
+          <h1 class="u-verx3">実装ステップ</h1>
+          <ol>
+            <li>Vueインスタンスの生成</li>
+            <li>スレッドをモックデータに置き換え</li>
+            <li>入力データの反映</li>
+            <li>コンポーネント化</li>
+          </ol>
+        </section>
+        <section class="slide-top">
+          <h1 class="u-verx3">Vueのインスタンスの生成</h1>
+          <p>全ての Vue アプリケーション は、Vue 関数で新しい Vue インスタンスを作成することによって始まる</p>
+          <pre><code>var vm = new Vue({
+  // オプション
+})</code></pre>
+        </section>
+        <section class="slide-top">
+          <h1 class="u-verx3">スレッドをモックデータに置き換え</h1>
+          <pre><code>const messages = [
+  {
+    name: 'scottish-fold',
+    time: '11:10 AM',
+    icon: 'images/pickrusu.jpg',
+    text: 'これはサンプルテキストですこれはサンプルテキストです\nこれはサンプルテキストです\nこれはサンプルテキストですこれはサンプルテキストですこれはサンプルテキストです',
+  },
+  {
+    name: 'scottish-fold',
+    time: '11:10 AM',
+    icon: 'images/pickrusu.jpg',
+    text: 'これはサンプルテキストですこれはサンプルテキストです\nこれはサンプルテキストです\nこれはサンプルテキストですこれはサンプルテキストですこれはサンプルテキストです',
+  },
+  {
+    name: 'scottish-fold',
+    time: '11:10 AM',
+    icon: 'images/pickrusu.jpg',
+    text: 'これはサンプルテキストですこれはサンプルテキストです\nこれはサンプルテキストです\nこれはサンプルテキストですこれはサンプルテキストですこれはサンプルテキストです',
+  }
+]</code></pre>
+        </section>
+        <section class="slide-top">
+          <h1 class="u-verx3">入力データの反映</h1><img class="vertxcenter" src="images/vue-primer/trunk.gif" width="1000">
+        </section>
+        <section class="slide-top">
+          <h1 class="u-verx3">コンポーネント化</h1>
+          <h3 class="u-verx9-t">単一ファイルコンポーネント</h3>
+          <p>
+            コンポーネントとは部品という意味
+            ページを構成している要素を部品化し、構造・見た目・振る舞いをセットにして1ファイルにまとめて記述する
+          </p>
+        </section>
+        <section class="slide-top">
+          <h1 class="u-verx3">Vue.jsの単一ファイルコンポーネントシンタックス</h1>
+          <iframe src="https://codesandbox.io/embed/m5x9x7242p" style="width:100%; height:800px; border:0; border-radius: 4px; overflow:hidden;" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"></iframe>
+        </section>
+        <section class="slide-top">
+          <h1 class="u-verx3">Props</h1>
+          <p>親コンポーネントから子コンポーネントへとデータ(関数)の受け渡しを行う</p>
+          <iframe src="https://codesandbox.io/embed/0pvqq7wn7n" style="width:100%; height:800px; border:0; border-radius: 4px; overflow:hidden;" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"></iframe>
+        </section>
+        <section class="slide-top">
+          <h1 class="u-verx3">メッセ部分をコンポーネント化</h1><img class="vertxcenter" src="images/vue-primer/component.png" width="1000">
+        </section>
+        <section class="slide-top">
+          <h1 class="u-verx3">コンポーネント化を行うための実装ステップ</h1>
+          <ol>
+            <li>Vueコンポーネントファイルの作成</li>
+            <li>コンポーネントの登録</li>
+            <li>Viewの書き換え / propsの受け渡し</li>
+          </ol>
+        </section>
+        <section class="slide-top">
+          <h1 class="u-verx3">And more...</h1>
+          <li>Vue Router</li>
+          <li>Vuex</li>
+        </section>
+        <section class="bg-green"><span class="background dark" style="background-image:url('./images/cover/0.jpg')"></span>
+          <!-- .wrap = container (width: 90%)-->
+          <div class="wrap aligncenter fadeInUp">
+            <h3><strong>Thanks</strong></h3>
+          </div>
+        </section>
         <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
       </article>
     </main>
