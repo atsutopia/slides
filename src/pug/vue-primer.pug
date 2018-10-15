@@ -36,6 +36,7 @@ block content
     .wrap
       div
         h1 Vue.jsを使ってSlackを作ってみよう
+      img.vertxcenter(src="images/vue-primer/sample.gif" width="800")
 
   section.fullscreen
     span.background.dark(style="background-image:url('./images/cover/profile.png'); width: 60%; height: 120%; top: 50%; left: 50%; transform: translate(-50%, -50%); opacity: .4;")
@@ -59,7 +60,7 @@ block content
   section.slide-top
     h3 Vue.jsとは?
     p
-      | Vue.jsはインタラクティブなUIを構築するためのJavaScriptフレームワークの一種。
+      | Vue.jsはインタラクティブなUIを構築するためのJavaScriptフレームワーク
       | 2013年にEvan You氏の個人プロジェクトとして開始，2014年2月にバージョン0.8が正式に公開
       | JavaScript ベスト・オブ・ザ・イヤーでは2年連続でVue.jsがベストプロジェクトに選ばれている <br>
       a(href="https://risingstars.js.org/2017/ja/#section-all") https://risingstars.js.org/2017/ja/#section-all
@@ -91,6 +92,32 @@ block content
   section.slide-top
     h4 Example(Vue.js)
     <p data-height="465" data-theme-id="0" data-slug-hash="oazaQp" data-default-tab="html,result" data-user="pickrusu" data-pen-title="Vue.js Sample Form" class="codepen">See the Pen <a href="https://codepen.io/pickrusu/pen/oazaQp/">Vue.js Sample Form</a> by pickrusu (<a href="https://codepen.io/pickrusu">@pickrusu</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+
+  section.slide-top
+    h4 Vue.jsインスタンスの生成
+    pre: code
+      | new Vue({
+      |   // Vue.jsとDOMの関連付け
+      |   el: "#app",
+      |   // データ
+      |   data: {
+      |     message: "Hello"
+      |     }
+      |   },
+      |   // ライフサイクルフック
+      |   created: function() {
+      |     console.log("created!!")
+      |     }
+      |   },
+      |   // メソッドの定義
+      |   methods: {
+      |     say: function(msg) {
+      |       alert("Hello" + msg)
+      |       }
+      |     }
+      |   },
+      | })
+
 
   section.slide-top
     h4 基本操作 (Loop / if / method / onclick)
