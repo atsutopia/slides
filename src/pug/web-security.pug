@@ -21,9 +21,8 @@ block content
       ol.text-cols
         li トレーニング概要
         li 自己紹介
-        li 安全なアプリケーションの作り方
-        li Webアプリケーションの構成
-        li 機能別セキュリティ対策
+        li 不正利用防止対策について
+        li ステップ別セキュリティ対策
   section.bg-green
     span.background.dark(style="background-image:url('https://images.unsplash.com/photo-1535219241072-7d3c28a49a5c')")
     // .wrap = container (width: 90%)
@@ -32,7 +31,9 @@ block content
         strong トレーニング概要
     // .end .wrap
   section.slide-top
-    h1 アプリケーションを構築する上での気をつけるポイントを実践と理論から解説
+    h1 セキュリティ上の注意ポイントを解説しながらステップ形式アプリケーション構築を行う
+    img.vertxcenter(src="./images/web-security/structure.svg" style="width: 1200px")
+
 
   section.fullscreen
     span.background.dark(style="background-image:url('./images/cover/profile.png'); width: 60%; height: 120%; top: 50%; left: 50%; transform: translate(-50%, -50%); opacity: .4;")
@@ -49,7 +50,55 @@ block content
     span.background.dark(style="background-image:url('https://images.unsplash.com/photo-1535219241072-7d3c28a49a5c')")
     // .wrap = container (width: 90%)
     .wrap.aligncenter.fadeInUp
-      h1 安全なアプリケーションの作り方
+      h1 不正利用防止対策について
+    // .end .wrap
+
+  section.slide-top
+    h1 脆弱性診断
+    p
+      | WEBアプリケーションの脆弱性診断では大きく「プラットフォーム診断」とアプリケーション診断がある
+    ol
+      li プラットフォーム診断
+        p
+          | サーバーやネットワークに対する脆弱性診断
+      li アプリケーション診断
+        p
+          | Webアプリケーションに対する脆弱性診断。「ブラックボックス診断」と呼ばれる診断方法では実際にWebアプリケーションを動かして診断を行う。
+          | 一方、「ホワイトボックス診断」と呼ばれる診断方法ではソースコードを解析することにより、脆弱性を発見します。
+
+    h1 脆弱性診断ツールの代表例
+    h3 Nmap
+    p
+      | ポートスキャンという機能が有名でサーバーやネットワーク機器のオープンポートを列挙する <br>
+      a(href="https://nmap.org/man/jp/") https://nmap.org/man/jp/
+
+    h3 Nessus
+    p
+      | Nessusは現在まで世界中で20,000以上の顧客と10,000,000件のダウンロードが有ったネットワーク業界で最も広く知られたネットワーク機器の 脆弱性検出とシステム機器構成評価用ソフトウェア <br>
+      a(href="https://jp.tenable.com/products/nessus/nessus-professional") https://jp.tenable.com/products/nessus/nessus-professional
+
+  section.slide-top
+    h1 バグバウンティ
+    p
+      | バグバウンティとは「脆弱性報奨金制度」や「バグ報奨金制度」とも呼ばれ、、企業が脆弱性に報奨金をかけて一般公開し、
+      | 一般人が発見した脆弱性を報告して報奨金を受け取る制度
+
+    h2 導入例
+    h4 Google
+    p
+      | Googleでは、ChromeとAndroidを分けてバグバウンティのプログラムを用意
+      | 過去には、緊急度が高い脆弱を発見した人に対し、約330万円（30,000$）の報奨金が支払われた例もある
+
+    h4 Facebook
+    p
+      | Facebookとその傘下であるInstagramでバグバウンティのプログラムを用意
+      | 2016年には、10歳の少年がInstagramの脆弱性を指摘し、約100万円（10,000$）の報奨金が支払われた
+
+  section.bg-green
+    span.background.dark(style="background-image:url('https://images.unsplash.com/photo-1535219241072-7d3c28a49a5c')")
+    // .wrap = container (width: 90%)
+    .wrap.aligncenter.fadeInUp
+      h1 ステップ別セキュリティ対策
     // .end .wrap
 
   section.slide-top
