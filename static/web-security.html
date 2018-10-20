@@ -195,15 +195,144 @@
             </ol>
           </p>
         </section>
+        <section class="slide-top">
+          <h3>制作ステップ</h3>
+          <ol>
+            <li>ドメイン取得</li>
+            <li>サーバーの構築</li>
+            <li>アプリケーションの作成</li>
+            <li>テスト</li>
+            <li>リリース</li>
+          </ol><img class="vertxcenter" src="./images/web-security/structure.svg" style="width: 1200px">
+        </section>
         <section class="bg-green"><span class="background dark" style="background-image:url('https://images.unsplash.com/photo-1535219241072-7d3c28a49a5c')"></span>
           <!-- .wrap = container (width: 90%)-->
           <div class="wrap aligncenter fadeInUp">
-            <h3><strong>Webアプリケーションの構成</strong></h3>
+            <h3><strong>ドメイン取得</strong></h3>
           </div>
           <!-- .end .wrap-->
         </section>
         <section class="slide-top">
-          <h3>一般的なWebアプリケーションの構成を想定 (EC/SNS)</h3>
+          <h1>ドメイン取得</h1>
+          <p>
+            Webドメインとは、WebサイトのURLの終わりにある.comや.jpなどのサイトが登録された場所を示す文字コードです。
+            ドメインの種別は大きく分けて「gTLD」と「ccTLD」に大別できます。
+            gTLDは従来、世界の誰もが登録できる「.com」「.net」「.org」と、登録にあたって一定の要件が必要とされる「.edu」「.gov」などが存在する。
+            ccTLDは、各国/地域に割り当てられたTLDであり、2文字の国コードを原則として使用している。「.jp」「.au」「.us」などが例に挙げられる
+          </p>
+          <h3>取得ドメインの注意点</h3>
+          <p>
+            ccTLDのドメインを取得する場合はvb.lyが警告なしでリビア政府によって差し押さえらた事例もあるとおり
+            国の情勢も考慮に入れたほうが良い。
+            また、ioドメインもccTLDのドメインの一種だが、過去にioドメインの名前解決障害が起こったこともあるように実際のプロダクションで利用する場合は慎重に
+            導入したほうがよい
+          </p>
+        </section>
+        <section class="slide-top">
+          <h1>サーバーの構築</h1>
+          <p>
+            アプリケーションを構築する上でまずはサーバーを構築することとなる。
+            Webサーバーの場合はポートを開放して外部からのアクセスを受け付ける必要があるが、開放するポートの設定は気をつける必要がある
+          </p><img class="vertxcenter" src="./images/web-security/port.svg" style="width: 1000px">
+        </section>
+        <section class="slide-top">
+          <h1>ポートの種類</h1>
+          <h3>80/443</h3>
+          <p>
+            http/https通信が行われているポート
+            サイト訪問者がこのポートを利用してリソースを取得するため、誰でもこのポートを利用してサーバーにアクセスすることができる
+          </p>
+          <h4>22</h4>
+          <p>
+            SSHで利用されるポート。SSHとはサーバーに接続し遠隔操作をする仕組みで主にサイト運用者がこのポートを利用する
+            そのため、SSH接続が可能な接続元アドレスを指定することがよい。また、複数人でサーバーを運用する場合は権限管理の設定に気をつける
+          </p>
+          <h4>21</h4>
+          <p>
+            FTPとはFile Transfer Protocolの省略でファイルの転送に使われているプロトコル
+            昔はページの更新などでこのポートが利用されていたが、現在では <strong> セキュリティ上問題 </strong> があるため現在ではほとんど使われない
+            セキュリティ上の問題というのは通信データが「暗号化」されていないことにあります。つまり、接続情報が盗聴されるリクスがあります
+          </p>
+        </section>
+        <section class="slide-top">
+          <h1>ミドルウェア</h1>
+          <p>
+            サーバーは様々なミドルウェアを組み合わせて構築されていきます。代表例としてはApacheやNginx,Mysql,PostgreSqlがそれらにあたります。
+            便利は反面、ミドルウェアの脆弱性をついたサイバー攻撃も発生します。脆弱性が見つかった場合はインストールしているミドルウェアのバージョンを確認し、
+            速やかにセキュリティパッチを取り込むようにしましょう。
+            セキュリティパッチ情報例
+            <a href="https://www.ipa.go.jp/security/announce/about.html#section2">https://www.ipa.go.jp/security/announce/about.html#section2</a>
+          </p>
+        </section>
+        <section class="slide-top">
+          <h1>ログ管理</h1>
+          <p>
+            ログは情報漏えいが発生してしまったときにその被害状況や影響調査などに使用するため、ログの取得と保管は重要になります。
+            ただし、機密情報 (パスワードなど) はログに平文では書き込まないように気をつけよう
+          </p>
+        </section>
+        <section class="bg-green"><span class="background dark" style="background-image:url('https://images.unsplash.com/photo-1535219241072-7d3c28a49a5c')"></span>
+          <!-- .wrap = container (width: 90%)-->
+          <div class="wrap aligncenter fadeInUp">
+            <h3><strong>アプリケーションの作成</strong></h3>
+          </div>
+          <!-- .end .wrap-->
+        </section>
+        <section class="slide-top">
+          <h1>ブラウザにレンダリングされるまでの流れ</h1><img class="vertxcenter" src="./images/web-security/flow.svg" style="width: 1200px">
+        </section>
+        <section class="slide-top">
+          <h1>Request/Response</h1><img class="vertxcenter" src="./images/web-security/flow-request.svg" style="width: 1200px">
+        </section>
+        <section class="slide-top">
+          <h1>通信部分で気をつけるポイント</h1>
+          <ol>
+            <li>暗号化通信</li>
+            <li>キャッシュルール</li>
+            <li>クッキー</li>
+            <li>CORS</li>
+          </ol>
+        </section>
+        <section class="slide-top">
+          <h1>アプリケーション処理 (Backend)</h1><img class="vertxcenter" src="./images/web-security/flow-request.svg" style="width: 1200px">
+        </section>
+        <section class="slide-top">
+          <h1>アプリケーション処理 (Backend)</h1>
+          <ol>
+            <li>入力値の検証</li>
+            <li>SQLインジェクション</li>
+            <li>CSRF</li>
+            <li>セッション管理</li>
+            <li>オープンリダイレクト</li>
+            <li>メールヘッダ・インジェクション</li>
+            <li>ディレクトリ・トラバーサル</li>
+            <li>OSコマンドインジェクション</li>
+            <li>ファイルアップロード (Dos攻撃)</li>
+            <li>ファイルインクルード攻撃</li>
+            <li>evalインジェクション</li>
+          </ol>
+        </section>
+        <section class="slide-top">
+          <h1>データベース</h1><img class="vertxcenter" src="./images/web-security/flow-request.svg" style="width: 1200px">
+        </section>
+        <section class="slide-top">
+          <h1>データベース</h1>
+          <ol>
+            <li>SQLインジェクション</li>
+            <li>機密情報の暗号化</li>
+            <li>レプリケーション設定</li>
+            <li>内部不正</li>
+          </ol>
+        </section>
+        <section class="slide-top">
+          <h1>アプリケーション処理 (Frontend)</h1><img class="vertxcenter" src="./images/web-security/flow-request.svg" style="width: 1200px">
+        </section>
+        <section class="slide-top">
+          <h1>アプリケーション処理 (Frontend)</h1>
+          <ol>
+            <li>クロスサイト・スクリプティング</li>
+            <li>難読化</li>
+          </ol>
         </section>
       </article>
     </main>

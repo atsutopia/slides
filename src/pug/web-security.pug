@@ -113,13 +113,147 @@ block content
         li サイトを閲覧した利用者のPCを感染させる
         li コンピューター資源を勝手に使われる (暗号通貨のマイニング)
 
+  section.slide-top
+    h3 制作ステップ
+    ol
+      li ドメイン取得
+      li サーバーの構築
+      li アプリケーションの作成
+      li テスト
+      li リリース
+    img.vertxcenter(src="./images/web-security/structure.svg" style="width: 1200px")
+
   section.bg-green
     span.background.dark(style="background-image:url('https://images.unsplash.com/photo-1535219241072-7d3c28a49a5c')")
     // .wrap = container (width: 90%)
     .wrap.aligncenter.fadeInUp
       h3
-        strong Webアプリケーションの構成
+        strong ドメイン取得
     // .end .wrap
 
   section.slide-top
-    h3 一般的なWebアプリケーションの構成を想定 (EC/SNS)
+    h1 ドメイン取得
+    p
+      | Webドメインとは、WebサイトのURLの終わりにある.comや.jpなどのサイトが登録された場所を示す文字コードです。
+      | ドメインの種別は大きく分けて「gTLD」と「ccTLD」に大別できます。
+      | gTLDは従来、世界の誰もが登録できる「.com」「.net」「.org」と、登録にあたって一定の要件が必要とされる「.edu」「.gov」などが存在する。
+      | ccTLDは、各国/地域に割り当てられたTLDであり、2文字の国コードを原則として使用している。「.jp」「.au」「.us」などが例に挙げられる
+    h3 取得ドメインの注意点
+    p
+      | ccTLDのドメインを取得する場合はvb.lyが警告なしでリビア政府によって差し押さえらた事例もあるとおり
+      | 国の情勢も考慮に入れたほうが良い。
+      | また、ioドメインもccTLDのドメインの一種だが、過去にioドメインの名前解決障害が起こったこともあるように実際のプロダクションで利用する場合は慎重に
+      | 導入したほうがよい
+
+  section.slide-top
+    h1 サーバーの構築
+    p
+      | アプリケーションを構築する上でまずはサーバーを構築することとなる。
+      | Webサーバーの場合はポートを開放して外部からのアクセスを受け付ける必要があるが、開放するポートの設定は気をつける必要がある
+    img.vertxcenter(src="./images/web-security/port.svg" style="width: 1000px")
+
+  section.slide-top
+    h1 ポートの種類
+    h3 80/443
+    p
+      | http/https通信が行われているポート
+      | サイト訪問者がこのポートを利用してリソースを取得するため、誰でもこのポートを利用してサーバーにアクセスすることができる
+    h4 22
+    p
+      | SSHで利用されるポート。SSHとはサーバーに接続し遠隔操作をする仕組みで主にサイト運用者がこのポートを利用する
+      | そのため、SSH接続が可能な接続元アドレスを指定することがよい。また、複数人でサーバーを運用する場合は権限管理の設定に気をつける
+
+    h4 21
+    p
+      | FTPとはFile Transfer Protocolの省略でファイルの転送に使われているプロトコル
+      | 昔はページの更新などでこのポートが利用されていたが、現在では <strong> セキュリティ上問題 </strong> があるため現在ではほとんど使われない
+      | セキュリティ上の問題というのは通信データが「暗号化」されていないことにあります。つまり、接続情報が盗聴されるリクスがあります
+
+  section.slide-top
+    h1 ミドルウェア
+    p
+      | サーバーは様々なミドルウェアを組み合わせて構築されていきます。代表例としてはApacheやNginx,Mysql,PostgreSqlがそれらにあたります。
+      | 便利は反面、ミドルウェアの脆弱性をついたサイバー攻撃も発生します。脆弱性が見つかった場合はインストールしているミドルウェアのバージョンを確認し、
+      | 速やかにセキュリティパッチを取り込むようにしましょう。
+      | セキュリティパッチ情報例
+      |
+      a(href="https://www.ipa.go.jp/security/announce/about.html#section2") https://www.ipa.go.jp/security/announce/about.html#section2
+
+  section.slide-top
+    h1 ログ管理
+    p
+      | ログは情報漏えいが発生してしまったときにその被害状況や影響調査などに使用するため、ログの取得と保管は重要になります。
+      | ただし、機密情報 (パスワードなど) はログに平文では書き込まないように気をつけよう
+
+  section.bg-green
+    span.background.dark(style="background-image:url('https://images.unsplash.com/photo-1535219241072-7d3c28a49a5c')")
+    // .wrap = container (width: 90%)
+    .wrap.aligncenter.fadeInUp
+      h3
+        strong アプリケーションの作成
+    // .end .wrap
+
+
+  section.slide-top
+    h1 ブラウザにレンダリングされるまでの流れ
+    img.vertxcenter(src="./images/web-security/flow.svg" style="width: 1200px")
+
+
+  section.slide-top
+    h1 Request/Response
+    img.vertxcenter(src="./images/web-security/flow-request.svg" style="width: 1200px")
+
+  section.slide-top
+    h1 通信部分で気をつけるポイント
+    ol
+      li 暗号化通信
+      li キャッシュルール
+      li クッキー
+      li CORS
+
+  section.slide-top
+    h1 アプリケーション処理 (Backend)
+    img.vertxcenter(src="./images/web-security/flow-request.svg" style="width: 1200px")
+
+  section.slide-top
+    h1 アプリケーション処理 (Backend)
+    ol
+      li 入力値の検証
+      li SQLインジェクション
+      li CSRF
+      li セッション管理
+      li オープンリダイレクト
+      li メールヘッダ・インジェクション
+      li ディレクトリ・トラバーサル
+      li OSコマンドインジェクション
+      li ファイルアップロード (Dos攻撃)
+      li ファイルインクルード攻撃
+      li evalインジェクション
+
+  section.slide-top
+    h1 データベース
+    img.vertxcenter(src="./images/web-security/flow-request.svg" style="width: 1200px")
+
+  section.slide-top
+    h1 データベース
+    ol
+      li SQLインジェクション
+      li 機密情報の暗号化
+      li レプリケーション設定
+      li 内部不正
+
+
+  section.slide-top
+    h1 アプリケーション処理 (Frontend)
+    img.vertxcenter(src="./images/web-security/flow-request.svg" style="width: 1200px")
+
+  section.slide-top
+    h1 アプリケーション処理 (Frontend)
+    ol
+      li クロスサイト・スクリプティング
+      li 難読化
+
+
+
+
+
