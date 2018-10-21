@@ -201,15 +201,110 @@ block content
 
   section.slide-top
     h1 Request/Response
+    ol
+      li 暗号化通信
+      li Cache
+      li Cookie
+      li CORS
     img.vertxcenter(src="./images/web-security/flow-request.svg" style="width: 1200px")
 
   section.slide-top
-    h1 通信部分で気をつけるポイント
-    ol
-      li 暗号化通信
-      li キャッシュルール
-      li クッキー
-      li CORS
+    h1 暗号化通信
+    p
+      | HTTP通信でクライアントとサーバー間の通信が暗号化されておらず、盗聴される危険があります。
+      | 個人情報を扱うようなアプリケーションを作成する場合は必ずHTTPS対応を行いましょう。
+      | 最近では、無料でHTTPS化をするための <a href="https://letsencrypt.jp/">https://letsencrypt.jp/</a> というサービスもあります。
+
+    p
+      img.vertxcenter(src="./images/web-security/http.svg" style="width: 800px")
+    p
+      img.vertxcenter(src="./images/web-security/https.svg" style="width: 800px; margin-top: 300px;")
+
+  section.slide-top
+    h1 Cashe
+    p
+      | キャッシュはアプリケーションのパフォーマンス向上に大きく期待でき、多くのアプリケーションで導入されています。
+      | ただし、セッション情報が利用されているページや個人情報が乗っているページをキャッシュすると情報漏えいの原因となるので
+      | キャッシュルールの設定には十分気をつける必要がある
+
+  section.slide-top
+    h1 Cookie
+    p
+      | クッキーによる自動認証は多くのアプリケーションで利用されている
+    table
+      thead
+        tr
+          th カラム名
+          th 値 (例)
+          th 説明
+      tbody
+        tr
+          td Name
+          td _twitter
+          td クッキー名
+        tr
+          td Value
+          td BAh7CSIKZmxhc2hJ...
+          td
+            | クッキー値 (暗号化したデータをセット)
+            br
+            | セキュリティ上、以下のようなことを気をつける必要があります
+            br
+            | ・暗号化したデータをセットする
+            br
+            | ・パスワードなどの機密情報をクッキーにセットしない
+        tr
+          td domain
+          td .twitter.com
+          td
+            | クッキーが届くドメインを指定
+            br
+            | .twitter.comと指定することによりサブドメイン間との共有もできる
+        tr
+          td path
+          td /
+          td
+            | クッキーを読み込めるパスを指定する
+            br
+            | 「/」 と指定することで全ページから読み込める
+        tr
+          td Expires / Max-Age
+          td 2028-09-09T01:13:08.543Z
+          td
+            | クッキーの有効期限
+            br
+            |  省略するとブラウザを終了させるまでが有効期限となる
+        tr
+          td HttpOnly
+          td true
+          td
+            | CookieをJavaScriptからアクセスできないように制限
+        tr
+          td Secure
+          td true
+          td
+            | HTTPSで通信している場合にのみCookieを送信する
+
+  section.slide-top
+    h1 CORS
+    p
+      | CORS (Cross-Origin Resource Sharing)とは異なるオリジン間でデータをやり取りするための取り決め
+      | CORSの設定はレスポンスヘッダによって行うが、同一オリジンポリシーが全く無い場合ブラウザから悪意ある攻撃者のサイトにアクセスし、
+      | ページのJavaScriptが実行される危険性がある
+
+    table
+      thead
+        tr
+          th ヘッダ
+          th 説明
+      tbody
+        tr
+          td Access-Control-Allow-Origin
+          td 許可するオリジン
+      tbody
+        tr
+          td Access-Control-Allow-Methods
+          td 許可するHTTPメソッドの種類
 
   section.slide-top
     h1 アプリケーション処理 (Backend)
