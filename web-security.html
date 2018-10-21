@@ -195,15 +195,395 @@
             </ol>
           </p>
         </section>
+        <section class="slide-top">
+          <h3>制作ステップ</h3>
+          <ol>
+            <li>ドメイン取得</li>
+            <li>サーバーの構築</li>
+            <li>アプリケーションの作成</li>
+            <li>テスト</li>
+            <li>リリース</li>
+          </ol><img class="vertxcenter" src="./images/web-security/structure.svg" style="width: 1200px">
+        </section>
         <section class="bg-green"><span class="background dark" style="background-image:url('https://images.unsplash.com/photo-1535219241072-7d3c28a49a5c')"></span>
           <!-- .wrap = container (width: 90%)-->
           <div class="wrap aligncenter fadeInUp">
-            <h3><strong>Webアプリケーションの構成</strong></h3>
+            <h3><strong>ドメイン取得</strong></h3>
           </div>
           <!-- .end .wrap-->
         </section>
         <section class="slide-top">
-          <h3>一般的なWebアプリケーションの構成を想定 (EC/SNS)</h3>
+          <h1>ドメイン取得</h1>
+          <p>
+            Webドメインとは、WebサイトのURLの終わりにある.comや.jpなどのサイトが登録された場所を示す文字コードです。
+            ドメインの種別は大きく分けて「gTLD」と「ccTLD」に大別できます。
+            gTLDは従来、世界の誰もが登録できる「.com」「.net」「.org」と、登録にあたって一定の要件が必要とされる「.edu」「.gov」などが存在する。
+            ccTLDは、各国/地域に割り当てられたTLDであり、2文字の国コードを原則として使用している。「.jp」「.au」「.us」などが例に挙げられる
+          </p>
+          <h3>取得ドメインの注意点</h3>
+          <p>
+            ccTLDのドメインを取得する場合はvb.lyが警告なしでリビア政府によって差し押さえらた事例もあるとおり
+            国の情勢も考慮に入れたほうが良い。
+            また、ioドメインもccTLDのドメインの一種だが、過去にioドメインの名前解決障害が起こったこともあるように実際のプロダクションで利用する場合は慎重に
+            導入したほうがよい
+          </p>
+        </section>
+        <section class="slide-top">
+          <h1>サーバーの構築</h1>
+          <p>
+            アプリケーションを構築する上でまずはサーバーを構築することとなる。
+            Webサーバーの場合はポートを開放して外部からのアクセスを受け付ける必要があるが、開放するポートの設定は気をつける必要がある
+          </p><img class="vertxcenter" src="./images/web-security/port.svg" style="width: 1000px">
+        </section>
+        <section class="slide-top">
+          <h1>ポートの種類</h1>
+          <h3>80/443</h3>
+          <p>
+            http/https通信が行われているポート
+            サイト訪問者がこのポートを利用してリソースを取得するため、誰でもこのポートを利用してサーバーにアクセスすることができる
+          </p>
+          <h4>22</h4>
+          <p>
+            SSHで利用されるポート。SSHとはサーバーに接続し遠隔操作をする仕組みで主にサイト運用者がこのポートを利用する
+            そのため、SSH接続が可能な接続元アドレスを指定することがよい。また、複数人でサーバーを運用する場合は権限管理の設定に気をつける
+          </p>
+          <h4>21</h4>
+          <p>
+            FTPとはFile Transfer Protocolの省略でファイルの転送に使われているプロトコル
+            昔はページの更新などでこのポートが利用されていたが、現在では <strong> セキュリティ上問題 </strong> があるため現在ではほとんど使われない
+            セキュリティ上の問題というのは通信データが「暗号化」されていないことにあります。つまり、接続情報が盗聴されるリクスがあります
+          </p>
+        </section>
+        <section class="slide-top">
+          <h1>ミドルウェア</h1>
+          <p>
+            サーバーは様々なミドルウェアを組み合わせて構築されていきます。代表例としてはApacheやNginx,Mysql,PostgreSqlがそれらにあたります。
+            便利は反面、ミドルウェアの脆弱性をついたサイバー攻撃も発生します。脆弱性が見つかった場合はインストールしているミドルウェアのバージョンを確認し、
+            速やかにセキュリティパッチを取り込むようにしましょう。
+            セキュリティパッチ情報例
+            <a href="https://www.ipa.go.jp/security/announce/about.html#section2">https://www.ipa.go.jp/security/announce/about.html#section2</a>
+          </p>
+        </section>
+        <section class="slide-top">
+          <h1>ログ管理</h1>
+          <p>
+            ログは情報漏えいが発生してしまったときにその被害状況や影響調査などに使用するため、ログの取得と保管は重要になります。
+            ただし、機密情報 (パスワードなど) はログに平文では書き込まないように気をつけよう
+          </p>
+        </section>
+        <section class="bg-green"><span class="background dark" style="background-image:url('https://images.unsplash.com/photo-1535219241072-7d3c28a49a5c')"></span>
+          <!-- .wrap = container (width: 90%)-->
+          <div class="wrap aligncenter fadeInUp">
+            <h3><strong>アプリケーションの作成</strong></h3>
+          </div>
+          <!-- .end .wrap-->
+        </section>
+        <section class="slide-top">
+          <h1>ブラウザにレンダリングされるまでの流れ</h1><img class="vertxcenter" src="./images/web-security/flow.svg" style="width: 1200px">
+        </section>
+        <section class="slide-top">
+          <h1>Request/Response</h1>
+          <ol>
+            <li>暗号化通信</li>
+            <li>Cache</li>
+            <li>Cookie</li>
+            <li>CORS</li>
+          </ol><img class="vertxcenter" src="./images/web-security/flow-request.svg" style="width: 1200px">
+        </section>
+        <section class="slide-top">
+          <h1>暗号化通信</h1>
+          <p>
+            HTTP通信でクライアントとサーバー間の通信が暗号化されておらず、盗聴される危険があります。
+            個人情報を扱うようなアプリケーションを作成する場合は必ずHTTPS対応を行いましょう。
+            最近では、無料でHTTPS化をするための <a href="https://letsencrypt.jp/">https://letsencrypt.jp/</a> というサービスもあります。
+          </p>
+          <p><img class="vertxcenter" src="./images/web-security/http.svg" style="width: 800px"></p>
+          <p><img class="vertxcenter" src="./images/web-security/https.svg" style="width: 800px; margin-top: 300px;"></p>
+        </section>
+        <section class="slide-top">
+          <h1>Cashe</h1>
+          <p>
+            キャッシュはアプリケーションのパフォーマンス向上に大きく期待でき、多くのアプリケーションで導入されています。
+            ただし、セッション情報が利用されているページや個人情報が乗っているページをキャッシュすると情報漏えいの原因となるので
+            キャッシュルールの設定には十分気をつける必要がある
+          </p>
+        </section>
+        <section class="slide-top">
+          <h1>Cookie</h1>
+          <p>クッキーによる自動認証は多くのアプリケーションで利用されている</p>
+          <table>
+            <thead>
+              <tr>
+                <th>カラム名</th>
+                <th>値 (例)</th>
+                <th>説明</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Name</td>
+                <td>_twitter</td>
+                <td>クッキー名</td>
+              </tr>
+              <tr>
+                <td>Value</td>
+                <td>BAh7CSIKZmxhc2hJ...</td>
+                <td>クッキー値 (暗号化したデータをセット)<br>セキュリティ上、以下のようなことを気をつける必要があります<br>・暗号化したデータをセットする<br>・パスワードなどの機密情報をクッキーにセットしない</td>
+              </tr>
+              <tr>
+                <td>domain</td>
+                <td>.twitter.com</td>
+                <td>クッキーが届くドメインを指定<br>.twitter.comと指定することによりサブドメイン間との共有もできる</td>
+              </tr>
+              <tr>
+                <td>path</td>
+                <td>/</td>
+                <td>クッキーを読み込めるパスを指定する<br>「/」 と指定することで全ページから読み込める</td>
+              </tr>
+              <tr>
+                <td>Expires / Max-Age</td>
+                <td>2028-09-09T01:13:08.543Z</td>
+                <td>クッキーの有効期限<br> 省略するとブラウザを終了させるまでが有効期限となる</td>
+              </tr>
+              <tr>
+                <td>HttpOnly</td>
+                <td>true</td>
+                <td>CookieをJavaScriptからアクセスできないように制限</td>
+              </tr>
+              <tr>
+                <td>Secure</td>
+                <td>true</td>
+                <td>HTTPSで通信している場合にのみCookieを送信する</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+        <section class="slide-top">
+          <h1>CORS</h1>
+          <p>
+            CORS (Cross-Origin Resource Sharing)とは異なるオリジン間でデータをやり取りするための取り決め
+            CORSの設定はレスポンスヘッダによって行うが、同一オリジンポリシーが全く無い場合ブラウザから悪意ある攻撃者のサイトにアクセスし、
+            ページのJavaScriptが実行される危険性がある
+          </p>
+          <table>
+            <thead>
+              <tr>
+                <th>ヘッダ</th>
+                <th>説明</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Access-Control-Allow-Origin</td>
+                <td>許可するオリジン</td>
+              </tr>
+            </tbody>
+            <tbody>
+              <tr>
+                <td>Access-Control-Allow-Methods</td>
+                <td>許可するHTTPメソッドの種類</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+        <section class="slide-top">
+          <h1>アプリケーション処理 (Backend)</h1><img class="vertxcenter" src="./images/web-security/backend.svg" style="width: 1200px">
+        </section>
+        <section class="slide-top">
+          <h1>アプリケーション処理 (Backend)</h1>
+          <ol>
+            <li>入力値の検証</li>
+            <li>CSRF</li>
+            <li>セッション管理</li>
+            <li>オープンリダイレクト</li>
+            <li>メールヘッダ・インジェクション</li>
+            <li>ディレクトリ・トラバーサル</li>
+            <li>OSコマンドインジェクション</li>
+          </ol>
+        </section>
+        <section class="slide-top">
+          <h1>入力値の検証ステップ</h1>
+          <ol>
+            <li>文字エンコーディングの妥当性検証</li>
+            <li>入力値の妥当性検証</li>
+          </ol>
+          <h2>文字エンコーディングの妥当性検証</h2>
+          <p>
+            Ruby1.9では不正な文字コードを受け付けない言語仕様となっているため、アプリケーションで検証を行っていないことも
+            少なくないかもしれませんが、もし不正な文字コードを受け付けてしまった場合はバグの温床となる恐れがある
+            不正な文字コードを
+          </p>
+          <h2>入力値の妥当性検証</h2>
+          <p>
+            入力値検証 (バリデーション) の主目的はセキュリティのためではないですが、セキュリティ対策に役立つ例もあります。
+            ・SQLインジェクション対策が漏れていた場合でも入力値検証により実害に至らない
+            などもその一つです。データの不整合を起こさないためにもバリデーションチェックはしっかり行う必要がある
+          </p>
+        </section>
+        <section class="slide-top">
+          <h1>CSRF</h1>
+          <p>
+            CSRF(クロスサイトリクエストフォージェリ)とはリクエスト強要とも呼ばれており、悪意のある第三者が作成したページを利用者が見た場合に
+            意図しない形でショッピングカートに品物を入れてしまったり、SNSへ投稿してしまったりする攻撃の一種。
+          </p>
+          <pre><code>&lt;body onload=&quot;document.csrf.submit()&quot;&gt;
+  &lt;form name=&quot;csrf&quot; action=&quot;http://sample.shop.com/order&quot; method=&quot;POST&quot;&gt;
+    &lt;input type=&quot;hidden&quot; name=&quot;product&quot; value=&quot;bread&quot;&gt;
+    &lt;input type=&quot;hidden&quot; name=&quot;amount&quot; value=&quot;1000&quot;&gt;
+  &lt;/form&gt;
+&lt;/body&gt;
+</code></pre>
+          <h2>CSRF対策</h2>
+          <p>
+            Webアプリケーションフレームワーク側でワンタイムトークンの発行を標準でサポートされていることが多いため、利用すると良い
+            ワンタイムトークンとはページを閲覧しているユーザーごとにランダムなトークン文字列が発行され、サーバー側でトークンの検証を行うことで
+            第三者からのリクエストを受けつ内容にする
+          </p>
+        </section>
+        <section class="slide-top">
+          <h1>セッション管理</h1>
+          <p>
+            セッションはログイン認証状態の保持する手段としてセッション管理機構が用いられています。
+            主流のセッション管理機構は、クッキーなどにセッションIDを保存させ、セッションIDをキーにサーバー側で情報を記憶するという手法が取られている。
+            第三者にこのセッションIDが知られると、その利用者に成りすましてアクセスされる可能性があります。第三者が悪用して成りすますことを「セッションハイジャック」
+            と呼びます。
+          </p>
+          <h1>セッションハイジャックの対策法</h1>
+          <p>
+            推測可能なセッションIDを使わない
+            サーバー側でセッション情報を保存する
+            セッション情報を暗号化する
+            セッション情報を露出させない (URLに埋め込まない)
+          </p>
+        </section>
+        <section class="slide-top">
+          <h1>その他のセキュリティ対策</h1>
+          <h5>オープンリダイレクト</h5>
+          <p>
+            パラメータにより指定したURLにリダイレクトする機能をリダイレクタと呼び、任意のドメインにリダイレクトできるものをオープンリダイレクタと呼ぶ。
+            利用者が信頼しているドメイン上にオープンリダイレクタ脆弱性があると、利用者は自分が信頼しているサイトを閲覧しているつもりでも知らない間に罠のサイトに誘導される可能性がある。
+            対策としては「リダイレクト先のドメインをチェック」「ダイレクト先のURLを固定にする」などがある
+          </p>
+          <h5>メールヘッダ・インジェクション</h5>
+          <p>
+            メールヘッダーインジェクションとは、メールの件名などの入力値を改ざんすることで、Bcc:などのメールヘッダーを付加する攻撃のことをいいます。
+            問い合わせフォームのようなメール送信画面にメールヘッダーインジェクションに対する脆弱性があると、迷惑メールの送信に悪用されてしまう可能性がある
+            対策としてはメールのヘッダに改行が含まれていないかなどの入力値のチェックや、インジェクション対策済みのライブラリを使用するなどがある
+          </p>
+          <h5>ディレクトリ・トラバーサル</h5>
+          <p>
+            ディレクトリトラバーサル攻撃というのは、「../」等の親ディレクトリを示す表記をファイル名パラメータの中に混入し、サーバ内の任意のファイルを読み出そうとする攻撃である。
+            外部から入力された値をもとにファイルを開こうとした場合、機密情報が流出する可能性がある。
+            対策としては、入力値の検証を行ったり権限管理の設定行う必要がある
+          </p><code>
+            <pre># input ../../etc/passwd
+dir = "/var/data1";
+open(HANDLE, "<$dir/$filename");</pre></code>
+          <h5>OSコマンドインジェクション</h5>
+          <p>
+            OSコマンド・インジェクションとは、不正なOSコマンドを送信することにより、攻撃対象となったPCやサーバに不正アクセスを行う攻撃の一種
+            対策としては可能な限りシェル（cmd.exeなど）を起動可能な言語機能の利用を避ける、外部からの命令文をそのままコマンドラインにインジェクションさせない
+          </p>
+        </section>
+        <section class="slide-top">
+          <h1>データベース</h1><img class="vertxcenter" src="./images/web-security/database.svg" style="width: 1200px">
+        </section>
+        <section class="slide-top">
+          <h1>データベース</h1>
+          <ol>
+            <li>SQLインジェクション</li>
+            <li>機密情報の暗号化</li>
+          </ol>
+        </section>
+        <section class="slide-top">
+          <h1>SQLインジェクション</h1>
+          <p>
+            多くのWebアプリケーションがデータベースを利用していて、データの問い合わせにSQLを使用しています。
+            SQLの呼び出しに不備がある場合、SQLインジェクションという脆弱性が生まれます。
+            SQLインジェクション脆弱性がある場合は以下のうようなセキュリティリスクが考えられる
+            <ol>
+              <li>データベースの内部情報が外部から盗まれる</li>
+              <li>データベースの内部が意図せず書き換えられる or 削除される</li>
+              <li>IDとパスワードが一致せずともログインされる</li>
+            </ol>
+          </p>
+        </section>
+        <section class="slide-top">
+          <h1>SQLインジェクションの代表例</h1>
+          <h3>シングルクォートを使った攻撃手法</h3>
+          <h5>テーブル</h5>
+          <table>
+            <thead>
+              <tr>
+                <th>id</th>
+                <th>password</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>admin</td>
+                <td>password</td>
+              </tr>
+              <tr>
+                <td>hoge</td>
+                <td>fuga</td>
+              </tr>
+            </tbody>
+          </table><code>
+            <pre>SELECT * FROM users WHERE id = '{$userId}' AND password = '{$passwd}';</pre></code><img class="vertxcenter" src="./images/web-security/form.svg" style="width: 600px">
+          <p>
+            この場合ユーザーIDは「admin」でパスワードが「password」でログインできる機能があるとします。
+            第三者はパスワードが知らずとも以下の入力値でログインが可能です
+            id: admin
+            password: ' OR 'A' = 'A
+            この場合、以下のSQLが発行されます。<code>
+              <pre>SELECT * FROM users WHERE id = 'admin' AND password = '' OR 'A' = 'A';</pre></code>
+          </p>
+          <p>
+            パラメータとして入力値「'」を含ませることで、パスワードに関するWHERE句の条件式を一旦終端させ、次にORを含ませると、「'A' = 'A'」という恒真式がORの対象になる。
+            よって、WHERE句全体が常に真となり、パスワードを入力せずにユーザID「admin」としてログインすることが可能となる。
+          </p>
+          <h3>セミコロンで分割</h3>
+          <p>
+            先ほどと同じ入力フォームがあるとして、今度は全てのユーザーを削除する構文を記述してみましょう
+            id: admin
+            password: '; DELETE FROM users WHERE 'A' = 'A'
+            この場合、以下のSQLが発行されます。<code>
+              <pre>SELECT * FROM users WHERE id = 'admin' AND password = ''; DELETE FROM users WHERE 'A' = 'A'</pre></code>
+          </p>
+          <p>これでテーブルの全ての情報を削除することができました</p>
+        </section>
+        <section class="slide-top">
+          <h1>SQLインジェクション対策</h1>
+          <p>ユーザーの入力値によってSQLを組み立てる場合、プレースホルダーを使用することでSQL文が変更されないようにする</p>
+          <pre><code>User.where("user_id = ?", params[:user_id])</code></pre>
+          <p>もし、以下のなコードの場合は全レコードを取得される危険がある</p>
+          <pre><code>User.where(&quot;user_id = #{params[:user_id]}&quot;)
+</code></pre>
+        </section>
+        <section class="slide-top">
+          <h1>機密情報の暗号化</h1>
+          <p>
+            前章で個人情報漏えいのリスクを話しましたが、機密情報となるような「パスワード」「住所」「電話番号」などは
+            データベースに保存する際は暗号化しておきましょう
+          </p><img class="vertxcenter" src="./images/web-security/table.svg" style="width: 1200px">
+        </section>
+        <section class="slide-top">
+          <h1>アプリケーション処理 (Frontend)</h1><img class="vertxcenter" src="./images/web-security/front.svg" style="width: 1200px">
+        </section>
+        <section class="slide-top">
+          <h1>アプリケーション処理 (Frontend)</h1>
+          <ol>
+            <li>クロスサイト・スクリプティング</li>
+            <li>難読化</li>
+          </ol>
+        </section>
+        <section class="slide-top">
+          <h1>クロスサイト・スクリプティング</h1>
+          <p>
+            ユーザーによって生成されたページ悪意のあるユーザーが任意のコードを埋め込み、サーバーが生成するHTMLの実装に問題があると
+            XSSという脆弱性が生まれます
+          </p>
         </section>
       </article>
     </main>
