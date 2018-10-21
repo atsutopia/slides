@@ -486,19 +486,90 @@ open(HANDLE, "<$dir/$filename");</pre></code>
           </p>
         </section>
         <section class="slide-top">
-          <h1>データベース</h1><img class="vertxcenter" src="./images/web-security/flow-request.svg" style="width: 1200px">
+          <h1>データベース</h1><img class="vertxcenter" src="./images/web-security/database.svg" style="width: 1200px">
         </section>
         <section class="slide-top">
           <h1>データベース</h1>
           <ol>
             <li>SQLインジェクション</li>
             <li>機密情報の暗号化</li>
-            <li>レプリケーション設定</li>
-            <li>内部不正</li>
           </ol>
         </section>
         <section class="slide-top">
-          <h1>アプリケーション処理 (Frontend)</h1><img class="vertxcenter" src="./images/web-security/flow-request.svg" style="width: 1200px">
+          <h1>SQLインジェクション</h1>
+          <p>
+            多くのWebアプリケーションがデータベースを利用していて、データの問い合わせにSQLを使用しています。
+            SQLの呼び出しに不備がある場合、SQLインジェクションという脆弱性が生まれます。
+            SQLインジェクション脆弱性がある場合は以下のうようなセキュリティリスクが考えられる
+            <ol>
+              <li>データベースの内部情報が外部から盗まれる</li>
+              <li>データベースの内部が意図せず書き換えられる or 削除される</li>
+              <li>IDとパスワードが一致せずともログインされる</li>
+            </ol>
+          </p>
+        </section>
+        <section class="slide-top">
+          <h1>SQLインジェクションの代表例</h1>
+          <h3>シングルクォートを使った攻撃手法</h3>
+          <h5>テーブル</h5>
+          <table>
+            <thead>
+              <tr>
+                <th>id</th>
+                <th>password</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>admin</td>
+                <td>password</td>
+              </tr>
+              <tr>
+                <td>hoge</td>
+                <td>fuga</td>
+              </tr>
+            </tbody>
+          </table><code>
+            <pre>SELECT * FROM users WHERE id = '{$userId}' AND password = '{$passwd}';</pre></code><img class="vertxcenter" src="./images/web-security/form.svg" style="width: 600px">
+          <p>
+            この場合ユーザーIDは「admin」でパスワードが「password」でログインできる機能があるとします。
+            第三者はパスワードが知らずとも以下の入力値でログインが可能です
+            id: admin
+            password: ' OR 'A' = 'A
+            この場合、以下のSQLが発行されます。<code>
+              <pre>SELECT * FROM users WHERE id = 'admin' AND password = '' OR 'A' = 'A';</pre></code>
+          </p>
+          <p>
+            パラメータとして入力値「'」を含ませることで、パスワードに関するWHERE句の条件式を一旦終端させ、次にORを含ませると、「'A' = 'A'」という恒真式がORの対象になる。
+            よって、WHERE句全体が常に真となり、パスワードを入力せずにユーザID「admin」としてログインすることが可能となる。
+          </p>
+          <h3>セミコロンで分割</h3>
+          <p>
+            先ほどと同じ入力フォームがあるとして、今度は全てのユーザーを削除する構文を記述してみましょう
+            id: admin
+            password: '; DELETE FROM users WHERE 'A' = 'A'
+            この場合、以下のSQLが発行されます。<code>
+              <pre>SELECT * FROM users WHERE id = 'admin' AND password = ''; DELETE FROM users WHERE 'A' = 'A'</pre></code>
+          </p>
+          <p>これでテーブルの全ての情報を削除することができました</p>
+        </section>
+        <section class="slide-top">
+          <h1>SQLインジェクション対策</h1>
+          <p>ユーザーの入力値によってSQLを組み立てる場合、プレースホルダーを使用することでSQL文が変更されないようにする</p>
+          <pre><code>User.where("user_id = ?", params[:user_id])</code></pre>
+          <p>もし、以下のなコードの場合は全レコードを取得される危険がある</p>
+          <pre><code>User.where(&quot;user_id = #{params[:user_id]}&quot;)
+</code></pre>
+        </section>
+        <section class="slide-top">
+          <h1>機密情報の暗号化</h1>
+          <p>
+            前章で個人情報漏えいのリスクを話しましたが、機密情報となるような「パスワード」「住所」「電話番号」などは
+            データベースに保存する際は暗号化しておきましょう
+          </p><img class="vertxcenter" src="./images/web-security/table.svg" style="width: 1200px">
+        </section>
+        <section class="slide-top">
+          <h1>アプリケーション処理 (Frontend)</h1><img class="vertxcenter" src="./images/web-security/front.svg" style="width: 1200px">
         </section>
         <section class="slide-top">
           <h1>アプリケーション処理 (Frontend)</h1>
@@ -506,6 +577,13 @@ open(HANDLE, "<$dir/$filename");</pre></code>
             <li>クロスサイト・スクリプティング</li>
             <li>難読化</li>
           </ol>
+        </section>
+        <section class="slide-top">
+          <h1>クロスサイト・スクリプティング</h1>
+          <p>
+            ユーザーによって生成されたページ悪意のあるユーザーが任意のコードを埋め込み、サーバーが生成するHTMLの実装に問題があると
+            XSSという脆弱性が生まれます
+          </p>
         </section>
       </article>
     </main>

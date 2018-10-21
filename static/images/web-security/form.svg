@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800px" height="400px" viewBox="0 0 800 400" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.1 (67048) - http://www.bohemiancoding.com/sketch -->
+    <title>Artboard</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Artboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect fill="#FFFFFF" x="0" y="0" width="800" height="400"></rect>
+        <g id="Group" transform="translate(30.000000, 29.000000)">
+            <g id="Group-3">
+                <rect id="Rectangle" stroke="#E7E7E7" x="0.5" y="28.5" width="214" height="35" rx="2"></rect>
+                <text id="ユーザー名" fill="#484848" font-family="NotoSansCJKjp-Bold, Noto Sans CJK JP" font-size="14" font-weight="bold" letter-spacing="1.60000002">
+                    <tspan x="0" y="16">ユーザー名</tspan>
+                </text>
+            </g>
+            <g id="Group-3" transform="translate(0.000000, 88.000000)">
+                <rect id="Rectangle" stroke="#E7E7E7" x="0.5" y="28.5" width="214" height="35" rx="2"></rect>
+                <text id="パスワード" fill="#484848" font-family="NotoSansCJKjp-Bold, Noto Sans CJK JP" font-size="14" font-weight="bold" letter-spacing="1.60000002">
+                    <tspan x="0" y="16">パスワード</tspan>
+                </text>
+            </g>
+            <rect id="Rectangle" fill="#24999E" x="0" y="190" width="215" height="36" rx="2"></rect>
+            <text id="送信" font-family="NotoSansCJKjp-Bold, Noto Sans CJK JP" font-size="14" font-weight="bold" letter-spacing="1.60000002" fill="#FFFFFF">
+                <tspan x="92" y="212">送信</tspan>
+            </text>
+        </g>
+    </g>
+</svg>
