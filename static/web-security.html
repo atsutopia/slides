@@ -581,9 +581,34 @@ open(HANDLE, "<$dir/$filename");</pre></code>
         <section class="slide-top">
           <h1>クロスサイト・スクリプティング</h1>
           <p>
-            ユーザーによって生成されたページ悪意のあるユーザーが任意のコードを埋め込み、サーバーが生成するHTMLの実装に問題があると
-            XSSという脆弱性が生まれます
-          </p>
+            エンドユーザー側がWebページを制作することのできる動的サイト (ex: Twitter, Facebook) に対して、自身が制作した不正なスクリプトを
+            挿入する攻撃の一種です。
+          </p><img class="vertxcenter" src="./images/web-security/xss.svg" style="width: 1200px">
+          <h1>事例</h1>
+          <p>XSSの脆弱性を付いた攻撃はたくさんありますが、Twitterも過去にXSSの脆弱性により被害が広がりました。</p><img class="vertxcenter" src="./images/web-security/tw.jpg">
+          <p>画像のようなツイートにマウスカーソルを合わせるだけで、リツイートされるというものでした</p>
+        </section>
+        <section class="slide-top">
+          <h1>クロスサイト・スクリプティング対策</h1>
+          <p>
+            XSS脆弱性が発生する主要因はHTMLを生成する際の「<」や「"」に対するエスケープ漏れです。
+            したがって、エンドユーザーによって動的に生成される箇所に関してはHTML特殊文字(「<」や「"」)などをエスケープしましょう
+            エスケープされたタグは以下のようになります。
+          </p><code>
+            <pre># before
+&lt;strong&gt;HTMLの特殊文字列&lt;/strong&gt;
+
+# after
+&amp;lt;strong&amp;gt;HTMLの特殊文字列&amp;lt;/strong&amp;gt;
+</pre></code>
+          <p>エスケープされた「&lt;」の部分は実体参照と呼ばれHTML特殊文字であっても文字列としてレンダリングされます。</p>
+        </section>
+        <section class="bg-green"><span class="background dark" style="background-image:url('https://images.unsplash.com/photo-1535219241072-7d3c28a49a5c')"></span>
+          <!-- .wrap = container (width: 90%)-->
+          <div class="wrap aligncenter fadeInUp">
+            <h1>まとめ</h1>
+          </div>
+          <!-- .end .wrap-->
         </section>
       </article>
     </main>
