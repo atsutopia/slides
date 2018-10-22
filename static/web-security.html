@@ -116,7 +116,8 @@
           <!-- .end .wrap-->
         </section>
         <section class="slide-top">
-          <h1>セキュリティ上の注意ポイントを解説しながらステップ形式アプリケーション構築を行う</h1><img class="vertxcenter" src="./images/web-security/structure.svg" style="width: 1200px">
+          <h1>トレーニング概要</h1>
+          <p>アプリケーションの構築ステップに分けてアプリケーションを安定稼働させるポイントを解説</p><img class="vertxcenter" src="./images/web-security/structure.svg" style="width: 1200px">
         </section>
         <section class="fullscreen"><span class="background dark" style="background-image:url('./images/cover/profile.png'); width: 60%; height: 120%; top: 50%; left: 50%; transform: translate(-50%, -50%); opacity: .4;"></span>
           <h2 style="position: relative; font-weight: bold;">WHAT I'M ABOUT</h2>
@@ -137,11 +138,22 @@
           <!-- .end .wrap-->
         </section>
         <section class="slide-top">
+          <h1>不正利用防止対策について</h1>
+          <p>ここでは脆弱性の早期発見の仕組みや未然に防ぐための手法を紹介する</p>
+          <ol>
+            <li>脆弱性診断</li>
+            <li>バグバウンティ</li>
+          </ol>
+        </section>
+        <section class="slide-top">
           <h1>脆弱性診断</h1>
-          <p>WEBアプリケーションの脆弱性診断では大きく「プラットフォーム診断」とアプリケーション診断がある</p>
+          <p>WEBアプリケーションの脆弱性診断では大きく「プラットフォーム診断」と「アプリケーション診断」がある</p>
           <ol>
             <li>プラットフォーム診断
-              <p>サーバーやネットワークに対する脆弱性診断</p>
+              <p>
+                サーバーやネットワークに対する脆弱性診断
+                
+              </p>
             </li>
             <li>アプリケーション診断
               <p>
@@ -150,6 +162,8 @@
               </p>
             </li>
           </ol>
+        </section>
+        <section class="slide-top">
           <h1>脆弱性診断ツールの代表例</h1>
           <h3>Nmap</h3>
           <p>ポートスキャンという機能が有名でサーバーやネットワーク機器のオープンポートを列挙する <br><a href="https://nmap.org/man/jp/">https://nmap.org/man/jp/</a></p>
@@ -182,21 +196,28 @@
           <!-- .end .wrap-->
         </section>
         <section class="slide-top">
-          <h1>安全なアプリケーションには適切な権限管理と脆弱性を生まないことが大切</h1>
-          <h2 class="u-verx9-t">脆弱性とは?</h2>
+          <h1>安全なアプリケーションとは?</h1>
+          <ol>
+            <li>システムやネットワーク、データを安全な状態に保つ</li>
+            <li>システムの安定稼働(冗長化)</li>
+            <li>利用ポリシー (知的財産権/脅迫)</li>
+          </ol>
+        </section>
+        <section class="slide-top">
+          <h1>脆弱性とは?</h1>
           <p>
             脆弱性とはセキュリティバグのことを指し、悪用できるバグとも言えます。
             アプリケーションにバグはつきものですが、セキュリティーホールになりえるようなバグの例は以下になります。
-            <ol>
-              <li>個人情報が閲覧できる</li>
-              <li>Webサイトの内容が書き換えられる</li>
-              <li>サイトを閲覧した利用者のPCを感染させる</li>
-              <li>コンピューター資源を勝手に使われる (暗号通貨のマイニング)</li>
-            </ol>
           </p>
+          <ol>
+            <li>個人情報が閲覧できる</li>
+            <li>Webサイトの内容が書き換えられる</li>
+            <li>サイトを閲覧した利用者のPCを感染させる</li>
+            <li>コンピューター資源を勝手に使われる (暗号通貨のマイニング)</li>
+          </ol>
         </section>
         <section class="slide-top">
-          <h3>制作ステップ</h3>
+          <h3>アプリケーション制作ステップ</h3>
           <ol>
             <li>ドメイン取得</li>
             <li>サーバーの構築</li>
@@ -219,19 +240,28 @@
             ドメインの種別は大きく分けて「gTLD」と「ccTLD」に大別できます。
             gTLDは従来、世界の誰もが登録できる「.com」「.net」「.org」と、登録にあたって一定の要件が必要とされる「.edu」「.gov」などが存在する。
             ccTLDは、各国/地域に割り当てられたTLDであり、2文字の国コードを原則として使用している。「.jp」「.au」「.us」などが例に挙げられる
+            
+            ※補足
+            新gTLDを自分で作成しようとした場合 申請料：約1654万円、年間費用:224万円 + 様々な審査を通ればTLDが作れる
           </p>
           <h3>取得ドメインの注意点</h3>
           <p>
-            ccTLDのドメインを取得する場合はvb.lyが警告なしでリビア政府によって差し押さえらた事例もあるとおり
-            国の情勢も考慮に入れたほうが良い。
-            また、ioドメインもccTLDのドメインの一種だが、過去にioドメインの名前解決障害が起こったこともあるように実際のプロダクションで利用する場合は慎重に
-            導入したほうがよい
+            vb.lyが警告なしでリビア政府によって差し押さえらた事例もあるとおりccTLDのドメインは国の情勢も考慮に入れたほうが良い。
+            また、ioドメインもccTLDのドメインの一種だが、過去にioドメインの名前解決障害が起こったこともあるように実際のプロダクションで利用する場合は慎重に導入したほうがよい
           </p>
         </section>
         <section class="slide-top">
           <h1>サーバーの構築</h1>
+          <ol>
+            <li>ポートの開放</li>
+            <li>ミドルウェアのインストール</li>
+            <li>ログ管理</li>
+          </ol>
+        </section>
+        <section class="slide-top">
+          <h1>ポートの開放</h1>
           <p>
-            アプリケーションを構築する上でまずはサーバーを構築することとなる。
+            アプリケーションを構築する上でまずはサーバーを構築することとなる
             Webサーバーの場合はポートを開放して外部からのアクセスを受け付ける必要があるが、開放するポートの設定は気をつける必要がある
           </p><img class="vertxcenter" src="./images/web-security/port.svg" style="width: 1000px">
         </section>
@@ -267,8 +297,8 @@
         <section class="slide-top">
           <h1>ログ管理</h1>
           <p>
-            ログは情報漏えいが発生してしまったときにその被害状況や影響調査などに使用するため、ログの取得と保管は重要になります。
-            ただし、機密情報 (パスワードなど) はログに平文では書き込まないように気をつけよう
+            ログは情報漏えいが発生してしまったときにその被害状況や影響調査などに使用するため、ログの取得と保管が重要
+            ただし、機密情報 (パスワードなど) はログに平文では書き込まないように注意
           </p>
         </section>
         <section class="bg-green"><span class="background dark" style="background-image:url('https://images.unsplash.com/photo-1535219241072-7d3c28a49a5c')"></span>
@@ -285,7 +315,7 @@
           <h1>Request/Response</h1>
           <ol>
             <li>暗号化通信</li>
-            <li>Cache</li>
+            <li>キャッシュ</li>
             <li>Cookie</li>
             <li>CORS</li>
           </ol><img class="vertxcenter" src="./images/web-security/flow-request.svg" style="width: 1200px">
@@ -293,24 +323,25 @@
         <section class="slide-top">
           <h1>暗号化通信</h1>
           <p>
-            HTTP通信でクライアントとサーバー間の通信が暗号化されておらず、盗聴される危険があります。
-            個人情報を扱うようなアプリケーションを作成する場合は必ずHTTPS対応を行いましょう。
-            最近では、無料でHTTPS化をするための <a href="https://letsencrypt.jp/">https://letsencrypt.jp/</a> というサービスもあります。
+            HTTP通信でクライアントとサーバー間の通信が暗号化されておらず、盗聴される危険がある
+            個人情報を扱うようなアプリケーションを作成する場合は必ずHTTPS対応が必要
+            
+            参考: <a href="https://letsencrypt.jp/">https://letsencrypt.jp/</a>
           </p>
           <p><img class="vertxcenter" src="./images/web-security/http.svg" style="width: 800px"></p>
           <p><img class="vertxcenter" src="./images/web-security/https.svg" style="width: 800px; margin-top: 300px;"></p>
         </section>
         <section class="slide-top">
-          <h1>Cashe</h1>
+          <h1>キャッシュ</h1>
           <p>
-            キャッシュはアプリケーションのパフォーマンス向上に大きく期待でき、多くのアプリケーションで導入されています。
+            キャッシュはアプリケーションのパフォーマンス向上に期待でき、多くのアプリケーションで導入されている
             ただし、セッション情報が利用されているページや個人情報が乗っているページをキャッシュすると情報漏えいの原因となるので
             キャッシュルールの設定には十分気をつける必要がある
           </p>
         </section>
         <section class="slide-top">
           <h1>Cookie</h1>
-          <p>クッキーによる自動認証は多くのアプリケーションで利用されている</p>
+          <p>自動認証機能などを作成する場合、クッキーをアプリケーションで利用することになる</p>
           <table>
             <thead>
               <tr>
@@ -407,13 +438,16 @@
             <li>文字エンコーディングの妥当性検証</li>
             <li>入力値の妥当性検証</li>
           </ol>
-          <h2>文字エンコーディングの妥当性検証</h2>
+        </section>
+        <section class="slide-top">
+          <h1>文字エンコーディングの妥当性検証</h1>
           <p>
             Ruby1.9では不正な文字コードを受け付けない言語仕様となっているため、アプリケーションで検証を行っていないことも
             少なくないかもしれませんが、もし不正な文字コードを受け付けてしまった場合はバグの温床となる恐れがある
-            不正な文字コードを
           </p>
-          <h2>入力値の妥当性検証</h2>
+        </section>
+        <section class="slide-top">
+          <h1>入力値の妥当性検証</h1>
           <p>
             入力値検証 (バリデーション) の主目的はセキュリティのためではないですが、セキュリティ対策に役立つ例もあります。
             ・SQLインジェクション対策が漏れていた場合でも入力値検証により実害に至らない
@@ -433,6 +467,8 @@
   &lt;/form&gt;
 &lt;/body&gt;
 </code></pre>
+        </section>
+        <section class="slide-top">
           <h2>CSRF対策</h2>
           <p>
             Webアプリケーションフレームワーク側でワンタイムトークンの発行を標準でサポートされていることが多いため、利用すると良い
@@ -448,6 +484,8 @@
             第三者にこのセッションIDが知られると、その利用者に成りすましてアクセスされる可能性があります。第三者が悪用して成りすますことを「セッションハイジャック」
             と呼びます。
           </p>
+        </section>
+        <section class="slide-top">
           <h1>セッションハイジャックの対策法</h1>
           <p>
             推測可能なセッションIDを使わない
@@ -458,19 +496,19 @@
         </section>
         <section class="slide-top">
           <h1>その他のセキュリティ対策</h1>
-          <h5>オープンリダイレクト</h5>
+          <h5 class="u-verx9-t">オープンリダイレクト</h5>
           <p>
             パラメータにより指定したURLにリダイレクトする機能をリダイレクタと呼び、任意のドメインにリダイレクトできるものをオープンリダイレクタと呼ぶ。
             利用者が信頼しているドメイン上にオープンリダイレクタ脆弱性があると、利用者は自分が信頼しているサイトを閲覧しているつもりでも知らない間に罠のサイトに誘導される可能性がある。
             対策としては「リダイレクト先のドメインをチェック」「ダイレクト先のURLを固定にする」などがある
           </p>
-          <h5>メールヘッダ・インジェクション</h5>
+          <h5 class="u-verx9-t">メールヘッダ・インジェクション</h5>
           <p>
             メールヘッダーインジェクションとは、メールの件名などの入力値を改ざんすることで、Bcc:などのメールヘッダーを付加する攻撃のことをいいます。
             問い合わせフォームのようなメール送信画面にメールヘッダーインジェクションに対する脆弱性があると、迷惑メールの送信に悪用されてしまう可能性がある
             対策としてはメールのヘッダに改行が含まれていないかなどの入力値のチェックや、インジェクション対策済みのライブラリを使用するなどがある
           </p>
-          <h5>ディレクトリ・トラバーサル</h5>
+          <h5 class="u-verx9-t">ディレクトリ・トラバーサル</h5>
           <p>
             ディレクトリトラバーサル攻撃というのは、「../」等の親ディレクトリを示す表記をファイル名パラメータの中に混入し、サーバ内の任意のファイルを読み出そうとする攻撃である。
             外部から入力された値をもとにファイルを開こうとした場合、機密情報が流出する可能性がある。
@@ -479,7 +517,7 @@
             <pre># input ../../etc/passwd
 dir = "/var/data1";
 open(HANDLE, "<$dir/$filename");</pre></code>
-          <h5>OSコマンドインジェクション</h5>
+          <h5 class="u-verx9-t">OSコマンドインジェクション</h5>
           <p>
             OSコマンド・インジェクションとは、不正なOSコマンドを送信することにより、攻撃対象となったPCやサーバに不正アクセスを行う攻撃の一種
             対策としては可能な限りシェル（cmd.exeなど）を起動可能な言語機能の利用を避ける、外部からの命令文をそのままコマンドラインにインジェクションさせない
@@ -498,20 +536,20 @@ open(HANDLE, "<$dir/$filename");</pre></code>
         <section class="slide-top">
           <h1>SQLインジェクション</h1>
           <p>
-            多くのWebアプリケーションがデータベースを利用していて、データの問い合わせにSQLを使用しています。
-            SQLの呼び出しに不備がある場合、SQLインジェクションという脆弱性が生まれます。
+            多くのWebアプリケーションがデータベースを利用していて、データの問い合わせにSQLを使用している
+            SQLの呼び出しに不備がある場合、SQLインジェクションという脆弱性が生まれる
             SQLインジェクション脆弱性がある場合は以下のうようなセキュリティリスクが考えられる
-            <ol>
-              <li>データベースの内部情報が外部から盗まれる</li>
-              <li>データベースの内部が意図せず書き換えられる or 削除される</li>
-              <li>IDとパスワードが一致せずともログインされる</li>
-            </ol>
           </p>
+          <ol>
+            <li>データベースの内部情報が外部から盗まれる</li>
+            <li>データベースの内部が意図せず書き換えられる or 削除される</li>
+            <li>IDとパスワードが一致せずともログインされる</li>
+          </ol>
         </section>
         <section class="slide-top">
           <h1>SQLインジェクションの代表例</h1>
-          <h3>シングルクォートを使った攻撃手法</h3>
-          <h5>テーブル</h5>
+          <h5 class="u-verx9-t">画面サンプル</h5><img class="vertxcenter" src="./images/web-security/form.svg" style="width: 600px">
+          <h5 class="u-verx9-t">テーブル情報</h5>
           <table>
             <thead>
               <tr>
@@ -529,21 +567,29 @@ open(HANDLE, "<$dir/$filename");</pre></code>
                 <td>fuga</td>
               </tr>
             </tbody>
-          </table><code>
-            <pre>SELECT * FROM users WHERE id = '{$userId}' AND password = '{$passwd}';</pre></code><img class="vertxcenter" src="./images/web-security/form.svg" style="width: 600px">
+          </table>
+          <h5 class="u-verx9-t">SQL例</h5><code>
+            <pre>SELECT * FROM users WHERE id = '{$userId}' AND password = '{$passwd}';</pre></code>
+        </section>
+        <section class="slide-top">
+          <h1>シングルクオートを使った攻撃</h1>
           <p>
-            この場合ユーザーIDは「admin」でパスワードが「password」でログインできる機能があるとします。
-            第三者はパスワードが知らずとも以下の入力値でログインが可能です
+            この場合ユーザーIDは「admin」でパスワードが「password」でログインできる認証機能を例に見てみる
+            しかし、第三者はパスワードが知らずとも以下の入力値でログインが可能
             id: admin
             password: ' OR 'A' = 'A
-            この場合、以下のSQLが発行されます。<code>
-              <pre>SELECT * FROM users WHERE id = 'admin' AND password = '' OR 'A' = 'A';</pre></code>
           </p>
+          <h5 class="u-verx9-t">手法</h5>
           <p>
-            パラメータとして入力値「'」を含ませることで、パスワードに関するWHERE句の条件式を一旦終端させ、次にORを含ませると、「'A' = 'A'」という恒真式がORの対象になる。
+            パラメータとして入力値「'」を含ませることで、パスワードに関するWHERE句の条件式を一旦終端させ、
+            次にORを含ませると、「'A' = 'A'」という恒真式がORの対象になる。
             よって、WHERE句全体が常に真となり、パスワードを入力せずにユーザID「admin」としてログインすることが可能となる。
           </p>
-          <h3>セミコロンで分割</h3>
+          <h5 class="u-verx9-t">発行されたsql<code>
+              <pre>SELECT * FROM users WHERE id = 'admin' AND password = '' OR 'A' = 'A';</pre></code></h5>
+        </section>
+        <section class="slide-top">
+          <h1>セミコロンで分割</h1>
           <p>
             先ほどと同じ入力フォームがあるとして、今度は全てのユーザーを削除する構文を記述してみましょう
             id: admin
@@ -565,7 +611,7 @@ open(HANDLE, "<$dir/$filename");</pre></code>
           <h1>機密情報の暗号化</h1>
           <p>
             前章で個人情報漏えいのリスクを話しましたが、機密情報となるような「パスワード」「住所」「電話番号」などは
-            データベースに保存する際は暗号化しておきましょう
+            データベースに保存する際は暗号化しよう
           </p><img class="vertxcenter" src="./images/web-security/table.svg" style="width: 1200px">
         </section>
         <section class="slide-top">
@@ -584,6 +630,8 @@ open(HANDLE, "<$dir/$filename");</pre></code>
             エンドユーザー側がWebページを制作することのできる動的サイト (ex: Twitter, Facebook) に対して、自身が制作した不正なスクリプトを
             挿入する攻撃の一種です。
           </p><img class="vertxcenter" src="./images/web-security/xss.svg" style="width: 1200px">
+        </section>
+        <section class="slide-top">
           <h1>事例</h1>
           <p>XSSの脆弱性を付いた攻撃はたくさんありますが、Twitterも過去にXSSの脆弱性により被害が広がりました。</p><img class="vertxcenter" src="./images/web-security/tw.jpg">
           <p>画像のようなツイートにマウスカーソルを合わせるだけで、リツイートされるというものでした</p>
@@ -591,8 +639,8 @@ open(HANDLE, "<$dir/$filename");</pre></code>
         <section class="slide-top">
           <h1>クロスサイト・スクリプティング対策</h1>
           <p>
-            XSS脆弱性が発生する主要因はHTMLを生成する際の「<」や「"」に対するエスケープ漏れです。
-            したがって、エンドユーザーによって動的に生成される箇所に関してはHTML特殊文字(「<」や「"」)などをエスケープしましょう
+            XSS脆弱性が発生する主要因はHTMLを生成する際の「<」や「"」に対するエスケープ漏れが原因
+            したがって、エンドユーザーによって動的に生成される箇所に関してはHTML特殊文字(「<」や「"」)などをエスケープしよう
             エスケープされたタグは以下のようになります。
           </p><code>
             <pre># before
@@ -618,25 +666,25 @@ open(HANDLE, "<$dir/$filename");</pre></code>
             <li>使用するミドルウェアはなるべく新しく脆弱性が発見されていないものを選ぼう</li>
             <li>ログ管理と保管はしっかりしよう。機密情報を平文で保存しないようにしよう</li>
           </ol>
-          <h3>アプリケーションの作成</h3>
+          <h3 class="u-verx9-t">アプリケーションの作成</h3>
           <ol>
             <li>重要情報の通信は暗号化しよう</li>
             <li>セッションを利用している箇所のキャッシュは気をつけよう</li>
             <li>クッキーの扱いには気をつけよう</li>
           </ol>
-          <h3>Backend</h3>
+          <h3 class="u-verx9-t">Backend</h3>
           <ol>
             <li>入力値の検証はアプリケーションの要件に合わせて行う</li>
             <li>CSRFトークンを利用する</li>
             <li>セッション管理はサーバー側でハンドリングできるようにする</li>
             <li>不正な改ざんをできないように入力チェック/エスケープを行う (メールヘッダ・インジェクション/ディレクトリ・トラバーサル/OSコマンドインジェクション)</li>
           </ol>
-          <h3>データベース</h3>
+          <h3 class="u-verx9-t">データベース</h3>
           <ol>
             <li>SQLインジェクション対策を行う</li>
             <li>機密情報は暗号化して保存する</li>
           </ol>
-          <h3>Frontend</h3>
+          <h3 class="u-verx9-t">Frontend</h3>
           <ol>
             <li>XSS対策</li>
           </ol>
