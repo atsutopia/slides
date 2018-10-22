@@ -610,6 +610,43 @@ open(HANDLE, "<$dir/$filename");</pre></code>
           </div>
           <!-- .end .wrap-->
         </section>
+        <section class="slide-top">
+          <h1>まとめ</h1>
+          <h3>サーバーの構築</h3>
+          <ol>
+            <li>権限管理と開放ポートは必要最低限にとどめておこう</li>
+            <li>使用するミドルウェアはなるべく新しく脆弱性が発見されていないものを選ぼう</li>
+            <li>ログ管理と保管はしっかりしよう。機密情報を平文で保存しないようにしよう</li>
+          </ol>
+          <h3>アプリケーションの作成</h3>
+          <ol>
+            <li>重要情報の通信は暗号化しよう</li>
+            <li>セッションを利用している箇所のキャッシュは気をつけよう</li>
+            <li>クッキーの扱いには気をつけよう</li>
+          </ol>
+          <h3>Backend</h3>
+          <ol>
+            <li>入力値の検証はアプリケーションの要件に合わせて行う</li>
+            <li>CSRFトークンを利用する</li>
+            <li>セッション管理はサーバー側でハンドリングできるようにする</li>
+            <li>不正な改ざんをできないように入力チェック/エスケープを行う (メールヘッダ・インジェクション/ディレクトリ・トラバーサル/OSコマンドインジェクション)</li>
+          </ol>
+          <h3>データベース</h3>
+          <ol>
+            <li>SQLインジェクション対策を行う</li>
+            <li>機密情報は暗号化して保存する</li>
+          </ol>
+          <h3>Frontend</h3>
+          <ol>
+            <li>XSS対策</li>
+          </ol>
+        </section>
+        <section class="bg-green"><span class="background dark" style="background-image:url('./images/cover/0.jpg')"></span>
+          <!-- .wrap = container (width: 90%)-->
+          <div class="wrap aligncenter fadeInUp">
+            <h3><strong>Thanks</strong></h3>
+          </div>
+        </section>
       </article>
     </main>
     <!-- main-->

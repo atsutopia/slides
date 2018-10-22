@@ -537,3 +537,41 @@ block content
     .wrap.aligncenter.fadeInUp
       h1 まとめ
     // .end .wrap
+
+  section.slide-top
+    h1 まとめ
+    h3 サーバーの構築
+    ol
+      li 権限管理と開放ポートは必要最低限にとどめておこう
+      li 使用するミドルウェアはなるべく新しく脆弱性が発見されていないものを選ぼう
+      li ログ管理と保管はしっかりしよう。機密情報を平文で保存しないようにしよう
+
+
+    h3 アプリケーションの作成
+    ol
+      li 重要情報の通信は暗号化しよう
+      li セッションを利用している箇所のキャッシュは気をつけよう
+      li クッキーの扱いには気をつけよう
+
+    h3 Backend
+    ol
+      li 入力値の検証はアプリケーションの要件に合わせて行う
+      li CSRFトークンを利用する
+      li セッション管理はサーバー側でハンドリングできるようにする
+      li 不正な改ざんをできないように入力チェック/エスケープを行う (メールヘッダ・インジェクション/ディレクトリ・トラバーサル/OSコマンドインジェクション)
+
+    h3 データベース
+    ol
+      li SQLインジェクション対策を行う
+      li 機密情報は暗号化して保存する
+
+    h3 Frontend
+    ol
+      li XSS対策
+
+  section.bg-green
+    span.background.dark(style="background-image:url('./images/cover/0.jpg')")
+    // .wrap = container (width: 90%)
+    .wrap.aligncenter.fadeInUp
+      h3
+        strong Thanks
