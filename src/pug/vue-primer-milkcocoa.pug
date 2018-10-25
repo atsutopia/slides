@@ -1,0 +1,177 @@
+extends /layout/_application
+
+prepend Config
+  - title = 'リアルタイムWebアプリハンズオン'
+
+
+block content
+  section.bg-red
+    span.background.dark(style="background-image:url('https://source.unsplash.com/R1J6Z1cnJZc/1600x800')")
+    // .wrap = container (width: 90%)
+    .wrap.aligncenter
+      h1
+        strong リアルタイムWebアプリハンズオン
+      h5.text-symbols Vue.js & Milkcocoa
+    // .end .wrap
+  section
+    // .wrap = container (width: 90%)
+    .wrap.size-70
+      h2
+        strong Agenda
+      hr
+      ol.text-cols
+        li トレーニング概要
+        li 自己紹介
+        li クラウドコンピューティング
+        li Milkcocoa紹介 (リアルタイム通信紹介)
+        li Javascript基礎
+        li Vue.js解説
+        li 実践Vue.jsアプリケーション
+  section.bg-green
+    span.background.dark(style="background-image:url('https://images.unsplash.com/photo-1535219241072-7d3c28a49a5c')")
+    // .wrap = container (width: 90%)
+    .wrap.aligncenter.fadeInUp
+      h3
+        strong トレーニング概要
+    // .end .wrap
+  section.slide-top
+    // .wrap = container (width: 90%)
+    h1 Vue.jsとMilkcocoaを使ってSlackを作ってみよう
+    img.vertxcenter(src="images/vue-primer-milkcocoa/sample.gif" width="1200")
+
+  section.fullscreen
+    span.background.dark(style="background-image:url('./images/cover/profile.png'); width: 60%; height: 120%; top: 50%; left: 50%; transform: translate(-50%, -50%); opacity: .4;")
+    h2(style="position: relative; font-weight: bold;") WHAT I'M ABOUT
+    p(style="position: relative; font-weight: bold;")
+      | 株式会社TRUNK TL Kawasaki Atsushi<br>
+      | 2013年じげんグループHRメディア事業のPMやバックエンドを担当。<br>
+      | 新規事業立ち上げの経験を経てエンジニアリングユニットのマネージャーに従事。<br>
+      |
+      | 2015年に株式会社カヤックへ入社。<br>
+      | クライアントワークや自社サービス(Lobi)のフロントエンド、バックエンドおよびインフラ設計、構築、運用を担当。<br>
+
+
+  section.bg-green
+    span.background.dark(style="background-image:url('https://images.unsplash.com/photo-1535219241072-7d3c28a49a5c')")
+    // .wrap = container (width: 90%)
+    .wrap.aligncenter.fadeInUp
+      h3
+        strong クラウドコンピューティング概論
+    // .end .wrap
+
+  section.slide-top
+    h3 クラウドコンピューティング概論
+    p
+      | クラウドとはオンプレミスとよばれる、自社で運用されたサーバーで提供されたサービスを利用するのに対して
+      | ユーザーがネットワークを介して各種コンピューティングサービスを受ける形態
+    img.vertxcenter(src="images/vue-primer-milkcocoa/cloud_computing.svg" width="800")
+
+  section.slide-top
+    h1 クラウドコンピューティングの分類
+    h3.u-verx9-t SaaS（Software as a Service)
+    p
+      | バズワードとしてよく取り上げられるSaasですが、ソフトウェアをネットワーク経由でサービスとして提供する形態はASP(Application Service Provider)として
+      | 従来より行われている。ASPとSaaSを区別することなく使われていることが多いがなぜ今ここまでバズワードになったのか?
+      |
+      | ひとつはマルチテナント方式の普及により再び注目を浴びていることが考えらる。
+      | このマルチテナント方式によりデータの分離、セキュリティの配慮をしつつメンテナンスコストが低くリソースの利用効率が高い
+      | 構成の実現が可能になった
+    img.vertxcenter(src="images/vue-primer-milkcocoa/tenant.svg" width="800")
+
+    h3.u-verx9-t PaaS(Platform as a Service)
+    p
+      | PaaSでは、ソフトウェアを構築および稼動させるための土台となるプラットフォームを、インターネット経由のサービスとして提供する
+      | Azure、AWS、Google App Engineなどがこの分類にあたる。
+
+    h3.u-verx9-t IaaS(Infrastructure as a Service)
+    p
+      | 仮想サーバをはじめとした機材やネットワークなどのインフラを、インターネット上のサービスとして提供する形態
+      | Google Compute Engine,EC2などがこの分類にあたる。
+
+  section.slide-top
+    h1 マイクロサービス
+    p
+      | マイクロサービスとは、ソフトウェア作成手法の1つです。このアーキテクチャはモノリシックなアプリケーションと対比するもので
+      | モノリシックなアーキテクチャが一つのアプリケーションにユーザーへの提供機能を全て含めることで、マイクロサービスとは
+      | 必要な機能単位にアプリケーションを分割し、統合することでサービスを提供する形態のことである。
+
+    img.vertxcenter(src="images/vue-primer-milkcocoa/monolithic.svg" width="800")
+
+  section.slide-top
+    h1 マイクロサービスアーキテクチャ例 (AWS)
+    img.vertxcenter(src="images/vue-primer-milkcocoa/infra.svg" width="1200")
+
+  section.bg-green
+    span.background.dark(style="background-image:url('./images/cover/0.jpg')")
+    // .wrap = container (width: 90%)
+    .wrap.aligncenter.fadeInUp
+      h3
+        strong Milkcocoa紹介
+
+  section.slide-top
+    h1 Milkcocoa紹介
+    p
+      | Milkcocoaは、IoTデバイス・スマートフォン・PC間で簡単にリアルタイムなデータのやり取りが出来るようになるクラウドプラットフォーム
+    a(href="https://mlkcca.com/") https://mlkcca.com/
+    img.vertxcenter.u-verx9-t(src="images/vue-primer-milkcocoa/milk_desctop.png" width="1200")
+
+  section.slide-top
+    h1 リアルタイム通信
+    p
+      | 従来のWebアプリケーションでは単方向通信と呼ばれ、リクエストはクライアントからのみ送られサーバーから通信を開始することができませんでした。(それでも、擬似的な双方向通信を実現するポーリングなどの手法がありましたが
+      |
+      | WebSocketという新しいプロトコルが生まれたことにより双方向通信の実現ハードルが下がりリアルタイム通信アプリケーションが
+      | 広く普及しました。
+    img.vertxcenter.u-verx9-t(src="images/vue-primer-milkcocoa/websocket.svg" width="1200")
+
+
+  section.slide-top
+    h1 リアルタイム通信手法
+    table
+      thead
+        tr
+          th 呼称
+          th プロトコル
+          th サーバーPush
+          th メモリ消費
+          th 遅延
+          th 導入ハードル
+      tbody
+        tr
+          td Polling
+          td HTTP
+          td ☓
+          td ☓
+          td ☓
+          td 容易
+        tr
+          td LongPolling(Comet)
+          td HTTP
+          td ○
+          td △
+          td △
+          td 容易
+        tr
+          td ServerSentEvents
+          td HTTP
+          td ○
+          td ○
+          td ○
+          td ブラウザ互換依存あり
+        tr
+          td WebSocket
+          td WebSocket
+          td ○
+          td ○
+          td ◎
+          td 面倒
+
+  section.slide-top
+    h1 Milkcocoaの使い方
+
+  section.bg-green
+    span.background.dark(style="background-image:url('./images/cover/0.jpg')")
+    // .wrap = container (width: 90%)
+    .wrap.aligncenter.fadeInUp
+      h3
+        strong Thanks
