@@ -3,6 +3,9 @@ extends /layout/_application
 prepend Config
   - title = 'リアルタイムWebアプリハンズオン'
 
+block head
+  script(async src="https://static.codepen.io/assets/embed/ei.js")
+
 
 block content
   section.bg-red
@@ -248,12 +251,255 @@ block content
 
 
   section.slide-top
+    // https://codepen.io/pickrusu/pen/NOojpE?editors=0011
     h1 FizzBuzz問題をやってみよう
     p
       | 1 ~ 100までの数字を出力する
       | 3で割り切れる場合はFizz
       | 5で割り切れる場合はBuzz
       | 3と5の両方で割り切れる場合はFizzBuzzを出力しよう
+
+  section.bg-green
+    span.background.dark(style="background-image:url('https://images.unsplash.com/photo-1535219241072-7d3c28a49a5c')")
+    // .wrap = container (width: 90%)
+    .wrap.aligncenter.fadeInUp
+      h3
+        strong Vue.js解説
+    // .end .wrap
+
+  section.slide-top
+    h3 Vue.jsとは?
+    p
+      | Vue.jsはインタラクティブなUIを構築するためのJavaScriptフレームワーク
+      | 2013年にEvan You氏の個人プロジェクトとして開始，2014年2月にバージョン0.8が正式に公開
+      | JavaScript ベスト・オブ・ザ・イヤーでは2年連続でVue.jsがベストプロジェクトに選ばれている <br>
+      a(href="https://risingstars.js.org/2017/ja/#section-all") https://risingstars.js.org/2017/ja/#section-all
+  section.slide-top
+    h4 Vue.jsの特徴
+    ul
+      li 学習コストが低い(API/テンプレート)
+      li リアクティブなデータバインディング
+      li コンポーネント指向UI
+      li ファイルサイズが軽量
+
+    h4.u-verx9-t React vs Vue.js
+    p
+      | React では、すべてのコンポーネントは JSX を用いた 描画関数 (render) の中でそれらの UI を表現を行う。
+      | これにより、完全なプログラミング言語 (JavaScript) の力を活用してビューを構築することができる。
+      | 一方Vue.jsではJSXサポートがありながら、HTML/Pugのようなテンプレートでビューを構築していくことが可能
+
+    h4.u-verx9-t AngularJS vs Vue.js
+    p
+      | AngularJSはフルスタックフレームワークであり、開発に必要なものはすべて含まれている。
+      | 標準でルーティング機能が備わっていたり、ユニットテストやE2Eテストも組み込みやすくなっている。
+      | 一方、Vue.jsはビューに焦点を絞ったフレームワークで学習コストが低いことが特徴
+
+
+  section.slide-top
+    h4 Example(Pure Javascript)
+    <p data-height="465" data-theme-id="0" data-slug-hash="aRmRXw" data-default-tab="js,result" data-user="pickrusu" data-pen-title="JS Sample Form" class="codepen">See the Pen <a href="https://codepen.io/pickrusu/pen/aRmRXw/">JS Sample Form</a> by pickrusu (<a href="https://codepen.io/pickrusu">@pickrusu</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+
+  section.slide-top
+    h4 Example(Vue.js)
+    <p data-height="465" data-theme-id="0" data-slug-hash="oazaQp" data-default-tab="html,result" data-user="pickrusu" data-pen-title="Vue.js Sample Form" class="codepen">See the Pen <a href="https://codepen.io/pickrusu/pen/oazaQp/">Vue.js Sample Form</a> by pickrusu (<a href="https://codepen.io/pickrusu">@pickrusu</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+
+  section.slide-top
+    h4 Vue.jsインスタンスの生成
+    pre: code
+      | new Vue({
+      |   // Vue.jsとDOMの関連付け
+      |   el: "#app",
+      |   // データ
+      |   data: {
+      |     message: "Hello"
+      |     }
+      |   },
+      |   // ライフサイクルフック
+      |   created: function() {
+      |     console.log("created!!")
+      |     }
+      |   },
+      |   // メソッドの定義
+      |   methods: {
+      |     say: function(msg) {
+      |       alert("Hello" + msg)
+      |       }
+      |     }
+      |   },
+      | })
+
+
+  section.slide-top
+    h4 基本操作 (Loop / if / method / onclick)
+    h3 Loop
+    <p data-height="265" data-theme-id="0" data-slug-hash="NOdPNb" data-default-tab="js,result" data-user="pickrusu" data-pen-title="NOdPNb" class="codepen">See the Pen <a href="https://codepen.io/pickrusu/pen/NOdPNb/">NOdPNb</a> by pickrusu (<a href="https://codepen.io/pickrusu">@pickrusu</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+
+    h3 if
+    <p data-height="265" data-theme-id="0" data-slug-hash="aRpzNa" data-default-tab="html,result" data-user="pickrusu" data-pen-title="Vue.js if" class="codepen">See the Pen <a href="https://codepen.io/pickrusu/pen/aRpzNa/">Vue.js if</a> by pickrusu (<a href="https://codepen.io/pickrusu">@pickrusu</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+
+    h3 method / onclick
+    <p data-height="265" data-theme-id="0" data-slug-hash="NOdPdd" data-default-tab="html,result" data-user="pickrusu" data-pen-title="Vue.js method" class="codepen">See the Pen <a href="https://codepen.io/pickrusu/pen/NOdPdd/">Vue.js method</a> by pickrusu (<a href="https://codepen.io/pickrusu">@pickrusu</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+
+  section.slide-top
+    h4 Vue.jsを触ってみよう
+    ul
+      li Hello World! となっている部分を Hello Vue!に変更してみよう
+      li 入力されている文字数が20文字以上になったら `alert('not more than 20')` とアラートを表示しよう
+
+    <p data-height="465" data-theme-id="0" data-slug-hash="oazaQp" data-default-tab="html,result" data-user="pickrusu" data-pen-title="Vue.js Sample Form" class="codepen">See the Pen <a href="https://codepen.io/pickrusu/pen/oazaQp/">Vue.js Sample Form</a> by pickrusu (<a href="https://codepen.io/pickrusu">@pickrusu</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+
+  section.slide-top
+    h4 Vue.jsの裏側
+    h5 ライフサイクル
+    img.vertxcenter(src="images/vue-primer/lifecycle.png" width="800")
+
+  section.slide-top
+    h5 仮想DOM
+    p
+      | Vue.jsはDOMとJavaScriptのデータを同期するためにリアクティブなデータバインディングを持っている
+      | データの変更後に仮想DOMに反映され、仮想DOMと実際のDOMの差分を計算して変更部分を実際のDOMに反映し、Viewが変更される
+    img.vertxcenter(src="images/vue-primer/1_hwlyMTnboUp9Mk0mUYhpdQ.png" width="800")
+
+  section.bg-green
+    span.background.dark(style="background-image:url('https://images.unsplash.com/photo-1535219241072-7d3c28a49a5c')")
+    // .wrap = container (width: 90%)
+    .wrap.aligncenter.fadeInUp
+      h3
+        strong 実践Vue.jsアプリケーション
+    // .end .wrap
+
+  section.slide-top
+    h1 今回作成するアプリケーションはこちら
+    img.vertxcenter(src="images/vue-primer-milkcocoa/sample.gif" width="1200")
+
+  section.slide-top
+    h1.u-verx3 ソースコードはこちらを利用
+    <iframe src="https://codesandbox.io/embed/vvov1nvx67" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"></iframe>
+
+  section.slide-top
+    h1.u-verx3 ツールの説明
+    img.vertxcenter(src="images/vue-primer/sandbox.png" width="1200")
+
+  section.slide-top
+    h1.u-verx3 実装ステップ
+    ol
+      li Vueインスタンスの生成
+      li モーダルの実装
+      li 入力データの反映
+      li
+        strong Milkcocoaとつなぎ込み
+      li コンポーネント化
+
+  section.slide-top
+    h1 Vueのインスタンスの生成
+    p
+      | 全ての Vue アプリケーション は、Vue 関数で新しい Vue インスタンスを作成することによって始まる
+
+    pre: code
+      | var vm = new Vue({
+      |   // オプション
+      | })
+
+  section.slide-top
+    h1 モーダルの実装
+    ol
+      li modalVisibledをVueアプリのデータ追加
+      li v-ifディレクティブによるDOMの出し分け
+      li クリックイベントのListen
+      li モーダル内のフォームとVueアプリのデータを同期
+    img.vertxcenter(src="images/vue-primer-milkcocoa/modal.gif" width="1200")
+
+  section.slide-top
+    h1 入力データの反映
+    ol.u-verx9-t
+      li messagesのデータをVueアプリに追加。 メッセージ部分をモックデータに置き換え
+      li currentInputのデータをVueアプリに追加。 <br> 入力フォームのデータをv-modelディレクティブによりVueアプリデータと同期
+      li 送信ボタンにクリックイベントをリッスン。関数内でmessagesの変数に対して追加
+    img.vertxcenter.u-verx9-t(src="images/vue-primer-milkcocoa/input.gif" width="1200")
+
+    h4.u-verx3 サンプルデータ
+    pre: code
+      | const messages = [
+      |   {
+      |     name: 'scottish-fold',
+      |     time: '2018/01/01 11:00 ',
+      |     icon: 'https://pocke777.github.io/slides/assets/icon.png',
+      |     text: 'これはサンプルテキストですこれはサンプルテキストです\nこれはサンプルテキストです\nこれはサンプルテキストですこれはサンプルテキストですこれはサンプルテキストです',
+      |   },
+      |   {
+      |     name: 'scottish-fold',
+      |     time: '2018/01/01 11:00 ',
+      |     icon: 'https://pocke777.github.io/slides/assets/icon.png',
+      |     text: 'これはサンプルテキストですこれはサンプルテキストです\nこれはサンプルテキストです\nこれはサンプルテキストですこれはサンプルテキストですこれはサンプルテキストです',
+      |   },
+      |   {
+      |     name: 'scottish-fold',
+      |     time: '11:10 AM',
+      |     icon: 'https://pocke777.github.io/slides/assets/icon.png',
+      |     text: 'これはサンプルテキストですこれはサンプルテキストです\nこれはサンプルテキストです\nこれはサンプルテキストですこれはサンプルテキストですこれはサンプルテキストです',
+      |   }
+      | ]
+
+  section.slide-top
+    h1 Milkcocoaとつなぎ込み
+    p
+      | 詳細は
+      a(href="https://mlkcca.com/document/start-js.html") こちら
+      | のドキュメントを参照
+    ol
+      li scriptタグを読み込む
+      li AppIdからオブジェクトの生成
+        small: pre: code const milkcocoa = new MilkCocoa('<your app code>.mlkcca.com')
+      li データストアの取得
+        small: pre: code const ds = milkcocoa.dataStore('sample');
+      li 送信ボタンを押したときのコールバックでデータの保存
+        small: pre: code
+          | ds.push({name : this.name, send_at: new Date(), content : this.currentInput, icon: this.icon});
+      li データ保存時のイベントにリッスン
+        small: pre: code
+          | ds.on('push', (value) => {
+          |   this.messages.push(value);
+          | });
+      li ロード時に初期データの取得
+        small: pre: code
+          | ds.stream()
+          |   .next((err, messages) => {
+          |     this.messages = messages;
+          |   });
+      li データ構造に合わせてHTMLの調整
+
+  section.slide-top
+    h1.u-verx3 コンポーネント化
+    h3.u-verx9-t 単一ファイルコンポーネント
+    p
+      | コンポーネントとは部品という意味
+      | ページを構成している要素を部品化し、構造・見た目・振る舞いをセットにして1ファイルにまとめて記述する
+
+  section.slide-top
+    h1.u-verx3 Vue.jsの単一ファイルコンポーネントシンタックス
+    iframe(src="https://codesandbox.io/embed/m5x9x7242p" style="width:100%; height:800px; border:0; border-radius: 4px; overflow:hidden;" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin")
+
+  section.slide-top
+    h1.u-verx3 Props
+    p
+      | 親コンポーネントから子コンポーネントへとデータ(関数)の受け渡しを行う
+    iframe(src="https://codesandbox.io/embed/0pvqq7wn7n" style="width:100%; height:800px; border:0; border-radius: 4px; overflow:hidden;" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin")
+
+  section.slide-top
+    h1.u-verx3 メッセ部分をコンポーネント化
+    img.vertxcenter(src="images/vue-primer/component.png" width="1000")
+
+  section.slide-top
+    h1.u-verx3 コンポーネント化を行うための実装ステップ
+    ol
+      li Vueコンポーネントファイルの作成
+      li コンポーネントの登録
+      li Viewの書き換え / propsの受け渡し
+
+  section.slide-top
+    h1.u-verx3 And more...
+    li Vue Router
+    li Vuex
 
   section.bg-green
     span.background.dark(style="background-image:url('./images/cover/0.jpg')")
