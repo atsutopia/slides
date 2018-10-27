@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns#">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--
+    CLEAN MARKUP = GOOD KARMA.
+    Hi source code lover,
+    you're a curious person and a fast learner ;)
+    Let's make something beautiful together. Contribute on Github:
+    https://github.com/webslides/webslides
+    Thanks!
+    -->
+    <!-- SEO-->
+    <title>リアルタイムWebアプリハンズオン</title>
+    <meta name="description" content="">
+    <!-- URL CANONICAL-->
+    <!-- <link rel="canonical" href="http://your-url.com/permalink">-->
+    <!-- Google Fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,700,700i%7CMaitree:200,300,400,600,700&amp;subset=latin-ext" rel="stylesheet">
+    <!-- CSS Base-->
+    <link rel="stylesheet" type="text/css" media="all" href="./css/webslides.css">
+    <link rel="stylesheet" type="text/css" media="all" href="./css/default.css">
+    <!-- link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css")-->
+    <!-- Optional - CSS SVG Icons (Font Awesome)-->
+    <link rel="stylesheet" type="text/css" media="all" href="./css/svg-icons.css">
+    <!-- SOCIAL CARDS (ADD YOUR INFO)-->
+    <!-- FACEBOOK-->
+    <!-- EDIT-->
+    <meta property="og:url" content="http://your-url.com/permalink">
+    <!-- EDIT-->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="WebSlides: Netflix's Culture">
+    <meta property="og:description" content="Patty McCord created Netflix's culture. This is a homage.">
+    <!-- EDIT-->
+    <meta property="og:updated_time" content="2017-04-16T16:24:56">
+    <!-- EDIT-->
+    <meta property="og:image" content="../static/images/share-webslides.jpg">
+    <!-- EDIT-->
+    <meta property="og:image:width" content="800">
+    <meta property="og:image:height" content="429">
+    <!-- TWITTER-->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@webslides">
+    <!-- EDIT-->
+    <meta name="twitter:creator" content="@jlantunez">
+    <!-- EDIT-->
+    <meta name="twitter:title" content="WebSlides: Netflix's Culture">
+    <!-- EDIT-->
+    <meta name="twitter:description" content="Patty McCord created Netflix's culture. This is a homage.">
+    <!-- EDIT-->
+    <meta name="twitter:image" content="../static/images/share-webslides.jpg">
+    <!-- EDIT-->
+    <!-- FAVICONS-->
+    <link rel="shortcut icon" sizes="16x16" href="../static/images/favicons/favicon.png">
+    <link rel="shortcut icon" sizes="32x32" href="../static/images/favicons/favicon-32.png">
+    <link rel="apple-touch-icon icon" sizes="76x76" href="../static/images/favicons/favicon-76.png">
+    <link rel="apple-touch-icon icon" sizes="120x120" href="../static/images/favicons/favicon-120.png">
+    <link rel="apple-touch-icon icon" sizes="152x152" href="../static/images/favicons/favicon-152.png">
+    <link rel="apple-touch-icon icon" sizes="180x180" href="../static/images/favicons/favicon-180.png">
+    <link rel="apple-touch-icon icon" sizes="192x192" href="../static/images/favicons/favicon-192.png">
+    <!-- Android-->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#333333">
+    <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+  </head>
+  <body>
+    <!-- header(role='banner')-->
+    <!--   nav(role='navigation')-->
+    <!--     p.logo-->
+    <!--       a(href='../index.html', title='WebSlides') WebSlides-->
+    <!--     ul-->
+    <!--       li.github-->
+    <!--         a(rel='external', href='https://github.com/webslides/webslides', title='Github')-->
+    <!--           svg.fa-github-->
+    <!--             use(xlink:href='#fa-github')-->
+    <!--           em WebSlides-->
+    <!--       li.twitter-->
+    <!--         a(rel='external', href='https://twitter.com/webslides', title='Twitter')-->
+    <!--           svg.fa-twitter-->
+    <!--             use(xlink:href='#fa-twitter')-->
+    <!--           em @WebSlides-->
+    <!--       // <li class="dribbble"><a rel="external" href="http://dribbble.com/webslides" title="Dribbble"><svg class="fa-dribbble"><use xlink:href="#fa-dribbble"></use></svg> <em>webslides</em></a></li>-->
+    <main role="main">
+      <article id="webslides">
+        <!--
+        Quick Guide
+        - Each parent <section> in the <article id="webslides"> element is an individual slide.
+        - Vertical sliding = <article id="webslides" class="vertical">
+        - <div class="wrap"> = container 90% / <div class="wrap size-50"> = 45%;
+        -->
+        <section class="bg-red"><span class="background dark" style="background-image:url('https://source.unsplash.com/R1J6Z1cnJZc/1600x800')"></span>
+          <!-- .wrap = container (width: 90%)-->
+          <div class="wrap aligncenter">
+            <h1><strong>リアルタイムWebアプリハンズオン</strong></h1>
+            <h5 class="text-symbols">Vue.js & Milkcocoa</h5>
+          </div>
+          <!-- .end .wrap-->
+        </section>
+        <section>
+          <!-- .wrap = container (width: 90%)-->
+          <div class="wrap size-70">
+            <h2><strong>Agenda</strong></h2>
+            <hr>
+            <ol class="text-cols">
+              <li>トレーニング概要</li>
+              <li>自己紹介</li>
+              <li>クラウドコンピューティング</li>
+              <li>Milkcocoa紹介</li>
+              <li>Javascript基礎</li>
+              <li>Vue.js解説</li>
+              <li>実践Vue.jsアプリケーション</li>
+            </ol>
+          </div>
+        </section>
+        <section class="bg-green"><span class="background dark" style="background-image:url('https://images.unsplash.com/photo-1535219241072-7d3c28a49a5c')"></span>
+          <!-- .wrap = container (width: 90%)-->
+          <div class="wrap aligncenter fadeInUp">
+            <h3><strong>トレーニング概要</strong></h3>
+          </div>
+          <!-- .end .wrap-->
+        </section>
+        <section class="slide-top">
+          <!-- .wrap = container (width: 90%)-->
+          <h1>Vue.jsとMilkcocoaを使ってSlackを作ってみよう</h1><img class="vertxcenter" src="images/vue-primer-milkcocoa/sample.gif" width="1200">
+        </section>
+        <section class="fullscreen"><span class="background dark" style="background-image:url('./images/cover/profile.png'); width: 60%; height: 120%; top: 50%; left: 50%; transform: translate(-50%, -50%); opacity: .4;"></span>
+          <h2 style="position: relative; font-weight: bold;">WHAT I'M ABOUT</h2>
+          <p style="position: relative; font-weight: bold;">
+            株式会社TRUNK TL Kawasaki Atsushi<br>
+            2013年じげんグループHRメディア事業のPMやバックエンドを担当。<br>
+            新規事業立ち上げの経験を経てエンジニアリングユニットのマネージャーに従事。<br>
+            
+            2015年に株式会社カヤックへ入社。<br>
+            クライアントワークや自社サービス(Lobi)のフロントエンド、バックエンドおよびインフラ設計、構築、運用を担当。<br>
+          </p>
+        </section>
+        <section class="bg-green"><span class="background dark" style="background-image:url('https://images.unsplash.com/photo-1535219241072-7d3c28a49a5c')"></span>
+          <!-- .wrap = container (width: 90%)-->
+          <div class="wrap aligncenter fadeInUp">
+            <h3><strong>クラウドコンピューティング概論</strong></h3>
+          </div>
+          <!-- .end .wrap-->
+        </section>
+        <section class="slide-top">
+          <h3>クラウドコンピューティング概論</h3>
+          <p>
+            クラウドとはオンプレミスとよばれる、自社で運用されたサーバーで提供されたサービスを利用するのに対して
+            ユーザーがネットワークを介して各種コンピューティングサービスを受ける形態
+          </p><img class="vertxcenter" src="images/vue-primer-milkcocoa/cloud_computing.svg" width="800">
+        </section>
+        <section class="slide-top">
+          <h1>クラウドコンピューティングの分類</h1>
+          <h3 class="u-verx9-t">SaaS（Software as a Service)</h3>
+          <p>
+            バズワードとしてよく取り上げられるSaasですが、ソフトウェアをネットワーク経由でサービスとして提供する形態はASP(Application Service Provider)として
+            従来より行われている。ASPとSaaSを区別することなく使われていることが多いがなぜ今ここまでバズワードになったのか?
+            
+            ひとつはマルチテナント方式の普及により再び注目を浴びていることが考えらる。
+            このマルチテナント方式によりデータの分離、セキュリティの配慮をしつつメンテナンスコストが低くリソースの利用効率が高い
+            構成の実現が可能になった
+          </p><img class="vertxcenter" src="images/vue-primer-milkcocoa/tenant.svg" width="800">
+          <h3 class="u-verx9-t">PaaS(Platform as a Service)</h3>
+          <p>
+            PaaSでは、ソフトウェアを構築および稼動させるための土台となるプラットフォームを、インターネット経由のサービスとして提供する
+            Azure、AWS、Google App Engineなどがこの分類にあたる。
+          </p>
+          <h3 class="u-verx9-t">IaaS(Infrastructure as a Service)</h3>
+          <p>
+            仮想サーバをはじめとした機材やネットワークなどのインフラを、インターネット上のサービスとして提供する形態
+            Google Compute Engine,EC2などがこの分類にあたる。
+          </p>
+        </section>
+        <section class="slide-top">
+          <h1>マイクロサービス</h1>
+          <p>
+            マイクロサービスとは、ソフトウェア作成手法の1つです。このアーキテクチャはモノリシックなアプリケーションと対比するもので
+            モノリシックなアーキテクチャが一つのアプリケーションにユーザーへの提供機能を全て含めることで、マイクロサービスとは
+            必要な機能単位にアプリケーションを分割し、統合することでサービスを提供する形態のことである。
+          </p><img class="vertxcenter" src="images/vue-primer-milkcocoa/monolithic.svg" width="800">
+        </section>
+        <section class="slide-top">
+          <h1>マイクロサービスアーキテクチャ例 (AWS)</h1><img class="vertxcenter" src="images/vue-primer-milkcocoa/infra.svg" width="1200">
+        </section>
+        <section class="bg-green"><span class="background dark" style="background-image:url('./images/cover/0.jpg')"></span>
+          <!-- .wrap = container (width: 90%)-->
+          <div class="wrap aligncenter fadeInUp">
+            <h3><strong>Milkcocoa紹介</strong></h3>
+          </div>
+        </section>
+        <section class="slide-top">
+          <h1>Milkcocoa紹介</h1>
+          <p>Milkcocoaは、IoTデバイス・スマートフォン・PC間で簡単にリアルタイムなデータのやり取りが出来るようになるクラウドプラットフォーム</p><a href="https://mlkcca.com/">https://mlkcca.com/</a><img class="vertxcenter u-verx9-t" src="images/vue-primer-milkcocoa/milk_desctop.png" width="1200">
+        </section>
+        <section class="slide-top">
+          <h1>リアルタイム通信</h1>
+          <p>
+            従来のWebアプリケーションでは単方向通信と呼ばれ、リクエストはクライアントからのみ送られサーバーから通信を開始することができませんでした。(それでも、擬似的な双方向通信を実現するポーリングなどの手法がありましたが
+            
+            WebSocketという新しいプロトコルが生まれたことにより双方向通信の実現ハードルが下がりリアルタイム通信アプリケーションが
+            広く普及しました。
+          </p><img class="vertxcenter u-verx9-t" src="images/vue-primer-milkcocoa/websocket.svg" width="1200">
+        </section>
+        <section class="slide-top">
+          <h1>リアルタイム通信手法</h1>
+          <table>
+            <thead>
+              <tr>
+                <th>呼称</th>
+                <th>プロトコル</th>
+                <th>サーバーPush</th>
+                <th>メモリ消費</th>
+                <th>遅延</th>
+                <th>導入ハードル</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Polling</td>
+                <td>HTTP</td>
+                <td>☓</td>
+                <td>☓</td>
+                <td>☓</td>
+                <td>容易</td>
+              </tr>
+              <tr>
+                <td>LongPolling(Comet)</td>
+                <td>HTTP</td>
+                <td>○</td>
+                <td>△</td>
+                <td>△</td>
+                <td>容易</td>
+              </tr>
+              <tr>
+                <td>ServerSentEvents</td>
+                <td>HTTP</td>
+                <td>○</td>
+                <td>○</td>
+                <td>○</td>
+                <td>ブラウザ互換依存あり</td>
+              </tr>
+              <tr>
+                <td>WebSocket</td>
+                <td>WebSocket</td>
+                <td>○</td>
+                <td>○</td>
+                <td>◎</td>
+                <td>面倒</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+        <section class="slide-top">
+          <h1>Milkcocoaの使い方</h1>
+          <ol>
+            <li>アカウントの作成(無料)</li>
+            <li>アプリの作成</li>
+            <li>組み込み</li>
+          </ol>
+        </section>
+        <section class="slide-top">
+          <h1>アカウントの作成(無料)</h1><img class="vertxcenter" src="images/vue-primer-milkcocoa/milk_account.png"><a href="https://mlkcca.com" target="_blank">https://mlkcca.com</a>
+        </section>
+        <section class="slide-top">
+          <h1>アプリの作成</h1><img class="vertxcenter" src="images/vue-primer-milkcocoa/milk_app.png">
+        </section>
+        <section class="bg-green"><span class="background dark" style="background-image:url('https://images.unsplash.com/photo-1535219241072-7d3c28a49a5c')"></span>
+          <!-- .wrap = container (width: 90%)-->
+          <div class="wrap aligncenter fadeInUp">
+            <h3><strong>Javascript基礎</strong></h3>
+          </div>
+          <!-- .end .wrap-->
+        </section>
+        <section class="slide-top">
+          <h1>Javascript基礎</h1>
+          <p>ブラウザ上で実行可能なプログラミング言語の一種。しかし、Node.jsなど非ブラウザ環境においても使用されている</p>
+          <h3 class="u-verx3">HTML</h3>
+          <p>マークアップ言語で、これを使ってウェブコンテンツに構造と意味を与えます。 例えば段落や見出しや表を定義したり、ページに画像や動画を入れたりします。</p>
+          <h3 class="u-verx3">CSS</h3>
+          <p>HTML コンテンツに適用するスタイリング規則の言語です。 例えば背景とフォントの色を設定したり、複数カラムにコンテンツをレイアウトしたりします。</p>
+          <h3 class="u-verx3">Javascript</h3>
+          <p>動的にコンテンツを更新したり、マルチメディアを管理したり、その他多くのことができるスクリプト言語です。</p>
+        </section>
+        <section class="slide-top">
+          <h1>Javascriptデータ型</h1>
+          <h3 class="u-verx3">プリミティブ型</h3>
+          <pre><code>true // Boolean
+null // Null
+undefined // 未定義
+2018 // Number
+"こんにちは" // String
+Symbol("hello") // Symbol (ES2015)</code></pre>
+          <h3 class="u-verx3">オブジェクト型</h3>
+          <pre><code>['hello1', 'hello1', 'hello1'] // 配列
+{ hello1: "world1", hello2: "world2" } // Object
+[{ hello: "world1" }, { hello: "world2" }] // Collection
+function () {} // 関数</code></pre>
+        </section>
+        <section class="slide-top">
+          <h1>Javascript文法</h1>
+          <h3>(繰り返し処理 / 条件分岐 / 関数 / イベント)</h3><strong class="u-verx9-t">繰り返し処理</strong><iframe height='265' scrolling='no' title='for' src='//codepen.io/pickrusu/embed/QZYjeg/?height=265&theme-id=0&default-tab=js,result' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='https://codepen.io/pickrusu/pen/QZYjeg/'>for</a> by pickrusu (<a href='https://codepen.io/pickrusu'>@pickrusu</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe><strong class="u-verx9-t">条件分岐</strong><iframe height='265' scrolling='no' title='for' src='//codepen.io/pickrusu/embed/WaPrZd/?height=265&theme-id=0&default-tab=js,result' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='https://codepen.io/pickrusu/pen/WaPrZd/'>for</a> by pickrusu (<a href='https://codepen.io/pickrusu'>@pickrusu</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe><strong class="u-verx9-t">関数</strong><iframe height='265' scrolling='no' title='function' src='//codepen.io/pickrusu/embed/pxGgaZ/?height=265&theme-id=0&default-tab=js,result' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='https://codepen.io/pickrusu/pen/pxGgaZ/'>function</a> by pickrusu (<a href='https://codepen.io/pickrusu'>@pickrusu</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe><strong class="u-verx9-t">イベント</strong><iframe height='265' scrolling='no' title='event' src='//codepen.io/pickrusu/embed/bmzEmL/?height=265&theme-id=0&default-tab=js,result' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='https://codepen.io/pickrusu/pen/bmzEmL/'>event</a> by pickrusu (<a href='https://codepen.io/pickrusu'>@pickrusu</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>
+        </section>
+        <section class="slide-top">
+          <!-- https://codepen.io/pickrusu/pen/NOojpE?editors=0011-->
+          <h1>FizzBuzz問題をやってみよう</h1>
+          <p>
+            1 ~ 100までの数字を出力する
+            3で割り切れる場合はFizz
+            5で割り切れる場合はBuzz
+            3と5の両方で割り切れる場合はFizzBuzzを出力しよう
+          </p>
+        </section>
+        <section class="bg-green"><span class="background dark" style="background-image:url('https://images.unsplash.com/photo-1535219241072-7d3c28a49a5c')"></span>
+          <!-- .wrap = container (width: 90%)-->
+          <div class="wrap aligncenter fadeInUp">
+            <h3><strong>Vue.js解説</strong></h3>
+          </div>
+          <!-- .end .wrap-->
+        </section>
+        <section class="slide-top">
+          <h3>Vue.jsとは?</h3>
+          <p>
+            Vue.jsはインタラクティブなUIを構築するためのJavaScriptフレームワーク
+            2013年にEvan You氏の個人プロジェクトとして開始，2014年2月にバージョン0.8が正式に公開
+            JavaScript ベスト・オブ・ザ・イヤーでは2年連続でVue.jsがベストプロジェクトに選ばれている <br><a href="https://risingstars.js.org/2017/ja/#section-all">https://risingstars.js.org/2017/ja/#section-all</a>
+          </p>
+        </section>
+        <section class="slide-top">
+          <h4>Vue.jsの特徴</h4>
+          <ul>
+            <li>学習コストが低い(API/テンプレート)</li>
+            <li>リアクティブなデータバインディング</li>
+            <li>コンポーネント指向UI</li>
+            <li>ファイルサイズが軽量</li>
+          </ul>
+          <h4 class="u-verx9-t">React vs Vue.js</h4>
+          <p>
+            React では、すべてのコンポーネントは JSX を用いた 描画関数 (render) の中でそれらの UI を表現を行う。
+            これにより、完全なプログラミング言語 (JavaScript) の力を活用してビューを構築することができる。
+            一方Vue.jsではJSXサポートがありながら、HTML/Pugのようなテンプレートでビューを構築していくことが可能
+          </p>
+          <h4 class="u-verx9-t">AngularJS vs Vue.js</h4>
+          <p>
+            AngularJSはフルスタックフレームワークであり、開発に必要なものはすべて含まれている。
+            標準でルーティング機能が備わっていたり、ユニットテストやE2Eテストも組み込みやすくなっている。
+            一方、Vue.jsはビューに焦点を絞ったフレームワークで学習コストが低いことが特徴
+          </p>
+        </section>
+        <section class="slide-top">
+          <h4>Example(Pure Javascript)</h4><p data-height="465" data-theme-id="0" data-slug-hash="aRmRXw" data-default-tab="js,result" data-user="pickrusu" data-pen-title="JS Sample Form" class="codepen">See the Pen <a href="https://codepen.io/pickrusu/pen/aRmRXw/">JS Sample Form</a> by pickrusu (<a href="https://codepen.io/pickrusu">@pickrusu</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+        </section>
+        <section class="slide-top">
+          <h4>Example(Vue.js)</h4><p data-height="465" data-theme-id="0" data-slug-hash="oazaQp" data-default-tab="html,result" data-user="pickrusu" data-pen-title="Vue.js Sample Form" class="codepen">See the Pen <a href="https://codepen.io/pickrusu/pen/oazaQp/">Vue.js Sample Form</a> by pickrusu (<a href="https://codepen.io/pickrusu">@pickrusu</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+        </section>
+        <section class="slide-top">
+          <h4>Vue.jsインスタンスの生成</h4>
+          <pre><code>new Vue({
+  // Vue.jsとDOMの関連付け
+  el: "#app",
+  // データ
+  data: {
+    message: "Hello"
+    }
+  },
+  // ライフサイクルフック
+  created: function() {
+    console.log("created!!")
+    }
+  },
+  // メソッドの定義
+  methods: {
+    say: function(msg) {
+      alert("Hello" + msg)
+      }
+    }
+  },
+})</code></pre>
+        </section>
+        <section class="slide-top">
+          <h4>基本操作 (Loop / if / method / onclick)</h4>
+          <h3>Loop</h3><p data-height="265" data-theme-id="0" data-slug-hash="NOdPNb" data-default-tab="js,result" data-user="pickrusu" data-pen-title="NOdPNb" class="codepen">See the Pen <a href="https://codepen.io/pickrusu/pen/NOdPNb/">NOdPNb</a> by pickrusu (<a href="https://codepen.io/pickrusu">@pickrusu</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+          <h3>if</h3><p data-height="265" data-theme-id="0" data-slug-hash="aRpzNa" data-default-tab="html,result" data-user="pickrusu" data-pen-title="Vue.js if" class="codepen">See the Pen <a href="https://codepen.io/pickrusu/pen/aRpzNa/">Vue.js if</a> by pickrusu (<a href="https://codepen.io/pickrusu">@pickrusu</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+          <h3>method / onclick</h3><p data-height="265" data-theme-id="0" data-slug-hash="NOdPdd" data-default-tab="html,result" data-user="pickrusu" data-pen-title="Vue.js method" class="codepen">See the Pen <a href="https://codepen.io/pickrusu/pen/NOdPdd/">Vue.js method</a> by pickrusu (<a href="https://codepen.io/pickrusu">@pickrusu</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+        </section>
+        <section class="slide-top">
+          <h4>Vue.jsを触ってみよう</h4>
+          <ul>
+            <li>Hello World! となっている部分を Hello Vue!に変更してみよう</li>
+            <li>入力されている文字数が20文字以上になったら `alert('not more than 20')` とアラートを表示しよう</li>
+          </ul><p data-height="465" data-theme-id="0" data-slug-hash="oazaQp" data-default-tab="html,result" data-user="pickrusu" data-pen-title="Vue.js Sample Form" class="codepen">See the Pen <a href="https://codepen.io/pickrusu/pen/oazaQp/">Vue.js Sample Form</a> by pickrusu (<a href="https://codepen.io/pickrusu">@pickrusu</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+        </section>
+        <section class="slide-top">
+          <h4>Vue.jsの裏側</h4>
+          <h5>ライフサイクル</h5><img class="vertxcenter" src="images/vue-primer/lifecycle.png" width="800">
+        </section>
+        <section class="slide-top">
+          <h5>仮想DOM</h5>
+          <p>
+            Vue.jsはDOMとJavaScriptのデータを同期するためにリアクティブなデータバインディングを持っている
+            データの変更後に仮想DOMに反映され、仮想DOMと実際のDOMの差分を計算して変更部分を実際のDOMに反映し、Viewが変更される
+          </p><img class="vertxcenter" src="images/vue-primer/1_hwlyMTnboUp9Mk0mUYhpdQ.png" width="800">
+        </section>
+        <section class="bg-green"><span class="background dark" style="background-image:url('https://images.unsplash.com/photo-1535219241072-7d3c28a49a5c')"></span>
+          <!-- .wrap = container (width: 90%)-->
+          <div class="wrap aligncenter fadeInUp">
+            <h3><strong>実践Vue.jsアプリケーション</strong></h3>
+          </div>
+          <!-- .end .wrap-->
+        </section>
+        <section class="slide-top">
+          <h1>今回作成するアプリケーションはこちら</h1><img class="vertxcenter" src="images/vue-primer-milkcocoa/sample.gif" width="1200">
+        </section>
+        <section class="slide-top">
+          <h1 class="u-verx3">ソースコードはこちらを利用</h1><iframe src="https://codesandbox.io/embed/vvov1nvx67" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"></iframe>
+        </section>
+        <section class="slide-top">
+          <h1 class="u-verx3">ツールの説明</h1><img class="vertxcenter" src="images/vue-primer/sandbox.png" width="1200">
+        </section>
+        <section class="slide-top">
+          <h1 class="u-verx3">実装ステップ</h1>
+          <ol>
+            <li>Vueインスタンスの生成</li>
+            <li>モーダルの実装</li>
+            <li>入力データの反映</li>
+            <li><strong>Milkcocoaとつなぎ込み</strong></li>
+            <li>コンポーネント化</li>
+          </ol>
+        </section>
+        <section class="slide-top">
+          <h1>Vueのインスタンスの生成</h1>
+          <p>全ての Vue アプリケーション は、Vue 関数で新しい Vue インスタンスを作成することによって始まる</p>
+          <pre><code>var vm = new Vue({
+  // オプション
+})</code></pre>
+        </section>
+        <section class="slide-top">
+          <h1>モーダルの実装</h1>
+          <ol>
+            <li>modalVisibledをVueアプリのデータ追加</li>
+            <li>v-ifディレクティブによるDOMの出し分け</li>
+            <li>クリックイベントのListen</li>
+            <li>モーダル内のフォームとVueアプリのデータを同期</li>
+          </ol><img class="vertxcenter" src="images/vue-primer-milkcocoa/modal.gif" width="1200">
+        </section>
+        <section class="slide-top">
+          <h1>入力データの反映</h1>
+          <ol class="u-verx9-t">
+            <li>messagesのデータをVueアプリに追加。 メッセージ部分をモックデータに置き換え</li>
+            <li>currentInputのデータをVueアプリに追加。 <br> 入力フォームのデータをv-modelディレクティブによりVueアプリデータと同期</li>
+            <li>送信ボタンにクリックイベントをリッスン。関数内でmessagesの変数に対して追加</li>
+          </ol><img class="vertxcenter u-verx9-t" src="images/vue-primer-milkcocoa/input.gif" width="1200">
+          <h4 class="u-verx3">サンプルデータ</h4>
+          <pre><code>const messages = [
+  {
+    name: 'scottish-fold',
+    time: '2018/01/01 11:00 ',
+    icon: 'https://pocke777.github.io/slides/assets/icon.png',
+    text: 'これはサンプルテキストですこれはサンプルテキストです\nこれはサンプルテキストです\nこれはサンプルテキストですこれはサンプルテキストですこれはサンプルテキストです',
+  },
+  {
+    name: 'scottish-fold',
+    time: '2018/01/01 11:00 ',
+    icon: 'https://pocke777.github.io/slides/assets/icon.png',
+    text: 'これはサンプルテキストですこれはサンプルテキストです\nこれはサンプルテキストです\nこれはサンプルテキストですこれはサンプルテキストですこれはサンプルテキストです',
+  },
+  {
+    name: 'scottish-fold',
+    time: '11:10 AM',
+    icon: 'https://pocke777.github.io/slides/assets/icon.png',
+    text: 'これはサンプルテキストですこれはサンプルテキストです\nこれはサンプルテキストです\nこれはサンプルテキストですこれはサンプルテキストですこれはサンプルテキストです',
+  }
+]</code></pre>
+        </section>
+        <section class="slide-top">
+          <h1>Milkcocoaとつなぎ込み</h1>
+          <p>詳細は<a href="https://mlkcca.com/document/start-js.html">こちら</a>のドキュメントを参照</p>
+          <ol>
+            <li>scriptタグを読み込む</li>
+            <li>AppIdからオブジェクトの生成<small>
+                <pre><code>const milkcocoa = new MilkCocoa('<your app code>.mlkcca.com')</code></pre></small></li>
+            <li>データストアの取得<small>
+                <pre><code>const ds = milkcocoa.dataStore('sample');</code></pre></small></li>
+            <li>送信ボタンを押したときのコールバックでデータの保存<small>
+                <pre><code>ds.push({name : this.name, send_at: new Date(), content : this.currentInput, icon: this.icon});</code></pre></small></li>
+            <li>データ保存時のイベントにリッスン<small>
+                <pre><code>ds.on('push', (value) => {
+  this.messages.push(value);
+});</code></pre></small></li>
+            <li>ロード時に初期データの取得<small>
+                <pre><code>ds.stream()
+  .next((err, messages) => {
+    this.messages = messages;
+  });</code></pre></small></li>
+            <li>データ構造に合わせてHTMLの調整</li>
+          </ol>
+        </section>
+        <section class="slide-top">
+          <h1 class="u-verx3">コンポーネント化</h1>
+          <h3 class="u-verx9-t">単一ファイルコンポーネント</h3>
+          <p>
+            コンポーネントとは部品という意味
+            ページを構成している要素を部品化し、構造・見た目・振る舞いをセットにして1ファイルにまとめて記述する
+          </p>
+        </section>
+        <section class="slide-top">
+          <h1 class="u-verx3">Vue.jsの単一ファイルコンポーネントシンタックス</h1>
+          <iframe src="https://codesandbox.io/embed/m5x9x7242p" style="width:100%; height:800px; border:0; border-radius: 4px; overflow:hidden;" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"></iframe>
+        </section>
+        <section class="slide-top">
+          <h1 class="u-verx3">Props</h1>
+          <p>親コンポーネントから子コンポーネントへとデータ(関数)の受け渡しを行う</p>
+          <iframe src="https://codesandbox.io/embed/0pvqq7wn7n" style="width:100%; height:800px; border:0; border-radius: 4px; overflow:hidden;" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"></iframe>
+        </section>
+        <section class="slide-top">
+          <h1 class="u-verx3">メッセ部分をコンポーネント化</h1><img class="vertxcenter" src="images/vue-primer/component.png" width="1000">
+        </section>
+        <section class="slide-top">
+          <h1 class="u-verx3">コンポーネント化を行うための実装ステップ</h1>
+          <ol>
+            <li>Vueコンポーネントファイルの作成</li>
+            <li>コンポーネントの登録</li>
+            <li>Viewの書き換え / propsの受け渡し</li>
+          </ol>
+        </section>
+        <section class="slide-top">
+          <h1 class="u-verx3">And more...</h1>
+          <li>Vue Router</li>
+          <li>Vuex</li>
+        </section>
+        <section class="bg-green"><span class="background dark" style="background-image:url('./images/cover/0.jpg')"></span>
+          <!-- .wrap = container (width: 90%)-->
+          <div class="wrap aligncenter fadeInUp">
+            <h3><strong>Thanks</strong></h3>
+          </div>
+        </section>
+      </article>
+    </main>
+    <!-- main-->
+    <footer>
+      <div class="wrap">
+        <p><span class="alignright"><a href="https://trunk.fm/" title="Trunk"><img src="./images/logos/trunk.svg" alt="Trunk"></a></span></p>
+      </div>
+    </footer>
+    <!-- Required-->
+    <script src="./js/webslides.js"></script>
+    <script src="./js/highlight.pack.js"></script>
+    <script>
+      window.ws = new WebSlides();
+      hljs.initHighlightingOnLoad();
+    </script>
+    <!-- Autoslide? window.ws = new WebSlides({ autoslide: 8000 });-->
+    <!-- OPTIONAL - svg-icons.js (fontastic.me - Font Awesome as svg icons)-->
+    <script defer="" src="../static/js/svg-icons.js"></script>
+  </body>
+</html>
