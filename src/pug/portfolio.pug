@@ -1,7 +1,7 @@
 extends /layout/_application
 
 prepend Config
-  - title = 'ポートフォリオ'
+  - title = 'エンジニアのポートフォリオ'
 
 block content
   section.bg-red
@@ -9,7 +9,7 @@ block content
     // .wrap = container (width: 90%)
     .wrap.aligncenter
       h1
-        strong ポートフォリオ
+        strong エンジニアのポートフォリオ
       h5.text-symbols ***
     // .end .wrap
   section
@@ -51,7 +51,7 @@ block content
       | 業界業種によって意味が若干変わりますがIT業界では、自分のこれまでの実績をアピールするための成果集のことを指します。
       | 元々はデザイナー職が自身の作品をまとめ企業に提出をしていましたが、近年ではエンジニア職に対してもポートフォリオを
       | 求める企業は増えています。
-    // TODO: Image
+    img.vertxcenter(src="images/poftfolio/poftfolio.png" width="800")
 
   section.bg-green
     span.background.dark(style="background-image:url('https://images.unsplash.com/photo-1535219241072-7d3c28a49a5c')")
@@ -67,8 +67,68 @@ block content
     h1 ポートフォリオ作成のポイント
 
     h3.u-verx9-t 基本項目
+    p
+      | 自分にはどんな技術や経験があり、開発チームにどんな貢献ができるかの共通認識を作ることが大切です
+    ol
+      li プロジェクト名
+      li プロジェクト内容
+      li 開発期間
+      li チームの規模・役割
+      li 技術スタック (必要な場合はバージョンも記述)
+      li 特記事項 (困難だったことや成果)
+      li 詳細リンク (あれば)
 
     h3.u-verx9-t 注意点
+    p
+      | クレジットができないプロジェクトも多々あるので実際の仕事を記述する場合はメンバーに確認をとりましょう
+
+  section.slide-top
+    // .wrap = container (width: 90%)
+    h1 ポートフォリオの作成例
+    ol
+      li 面白法人カヤックのコーポレートサイトリニューアル
+      li KADO (個人)
+
+  section.slide-top
+    h2.u-verx9-t 面白法人カヤックのコーポレートサイトリニューアル
+    ol
+      li: small チームの規模: Desiner: 4, Frontend: 3 ~ 4, Backend: 3
+      li: small 開発期間: 3ヶ月
+      li: small アーキテクチャ: Ruby: 2.4, RoR: 5.1, ES2015, AWS, Chef
+      li: small リンク:
+        a(href="https://www.kayac.com/service/client/1436" target="_blank") https://www.kayac.com
+    p
+      | ■ アプリケーション概要
+      | 面白法人カヤックのコーポレートサイトです。リニューアルは3年ぶり8回目。
+      | コンセプトは、「複数の世界観をもつコーポレートサイト」。たくさんの顔を持つカヤックの多面性を表現するために、「Simple」「Manga」「Game」「Tech」「Kamakura」の5つのデザインを用意しており、ユーザーはサイトを自分の好きなテーマに切り替えて楽しむことができます。
+      |
+      | ■  役割・成果
+      | バックエンドリードエンジニアとして、リニューアルの設計からローンチまで全行程を監修・実装しました。
+      | 今回のリニューアルではバックエンド・フロントエンド共にゼロからの作り直しとなりました。
+      | ・DB再設計
+      | ・既存データ移行
+      | ・運用管理ツール作成
+      | ・デプロイ環境構築
+      | ・アプリケーション全般の実装・レビュー
+      | ・インフラ構築
+
+    img.vertxcenter(src="images/poftfolio/main.jpg" width="800")
+
+  section.slide-top
+    h2.u-verx9-t KADO (個人)
+    ol
+      li: small チームの規模: 1人 (個人)
+      li: small 開発期間: 3日
+      li: small アーキテクチャ: Javascript, WEBGL, ThreeJS, GLSL
+      li: small リンク:
+        a(href="https://pocke777.github.io/mock/2017/07/kado.html" target="_blank") https://pocke777.github.io/mock/2017/07/kado.html
+    p
+      | ■ アプリケーション概要
+      | 正解するカドに登場するKADOをJSで再現しました
+      |
+      | ■  役割・成果
+      | 社内の個人プロジェクト発表会にて発表
+    img.vertxcenter(src="images/poftfolio/kado.png" width="800")
 
   section.bg-green
     span.background.dark(style="background-image:url('https://images.unsplash.com/photo-1535219241072-7d3c28a49a5c')")
@@ -78,10 +138,11 @@ block content
         strong ポートフォリオ作成
     // .end .wrap
 
-
   section.slide-top
     // .wrap = container (width: 90%)
     h1 ポートフォリオ作成
+    small: a(href="https://trunk.fm/mypage/student/portfolios/new") https://trunk.fm/mypage/student/portfolios/new
+    img.vertxcenter(src="images/poftfolio/mypage.png" width="800")
 
   section.bg-green
     span.background.dark(style="background-image:url('./images/cover/0.jpg')")
