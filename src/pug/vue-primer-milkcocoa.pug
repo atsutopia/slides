@@ -413,7 +413,7 @@ block content
     h1 入力データの反映
     ol.u-verx9-t
       li messagesのデータをVueアプリに追加。 メッセージ部分をモックデータに置き換え
-      li currentInputのデータをVueアプリに追加。 <br> 入力フォームのデータをv-modelディレクティブによりVueアプリデータと同期
+      li 入力フォームのデータをv-modelディレクティブによりVueアプリデータと同期
       li 送信ボタンにクリックイベントをリッスン。関数内でmessagesの変数に対して追加
     img.vertxcenter.u-verx9-t(src="images/vue-primer-milkcocoa/input.gif" width="1200")
 
@@ -421,24 +421,30 @@ block content
     pre: code
       | const messages = [
       |   {
-      |     name: 'scottish-fold',
-      |     time: '2018/01/01 11:00 ',
-      |     icon: 'https://pocke777.github.io/slides/assets/icon.png',
-      |     text: 'これはサンプルテキストですこれはサンプルテキストです\nこれはサンプルテキストです\nこれはサンプルテキストですこれはサンプルテキストですこれはサンプルテキストです',
+      |     timestamp: "2018/01/01 11:00",
+      |     value: {
+      |       name: "scottish",
+      |       icon: "https://pocke777.github.io/slides/assets/icon.png",
+      |       text: "これはサンプルテキストです"
+      |     }
       |   },
       |   {
-      |     name: 'scottish-fold',
-      |     time: '2018/01/01 11:00 ',
-      |     icon: 'https://pocke777.github.io/slides/assets/icon.png',
-      |     text: 'これはサンプルテキストですこれはサンプルテキストです\nこれはサンプルテキストです\nこれはサンプルテキストですこれはサンプルテキストですこれはサンプルテキストです',
+      |     timestamp: "2018/01/01 11:00",
+      |     value: {
+      |       name: "scottish",
+      |       icon: "https://pocke777.github.io/slides/assets/icon.png",
+      |       text: "これはサンプルテキストです"
+      |     }
       |   },
       |   {
-      |     name: 'scottish-fold',
-      |     time: '11:10 AM',
-      |     icon: 'https://pocke777.github.io/slides/assets/icon.png',
-      |     text: 'これはサンプルテキストですこれはサンプルテキストです\nこれはサンプルテキストです\nこれはサンプルテキストですこれはサンプルテキストですこれはサンプルテキストです',
+      |     timestamp: "2018/01/01 11:00",
+      |     value: {
+      |       name: "scottish",
+      |       icon: "https://pocke777.github.io/slides/assets/icon.png",
+      |       text: "これはサンプルテキストです"
+      |     }
       |   }
-      | ]
+      | ];
 
   section.slide-top
     h1 Milkcocoaとつなぎ込み
