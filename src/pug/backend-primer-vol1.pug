@@ -100,14 +100,14 @@ block content
       | クライアントワークや自社サービス(Lobi)のフロントエンド、バックエンドおよびインフラ設計、構築、運用を担当。<br>
   section.bg-green
     span.background.dark(style="background-image:url('https://images.unsplash.com/photo-1535219241072-7d3c28a49a5c')")
-    // .wrap = container (width: 90%)
+    // 大体WEBの図を出す
     .wrap.aligncenter.fadeInUp
       h3
         strong バックエンドエンジニアのスキル領域と役割
     // .end .wrap
   section.slide-top
-    h3 エンジニアの職種とは?
-    ul
+    h1 エンジニアの職種とは?
+    ol
       li バックエンドエンジニア
       li インフラエンジニア
       li フロントエンドエンジニア
@@ -144,18 +144,18 @@ block content
   section.slide-top
     h3 スキル領域
     ul
-      li アプリケーション層プロトコル (HTTP DHCP SMTP)
-      li プログラミング言語 (コンパイラ型: Golang Java, インタプリタ型: Perl Ruby Python)
+      li アプリケーション層 (HTTP DHCP SMTP)
+      li プログラミング言語 (コンパイラ型/インタプリタ型)
       li データベース設計
       li Webセキュリティ
     img(src="./images/backend-primer/68747470733a2f2f692e696d6775722e636f6d2f4f5a554f5574492e706e67.png" width="1200")
     img(src="./images/backend-primer/backend.png" width="1200")
     small
-      | 参考 
+      | 参考
       a(target="_blank" href="https://github.com/kamranahmedse/developer-roadmap" width="680") https://github.com/kamranahmedse/developer-roadmap
 
   section.slide-top
-    h3 年収
+    h1 Salary
     img(src="./images/backend-primer/img_50c49d1c11ba86d08c144c30f53196a0504446.jpg" width="680")
     small
       | 参考:
@@ -167,7 +167,8 @@ block content
     .wrap.aligncenter.fadeInUp
       h3
         strong Web概論
-    // .end .wrap
+  // Web 1.0 ~ 3.0の話
+  // https://medium.com/cryptoage/web3-0%E3%81%AE%E9%87%8D%E8%A6%81%E6%80%A7%E3%81%A8-%E3%81%9D%E3%82%8C%E3%82%92%E3%81%82%E3%81%AA%E3%81%9F%E3%81%8C%E7%9F%A5%E3%81%A3%E3%81%A6%E3%81%8A%E3%81%8B%E3%81%AA%E3%81%91%E3%82%8C%E3%81%B0%E3%81%AA%E3%82%89%E3%81%AA%E3%81%84%E7%90%86%E7%94%B1-71de18897539
   section.slide-top
     .wrap
       div
@@ -178,6 +179,13 @@ block content
           | wikipedia:
           a(href="https://ja.wikipedia.org/wiki/World_Wide_Web") https://ja.wikipedia.org/wiki/World_Wide_Web
         img(src="./images/backend-primer/WorldWideWebAroundWikipedia.png")
+  section.slide-top
+    .wrap
+      h1 Web 2.0
+      img(src="./images/backend-primer/web3.0.png")
+      small
+        a(href="https://medium.com/cryptoage/web3-0%E3%81%AE%E9%87%8D%E8%A6%81%E6%80%A7%E3%81%A8-%E3%81%9D%E3%82%8C%E3%82%92%E3%81%82%E3%81%AA%E3%81%9F%E3%81%8C%E7%9F%A5%E3%81%A3%E3%81%A6%E3%81%8A%E3%81%8B%E3%81%AA%E3%81%91%E3%82%8C%E3%81%B0%E3%81%AA%E3%82%89%E3%81%AA%E3%81%84%E7%90%86%E7%94%B1-71de18897539") 参考
+
   section
     // .wrap = container (width: 90%)
     .wrap
@@ -274,29 +282,35 @@ block content
     // .wrap = container (width: 90%)
     .wrap
       h3 Tools
-      ol(style="font-size: 30px;")
-        li(style="margin-bottom: 30px;")
-          a(href="https://codeanywhere.com/") Codeanywhere
-        li
-          a(href="github.com") Github
+      li(style="margin-bottom: 30px;") AWS Cloud9
+        img(src="images/backend-primer/cloud9.png")
+      li
+        a(href="github.com") Github
+        img(src="images/backend-primer/github.png")
+
   section.slide-top
-    // .wrap = container (width: 90%)
     .wrap
-      h3 Codeanywhere
+      h3 AWS Cloud9
       p
-        | Meet your new go-to development environment
-      h4 プロジェクトの新規作成
-      img(src="./images/backend-primer/codeanywhere/1.png")
-      h4 プロジェクトの設定
-      img(src="./images/backend-primer/codeanywhere/2.png")
-      img(src="./images/backend-primer/codeanywhere/3.png")
-      img(src="./images/backend-primer/codeanywhere/4.png")
+        | コードを記述、実行、デバッグできるクラウドベースの統合開発環境 (IDE)
+        | 通常使用にはAWSアカウントの発行が必要ですが、今回はこちらでアカウント発行を行います。
+
+      h3(style="margin-top: 45px;") ログイン手順
+
+      li アカウント発行
+      li パスワード変更
+      li プロジェクトURLへアクセス
+      p
+        | ここはトレーナーの指示に従ってください
+
+
   section.slide-top
-    // .wrap = container (width: 90%)
     .wrap
-      h3 CLI(Command Line Interface)
+      h1 サーバーの起動
+
+      h3(style="margin-top: 45px;") CLI(Command Line Interface)
       p ユーザに対する情報の表示を文字によって行い、全ての操作はキーボードを用いて行うユーザイーンターフェースのこと
-      img(src="./images/backend-primer/codeanywhere/5.png")
+      img(src="./images/backend-primer/termial.png")
       h5 コマンド一例
       table
         thead
@@ -332,28 +346,6 @@ block content
       small
         | 参考:
         a(href="http://www.redout.net/data/command.html") http://www.redout.net/data/command.html
-  section.slide-top
-    // .wrap = container (width: 90%)
-    .wrap
-      h3 環境セットアップ
-      h5 rubyのアップデート
-      code
-        pre
-          | # 最新のrubyバージョン取得
-          | rvm get head
-          | # インストール可能なバージョン一覧表示
-          | rvm list known
-          | # 2.4をインストール
-          | rvm install 2.4
-          | # インストール済みのバージョンを表示
-          | rvm list
-          | # インストールした2.4のrubyを使用
-      video(src="./images/backend-primer/rmv.mp4" controls)
-          | rvm --default use ruby-2.4.4
-          | # 現在のrubyバージョンの表示
-          | ruby -v
-          | # パッケージマネージャーの表示
-          | gem install bundler
   section.slide-top
     // .wrap = container (width: 90%)
     .wrap
@@ -395,7 +387,7 @@ block content
       code
         pre
           | git clone https://github.com/pocke777/twwwitter-clone-rails
-      img(src="./images/backend-primer/codeanywhere/6.png")
+      img(src="./images/backend-primer/cloud9/1.png")
 
   section.slide-top
     // .wrap = container (width: 90%)
@@ -406,13 +398,19 @@ block content
         pre
           | cd twwwitter-clone-rails
           | bundle install
-      img(src="./images/backend-primer/codeanywhere/7.png")
-      h5 Railsコマンドでサーバー起動 🎉🎉🎉
+      img(src="./images/backend-primer/cloud9/2.png")
+      h5(style="margin-top: 45px;") Railsコマンドでサーバー起動 🎉🎉🎉
       code
         pre
           | bin/rails db:migrate
-          | bin/rails s -b 0.0.0.0
-      img(src="./images/backend-primer/codeanywhere/8.png")
+          | bin/rails s
+      img(src="./images/backend-primer/cloud9/3.png")
+      h5(style="margin-top: 45px;") ブラウザで確認
+      img(src="./images/backend-primer/cloud9/4.png")
+      img(src="./images/backend-primer/cloud9/5.png")
+
+      h5(style="margin-top: 45px;") こちらの表示がされていればOK!
+      img(src="./images/backend-primer/cloud9/6.png")
 
   section.bg-green
     span.background.dark(style="background-image:url('https://images.unsplash.com/photo-1535219241072-7d3c28a49a5c')")
@@ -429,16 +427,36 @@ block content
       | 可読性を重視した構文となっている。Ruby においては整数や文字列なども含めデータ型はすべてがオブジェクトであり、純粋なオブジェクト指向言語といえる。<br>
     small wiki:
       a(href="https://ja.wikipedia.org/wiki/Ruby") https://ja.wikipedia.org/wiki/Ruby
-    h3(style="margin-top: 80px;") 動かしてみよう
-    p
-      a(href="https://repl.it/@pocke777/JudiciousTraumaticCores" target="_blank") https://repl.it/@pocke777/JudiciousTraumaticCores
-
 
     h3(style="margin-top: 80px;") Gemとは?
     p
       | RubyGemsは、Ruby言語用のパッケージ管理システムであり、Rubyのプログラムと（"gem" と呼ばれる）ライブラリの配布用標準フォーマットを提供している。gemを容易に管理でき、gemを配布するサーバの機能も持つ。Rubyバージョン1.9以降では標準ライブラリの一部となっている。
     small wiki:
       a(href="https://ja.wikipedia.org/wiki/RubyGems") https://ja.wikipedia.org/wiki/RubyGems
+
+  section.slide-top
+    h4(style="margin-top: 45px;") Rubyの基本構文
+    p
+      iframe(height="800px" width="100%" src="https://repl.it/@pocke777/DimTrustyWorkplace?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals")
+
+  section.slide-top
+    // .wrap = container (width: 90%)
+    h2 Ruby基本
+
+    h4(style="margin-top: 45px;") FizzBuzz問題をやってみよう!
+    p
+      ol
+        li 1から100までの数を順番に出力
+        li 3で割り切れる数ならFizz
+        li 5で割り切れる数ならBuzzと出力
+        li 両方で割り切れるならFizzBuzzと出力
+      img(src="./images/backend-primer2/1.png")
+    h5 Try
+    a(href="https://repl.it/@pocke777/FizzBuzz-Template" target="_blank") https://repl.it/@pocke777/FizzBuzz-Template
+
+  section.slide-top
+    h4(style="margin-top: 45px;") FizzBuzz問題(回答例)
+    iframe(height="800px" width="100%" src="https://repl.it/@pocke777/FizzBuzz?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals")
 
   section.bg-green
     span.background.dark(style="background-image:url('https://images.unsplash.com/photo-1535219241072-7d3c28a49a5c')")
@@ -483,7 +501,18 @@ block content
     .wrap.aligncenter.fadeInUp
       h3
         strong Railsハンズオンズ (HTML編集)
-    // .end .wrap
   section.slide-top
-    // .wrap = container (width: 90%)
     h2 ルーティングを確認してリンクを繋いでみよう
+    li(style="margin-top: 80px;") ルーティングの確認
+    img(src="./images/backend-primer/cloud9/7.png")
+
+    li(style="margin-top: 80px;") アカウント作成へリンクの追加
+    img(src="./images/backend-primer/cloud9/8.png")
+
+    li(style="margin-top: 80px;") ログインへのリンクも追加しよう!
+
+
+
+
+
+
