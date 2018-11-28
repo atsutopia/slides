@@ -107,10 +107,6 @@
           </div>
           <!-- .end .wrap-->
         </section>
-        <section class="slide-top">
-          <h2>本日のスライド</h2>
-          <h1>https://bit.ly/2PN6K2p</h1>
-        </section>
         <section>
           <!-- .wrap = container (width: 90%)-->
           <div class="wrap size-70">
@@ -212,6 +208,23 @@
           <h4 style="margin-top: 45px;">FizzBuzz問題(回答例)</h4>
           <iframe height="800px" width="100%" src="https://repl.it/@pocke777/FizzBuzz?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
         </section>
+        <section class="slide-top">
+          <!-- .wrap = container (width: 90%)-->
+          <h2>Ruby基本</h2>
+          <h4 style="margin-top: 45px;">確率を求めてみよう!</h4>
+          <ol>
+            <li>["kawasaki", "suzuki", "toyota", "subaru", "honda"] という配列の中から1つの値をランダムに取り出してください。</li>
+            <li>この操作を1000回繰り返してそれぞれの値が出力された確率を表示しましょう</li>
+          </ol>
+          <h6 style="margin-top: 45px;">実行例</h6><code>
+            <pre>
+ $ ruby scripts/chapter1/challenge2/q2.rb
+ kawasaki: 20.599999999999998%
+ suzuki: 19.2%
+ toyota: 15.8%
+ subaru: 22.1%
+ honda: 22.3%</pre></code>
+        </section>
         <section class="slide-top" id="snippet">
           <!-- .wrap = container (width: 90%)-->
           <h2>Ruby (Class)</h2>
@@ -279,6 +292,44 @@ end</code></pre>
           <pre><code>$ p = point.new(1,2)
 p.increment
 p.x => # 2</code></pre>
+        </section>
+        <section class="slide-top">
+          <h2>名簿管理用のクラスを作成しよう!</h2>
+          <ol>
+            <li>名前/性別情報を登録できる</li>
+            <li>生徒数と男女の割合を出力</li>
+          </ol>
+          <h6 style="margin-top: 45px;">クラスの雛形</h6>
+          <pre><code>class ClassRoom
+  def initialize
+    @students = []
+  end
+end</code></pre>
+          <h6 style="margin-top: 45px;">実行例</h6>
+          <pre><code>$ ruby scripts/chapter1/challenge7/q2.rb
+選択してください
+[0] 生徒を登録
+[1] 生徒数/割合を取得
+0
+名前を入力
+taro
+性別を入力 { man or woman }
+man
+選択してください
+[0] 生徒を登録
+[1] 生徒数/割合を取得
+0
+名前を入力
+hanako
+性別を入力 { man or woman }
+woman
+選択してください
+[0] 生徒を登録
+[1] 生徒数/割合を取得
+1
+生徒数は2人です
+男子の割合は50.0%です
+女子の割合は50.0%です</code></pre>
         </section>
         <section class="slide-top">
           <h2>カレンダー問題</h2>
@@ -415,52 +466,53 @@ Loading development environment (Rails 5.1.6)
         </section>
         <section class="slide-top">
           <h3>前準備</h3>
-          <ol>
-            <li class="u-verx9">ソースコードを最新に更新
-              <ol>
-                <li>自分の作業ブランチを作成 (ブランチ名は適当に)</li>
-                <li>今までの作業をコミット</li>
-                <li>masterブランチから最新コード取ってくる</li>
-              </ol>
-            </li>
-          </ol>
-          <h5 class="u-verx9">コミットFlow</h5><img src="./images/backend-primer2/git-flow.svg">
-          <h5 class="u-verx9">ブランチ作成Flow</h5><img src="./images/backend-primer2/git-branch.svg">
-          <h5 class="u-verx9">マージFlow</h5><img src="./images/backend-primer2/git-merge.svg">
-          <h5>例</h5>
-          <pre><code># 以下では作業中のファイルあるためコードを取得してもエラー
-cabox@box-codeanywhere:~/workspace/twwwitter-clone-rails$ git pull origin master
-remote: Counting objects: 27, done.
-remote: Compressing objects: 100% (9/9), done.
-remote: Total 27 (delta 15), reused 27 (delta 15), pack-reused 0
-Unpacking objects: 100% (27/27), done.
-From https://github.com/pocke777/twwwitter-clone-rails
- * branch            master     -> FETCH_HEAD
-   c2dd612..d376947  master     -> origin/master
-Updating c2dd612..d376947
-error: Your local changes to the following files would be overwritten by merge:
-        app/views/home/index.html.erb
-        db/schema.rb
-Please, commit your changes or stash them before you can merge.
-Aborting
-
-# ブランチの切り替え
-cabox@box-codeanywhere:~/workspace/twwwitter-clone-rails$ git branch
-  feature/0.0.1
-* master
-
-# ブランチの作成
-cabox@box-codeanywhere:~/workspace/twwwitter-clone-rails$ git checkout -b feature/ak
-M       app/views/home/index.html.erb
-M       db/schema.rb
-Switched to a new branch 'feature/ak'
-# 作業のコミット
-no changes added to commit (use "git add" and/or "git commit -a")
-cabox@box-codeanywhere:~/workspace/twwwitter-clone-rails$ git add .
-cabox@box-codeanywhere:~/workspace/twwwitter-clone-rails$ git commit -m "link connect"
-
-# マスターブランチのコードを取得
-cabox@box-codeanywhere:~/workspace/twwwitter-clone-rails$ git pull origin master</code></pre>
+          <!-- ol-->
+          <!--   li.u-verx9 ソースコードを最新に更新-->
+          <!--     ol-->
+          <!--       li 自分の作業ブランチを作成 (ブランチ名は適当に)-->
+          <!--       li 今までの作業をコミット-->
+          <!--       li masterブランチから最新コード取ってくる-->
+          <!-- h5.u-verx9 コミットFlow-->
+          <!-- img(src="./images/backend-primer2/git-flow.svg")-->
+          <!-- h5.u-verx9 ブランチ作成Flow-->
+          <!-- img(src="./images/backend-primer2/git-branch.svg")-->
+          <!-- h5.u-verx9 マージFlow-->
+          <!-- img(src="./images/backend-primer2/git-merge.svg")-->
+          <!-- h5 例-->
+          <!-- pre: code-->
+          <!--   | # 以下では作業中のファイルあるためコードを取得してもエラー-->
+          <!--   | cabox@box-codeanywhere:~/workspace/twwwitter-clone-rails$ git pull origin master-->
+          <!--   | remote: Counting objects: 27, done.-->
+          <!--   | remote: Compressing objects: 100% (9/9), done.-->
+          <!--   | remote: Total 27 (delta 15), reused 27 (delta 15), pack-reused 0-->
+          <!--   | Unpacking objects: 100% (27/27), done.-->
+          <!--   | From https://github.com/pocke777/twwwitter-clone-rails-->
+          <!--   |  * branch            master     -> FETCH_HEAD-->
+          <!--   |    c2dd612..d376947  master     -> origin/master-->
+          <!--   | Updating c2dd612..d376947-->
+          <!--   | error: Your local changes to the following files would be overwritten by merge:-->
+          <!--   |         app/views/home/index.html.erb-->
+          <!--   |         db/schema.rb-->
+          <!--   | Please, commit your changes or stash them before you can merge.-->
+          <!--   | Aborting-->
+          <!--   |-->
+          <!--   | # ブランチの切り替え-->
+          <!--   | cabox@box-codeanywhere:~/workspace/twwwitter-clone-rails$ git branch-->
+          <!--   |   feature/0.0.1-->
+          <!--   | * master-->
+          <!--   |-->
+          <!--   | # ブランチの作成-->
+          <!--   | cabox@box-codeanywhere:~/workspace/twwwitter-clone-rails$ git checkout -b feature/ak-->
+          <!--   | M       app/views/home/index.html.erb-->
+          <!--   | M       db/schema.rb-->
+          <!--   | Switched to a new branch 'feature/ak'-->
+          <!--   | # 作業のコミット-->
+          <!--   | no changes added to commit (use "git add" and/or "git commit -a")-->
+          <!--   | cabox@box-codeanywhere:~/workspace/twwwitter-clone-rails$ git add .-->
+          <!--   | cabox@box-codeanywhere:~/workspace/twwwitter-clone-rails$ git commit -m "link connect"-->
+          <!--   |-->
+          <!--   | # マスターブランチのコードを取得-->
+          <!--   | cabox@box-codeanywhere:~/workspace/twwwitter-clone-rails$ git pull origin master-->
           <li class="u-verx9">タイムゾーンの設定
             <pre><code># config/application.rb
 config.time_zone = 'Tokyo'
