@@ -387,56 +387,56 @@ block content
 
   section.slide-top
     h3 前準備
-    ol
-      li.u-verx9 ソースコードを最新に更新
-        ol
-          li 自分の作業ブランチを作成 (ブランチ名は適当に)
-          li 今までの作業をコミット
-          li masterブランチから最新コード取ってくる
-    h5.u-verx9 コミットFlow
-    img(src="./images/backend-primer2/git-flow.svg")
+    // ol
+    //   li.u-verx9 ソースコードを最新に更新
+    //     ol
+    //       li 自分の作業ブランチを作成 (ブランチ名は適当に)
+    //       li 今までの作業をコミット
+    //       li masterブランチから最新コード取ってくる
+    // h5.u-verx9 コミットFlow
+    // img(src="./images/backend-primer2/git-flow.svg")
 
-    h5.u-verx9 ブランチ作成Flow
-    img(src="./images/backend-primer2/git-branch.svg")
+    // h5.u-verx9 ブランチ作成Flow
+    // img(src="./images/backend-primer2/git-branch.svg")
 
-    h5.u-verx9 マージFlow
-    img(src="./images/backend-primer2/git-merge.svg")
+    // h5.u-verx9 マージFlow
+    // img(src="./images/backend-primer2/git-merge.svg")
 
-    h5 例
-    pre: code
-      | # 以下では作業中のファイルあるためコードを取得してもエラー
-      | cabox@box-codeanywhere:~/workspace/twwwitter-clone-rails$ git pull origin master
-      | remote: Counting objects: 27, done.
-      | remote: Compressing objects: 100% (9/9), done.
-      | remote: Total 27 (delta 15), reused 27 (delta 15), pack-reused 0
-      | Unpacking objects: 100% (27/27), done.
-      | From https://github.com/pocke777/twwwitter-clone-rails
-      |  * branch            master     -> FETCH_HEAD
-      |    c2dd612..d376947  master     -> origin/master
-      | Updating c2dd612..d376947
-      | error: Your local changes to the following files would be overwritten by merge:
-      |         app/views/home/index.html.erb
-      |         db/schema.rb
-      | Please, commit your changes or stash them before you can merge.
-      | Aborting
-      |
-      | # ブランチの切り替え
-      | cabox@box-codeanywhere:~/workspace/twwwitter-clone-rails$ git branch
-      |   feature/0.0.1
-      | * master
-      |
-      | # ブランチの作成
-      | cabox@box-codeanywhere:~/workspace/twwwitter-clone-rails$ git checkout -b feature/ak
-      | M       app/views/home/index.html.erb
-      | M       db/schema.rb
-      | Switched to a new branch 'feature/ak'
-      | # 作業のコミット
-      | no changes added to commit (use "git add" and/or "git commit -a")
-      | cabox@box-codeanywhere:~/workspace/twwwitter-clone-rails$ git add .
-      | cabox@box-codeanywhere:~/workspace/twwwitter-clone-rails$ git commit -m "link connect"
-      |
-      | # マスターブランチのコードを取得
-      | cabox@box-codeanywhere:~/workspace/twwwitter-clone-rails$ git pull origin master
+    // h5 例
+    // pre: code
+    //   | # 以下では作業中のファイルあるためコードを取得してもエラー
+    //   | cabox@box-codeanywhere:~/workspace/twwwitter-clone-rails$ git pull origin master
+    //   | remote: Counting objects: 27, done.
+    //   | remote: Compressing objects: 100% (9/9), done.
+    //   | remote: Total 27 (delta 15), reused 27 (delta 15), pack-reused 0
+    //   | Unpacking objects: 100% (27/27), done.
+    //   | From https://github.com/pocke777/twwwitter-clone-rails
+    //   |  * branch            master     -> FETCH_HEAD
+    //   |    c2dd612..d376947  master     -> origin/master
+    //   | Updating c2dd612..d376947
+    //   | error: Your local changes to the following files would be overwritten by merge:
+    //   |         app/views/home/index.html.erb
+    //   |         db/schema.rb
+    //   | Please, commit your changes or stash them before you can merge.
+    //   | Aborting
+    //   |
+    //   | # ブランチの切り替え
+    //   | cabox@box-codeanywhere:~/workspace/twwwitter-clone-rails$ git branch
+    //   |   feature/0.0.1
+    //   | * master
+    //   |
+    //   | # ブランチの作成
+    //   | cabox@box-codeanywhere:~/workspace/twwwitter-clone-rails$ git checkout -b feature/ak
+    //   | M       app/views/home/index.html.erb
+    //   | M       db/schema.rb
+    //   | Switched to a new branch 'feature/ak'
+    //   | # 作業のコミット
+    //   | no changes added to commit (use "git add" and/or "git commit -a")
+    //   | cabox@box-codeanywhere:~/workspace/twwwitter-clone-rails$ git add .
+    //   | cabox@box-codeanywhere:~/workspace/twwwitter-clone-rails$ git commit -m "link connect"
+    //   |
+    //   | # マスターブランチのコードを取得
+    //   | cabox@box-codeanywhere:~/workspace/twwwitter-clone-rails$ git pull origin master
     li.u-verx9 タイムゾーンの設定
       pre: code
         | # config/application.rb
