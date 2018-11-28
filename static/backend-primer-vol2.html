@@ -107,10 +107,6 @@
           </div>
           <!-- .end .wrap-->
         </section>
-        <section class="slide-top">
-          <h2>本日のスライド</h2>
-          <h1>https://bit.ly/2PN6K2p</h1>
-        </section>
         <section>
           <!-- .wrap = container (width: 90%)-->
           <div class="wrap size-70">
@@ -212,6 +208,23 @@
           <h4 style="margin-top: 45px;">FizzBuzz問題(回答例)</h4>
           <iframe height="800px" width="100%" src="https://repl.it/@pocke777/FizzBuzz?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
         </section>
+        <section class="slide-top">
+          <!-- .wrap = container (width: 90%)-->
+          <h2>Ruby基本</h2>
+          <h4 style="margin-top: 45px;">確率を求めてみよう!</h4>
+          <ol>
+            <li>["kawasaki", "suzuki", "toyota", "subaru", "honda"] という配列の中から1つの値をランダムに取り出してください。</li>
+            <li>この操作を1000回繰り返してそれぞれの値が出力された確率を表示しましょう</li>
+          </ol>
+          <h6 style="margin-top: 45px;">実行例</h6><code>
+            <pre>
+ $ ruby scripts/chapter1/challenge2/q2.rb
+ kawasaki: 20.599999999999998%
+ suzuki: 19.2%
+ toyota: 15.8%
+ subaru: 22.1%
+ honda: 22.3%</pre></code>
+        </section>
         <section class="slide-top" id="snippet">
           <!-- .wrap = container (width: 90%)-->
           <h2>Ruby (Class)</h2>
@@ -279,6 +292,44 @@ end</code></pre>
           <pre><code>$ p = point.new(1,2)
 p.increment
 p.x => # 2</code></pre>
+        </section>
+        <section class="slide-top">
+          <h2>名簿管理用のクラスを作成しよう!</h2>
+          <ol>
+            <li>名前/性別情報を登録できる</li>
+            <li>生徒数と男女の割合を出力</li>
+          </ol>
+          <h6 style="margin-top: 45px;">クラスの雛形</h6>
+          <pre><code>class ClassRoom
+  def initialize
+    @students = []
+  end
+end</code></pre>
+          <h6 style="margin-top: 45px;">実行例</h6>
+          <pre><code>$ ruby scripts/chapter1/challenge7/q2.rb
+選択してください
+[0] 生徒を登録
+[1] 生徒数/割合を取得
+0
+名前を入力
+taro
+性別を入力 { man or woman }
+man
+選択してください
+[0] 生徒を登録
+[1] 生徒数/割合を取得
+0
+名前を入力
+hanako
+性別を入力 { man or woman }
+woman
+選択してください
+[0] 生徒を登録
+[1] 生徒数/割合を取得
+1
+生徒数は2人です
+男子の割合は50.0%です
+女子の割合は50.0%です</code></pre>
         </section>
         <section class="slide-top">
           <h2>カレンダー問題</h2>
