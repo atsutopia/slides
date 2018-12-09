@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns#">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--
+    CLEAN MARKUP = GOOD KARMA.
+    Hi source code lover,
+    you're a curious person and a fast learner ;)
+    Let's make something beautiful together. Contribute on Github:
+    https://github.com/webslides/webslides
+    Thanks!
+    -->
+    <!-- SEO-->
+    <title>モダンWebフロントエンド実践入門 〜カルーセル実装〜</title>
+    <meta name="description" content="">
+    <!-- URL CANONICAL-->
+    <!-- <link rel="canonical" href="http://your-url.com/permalink">-->
+    <!-- Google Fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,700,700i%7CMaitree:200,300,400,600,700&amp;subset=latin-ext" rel="stylesheet">
+    <!-- CSS Base-->
+    <link rel="stylesheet" type="text/css" media="all" href="./css/webslides.css">
+    <link rel="stylesheet" type="text/css" media="all" href="./css/default.css">
+    <!-- link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css")-->
+    <!-- Optional - CSS SVG Icons (Font Awesome)-->
+    <link rel="stylesheet" type="text/css" media="all" href="./css/svg-icons.css">
+    <!-- SOCIAL CARDS (ADD YOUR INFO)-->
+    <!-- FACEBOOK-->
+    <!-- EDIT-->
+    <meta property="og:url" content="http://your-url.com/permalink">
+    <!-- EDIT-->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="WebSlides: Netflix's Culture">
+    <meta property="og:description" content="Patty McCord created Netflix's culture. This is a homage.">
+    <!-- EDIT-->
+    <meta property="og:updated_time" content="2017-04-16T16:24:56">
+    <!-- EDIT-->
+    <meta property="og:image" content="../static/images/share-webslides.jpg">
+    <!-- EDIT-->
+    <meta property="og:image:width" content="800">
+    <meta property="og:image:height" content="429">
+    <!-- TWITTER-->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@webslides">
+    <!-- EDIT-->
+    <meta name="twitter:creator" content="@jlantunez">
+    <!-- EDIT-->
+    <meta name="twitter:title" content="WebSlides: Netflix's Culture">
+    <!-- EDIT-->
+    <meta name="twitter:description" content="Patty McCord created Netflix's culture. This is a homage.">
+    <!-- EDIT-->
+    <meta name="twitter:image" content="../static/images/share-webslides.jpg">
+    <!-- EDIT-->
+    <!-- FAVICONS-->
+    <link rel="shortcut icon" sizes="16x16" href="../static/images/favicons/favicon.png">
+    <link rel="shortcut icon" sizes="32x32" href="../static/images/favicons/favicon-32.png">
+    <link rel="apple-touch-icon icon" sizes="76x76" href="../static/images/favicons/favicon-76.png">
+    <link rel="apple-touch-icon icon" sizes="120x120" href="../static/images/favicons/favicon-120.png">
+    <link rel="apple-touch-icon icon" sizes="152x152" href="../static/images/favicons/favicon-152.png">
+    <link rel="apple-touch-icon icon" sizes="180x180" href="../static/images/favicons/favicon-180.png">
+    <link rel="apple-touch-icon icon" sizes="192x192" href="../static/images/favicons/favicon-192.png">
+    <!-- Android-->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#333333">
+  </head>
+  <body>
+    <!-- header(role='banner')-->
+    <!--   nav(role='navigation')-->
+    <!--     p.logo-->
+    <!--       a(href='../index.html', title='WebSlides') WebSlides-->
+    <!--     ul-->
+    <!--       li.github-->
+    <!--         a(rel='external', href='https://github.com/webslides/webslides', title='Github')-->
+    <!--           svg.fa-github-->
+    <!--             use(xlink:href='#fa-github')-->
+    <!--           em WebSlides-->
+    <!--       li.twitter-->
+    <!--         a(rel='external', href='https://twitter.com/webslides', title='Twitter')-->
+    <!--           svg.fa-twitter-->
+    <!--             use(xlink:href='#fa-twitter')-->
+    <!--           em @WebSlides-->
+    <!--       // <li class="dribbble"><a rel="external" href="http://dribbble.com/webslides" title="Dribbble"><svg class="fa-dribbble"><use xlink:href="#fa-dribbble"></use></svg> <em>webslides</em></a></li>-->
+    <main role="main">
+      <article id="webslides">
+        <!--
+        Quick Guide
+        - Each parent <section> in the <article id="webslides"> element is an individual slide.
+        - Vertical sliding = <article id="webslides" class="vertical">
+        - <div class="wrap"> = container 90% / <div class="wrap size-50"> = 45%;
+        -->
+        <!-- https://jsprimer.net/basic/data-type/-->
+        <section class="bg-red"><span class="background dark" style="background-image:url('https://source.unsplash.com/R1J6Z1cnJZc/1600x800')"></span>
+          <!-- .wrap = container (width: 90%)-->
+          <div class="wrap aligncenter">
+            <h1><strong>モダンWebフロントエンド実践入門 〜カルーセル実装〜</strong></h1>
+            <h5 class="text-symbols">***</h5>
+          </div>
+          <!-- .end .wrap-->
+        </section>
+        <section>
+          <!-- .wrap = container (width: 90%)-->
+          <div class="wrap size-70">
+            <h2><strong>Agenda</strong></h2>
+            <hr>
+            <ol class="text-cols">
+              <li>トレーニング概要</li>
+              <li>自己紹介</li>
+              <li>JavaScriptの基礎文法</li>
+              <li>モダンWebフロントエンド開発</li>
+              <li>カルーセルハンズオン</li>
+            </ol>
+          </div>
+        </section>
+        <section class="bg-green"><span class="background dark" style="background-image:url('https://images.unsplash.com/photo-1535219241072-7d3c28a49a5c')"></span>
+          <!-- .wrap = container (width: 90%)-->
+          <div class="wrap aligncenter fadeInUp">
+            <h3><strong>トレーニング概要</strong></h3>
+          </div>
+          <!-- .end .wrap-->
+        </section>
+        <section class="slide-top">
+          <!-- .wrap = container (width: 90%)-->
+          <div class="wrap">
+            <div>
+              <h1>モダンWebフロントエンド環境でカルーセル実装を行おう！</h1>
+            </div>
+            <!-- TOOD: 完成形--><img class="vertxcenter" src="images/vue-primer/sample.gif" width="800">
+          </div>
+        </section>
+        <section class="fullscreen"><span class="background dark" style="background-image:url('./images/cover/profile.png'); width: 60%; height: 120%; top: 50%; left: 50%; transform: translate(-50%, -50%); opacity: .4;"></span>
+          <h2 style="position: relative; font-weight: bold;">WHAT I'M ABOUT</h2>
+          <p style="position: relative; font-weight: bold;">
+            株式会社TRUNK TL Kawasaki Atsushi<br>
+            2013年じげんグループHRメディア事業のPMやバックエンドを担当。<br>
+            新規事業立ち上げの経験を経てエンジニアリングユニットのマネージャーに従事。<br>
+            
+            2015年に株式会社カヤックへ入社。<br>
+            クライアントワークや自社サービス(Lobi)のフロントエンド、バックエンドおよびインフラ設計、構築、運用を担当。<br>
+          </p>
+        </section>
+        <section class="bg-green"><span class="background dark" style="background-image:url('https://images.unsplash.com/photo-1535219241072-7d3c28a49a5c')"></span>
+          <!-- .wrap = container (width: 90%)-->
+          <div class="wrap aligncenter fadeInUp">
+            <h3><strong>JavaScriptの基礎文法</strong></h3>
+          </div>
+          <!-- .end .wrap-->
+        </section>
+        <section class="slide-top">
+          <h3>JavaScriptとは</h3>
+          <p>JavaScriptはウェブブラウザ、Node.jsを始め、今はIoT（Internet of Things）デバイスなど幅広い環境で動作する言語となっています。 <br><br><strong>HTML</strong>はマークアップ言語で、これを使ってウェブコンテンツに構造と意味を与えます。 例えば段落や見出しや表を定義したり、ページに画像や動画を入れたりします。<br><br><strong>CSS</strong>は HTML コンテンツに適用するスタイリング規則の言語です。 例えば背景とフォントの色を設定したり、複数カラムにコンテンツをレイアウトしたりします。 <br><br><strong>JavaScript</strong>は動的にコンテンツを更新したり、マルチメディアを管理したり、その他多くのことができるスクリプト言語です。</p>
+        </section>
+        <section class="slide-top">
+          <h4>コメント</h4>
+          <p>
+            コメントはプログラムとして評価されないため、ソースコードの説明を書くために利用されています。
+            JavaScriptには大きく分けて2種類のコメントがあります。
+          </p>
+          <h5>一行コメント</h5>
+          <pre><code>// 一行コメント
+// この部分は評価されない</code></pre>
+          <h5>複数行コメント</h5>
+          <pre><code>/* 複数行コメント
+   囲まれている範囲が評価されない
+ */</code></pre>
+        </section>
+        <section class="slide-top">
+          <h4>変数と宣言</h4>
+          <p>
+            プログラミング言語には、数値などのデータに名前を付けたり繰り返し利用するために、データを保持するための変数があります。
+            JavaScriptでは、「これは変数です」という宣言をするキーワードとして、 var、let、constがあります。
+          </p>
+          <h5>let</h5>
+          <p>letキーワードを使い、現在のスコープに対して変数宣言できます。</p>
+          <pre><code>let bookTitle = "JavaScriptの本";
+let x; // "x"を定義する
+let x; // 同じ"x"を定義するとSyntaxErrorとなる</code></pre>
+          <h5>const</h5>
+          <p>基本的な使い方はletと同じですが、constは再代入できない変数を定義するキーワードです。</p>
+          <pre><code>const bookTitle = "JavaScriptの本";
+bookTitle = "上書き"; // TypeError: invalid assignment to const `bookTitle'</code></pre>
+        </section>
+        <section class="slide-top">
+          <h4>データ型とリテラル</h4>
+          <p>
+            JavaScriptは動的型付け言語に分類される言語であるため、 静的型付け言語のような変数の型はありません。
+            しかし、文字列、数値、真偽値といった値の型は存在します。 これらの値の型のことをデータ型とよびます。
+            データ型を大きく分けると、プリミティブ型とオブジェクトの2つに分類されます。
+          </p>
+          <h5>プリミティブ型（基本型）</h5>
+          <ul>
+            <li>真偽値（Boolean）: trueまたはfalseのデータ型</li>
+            <li>数値（Number）: 42 や 3.14159 などの数値のデータ型</li>
+            <li>文字列（String）: "JavaScript" などの文字列のデータ型</li>
+            <li>undefined: 値が未定義であることを意味するデータ型</li>
+            <li>null: 値が存在しないnull値を意味するデータ型</li>
+            <li>シンボル（Symbol）: ES2015から追加された一意で不変な値のデータ型</li>
+          </ul>
+          <h5>オブジェクト（複合型）</h5>
+          <ul>
+            <li>プリミティブ型以外のデータ</li>
+            <li>オブジェクト、配列、関数、正規表現、Dateなど</li>
+          </ul>
+          <pre><code>typeof true;// => "boolean"
+typeof 42; // => "number"
+typeof "JavaScript"; // => "string"
+typeof Symbol("シンボル");// => "symbol"
+typeof undefined; // => "undefined"
+typeof null; // => "object"
+typeof ["配列"]; // => "object"
+typeof { "key": "value" }; // => "object"
+typeof function() {}; // => "function"</code></pre>
+        </section>
+        <section class="slide-top">
+          <h4>関数と宣言</h4>
+          <p>JavaScriptでは、処理をまとめる際に関数やメソッド、クラスを使います。 これらは関数オブジェクトと言われる関数として使えるオブジェクトの一種です。</p>
+          <pre><code>// 関数定義
+function 関数名(仮引数1, 仮引数2) {
+    // 関数を呼び出された時の処理
+    // ...
+    return 関数が返す値;
+}
+// 関数呼び出し
+関数名(引数1, 引数2);</code></pre>
+          <pre><code>function multiple(num) {
+    return num * 2;
+}
+
+console.log(multiple(10)); // => 20</code></pre>
+        </section>
+        <section class="slide-top">
+          <h4>条件分岐</h4>
+          <p>
+            if文を使うことで、プログラム内に条件分岐を書くことができます。
+            if文は次のような構文が基本形となり、条件式の評価結果がtrueであるならば、 実行する文が実行されます。
+          </p>
+          <pre><code>if (条件式) {
+  // 実行する文;
+  // 実行する文;
+}</code></pre>
+          <h5>else if文</h5>
+          <p>複数の条件分岐を書く場合は、if文に続けてelse if文を使うことでできます。 たとえば、次の3つの条件分岐するプログラムを考えます。</p>
+          <ol>
+            <li>version が "ES5" ならば "ECMAScript 5" と出力</li>
+            <li>version が "ES6" ならば "ECMAScript 2015" と出力</li>
+            <li>version が "ES7" ならば "ECMAScript 2016" と出力</li>
+          </ol>
+          <pre><code>const version = "ES6";
+if (version === "ES5") {
+    console.log("ECMAScript 5");
+} else if (version === "ES6") {
+    console.log("ECMAScript 2015");
+} else if (version === "ES7") {
+    console.log("ECMAScript 2016");
+}</code></pre>
+        </section>
+        <section class="slide-top">
+          <h4>今年がうるう年かを判定してみましょう</h4>
+          <p>うるう年の条件は次のとおりです。
+            <ol>
+              <li>西暦で示した年が4で割り切れる年はうるう年です</li>
+              <li>ただし、西暦で示した年が100で割り切れる年はうるう年ではありません</li>
+              <li>ただし、西暦で示した年が400で割り切れる年はうるう年です</li>
+            </ol>
+          </p>
+          <pre><code>// 今年の西暦を取得
+const year = new Date().getFullYear();
+if (year % 4 === 0) { // 4で割り切れる
+  // 100で割り切れる年はうるう年ではない
+  // ただし、400で割り切れる年はうるう年
+} else {
+    console.log("うるう年ではありません");
+}</code></pre>
+        </section>
+        <section class="slide-top">
+          <h4>ループと反復処理</h4>
+          <p>プログラミングにおいて、同じ処理を繰り返すために同じコードを書く必要はありません。 ループや再帰呼び出し、イテレータなどを使い、反復処理は抽象化します。 ここでは、もっとも基本的な反復処理と制御文について学んでいきます。</p>
+          <h5>while文</h5>
+          <p>
+            while文は条件式がtrueであるならば、反復処理を行います。
+            while文の実行フローは次のようになります。 最初から条件式がfalseである場合は、何も実行せずwhile文は終了します。
+            <ol>
+              <li>条件式 の評価結果がtrueなら処理を続け、falseなら終了</li>
+              <li>実行する文を実行</li>
+              <li>ステップ1へ戻る</li>
+            </ol>
+          </p>
+          <h6>例</h6>
+          <p>次のコードではxの値が10未満であるなら、コンソールへ繰り返しログが出力されます。 また、実行する文にて、xの値を増やし条件式がfalseとなるようにしています。</p>
+          <pre><code>let x = 0;
+while (x < 10) {
+    console.log(x);
+    x += 1;
+}</code></pre>
+        </section>
+        <section class="slide-top">
+          <h4>FizzBuzz問題をやってみよう</h4>
+          <p>FizzBuzzの条件は次のとおりです。
+            <ol>
+              <li>1 ~ 100 までをループする</li>
+              <li>3で割り切れる場合はFizzを出力</li>
+              <li>5で割り切れる場合はBuzzを出力</li>
+              <li>3と5で割り切れる場合はFizzBuzzを出力</li>
+              <li>それ以外は数値を出力</li>
+            </ol>
+          </p>
+          <pre><code>let i = 1;
+while (i <= 100) {
+  if (i%3 == 0) {
+    console.log("Fizz")
+  } else {
+    console.log(i)
+  }
+}</code></pre>
+        </section>
+        <section class="bg-green"><span class="background dark" style="background-image:url('https://images.unsplash.com/photo-1535219241072-7d3c28a49a5c')"></span>
+          <!-- .wrap = container (width: 90%)-->
+          <div class="wrap aligncenter fadeInUp">
+            <h3><strong>モダンWebフロントエンド開発</strong></h3>
+          </div>
+          <!-- .end .wrap-->
+        </section>
+        <section class="slide-top">
+          <h4>Example(Pure Javascript)</h4><p data-height="465" data-theme-id="0" data-slug-hash="aRmRXw" data-default-tab="js,result" data-user="pickrusu" data-pen-title="JS Sample Form" class="codepen">See the Pen <a href="https://codepen.io/pickrusu/pen/aRmRXw/">JS Sample Form</a> by pickrusu (<a href="https://codepen.io/pickrusu">@pickrusu</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+        </section>
+        <section class="slide-top">
+          <h4>Example(Vue.js)</h4><p data-height="465" data-theme-id="0" data-slug-hash="oazaQp" data-default-tab="html,result" data-user="pickrusu" data-pen-title="Vue.js Sample Form" class="codepen">See the Pen <a href="https://codepen.io/pickrusu/pen/oazaQp/">Vue.js Sample Form</a> by pickrusu (<a href="https://codepen.io/pickrusu">@pickrusu</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+        </section>
+        <section class="slide-top">
+          <h4>Vue.jsインスタンスの生成</h4>
+          <pre><code>new Vue({
+  // Vue.jsとDOMの関連付け
+  el: "#app",
+  // データ
+  data: {
+    message: "Hello"
+    }
+  },
+  // ライフサイクルフック
+  created: function() {
+    console.log("created!!")
+    }
+  },
+  // メソッドの定義
+  methods: {
+    say: function(msg) {
+      alert("Hello" + msg)
+      }
+    }
+  },
+})</code></pre>
+        </section>
+        <section class="slide-top">
+          <h4>基本操作 (Loop / if / method / onclick)</h4>
+          <h3>Loop</h3><p data-height="265" data-theme-id="0" data-slug-hash="NOdPNb" data-default-tab="js,result" data-user="pickrusu" data-pen-title="NOdPNb" class="codepen">See the Pen <a href="https://codepen.io/pickrusu/pen/NOdPNb/">NOdPNb</a> by pickrusu (<a href="https://codepen.io/pickrusu">@pickrusu</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+          <h3>if</h3><p data-height="265" data-theme-id="0" data-slug-hash="aRpzNa" data-default-tab="html,result" data-user="pickrusu" data-pen-title="Vue.js if" class="codepen">See the Pen <a href="https://codepen.io/pickrusu/pen/aRpzNa/">Vue.js if</a> by pickrusu (<a href="https://codepen.io/pickrusu">@pickrusu</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+          <h3>method / onclick</h3><p data-height="265" data-theme-id="0" data-slug-hash="NOdPdd" data-default-tab="html,result" data-user="pickrusu" data-pen-title="Vue.js method" class="codepen">See the Pen <a href="https://codepen.io/pickrusu/pen/NOdPdd/">Vue.js method</a> by pickrusu (<a href="https://codepen.io/pickrusu">@pickrusu</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+        </section>
+        <section class="slide-top">
+          <h4>Vue.jsを触ってみよう</h4>
+          <ul>
+            <li>Hello World! となっている部分を Hello Vue!に変更してみよう</li>
+            <li>入力されている文字数が20文字以上になったら `alert('not more than 20')` とアラートを表示しよう</li>
+          </ul><p data-height="465" data-theme-id="0" data-slug-hash="oazaQp" data-default-tab="html,result" data-user="pickrusu" data-pen-title="Vue.js Sample Form" class="codepen">See the Pen <a href="https://codepen.io/pickrusu/pen/oazaQp/">Vue.js Sample Form</a> by pickrusu (<a href="https://codepen.io/pickrusu">@pickrusu</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+        </section>
+        <section class="slide-top">
+          <h4>Vue.jsの裏側</h4>
+          <h5>ライフサイクル</h5><img class="vertxcenter" src="images/vue-primer/lifecycle.png" width="800">
+        </section>
+        <section class="slide-top">
+          <h5>仮想DOM</h5>
+          <p>
+            Vue.jsはDOMとJavaScriptのデータを同期するためにリアクティブなデータバインディングを持っている
+            データの変更後に仮想DOMに反映され、仮想DOMと実際のDOMの差分を計算して変更部分を実際のDOMに反映し、Viewが変更される
+          </p><img class="vertxcenter" src="images/vue-primer/1_hwlyMTnboUp9Mk0mUYhpdQ.png" width="800">
+        </section>
+        <section class="bg-green"><span class="background dark" style="background-image:url('https://images.unsplash.com/photo-1535219241072-7d3c28a49a5c')"></span>
+          <!-- .wrap = container (width: 90%)-->
+          <div class="wrap aligncenter fadeInUp">
+            <h3><strong>実践Vue.jsアプリケーション</strong></h3>
+          </div>
+          <!-- .end .wrap-->
+        </section>
+        <section class="slide-top">
+          <h1>今回作成するアプリケーションはこちら</h1><img class="vertxcenter" src="images/vue-primer/sample.gif" width="800">
+        </section>
+        <section class="slide-top">
+          <h1 class="u-verx3">ソースコードはこちらを利用</h1>
+          <iframe src="https://codesandbox.io/embed/j4j6jxoy9y" style="width:100%; height:800px; border:0; border-radius: 4px; overflow:hidden;" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"></iframe>
+        </section>
+        <section class="slide-top">
+          <h1 class="u-verx3">ツールの説明</h1><img class="vertxcenter" src="images/vue-primer/sandbox.png" width="1200">
+        </section>
+        <section class="slide-top">
+          <h1 class="u-verx3">実装ステップ</h1>
+          <ol>
+            <li>Vueインスタンスの生成</li>
+            <li>スレッドをモックデータに置き換え</li>
+            <li>入力データの反映</li>
+            <li>コンポーネント化</li>
+          </ol>
+        </section>
+        <section class="slide-top">
+          <h1 class="u-verx3">Vueのインスタンスの生成</h1>
+          <p>全ての Vue アプリケーション は、Vue 関数で新しい Vue インスタンスを作成することによって始まる</p>
+          <pre><code>var vm = new Vue({
+  // オプション
+})</code></pre>
+        </section>
+        <section class="slide-top">
+          <h1 class="u-verx3">スレッドをモックデータに置き換え</h1>
+          <pre><code>const messages = [
+  {
+    name: 'scottish-fold',
+    time: '11:10 AM',
+    icon: 'images/pickrusu.jpg',
+    text: 'これはサンプルテキストですこれはサンプルテキストです\nこれはサンプルテキストです\nこれはサンプルテキストですこれはサンプルテキストですこれはサンプルテキストです',
+  },
+  {
+    name: 'scottish-fold',
+    time: '11:10 AM',
+    icon: 'images/pickrusu.jpg',
+    text: 'これはサンプルテキストですこれはサンプルテキストです\nこれはサンプルテキストです\nこれはサンプルテキストですこれはサンプルテキストですこれはサンプルテキストです',
+  },
+  {
+    name: 'scottish-fold',
+    time: '11:10 AM',
+    icon: 'images/pickrusu.jpg',
+    text: 'これはサンプルテキストですこれはサンプルテキストです\nこれはサンプルテキストです\nこれはサンプルテキストですこれはサンプルテキストですこれはサンプルテキストです',
+  }
+]</code></pre>
+        </section>
+        <section class="slide-top">
+          <h1 class="u-verx3">入力データの反映</h1><img class="vertxcenter" src="images/vue-primer/trunk.gif" width="1000">
+        </section>
+        <section class="slide-top">
+          <h1 class="u-verx3">コンポーネント化</h1>
+          <h3 class="u-verx9-t">単一ファイルコンポーネント</h3>
+          <p>
+            コンポーネントとは部品という意味
+            ページを構成している要素を部品化し、構造・見た目・振る舞いをセットにして1ファイルにまとめて記述する
+          </p>
+        </section>
+        <section class="slide-top">
+          <h1 class="u-verx3">Vue.jsの単一ファイルコンポーネントシンタックス</h1>
+          <iframe src="https://codesandbox.io/embed/m5x9x7242p" style="width:100%; height:800px; border:0; border-radius: 4px; overflow:hidden;" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"></iframe>
+        </section>
+        <section class="slide-top">
+          <h1 class="u-verx3">Props</h1>
+          <p>親コンポーネントから子コンポーネントへとデータ(関数)の受け渡しを行う</p>
+          <iframe src="https://codesandbox.io/embed/0pvqq7wn7n" style="width:100%; height:800px; border:0; border-radius: 4px; overflow:hidden;" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"></iframe>
+        </section>
+        <section class="slide-top">
+          <h1 class="u-verx3">メッセ部分をコンポーネント化</h1><img class="vertxcenter" src="images/vue-primer/component.png" width="1000">
+        </section>
+        <section class="slide-top">
+          <h1 class="u-verx3">コンポーネント化を行うための実装ステップ</h1>
+          <ol>
+            <li>Vueコンポーネントファイルの作成</li>
+            <li>コンポーネントの登録</li>
+            <li>Viewの書き換え / propsの受け渡し</li>
+          </ol>
+        </section>
+        <section class="slide-top">
+          <h1 class="u-verx3">And more...</h1>
+          <li>Vue Router</li>
+          <li>Vuex</li>
+        </section>
+        <section class="bg-green"><span class="background dark" style="background-image:url('./images/cover/0.jpg')"></span>
+          <!-- .wrap = container (width: 90%)-->
+          <div class="wrap aligncenter fadeInUp">
+            <h3><strong>Thanks</strong></h3>
+          </div>
+        </section>
+        <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+      </article>
+    </main>
+    <!-- main-->
+    <footer>
+      <div class="wrap">
+        <p><span class="alignright"><a href="https://trunk.fm/" title="Trunk"><img src="./images/logos/trunk.svg" alt="Trunk"></a></span></p>
+      </div>
+    </footer>
+    <!-- Required-->
+    <script src="./js/webslides.js"></script>
+    <script src="./js/highlight.pack.js"></script>
+    <script>
+      window.ws = new WebSlides();
+      hljs.initHighlightingOnLoad();
+    </script>
+    <!-- Autoslide? window.ws = new WebSlides({ autoslide: 8000 });-->
+    <!-- OPTIONAL - svg-icons.js (fontastic.me - Font Awesome as svg icons)-->
+    <script defer="" src="../static/js/svg-icons.js"></script>
+  </body>
+</html>

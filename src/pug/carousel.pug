@@ -1,0 +1,439 @@
+extends /layout/_application
+
+prepend Config
+  - title = 'モダンWebフロントエンド実践入門 〜カルーセル実装〜'
+
+block content
+  // https://jsprimer.net/basic/data-type/
+  section.bg-red
+    span.background.dark(style="background-image:url('https://source.unsplash.com/R1J6Z1cnJZc/1600x800')")
+    // .wrap = container (width: 90%)
+    .wrap.aligncenter
+      h1
+        strong モダンWebフロントエンド実践入門 〜カルーセル実装〜
+      h5.text-symbols ***
+    // .end .wrap
+  section
+    // .wrap = container (width: 90%)
+    .wrap.size-70
+      h2
+        strong Agenda
+      hr
+      ol.text-cols
+        li トレーニング概要
+        li 自己紹介
+        li JavaScriptの基礎文法
+        li モダンWebフロントエンド開発
+        li カルーセルハンズオン
+  section.bg-green
+    span.background.dark(style="background-image:url('https://images.unsplash.com/photo-1535219241072-7d3c28a49a5c')")
+    // .wrap = container (width: 90%)
+    .wrap.aligncenter.fadeInUp
+      h3
+        strong トレーニング概要
+    // .end .wrap
+  section.slide-top
+    // .wrap = container (width: 90%)
+    .wrap
+      div
+        h1 モダンWebフロントエンド環境でカルーセル実装を行おう！
+      // TOOD: 完成形
+      img.vertxcenter(src="images/vue-primer/sample.gif" width="800")
+  section.fullscreen
+    span.background.dark(style="background-image:url('./images/cover/profile.png'); width: 60%; height: 120%; top: 50%; left: 50%; transform: translate(-50%, -50%); opacity: .4;")
+    h2(style="position: relative; font-weight: bold;") WHAT I'M ABOUT
+    p(style="position: relative; font-weight: bold;")
+      | 株式会社TRUNK TL Kawasaki Atsushi<br>
+      | 2013年じげんグループHRメディア事業のPMやバックエンドを担当。<br>
+      | 新規事業立ち上げの経験を経てエンジニアリングユニットのマネージャーに従事。<br>
+      |
+      | 2015年に株式会社カヤックへ入社。<br>
+      | クライアントワークや自社サービス(Lobi)のフロントエンド、バックエンドおよびインフラ設計、構築、運用を担当。<br>
+
+  section.bg-green
+    span.background.dark(style="background-image:url('https://images.unsplash.com/photo-1535219241072-7d3c28a49a5c')")
+    // .wrap = container (width: 90%)
+    .wrap.aligncenter.fadeInUp
+      h3
+        strong JavaScriptの基礎文法
+    // .end .wrap
+
+  section.slide-top
+    h3 JavaScriptとは
+    p
+      | JavaScriptはウェブブラウザ、Node.jsを始め、今はIoT（Internet of Things）デバイスなど幅広い環境で動作する言語となっています。 <br><br>
+      strong HTML
+      | はマークアップ言語で、これを使ってウェブコンテンツに構造と意味を与えます。 例えば段落や見出しや表を定義したり、ページに画像や動画を入れたりします。<br><br>
+      strong CSS
+      | は HTML コンテンツに適用するスタイリング規則の言語です。 例えば背景とフォントの色を設定したり、複数カラムにコンテンツをレイアウトしたりします。 <br><br>
+      strong JavaScript
+      | は動的にコンテンツを更新したり、マルチメディアを管理したり、その他多くのことができるスクリプト言語です。
+
+  section.slide-top
+    h4 コメント
+    p
+      | コメントはプログラムとして評価されないため、ソースコードの説明を書くために利用されています。
+      | JavaScriptには大きく分けて2種類のコメントがあります。
+
+    h5 一行コメント
+    pre: code
+      | // 一行コメント
+      | // この部分は評価されない
+
+    h5 複数行コメント
+    pre: code
+      | /* 複数行コメント
+      |    囲まれている範囲が評価されない
+      |  */
+
+  section.slide-top
+    h4 変数と宣言
+    p
+      | プログラミング言語には、数値などのデータに名前を付けたり繰り返し利用するために、データを保持するための変数があります。
+      | JavaScriptでは、「これは変数です」という宣言をするキーワードとして、 var、let、constがあります。
+
+    h5 let
+    p
+      | letキーワードを使い、現在のスコープに対して変数宣言できます。
+    pre: code
+      | let bookTitle = "JavaScriptの本";
+      | let x; // "x"を定義する
+      | let x; // 同じ"x"を定義するとSyntaxErrorとなる
+
+    h5 const
+    p
+      | 基本的な使い方はletと同じですが、constは再代入できない変数を定義するキーワードです。
+
+    pre: code
+      | const bookTitle = "JavaScriptの本";
+      | bookTitle = "上書き"; // TypeError: invalid assignment to const `bookTitle'
+
+  section.slide-top
+    h4 データ型とリテラル
+    p
+      | JavaScriptは動的型付け言語に分類される言語であるため、 静的型付け言語のような変数の型はありません。
+      | しかし、文字列、数値、真偽値といった値の型は存在します。 これらの値の型のことをデータ型とよびます。
+      | データ型を大きく分けると、プリミティブ型とオブジェクトの2つに分類されます。
+
+    h5 プリミティブ型（基本型）
+    ul
+      li 真偽値（Boolean）: trueまたはfalseのデータ型
+      li 数値（Number）: 42 や 3.14159 などの数値のデータ型
+      li 文字列（String）: "JavaScript" などの文字列のデータ型
+      li undefined: 値が未定義であることを意味するデータ型
+      li null: 値が存在しないnull値を意味するデータ型
+      li シンボル（Symbol）: ES2015から追加された一意で不変な値のデータ型
+
+    h5 オブジェクト（複合型）
+    ul
+      li プリミティブ型以外のデータ
+      li オブジェクト、配列、関数、正規表現、Dateなど
+
+    pre: code
+      | typeof true;// => "boolean"
+      | typeof 42; // => "number"
+      | typeof "JavaScript"; // => "string"
+      | typeof Symbol("シンボル");// => "symbol"
+      | typeof undefined; // => "undefined"
+      | typeof null; // => "object"
+      | typeof ["配列"]; // => "object"
+      | typeof { "key": "value" }; // => "object"
+      | typeof function() {}; // => "function"
+
+  section.slide-top
+    h4 関数と宣言
+    p
+      | JavaScriptでは、処理をまとめる際に関数やメソッド、クラスを使います。 これらは関数オブジェクトと言われる関数として使えるオブジェクトの一種です。
+    pre: code
+
+      | // 関数定義
+      | function 関数名(仮引数1, 仮引数2) {
+      |     // 関数を呼び出された時の処理
+      |     // ...
+      |     return 関数が返す値;
+      | }
+      | // 関数呼び出し
+      | 関数名(引数1, 引数2);
+
+    pre: code
+      | function multiple(num) {
+      |     return num * 2;
+      | }
+      |
+      | console.log(multiple(10)); // => 20
+
+  section.slide-top
+    h4 条件分岐
+    p
+      | if文を使うことで、プログラム内に条件分岐を書くことができます。
+      | if文は次のような構文が基本形となり、条件式の評価結果がtrueであるならば、 実行する文が実行されます。
+    pre: code
+      | if (条件式) {
+      |   // 実行する文;
+      |   // 実行する文;
+      | }
+
+    h5 else if文
+    p
+      | 複数の条件分岐を書く場合は、if文に続けてelse if文を使うことでできます。 たとえば、次の3つの条件分岐するプログラムを考えます。
+
+    ol
+      li version が "ES5" ならば "ECMAScript 5" と出力
+      li version が "ES6" ならば "ECMAScript 2015" と出力
+      li version が "ES7" ならば "ECMAScript 2016" と出力
+
+    pre: code
+      | const version = "ES6";
+      | if (version === "ES5") {
+      |     console.log("ECMAScript 5");
+      | } else if (version === "ES6") {
+      |     console.log("ECMAScript 2015");
+      | } else if (version === "ES7") {
+      |     console.log("ECMAScript 2016");
+      | }
+
+  section.slide-top
+    h4 今年がうるう年かを判定してみましょう
+    p
+      | うるう年の条件は次のとおりです。
+      ol
+        li 西暦で示した年が4で割り切れる年はうるう年です
+        li ただし、西暦で示した年が100で割り切れる年はうるう年ではありません
+        li ただし、西暦で示した年が400で割り切れる年はうるう年です
+
+    pre: code
+      | // 今年の西暦を取得
+      | const year = new Date().getFullYear();
+      | if (year % 4 === 0) { // 4で割り切れる
+      |   // 100で割り切れる年はうるう年ではない
+      |   // ただし、400で割り切れる年はうるう年
+      | } else {
+      |     console.log("うるう年ではありません");
+      | }
+
+  section.slide-top
+    h4 ループと反復処理
+    p
+      | プログラミングにおいて、同じ処理を繰り返すために同じコードを書く必要はありません。 ループや再帰呼び出し、イテレータなどを使い、反復処理は抽象化します。 ここでは、もっとも基本的な反復処理と制御文について学んでいきます。
+
+    h5 while文
+    p
+      | while文は条件式がtrueであるならば、反復処理を行います。
+      | while文の実行フローは次のようになります。 最初から条件式がfalseである場合は、何も実行せずwhile文は終了します。
+      ol
+        li 条件式 の評価結果がtrueなら処理を続け、falseなら終了
+        li 実行する文を実行
+        li ステップ1へ戻る
+
+    h6 例
+    p
+      | 次のコードではxの値が10未満であるなら、コンソールへ繰り返しログが出力されます。 また、実行する文にて、xの値を増やし条件式がfalseとなるようにしています。
+    pre: code
+      | let x = 0;
+      | while (x < 10) {
+      |     console.log(x);
+      |     x += 1;
+      | }
+
+  section.slide-top
+    h4 FizzBuzz問題をやってみよう
+    p
+      | FizzBuzzの条件は次のとおりです。
+      ol
+        li 1 ~ 100 までをループする
+        li 3で割り切れる場合はFizzを出力
+        li 5で割り切れる場合はBuzzを出力
+        li 3と5で割り切れる場合はFizzBuzzを出力
+        li それ以外は数値を出力
+    pre: code
+      | let i = 1;
+      | while (i <= 100) {
+      |   if (i%3 == 0) {
+      |     console.log("Fizz")
+      |   } else {
+      |     console.log(i)
+      |   }
+      | }
+
+  section.bg-green
+    span.background.dark(style="background-image:url('https://images.unsplash.com/photo-1535219241072-7d3c28a49a5c')")
+    // .wrap = container (width: 90%)
+    .wrap.aligncenter.fadeInUp
+      h3
+        strong モダンWebフロントエンド開発
+    // .end .wrap
+
+
+  section.slide-top
+    h4 Example(Pure Javascript)
+    <p data-height="465" data-theme-id="0" data-slug-hash="aRmRXw" data-default-tab="js,result" data-user="pickrusu" data-pen-title="JS Sample Form" class="codepen">See the Pen <a href="https://codepen.io/pickrusu/pen/aRmRXw/">JS Sample Form</a> by pickrusu (<a href="https://codepen.io/pickrusu">@pickrusu</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+
+  section.slide-top
+    h4 Example(Vue.js)
+    <p data-height="465" data-theme-id="0" data-slug-hash="oazaQp" data-default-tab="html,result" data-user="pickrusu" data-pen-title="Vue.js Sample Form" class="codepen">See the Pen <a href="https://codepen.io/pickrusu/pen/oazaQp/">Vue.js Sample Form</a> by pickrusu (<a href="https://codepen.io/pickrusu">@pickrusu</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+
+  section.slide-top
+    h4 Vue.jsインスタンスの生成
+    pre: code
+      | new Vue({
+      |   // Vue.jsとDOMの関連付け
+      |   el: "#app",
+      |   // データ
+      |   data: {
+      |     message: "Hello"
+      |     }
+      |   },
+      |   // ライフサイクルフック
+      |   created: function() {
+      |     console.log("created!!")
+      |     }
+      |   },
+      |   // メソッドの定義
+      |   methods: {
+      |     say: function(msg) {
+      |       alert("Hello" + msg)
+      |       }
+      |     }
+      |   },
+      | })
+
+
+  section.slide-top
+    h4 基本操作 (Loop / if / method / onclick)
+    h3 Loop
+    <p data-height="265" data-theme-id="0" data-slug-hash="NOdPNb" data-default-tab="js,result" data-user="pickrusu" data-pen-title="NOdPNb" class="codepen">See the Pen <a href="https://codepen.io/pickrusu/pen/NOdPNb/">NOdPNb</a> by pickrusu (<a href="https://codepen.io/pickrusu">@pickrusu</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+
+    h3 if
+    <p data-height="265" data-theme-id="0" data-slug-hash="aRpzNa" data-default-tab="html,result" data-user="pickrusu" data-pen-title="Vue.js if" class="codepen">See the Pen <a href="https://codepen.io/pickrusu/pen/aRpzNa/">Vue.js if</a> by pickrusu (<a href="https://codepen.io/pickrusu">@pickrusu</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+
+    h3 method / onclick
+    <p data-height="265" data-theme-id="0" data-slug-hash="NOdPdd" data-default-tab="html,result" data-user="pickrusu" data-pen-title="Vue.js method" class="codepen">See the Pen <a href="https://codepen.io/pickrusu/pen/NOdPdd/">Vue.js method</a> by pickrusu (<a href="https://codepen.io/pickrusu">@pickrusu</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+
+  section.slide-top
+    h4 Vue.jsを触ってみよう
+    ul
+      li Hello World! となっている部分を Hello Vue!に変更してみよう
+      li 入力されている文字数が20文字以上になったら `alert('not more than 20')` とアラートを表示しよう
+
+    <p data-height="465" data-theme-id="0" data-slug-hash="oazaQp" data-default-tab="html,result" data-user="pickrusu" data-pen-title="Vue.js Sample Form" class="codepen">See the Pen <a href="https://codepen.io/pickrusu/pen/oazaQp/">Vue.js Sample Form</a> by pickrusu (<a href="https://codepen.io/pickrusu">@pickrusu</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+
+  section.slide-top
+    h4 Vue.jsの裏側
+    h5 ライフサイクル
+    img.vertxcenter(src="images/vue-primer/lifecycle.png" width="800")
+
+  section.slide-top
+    h5 仮想DOM
+    p
+      | Vue.jsはDOMとJavaScriptのデータを同期するためにリアクティブなデータバインディングを持っている
+      | データの変更後に仮想DOMに反映され、仮想DOMと実際のDOMの差分を計算して変更部分を実際のDOMに反映し、Viewが変更される
+    img.vertxcenter(src="images/vue-primer/1_hwlyMTnboUp9Mk0mUYhpdQ.png" width="800")
+
+  section.bg-green
+    span.background.dark(style="background-image:url('https://images.unsplash.com/photo-1535219241072-7d3c28a49a5c')")
+    // .wrap = container (width: 90%)
+    .wrap.aligncenter.fadeInUp
+      h3
+        strong 実践Vue.jsアプリケーション
+    // .end .wrap
+
+  section.slide-top
+    h1 今回作成するアプリケーションはこちら
+    img.vertxcenter(src="images/vue-primer/sample.gif" width="800")
+
+  section.slide-top
+    h1.u-verx3 ソースコードはこちらを利用
+    iframe(src="https://codesandbox.io/embed/j4j6jxoy9y" style="width:100%; height:800px; border:0; border-radius: 4px; overflow:hidden;" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin")
+
+  section.slide-top
+    h1.u-verx3 ツールの説明
+    img.vertxcenter(src="images/vue-primer/sandbox.png" width="1200")
+
+  section.slide-top
+    h1.u-verx3 実装ステップ
+    ol
+      li Vueインスタンスの生成
+      li スレッドをモックデータに置き換え
+      li 入力データの反映
+      li コンポーネント化
+
+  section.slide-top
+    h1.u-verx3 Vueのインスタンスの生成
+    p
+      | 全ての Vue アプリケーション は、Vue 関数で新しい Vue インスタンスを作成することによって始まる
+
+    pre: code
+      | var vm = new Vue({
+      |   // オプション
+      | })
+
+  section.slide-top
+    h1.u-verx3 スレッドをモックデータに置き換え
+
+    pre: code
+      | const messages = [
+      |   {
+      |     name: 'scottish-fold',
+      |     time: '11:10 AM',
+      |     icon: 'images/pickrusu.jpg',
+      |     text: 'これはサンプルテキストですこれはサンプルテキストです\nこれはサンプルテキストです\nこれはサンプルテキストですこれはサンプルテキストですこれはサンプルテキストです',
+      |   },
+      |   {
+      |     name: 'scottish-fold',
+      |     time: '11:10 AM',
+      |     icon: 'images/pickrusu.jpg',
+      |     text: 'これはサンプルテキストですこれはサンプルテキストです\nこれはサンプルテキストです\nこれはサンプルテキストですこれはサンプルテキストですこれはサンプルテキストです',
+      |   },
+      |   {
+      |     name: 'scottish-fold',
+      |     time: '11:10 AM',
+      |     icon: 'images/pickrusu.jpg',
+      |     text: 'これはサンプルテキストですこれはサンプルテキストです\nこれはサンプルテキストです\nこれはサンプルテキストですこれはサンプルテキストですこれはサンプルテキストです',
+      |   }
+      | ]
+
+  section.slide-top
+    h1.u-verx3 入力データの反映
+    img.vertxcenter(src="images/vue-primer/trunk.gif" width="1000")
+
+  section.slide-top
+    h1.u-verx3 コンポーネント化
+    h3.u-verx9-t 単一ファイルコンポーネント
+    p
+      | コンポーネントとは部品という意味
+      | ページを構成している要素を部品化し、構造・見た目・振る舞いをセットにして1ファイルにまとめて記述する
+
+  section.slide-top
+    h1.u-verx3 Vue.jsの単一ファイルコンポーネントシンタックス
+    iframe(src="https://codesandbox.io/embed/m5x9x7242p" style="width:100%; height:800px; border:0; border-radius: 4px; overflow:hidden;" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin")
+
+  section.slide-top
+    h1.u-verx3 Props
+    p
+      | 親コンポーネントから子コンポーネントへとデータ(関数)の受け渡しを行う
+    iframe(src="https://codesandbox.io/embed/0pvqq7wn7n" style="width:100%; height:800px; border:0; border-radius: 4px; overflow:hidden;" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin")
+
+  section.slide-top
+    h1.u-verx3 メッセ部分をコンポーネント化
+    img.vertxcenter(src="images/vue-primer/component.png" width="1000")
+
+  section.slide-top
+    h1.u-verx3 コンポーネント化を行うための実装ステップ
+    ol
+      li Vueコンポーネントファイルの作成
+      li コンポーネントの登録
+      li Viewの書き換え / propsの受け渡し
+
+  section.slide-top
+    h1.u-verx3 And more...
+    li Vue Router
+    li Vuex
+
+  section.bg-green
+    span.background.dark(style="background-image:url('./images/cover/0.jpg')")
+    // .wrap = container (width: 90%)
+    .wrap.aligncenter.fadeInUp
+      h3
+        strong Thanks
+
+  script(async src="https://static.codepen.io/assets/embed/ei.js")
