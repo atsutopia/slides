@@ -262,172 +262,32 @@ block content
       h3
         strong モダンWebフロントエンド開発
     // .end .wrap
-
-
   section.slide-top
-    h4 Example(Pure Javascript)
-    <p data-height="465" data-theme-id="0" data-slug-hash="aRmRXw" data-default-tab="js,result" data-user="pickrusu" data-pen-title="JS Sample Form" class="codepen">See the Pen <a href="https://codepen.io/pickrusu/pen/aRmRXw/">JS Sample Form</a> by pickrusu (<a href="https://codepen.io/pickrusu">@pickrusu</a>) on <a href="https://codepen.io">CodePen</a>.</p>
-
-  section.slide-top
-    h4 Example(Vue.js)
-    <p data-height="465" data-theme-id="0" data-slug-hash="oazaQp" data-default-tab="html,result" data-user="pickrusu" data-pen-title="Vue.js Sample Form" class="codepen">See the Pen <a href="https://codepen.io/pickrusu/pen/oazaQp/">Vue.js Sample Form</a> by pickrusu (<a href="https://codepen.io/pickrusu">@pickrusu</a>) on <a href="https://codepen.io">CodePen</a>.</p>
-
-  section.slide-top
-    h4 Vue.jsインスタンスの生成
-    pre: code
-      | new Vue({
-      |   // Vue.jsとDOMの関連付け
-      |   el: "#app",
-      |   // データ
-      |   data: {
-      |     message: "Hello"
-      |     }
-      |   },
-      |   // ライフサイクルフック
-      |   created: function() {
-      |     console.log("created!!")
-      |     }
-      |   },
-      |   // メソッドの定義
-      |   methods: {
-      |     say: function(msg) {
-      |       alert("Hello" + msg)
-      |       }
-      |     }
-      |   },
-      | })
-
-
-  section.slide-top
-    h4 基本操作 (Loop / if / method / onclick)
-    h3 Loop
-    <p data-height="265" data-theme-id="0" data-slug-hash="NOdPNb" data-default-tab="js,result" data-user="pickrusu" data-pen-title="NOdPNb" class="codepen">See the Pen <a href="https://codepen.io/pickrusu/pen/NOdPNb/">NOdPNb</a> by pickrusu (<a href="https://codepen.io/pickrusu">@pickrusu</a>) on <a href="https://codepen.io">CodePen</a>.</p>
-
-    h3 if
-    <p data-height="265" data-theme-id="0" data-slug-hash="aRpzNa" data-default-tab="html,result" data-user="pickrusu" data-pen-title="Vue.js if" class="codepen">See the Pen <a href="https://codepen.io/pickrusu/pen/aRpzNa/">Vue.js if</a> by pickrusu (<a href="https://codepen.io/pickrusu">@pickrusu</a>) on <a href="https://codepen.io">CodePen</a>.</p>
-
-    h3 method / onclick
-    <p data-height="265" data-theme-id="0" data-slug-hash="NOdPdd" data-default-tab="html,result" data-user="pickrusu" data-pen-title="Vue.js method" class="codepen">See the Pen <a href="https://codepen.io/pickrusu/pen/NOdPdd/">Vue.js method</a> by pickrusu (<a href="https://codepen.io/pickrusu">@pickrusu</a>) on <a href="https://codepen.io">CodePen</a>.</p>
-
-  section.slide-top
-    h4 Vue.jsを触ってみよう
-    ul
-      li Hello World! となっている部分を Hello Vue!に変更してみよう
-      li 入力されている文字数が20文字以上になったら `alert('not more than 20')` とアラートを表示しよう
-
-    <p data-height="465" data-theme-id="0" data-slug-hash="oazaQp" data-default-tab="html,result" data-user="pickrusu" data-pen-title="Vue.js Sample Form" class="codepen">See the Pen <a href="https://codepen.io/pickrusu/pen/oazaQp/">Vue.js Sample Form</a> by pickrusu (<a href="https://codepen.io/pickrusu">@pickrusu</a>) on <a href="https://codepen.io">CodePen</a>.</p>
-
-  section.slide-top
-    h4 Vue.jsの裏側
-    h5 ライフサイクル
-    img.vertxcenter(src="images/vue-primer/lifecycle.png" width="800")
-
-  section.slide-top
-    h5 仮想DOM
+    h3 アプリケーション開発の準備
+    li Node.jsのインストール
     p
-      | Vue.jsはDOMとJavaScriptのデータを同期するためにリアクティブなデータバインディングを持っている
-      | データの変更後に仮想DOMに反映され、仮想DOMと実際のDOMの差分を計算して変更部分を実際のDOMに反映し、Viewが変更される
-    img.vertxcenter(src="images/vue-primer/1_hwlyMTnboUp9Mk0mUYhpdQ.png" width="800")
+      | Node.jsはサーバーサイドで使うために開発されました。 しかし今ではコマンドラインツールやElectronなどのデスクトップアプリケーションにも利用されています。 そのため、Node.jsはサーバーサイドに限らずクライアントサイドのJavaScript実行環境としても幅広く使われています。
+
+    li npmによるパッケージインストール
+    p
+      | npmで公開されている実行可能なパッケージのインストール(OSSライブラリ)をします
+  section.slide-top
+    h3 技術スタック
+    ol
+      li
+        a(href="https://pugjs.org/api/getting-started.html" target="_blank") Pug
+      li
+        a(href="https://sass-lang.com/" target="_blank") Sass
+      li
+        a(href="https://developers.google.com/web/shows/ttt/series-2/es2015" target="_blank") ES2015
 
   section.bg-green
     span.background.dark(style="background-image:url('https://images.unsplash.com/photo-1535219241072-7d3c28a49a5c')")
     // .wrap = container (width: 90%)
     .wrap.aligncenter.fadeInUp
       h3
-        strong 実践Vue.jsアプリケーション
+        strong カルーセル実装ハンズオン
     // .end .wrap
-
-  section.slide-top
-    h1 今回作成するアプリケーションはこちら
-    img.vertxcenter(src="images/vue-primer/sample.gif" width="800")
-
-  section.slide-top
-    h1.u-verx3 ソースコードはこちらを利用
-    iframe(src="https://codesandbox.io/embed/j4j6jxoy9y" style="width:100%; height:800px; border:0; border-radius: 4px; overflow:hidden;" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin")
-
-  section.slide-top
-    h1.u-verx3 ツールの説明
-    img.vertxcenter(src="images/vue-primer/sandbox.png" width="1200")
-
-  section.slide-top
-    h1.u-verx3 実装ステップ
-    ol
-      li Vueインスタンスの生成
-      li スレッドをモックデータに置き換え
-      li 入力データの反映
-      li コンポーネント化
-
-  section.slide-top
-    h1.u-verx3 Vueのインスタンスの生成
-    p
-      | 全ての Vue アプリケーション は、Vue 関数で新しい Vue インスタンスを作成することによって始まる
-
-    pre: code
-      | var vm = new Vue({
-      |   // オプション
-      | })
-
-  section.slide-top
-    h1.u-verx3 スレッドをモックデータに置き換え
-
-    pre: code
-      | const messages = [
-      |   {
-      |     name: 'scottish-fold',
-      |     time: '11:10 AM',
-      |     icon: 'images/pickrusu.jpg',
-      |     text: 'これはサンプルテキストですこれはサンプルテキストです\nこれはサンプルテキストです\nこれはサンプルテキストですこれはサンプルテキストですこれはサンプルテキストです',
-      |   },
-      |   {
-      |     name: 'scottish-fold',
-      |     time: '11:10 AM',
-      |     icon: 'images/pickrusu.jpg',
-      |     text: 'これはサンプルテキストですこれはサンプルテキストです\nこれはサンプルテキストです\nこれはサンプルテキストですこれはサンプルテキストですこれはサンプルテキストです',
-      |   },
-      |   {
-      |     name: 'scottish-fold',
-      |     time: '11:10 AM',
-      |     icon: 'images/pickrusu.jpg',
-      |     text: 'これはサンプルテキストですこれはサンプルテキストです\nこれはサンプルテキストです\nこれはサンプルテキストですこれはサンプルテキストですこれはサンプルテキストです',
-      |   }
-      | ]
-
-  section.slide-top
-    h1.u-verx3 入力データの反映
-    img.vertxcenter(src="images/vue-primer/trunk.gif" width="1000")
-
-  section.slide-top
-    h1.u-verx3 コンポーネント化
-    h3.u-verx9-t 単一ファイルコンポーネント
-    p
-      | コンポーネントとは部品という意味
-      | ページを構成している要素を部品化し、構造・見た目・振る舞いをセットにして1ファイルにまとめて記述する
-
-  section.slide-top
-    h1.u-verx3 Vue.jsの単一ファイルコンポーネントシンタックス
-    iframe(src="https://codesandbox.io/embed/m5x9x7242p" style="width:100%; height:800px; border:0; border-radius: 4px; overflow:hidden;" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin")
-
-  section.slide-top
-    h1.u-verx3 Props
-    p
-      | 親コンポーネントから子コンポーネントへとデータ(関数)の受け渡しを行う
-    iframe(src="https://codesandbox.io/embed/0pvqq7wn7n" style="width:100%; height:800px; border:0; border-radius: 4px; overflow:hidden;" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin")
-
-  section.slide-top
-    h1.u-verx3 メッセ部分をコンポーネント化
-    img.vertxcenter(src="images/vue-primer/component.png" width="1000")
-
-  section.slide-top
-    h1.u-verx3 コンポーネント化を行うための実装ステップ
-    ol
-      li Vueコンポーネントファイルの作成
-      li コンポーネントの登録
-      li Viewの書き換え / propsの受け渡し
-
-  section.slide-top
-    h1.u-verx3 And more...
-    li Vue Router
-    li Vuex
 
   section.bg-green
     span.background.dark(style="background-image:url('./images/cover/0.jpg')")
