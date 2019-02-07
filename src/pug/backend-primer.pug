@@ -1,0 +1,306 @@
+extends /layout/_application
+
+
+prepend Config
+  - title = 'バックエンド体験入門'
+
+block head
+  style(type='text/css').
+    .training img {
+      display: block;
+      margin: 80px auto;
+    }
+
+    .full {
+      width: 100%;
+    }
+
+block content
+  section.bg-red
+    span.background.dark(style="background-image:url('https://source.unsplash.com/R1J6Z1cnJZc/1600x800')")
+    .wrap.aligncenter
+      h1
+        strong バックエンド体験入門コース
+      h5.text-symbols ***
+  section
+    .wrap.size-70
+      h2
+        strong Agenda
+      hr
+      ol.text-cols
+        li トレーニング概要
+        li TRUNKとは
+        li 自己紹介
+        li 業界紹介
+        li 各スキル領域と役割
+        li バックエンドエンジニアの１日の仕事の流れ
+        li プログラミング基礎
+        li プログラミング体験
+        li お知らせ
+  section.bg-green
+    span.background.dark(style="background-image:url('https://images.unsplash.com/photo-1535219241072-7d3c28a49a5c')")
+    .wrap.aligncenter.fadeInUp
+      h3
+        strong トレーニング概要
+  section.slide-top.training
+    .wrap
+      div
+        h2 バックエンドの仕事内容を知ろう
+        img(src="./images/backend-primer-new/sunaba_kodomo.png")
+      div
+        h2 プログラミングの基礎を学ぼう
+        img(src="./images/backend-primer-new/book_gijutsusyo_it_set.png")
+      div
+        h2 プログラミングを体験しよう
+        img(src="./images/backend-primer-new/computer_programming_woman.png")
+
+  section.bg-green
+    span.background.dark(style="background-image:url('https://images.unsplash.com/photo-1535219241072-7d3c28a49a5c')")
+    .wrap.aligncenter.fadeInUp
+      h3
+        strong TRUNKとは
+  section.slide-top
+    iframe(src="https://docs.google.com/presentation/d/e/2PACX-1vQn-Bh21l-m5bNi52n09dlQm1iS4lAbJkAdYa0QQ1T8VVHpummahqjw-pxXEJa-sbCyB6WfaT8P7-bB/embed?start=false&loop=false&delayms=3000" frameborder="0" width="1440" height="839" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;")
+
+  section.bg-green
+    span.background.dark(style="background-image:url('https://images.unsplash.com/photo-1535219241072-7d3c28a49a5c')")
+    .wrap.aligncenter.fadeInUp
+      h3
+        strong 自己紹介
+  section.fullscreen
+    span.background.dark(style="background-image:url('./images/cover/profile.png'); width: 60%; height: 120%; top: 50%; left: 50%; transform: translate(-50%, -50%); opacity: .4;")
+    h2(style="position: relative; font-weight: bold;") WHAT I'M ABOUT
+    p(style="position: relative; font-weight: bold;")
+      | 株式会社TRUNK TL Kawasaki Atsushi<br>
+      | 2013年じげんグループHRメディア事業のPMやバックエンドを担当。<br>
+      | 新規事業立ち上げの経験を経てエンジニアリングユニットのマネージャーに従事。<br>
+      |
+      | 2015年に株式会社カヤックへ入社。<br>
+      | クライアントワークや自社サービス(Lobi)のフロントエンド、バックエンドおよびインフラ設計、構築、運用を担当。<br>
+
+  section.bg-green
+    span.background.dark(style="background-image:url('https://images.unsplash.com/photo-1535219241072-7d3c28a49a5c')")
+    .wrap.aligncenter.fadeInUp
+      h3
+        strong 業界紹介
+
+  section.slide-top
+    h3 プログラマの三大美徳 (ラリー・ウォール)
+    li 怠惰（Laziness）
+    li 短気（Impatience）
+    li 傲慢（Hubris）
+
+  section.slide-top
+    h2 Tech Companies
+    img(src="./images/backend-primer-new/marketing_technology_landscape_2017_slide.jpg")
+
+  section.slide-top
+    h2 Tech Conference
+    img(src="./images/backend-primer-new/conf.png")
+
+  section.slide-top
+    h2 Web制作フロー
+    img(src="./images/backend-primer-new/flow.png")
+
+  section.slide-top
+    h2 Web業界のメリット
+    li 作ることが楽しい!!
+    li サイト公開ハードルの低さ
+    li 労働集約型の働き方からの解放
+    li 技術進歩スピードの速さ
+
+  section.slide-top
+    h2 Web業界のデメリット
+    li 仕事とプライベートの境界線の難しさ
+    li 重労働になることも...
+
+  section.bg-green
+    span.background.dark(style="background-image:url('https://images.unsplash.com/photo-1535219241072-7d3c28a49a5c')")
+    .wrap.aligncenter.fadeInUp
+      h3
+        strong 各スキル領域と役割
+
+  section.slide-top
+    h1 エンジニアの職種とは?
+    ol
+      li バックエンドエンジニア
+      li インフラエンジニア
+      li フロントエンドエンジニア
+      li ネイティブエンジニア
+    div(style="margin-top: 45px;")
+      h4 バックエンドエンジニア
+      p(style="max-width: 800px;")
+        | バックエンドエンジニアの役割はサービスの土台を作ることになります。
+        | クライアントからのリクエストを受け付け、リクエスト別にデータベースへの読み書きを行い、最終的にクライアントに要求されたデータを返す処理を実装します。
+      h4 インフラエンジニア
+      p(style="max-width: 800px;")
+        | インフラエンジニアの役割はサービスのインフラ構成や監視機能の構築がメインになります。SREとも最近呼ばれています。
+        | 最近ではAWSやGCPなどのクラウド環境が台頭してきたこともあり、サーバーサイドエンジニアがインフラ構築をすることが多くなってきているのが現状です。
+      h4 フロントエンドエンジニア
+      p(style="max-width: 800px;")
+        | フロントエンドエンジニアの役割はサービスの見た目を作ることです。
+        | デザイナーが作ったホームページやサービスのデザインをHTMLやCSS、Javascriptを駆使して実現することと、サーバーへリクエストを実行し、必要な情報の取得と表示を行います。
+      h4 ネイティブエンジニア
+      p(style="max-width: 800px;")
+        | ネイティブエンジニアの役割はiOSアプリ、Androidアプリの実装になります。
+      small
+        | 参考:
+        a(target="_blank" href="https://tomokazu-kozuma.com/things-to-learn-and-necessary-skills-by-engineers-job-category/") https://tomokazu-kozuma.com/things-to-learn-and-necessary-skills-by-engineers-job-category/
+
+  section.bg-dark
+    span.background.dark(style="background-image:url('./images/cover/mercari.png')")
+    // .wrap = container (width: 90%)
+    .wrap.aligncenter.fadeInUp
+      h3
+        strong 例
+  section
+    span.background(style="background-image:url('./images/cover/mercari2.png')")
+  section
+    span.background(style="background-image:url('./images/cover/mercari3.png')")
+  section.slide-top
+    h3 スキル領域
+    ul
+      li アプリケーション層 (HTTP DHCP SMTP)
+      li プログラミング言語 (コンパイラ型/インタプリタ型)
+      li データベース設計
+      li Webセキュリティ
+    img(src="./images/backend-primer/68747470733a2f2f692e696d6775722e636f6d2f4f5a554f5574492e706e67.png" width="1200")
+    img(src="./images/backend-primer/backend.png" width="1200")
+    small
+      | 参考
+      a(target="_blank" href="https://github.com/kamranahmedse/developer-roadmap" width="680") https://github.com/kamranahmedse/developer-roadmap
+
+  section.slide-top
+    h1 Salary
+    img(src="./images/backend-primer/img_50c49d1c11ba86d08c144c30f53196a0504446.jpg" width="680")
+    small
+      | 参考:
+      a(target="_blank" href="https://toyokeizai.net/articles/-/212579?page=3" width="680") https://toyokeizai.net/articles/-/212579?page=3
+
+  section.bg-green
+    span.background.dark(style="background-image:url('https://images.unsplash.com/photo-1535219241072-7d3c28a49a5c')")
+    .wrap.aligncenter.fadeInUp
+      h3
+        strong バックエンドエンジニアの１日の仕事の流れ
+
+  section.slide-top
+    h3 バックエンドエンジニアの１日の仕事の流れ
+    img(src="./images/backend-primer-new/day.png" width="800")
+
+  section.bg-green
+    span.background.dark(style="background-image:url('https://images.unsplash.com/photo-1535219241072-7d3c28a49a5c')")
+    .wrap.aligncenter.fadeInUp
+      h3
+        strong プログラミング基礎
+
+  section.slide-top
+    // .wrap = container (width: 90%)
+    h3 Rubyとは?
+    p
+      | まつもとゆきひろ氏により開発されたオブジェクト指向スクリプト言語です。<br>
+      | 可読性を重視した構文となっている。Ruby においては整数や文字列なども含めデータ型はすべてがオブジェクトであり、純粋なオブジェクト指向言語といえる。<br>
+    small wiki:
+      a(href="https://ja.wikipedia.org/wiki/Ruby") https://ja.wikipedia.org/wiki/Ruby
+
+    h3(style="margin-top: 80px;") Gemとは?
+    p
+      | RubyGemsは、Ruby言語用のパッケージ管理システムであり、Rubyのプログラムと（"gem" と呼ばれる）ライブラリの配布用標準フォーマットを提供している。gemを容易に管理でき、gemを配布するサーバの機能も持つ。Rubyバージョン1.9以降では標準ライブラリの一部となっている。
+    small wiki:
+      a(href="https://ja.wikipedia.org/wiki/RubyGems") https://ja.wikipedia.org/wiki/RubyGems
+
+  section.slide-top
+    h4(style="margin-top: 45px;") Rubyの基本構文
+    p
+      iframe(height="800px" width="100%" src="https://repl.it/@pocke777/DimTrustyWorkplace?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals")
+
+  section.slide-top
+    // .wrap = container (width: 90%)
+    h2 Ruby基本
+
+    h4(style="margin-top: 45px;") FizzBuzz問題をやってみよう!
+    p
+      ol
+        li 1から100までの数を順番に出力
+        li 3で割り切れる数ならFizz
+        li 5で割り切れる数ならBuzzと出力
+        li 両方で割り切れるならFizzBuzzと出力
+      img(src="./images/backend-primer2/1.png")
+    h5 Try
+    a(href="https://repl.it/@pocke777/FizzBuzz-Template" target="_blank") https://repl.it/@pocke777/FizzBuzz-Template
+
+  section.slide-top
+    h4(style="margin-top: 45px;") FizzBuzz問題(回答例)
+    iframe(height="800px" width="100%" src="https://repl.it/@pocke777/FizzBuzz?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals")
+
+  section.bg-green
+    span.background.dark(style="background-image:url('https://images.unsplash.com/photo-1535219241072-7d3c28a49a5c')")
+    // .wrap = container (width: 90%)
+    .wrap.aligncenter.fadeInUp
+      h3
+        strong Rails概論
+    // .end .wrap
+  section.slide-top
+    // .wrap = container (width: 90%)
+    h3 Ruby on Railsとは?
+    p
+      | Ruby on Rails（ルビーオンレイルズ）は、オープンソースのWebアプリケーションフレームワークである。RoRまたは単にRailsと呼ばれる。その名にも示されているようにRubyで書かれている。
+      | またModel View Controller（MVC）アーキテクチャに基づいて構築されている。
+    small wiki:
+      a(href="https://ja.wikipedia.org/wiki/Ruby_on_Rails" target="_blank") https://ja.wikipedia.org/wiki/Ruby_on_Rails
+
+    h4(style="margin-top: 80px;") Model, View, Controllerについて
+    h4 Model (モデル)
+    p
+      pre
+        | 一般的にはビジネスロジックといわれているが、実態はだいたいの場合データベース処理を担う。
+    h4 View (ビュー)
+    p
+      pre
+        | 表示内容生成部分。いわゆる HTML 部分と思っておけば良い。
+    h4 Controller (コントローラ)
+    p
+      pre
+        | ユーザからのリクエストを処理するもの。処理といっても複雑な処理はここではしない。 複雑な処理は Model に委譲し、その結果を表示する HTML (等)を生成するために View を用いる。
+
+    img(src="./images/backend-primer/010_hello-mvc.png" width="800")
+
+    h4(style="margin-top: 80px;") ルート設定
+    img(src="./images/backend-primer/010_hello-routing.png" width="800")
+    small
+      a(href="https://aspnet-mvc.clock-up.jp/contents/quick/hello-mvc" target="_blank") https://aspnet-mvc.clock-up.jp/contents/quick/hello-mvc
+
+  section.slide-top
+    // .wrap = container (width: 90%)
+    h2 Ruby基本その2
+
+    h4(style="margin-top: 45px;") FizzBuzz問題
+    p
+      ol
+        li 1から100までの数を順番に出力
+        li 3で割り切れる数ならFizz
+        li 5で割り切れる数ならBuzzと出力
+        li 両方で割り切れるならFizzBuzzと出力
+      img(src="./images/backend-primer2/1.png")
+    h5 Try
+    a(href="https://repl.it/@pocke777/FizzBuzz-Template" target="_blank") https://repl.it/@pocke777/FizzBuzz-Template
+
+  section.slide-top
+    h4(style="margin-top: 45px;") FizzBuzz問題(回答例)
+    iframe(height="800px" width="100%" src="https://repl.it/@pocke777/FizzBuzz?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals")
+
+  section.slide-top
+    // .wrap = container (width: 90%)
+    h2 Ruby基本
+    h4(style="margin-top: 45px;") 確率を求めてみよう!
+    ol
+      li ["kawasaki", "suzuki", "toyota", "subaru", "honda"] という配列の中から1つの値をランダムに取り出してください。
+      li この操作を1000回繰り返してそれぞれの値が出力された確率を表示しましょう
+    h6(style="margin-top: 45px;") 実行例
+    code: pre
+      |
+      |  $ ruby scripts/chapter1/challenge2/q2.rb
+      |  kawasaki: 20.599999999999998%
+      |  suzuki: 19.2%
+      |  toyota: 15.8%
+      |  subaru: 22.1%
+      |  honda: 22.3%

@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns#">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--
+    CLEAN MARKUP = GOOD KARMA.
+    Hi source code lover,
+    you're a curious person and a fast learner ;)
+    Let's make something beautiful together. Contribute on Github:
+    https://github.com/webslides/webslides
+    Thanks!
+    -->
+    <!-- SEO-->
+    <title>バックエンド体験入門</title>
+    <meta name="description" content="">
+    <!-- URL CANONICAL-->
+    <!-- <link rel="canonical" href="http://your-url.com/permalink">-->
+    <!-- Google Fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,700,700i%7CMaitree:200,300,400,600,700&amp;subset=latin-ext" rel="stylesheet">
+    <!-- CSS Base-->
+    <link rel="stylesheet" type="text/css" media="all" href="./css/webslides.css">
+    <link rel="stylesheet" type="text/css" media="all" href="./css/default.css">
+    <!-- link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css")-->
+    <!-- Optional - CSS SVG Icons (Font Awesome)-->
+    <link rel="stylesheet" type="text/css" media="all" href="./css/svg-icons.css">
+    <!-- SOCIAL CARDS (ADD YOUR INFO)-->
+    <!-- FACEBOOK-->
+    <!-- EDIT-->
+    <meta property="og:url" content="https://source.unsplash.com/R1J6Z1cnJZc/1600x800">
+    <!-- EDIT-->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="WebSlides: Trunk Study">
+    <meta property="og:description" content="created by Atsushi.">
+    <!-- EDIT-->
+    <meta property="og:updated_time" content="2017-04-16T16:24:56">
+    <!-- EDIT-->
+    <meta property="og:image:width" content="800">
+    <meta property="og:image:height" content="429">
+    <!-- TWITTER-->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@webslides">
+    <!-- FAVICONS-->
+    <link rel="shortcut icon" sizes="16x16" href="../static/images/favicons/favicon.png">
+    <link rel="shortcut icon" sizes="32x32" href="../static/images/favicons/favicon-32.png">
+    <link rel="apple-touch-icon icon" sizes="76x76" href="../static/images/favicons/favicon-76.png">
+    <link rel="apple-touch-icon icon" sizes="120x120" href="../static/images/favicons/favicon-120.png">
+    <link rel="apple-touch-icon icon" sizes="152x152" href="../static/images/favicons/favicon-152.png">
+    <link rel="apple-touch-icon icon" sizes="180x180" href="../static/images/favicons/favicon-180.png">
+    <link rel="apple-touch-icon icon" sizes="192x192" href="../static/images/favicons/favicon-192.png">
+    <!-- Android-->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#333333">
+    <style type="text/css">
+      .training img {
+        display: block;
+        margin: 80px auto;
+      }
+      
+      .full {
+        width: 100%;
+      }
+      
+    </style>
+  </head>
+  <body>
+    <!-- header(role='banner')-->
+    <!--   nav(role='navigation')-->
+    <!--     p.logo-->
+    <!--       a(href='../index.html', title='WebSlides') WebSlides-->
+    <!--     ul-->
+    <!--       li.github-->
+    <!--         a(rel='external', href='https://github.com/webslides/webslides', title='Github')-->
+    <!--           svg.fa-github-->
+    <!--             use(xlink:href='#fa-github')-->
+    <!--           em WebSlides-->
+    <!--       li.twitter-->
+    <!--         a(rel='external', href='https://twitter.com/webslides', title='Twitter')-->
+    <!--           svg.fa-twitter-->
+    <!--             use(xlink:href='#fa-twitter')-->
+    <!--           em @WebSlides-->
+    <!--       // <li class="dribbble"><a rel="external" href="http://dribbble.com/webslides" title="Dribbble"><svg class="fa-dribbble"><use xlink:href="#fa-dribbble"></use></svg> <em>webslides</em></a></li>-->
+    <main role="main">
+      <article id="webslides">
+        <!--
+        Quick Guide
+        - Each parent <section> in the <article id="webslides"> element is an individual slide.
+        - Vertical sliding = <article id="webslides" class="vertical">
+        - <div class="wrap"> = container 90% / <div class="wrap size-50"> = 45%;
+        -->
+        <section class="bg-red"><span class="background dark" style="background-image:url('https://source.unsplash.com/R1J6Z1cnJZc/1600x800')"></span>
+          <div class="wrap aligncenter">
+            <h1><strong>バックエンド体験入門コース</strong></h1>
+            <h5 class="text-symbols">***</h5>
+          </div>
+        </section>
+        <section>
+          <div class="wrap size-70">
+            <h2><strong>Agenda</strong></h2>
+            <hr>
+            <ol class="text-cols">
+              <li>トレーニング概要</li>
+              <li>TRUNKとは</li>
+              <li>自己紹介</li>
+              <li>業界紹介</li>
+              <li>各スキル領域と役割</li>
+              <li>バックエンドエンジニアの１日の仕事の流れ</li>
+              <li>プログラミング基礎</li>
+              <li>プログラミング体験</li>
+              <li>お知らせ</li>
+            </ol>
+          </div>
+        </section>
+        <section class="bg-green"><span class="background dark" style="background-image:url('https://images.unsplash.com/photo-1535219241072-7d3c28a49a5c')"></span>
+          <div class="wrap aligncenter fadeInUp">
+            <h3><strong>トレーニング概要</strong></h3>
+          </div>
+        </section>
+        <section class="slide-top training">
+          <div class="wrap">
+            <div>
+              <h2>バックエンドの仕事内容を知ろう</h2><img src="./images/backend-primer-new/sunaba_kodomo.png">
+            </div>
+            <div>
+              <h2>プログラミングの基礎を学ぼう</h2><img src="./images/backend-primer-new/book_gijutsusyo_it_set.png">
+            </div>
+            <div>
+              <h2>プログラミングを体験しよう</h2><img src="./images/backend-primer-new/computer_programming_woman.png">
+            </div>
+          </div>
+        </section>
+        <section class="bg-green"><span class="background dark" style="background-image:url('https://images.unsplash.com/photo-1535219241072-7d3c28a49a5c')"></span>
+          <div class="wrap aligncenter fadeInUp">
+            <h3><strong>TRUNKとは</strong></h3>
+          </div>
+        </section>
+        <section class="slide-top">
+          <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQn-Bh21l-m5bNi52n09dlQm1iS4lAbJkAdYa0QQ1T8VVHpummahqjw-pxXEJa-sbCyB6WfaT8P7-bB/embed?start=false&amp;loop=false&amp;delayms=3000" frameborder="0" width="1440" height="839" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+        </section>
+        <section class="bg-green"><span class="background dark" style="background-image:url('https://images.unsplash.com/photo-1535219241072-7d3c28a49a5c')"></span>
+          <div class="wrap aligncenter fadeInUp">
+            <h3><strong>自己紹介</strong></h3>
+          </div>
+        </section>
+        <section class="fullscreen"><span class="background dark" style="background-image:url('./images/cover/profile.png'); width: 60%; height: 120%; top: 50%; left: 50%; transform: translate(-50%, -50%); opacity: .4;"></span>
+          <h2 style="position: relative; font-weight: bold;">WHAT I'M ABOUT</h2>
+          <p style="position: relative; font-weight: bold;">
+            株式会社TRUNK TL Kawasaki Atsushi<br>
+            2013年じげんグループHRメディア事業のPMやバックエンドを担当。<br>
+            新規事業立ち上げの経験を経てエンジニアリングユニットのマネージャーに従事。<br>
+            
+            2015年に株式会社カヤックへ入社。<br>
+            クライアントワークや自社サービス(Lobi)のフロントエンド、バックエンドおよびインフラ設計、構築、運用を担当。<br>
+          </p>
+        </section>
+        <section class="bg-green"><span class="background dark" style="background-image:url('https://images.unsplash.com/photo-1535219241072-7d3c28a49a5c')"></span>
+          <div class="wrap aligncenter fadeInUp">
+            <h3><strong>業界紹介</strong></h3>
+          </div>
+        </section>
+        <section class="slide-top">
+          <h3>プログラマの三大美徳 (ラリー・ウォール)</h3>
+          <li>怠惰（Laziness）</li>
+          <li>短気（Impatience）</li>
+          <li>傲慢（Hubris）</li>
+        </section>
+        <section class="slide-top">
+          <h2>Tech Companies</h2><img src="./images/backend-primer-new/marketing_technology_landscape_2017_slide.jpg">
+        </section>
+        <section class="slide-top">
+          <h2>Tech Conference</h2><img src="./images/backend-primer-new/conf.png">
+        </section>
+        <section class="slide-top">
+          <h2>Web制作フロー</h2><img src="./images/backend-primer-new/flow.png">
+        </section>
+        <section class="slide-top">
+          <h2>Web業界のメリット</h2>
+          <li>作ることが楽しい!!</li>
+          <li>サイト公開ハードルの低さ</li>
+          <li>労働集約型の働き方からの解放</li>
+          <li>技術進歩スピードの速さ</li>
+        </section>
+        <section class="slide-top">
+          <h2>Web業界のデメリット</h2>
+          <li>仕事とプライベートの境界線の難しさ</li>
+          <li>重労働になることも...</li>
+        </section>
+        <section class="bg-green"><span class="background dark" style="background-image:url('https://images.unsplash.com/photo-1535219241072-7d3c28a49a5c')"></span>
+          <div class="wrap aligncenter fadeInUp">
+            <h3><strong>各スキル領域と役割</strong></h3>
+          </div>
+        </section>
+        <section class="slide-top">
+          <h1>エンジニアの職種とは?</h1>
+          <ol>
+            <li>バックエンドエンジニア</li>
+            <li>インフラエンジニア</li>
+            <li>フロントエンドエンジニア</li>
+            <li>ネイティブエンジニア</li>
+          </ol>
+          <div style="margin-top: 45px;">
+            <h4>バックエンドエンジニア</h4>
+            <p style="max-width: 800px;">
+              バックエンドエンジニアの役割はサービスの土台を作ることになります。
+              クライアントからのリクエストを受け付け、リクエスト別にデータベースへの読み書きを行い、最終的にクライアントに要求されたデータを返す処理を実装します。
+            </p>
+            <h4>インフラエンジニア</h4>
+            <p style="max-width: 800px;">
+              インフラエンジニアの役割はサービスのインフラ構成や監視機能の構築がメインになります。SREとも最近呼ばれています。
+              最近ではAWSやGCPなどのクラウド環境が台頭してきたこともあり、サーバーサイドエンジニアがインフラ構築をすることが多くなってきているのが現状です。
+            </p>
+            <h4>フロントエンドエンジニア</h4>
+            <p style="max-width: 800px;">
+              フロントエンドエンジニアの役割はサービスの見た目を作ることです。
+              デザイナーが作ったホームページやサービスのデザインをHTMLやCSS、Javascriptを駆使して実現することと、サーバーへリクエストを実行し、必要な情報の取得と表示を行います。
+            </p>
+            <h4>ネイティブエンジニア</h4>
+            <p style="max-width: 800px;">ネイティブエンジニアの役割はiOSアプリ、Androidアプリの実装になります。</p><small>参考:<a target="_blank" href="https://tomokazu-kozuma.com/things-to-learn-and-necessary-skills-by-engineers-job-category/">https://tomokazu-kozuma.com/things-to-learn-and-necessary-skills-by-engineers-job-category/</a></small>
+          </div>
+        </section>
+        <section class="bg-dark"><span class="background dark" style="background-image:url('./images/cover/mercari.png')"></span>
+          <!-- .wrap = container (width: 90%)-->
+          <div class="wrap aligncenter fadeInUp">
+            <h3><strong>例</strong></h3>
+          </div>
+        </section>
+        <section><span class="background" style="background-image:url('./images/cover/mercari2.png')"></span></section>
+        <section><span class="background" style="background-image:url('./images/cover/mercari3.png')"></span></section>
+        <section class="slide-top">
+          <h3>スキル領域</h3>
+          <ul>
+            <li>アプリケーション層 (HTTP DHCP SMTP)</li>
+            <li>プログラミング言語 (コンパイラ型/インタプリタ型)</li>
+            <li>データベース設計</li>
+            <li>Webセキュリティ</li>
+          </ul><img src="./images/backend-primer/68747470733a2f2f692e696d6775722e636f6d2f4f5a554f5574492e706e67.png" width="1200"><img src="./images/backend-primer/backend.png" width="1200"><small>参考<a target="_blank" href="https://github.com/kamranahmedse/developer-roadmap" width="680">https://github.com/kamranahmedse/developer-roadmap</a></small>
+        </section>
+        <section class="slide-top">
+          <h1>Salary</h1><img src="./images/backend-primer/img_50c49d1c11ba86d08c144c30f53196a0504446.jpg" width="680"><small>参考:<a target="_blank" href="https://toyokeizai.net/articles/-/212579?page=3" width="680">https://toyokeizai.net/articles/-/212579?page=3</a></small>
+        </section>
+        <section class="bg-green"><span class="background dark" style="background-image:url('https://images.unsplash.com/photo-1535219241072-7d3c28a49a5c')"></span>
+          <div class="wrap aligncenter fadeInUp">
+            <h3><strong>バックエンドエンジニアの１日の仕事の流れ</strong></h3>
+          </div>
+        </section>
+        <section class="slide-top">
+          <h3>バックエンドエンジニアの１日の仕事の流れ</h3><img src="./images/backend-primer-new/day.png" width="800">
+        </section>
+        <section class="bg-green"><span class="background dark" style="background-image:url('https://images.unsplash.com/photo-1535219241072-7d3c28a49a5c')"></span>
+          <div class="wrap aligncenter fadeInUp">
+            <h3><strong>プログラミング基礎</strong></h3>
+          </div>
+        </section>
+        <section class="slide-top">
+          <!-- .wrap = container (width: 90%)-->
+          <h3>Rubyとは?</h3>
+          <p>
+            まつもとゆきひろ氏により開発されたオブジェクト指向スクリプト言語です。<br>
+            可読性を重視した構文となっている。Ruby においては整数や文字列なども含めデータ型はすべてがオブジェクトであり、純粋なオブジェクト指向言語といえる。<br>
+          </p><small>wiki:<a href="https://ja.wikipedia.org/wiki/Ruby">https://ja.wikipedia.org/wiki/Ruby</a></small>
+          <h3 style="margin-top: 80px;">Gemとは?</h3>
+          <p>RubyGemsは、Ruby言語用のパッケージ管理システムであり、Rubyのプログラムと（"gem" と呼ばれる）ライブラリの配布用標準フォーマットを提供している。gemを容易に管理でき、gemを配布するサーバの機能も持つ。Rubyバージョン1.9以降では標準ライブラリの一部となっている。</p><small>wiki:<a href="https://ja.wikipedia.org/wiki/RubyGems">https://ja.wikipedia.org/wiki/RubyGems</a></small>
+        </section>
+        <section class="slide-top">
+          <h4 style="margin-top: 45px;">Rubyの基本構文</h4>
+          <p>
+            <iframe height="800px" width="100%" src="https://repl.it/@pocke777/DimTrustyWorkplace?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+          </p>
+        </section>
+        <section class="slide-top">
+          <!-- .wrap = container (width: 90%)-->
+          <h2>Ruby基本</h2>
+          <h4 style="margin-top: 45px;">FizzBuzz問題をやってみよう!</h4>
+          <p>
+            <ol>
+              <li>1から100までの数を順番に出力</li>
+              <li>3で割り切れる数ならFizz</li>
+              <li>5で割り切れる数ならBuzzと出力</li>
+              <li>両方で割り切れるならFizzBuzzと出力</li>
+            </ol><img src="./images/backend-primer2/1.png">
+          </p>
+          <h5>Try</h5><a href="https://repl.it/@pocke777/FizzBuzz-Template" target="_blank">https://repl.it/@pocke777/FizzBuzz-Template</a>
+        </section>
+        <section class="slide-top">
+          <h4 style="margin-top: 45px;">FizzBuzz問題(回答例)</h4>
+          <iframe height="800px" width="100%" src="https://repl.it/@pocke777/FizzBuzz?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+        </section>
+        <section class="bg-green"><span class="background dark" style="background-image:url('https://images.unsplash.com/photo-1535219241072-7d3c28a49a5c')"></span>
+          <!-- .wrap = container (width: 90%)-->
+          <div class="wrap aligncenter fadeInUp">
+            <h3><strong>Rails概論</strong></h3>
+          </div>
+          <!-- .end .wrap-->
+        </section>
+        <section class="slide-top">
+          <!-- .wrap = container (width: 90%)-->
+          <h3>Ruby on Railsとは?</h3>
+          <p>
+            Ruby on Rails（ルビーオンレイルズ）は、オープンソースのWebアプリケーションフレームワークである。RoRまたは単にRailsと呼ばれる。その名にも示されているようにRubyで書かれている。
+            またModel View Controller（MVC）アーキテクチャに基づいて構築されている。
+          </p><small>wiki:<a href="https://ja.wikipedia.org/wiki/Ruby_on_Rails" target="_blank">https://ja.wikipedia.org/wiki/Ruby_on_Rails</a></small>
+          <h4 style="margin-top: 80px;">Model, View, Controllerについて</h4>
+          <h4>Model (モデル)</h4>
+          <p>
+            <pre>一般的にはビジネスロジックといわれているが、実態はだいたいの場合データベース処理を担う。</pre>
+          </p>
+          <h4>View (ビュー)</h4>
+          <p>
+            <pre>表示内容生成部分。いわゆる HTML 部分と思っておけば良い。</pre>
+          </p>
+          <h4>Controller (コントローラ)</h4>
+          <p>
+            <pre>ユーザからのリクエストを処理するもの。処理といっても複雑な処理はここではしない。 複雑な処理は Model に委譲し、その結果を表示する HTML (等)を生成するために View を用いる。</pre>
+          </p><img src="./images/backend-primer/010_hello-mvc.png" width="800">
+          <h4 style="margin-top: 80px;">ルート設定</h4><img src="./images/backend-primer/010_hello-routing.png" width="800"><small><a href="https://aspnet-mvc.clock-up.jp/contents/quick/hello-mvc" target="_blank">https://aspnet-mvc.clock-up.jp/contents/quick/hello-mvc</a></small>
+        </section>
+        <section class="slide-top">
+          <!-- .wrap = container (width: 90%)-->
+          <h2>Ruby基本その2</h2>
+          <h4 style="margin-top: 45px;">FizzBuzz問題</h4>
+          <p>
+            <ol>
+              <li>1から100までの数を順番に出力</li>
+              <li>3で割り切れる数ならFizz</li>
+              <li>5で割り切れる数ならBuzzと出力</li>
+              <li>両方で割り切れるならFizzBuzzと出力</li>
+            </ol><img src="./images/backend-primer2/1.png">
+          </p>
+          <h5>Try</h5><a href="https://repl.it/@pocke777/FizzBuzz-Template" target="_blank">https://repl.it/@pocke777/FizzBuzz-Template</a>
+        </section>
+        <section class="slide-top">
+          <h4 style="margin-top: 45px;">FizzBuzz問題(回答例)</h4>
+          <iframe height="800px" width="100%" src="https://repl.it/@pocke777/FizzBuzz?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+        </section>
+        <section class="slide-top">
+          <!-- .wrap = container (width: 90%)-->
+          <h2>Ruby基本</h2>
+          <h4 style="margin-top: 45px;">確率を求めてみよう!</h4>
+          <ol>
+            <li>["kawasaki", "suzuki", "toyota", "subaru", "honda"] という配列の中から1つの値をランダムに取り出してください。</li>
+            <li>この操作を1000回繰り返してそれぞれの値が出力された確率を表示しましょう</li>
+          </ol>
+          <h6 style="margin-top: 45px;">実行例</h6><code>
+            <pre>
+ $ ruby scripts/chapter1/challenge2/q2.rb
+ kawasaki: 20.599999999999998%
+ suzuki: 19.2%
+ toyota: 15.8%
+ subaru: 22.1%
+ honda: 22.3%</pre></code>
+        </section>
+      </article>
+    </main>
+    <!-- main-->
+    <footer>
+      <div class="wrap">
+        <p><span class="alignright"><a href="https://trunk.fm/" title="Trunk"><img src="./images/logos/trunk.svg" alt="Trunk"></a></span></p>
+      </div>
+    </footer>
+    <!-- Required-->
+    <script src="./js/webslides.js"></script>
+    <script src="./js/highlight.pack.js"></script>
+    <script>
+      window.ws = new WebSlides();
+      hljs.initHighlightingOnLoad();
+    </script>
+    <!-- Autoslide? window.ws = new WebSlides({ autoslide: 8000 });-->
+    <!-- OPTIONAL - svg-icons.js (fontastic.me - Font Awesome as svg icons)-->
+    <script defer="" src="../static/js/svg-icons.js"></script>
+  </body>
+</html>
