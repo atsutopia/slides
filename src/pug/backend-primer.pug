@@ -271,26 +271,27 @@ block content
 
   section.slide-top
     // .wrap = container (width: 90%)
-    h2 Ruby基本その2
+    h4(style="margin-top: 45px;") 星座を返すプログラムを書いてみよう!
 
-    h4(style="margin-top: 45px;") FizzBuzz問題
-    p
-      ol
-        li 1から100までの数を順番に出力
-        li 3で割り切れる数ならFizz
-        li 5で割り切れる数ならBuzzと出力
-        li 両方で割り切れるならFizzBuzzと出力
-      img(src="./images/backend-primer2/1.png")
-    h5 Try
-    a(href="https://repl.it/@pocke777/FizzBuzz-Template" target="_blank") https://repl.it/@pocke777/FizzBuzz-Template
+    div
+      | ユーザーから生年月日を受け取って星座を返すプログラムを書いてみましょう。
+      | 星座の一覧は以下を参照してください。
 
-  section.slide-top
-    h4(style="margin-top: 45px;") FizzBuzz問題(回答例)
-    iframe(height="800px" width="100%" src="https://repl.it/@pocke777/FizzBuzz?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals")
-
+    pre: code
+      | '牡羊座',  3/21 ~  4/19
+      | '牡牛座',  4/20 ~  5/20
+      | '双子座',  5/21 ~  6/21
+      | 'かに座',  6/22 ~  7/22
+      | '獅子座',  7/23 ~  8/22
+      | '乙女座',  8/23 ~  9/22
+      | '天秤座',  9/23 ~ 10/23
+      | '蠍座',   10/24 ~ 11/22
+      | '射手座', 11/23 ~ 12/21
+      | '山羊座', 12/22 ~  1/19
+      | '水瓶座',  1/20 ~  2/18
+      | '魚座',    2/19 ~  3/20
   section.slide-top
     // .wrap = container (width: 90%)
-    h2 Ruby基本
     h4(style="margin-top: 45px;") 確率を求めてみよう!
     ol
       li ["kawasaki", "suzuki", "toyota", "subaru", "honda"] という配列の中から1つの値をランダムに取り出してください。
@@ -304,3 +305,9 @@ block content
       |  toyota: 15.8%
       |  subaru: 22.1%
       |  honda: 22.3%
+  section.bg-green
+    span.background.dark(style="background-image:url('./images/cover/0.jpg')")
+    // .wrap = container (width: 90%)
+    .wrap.aligncenter.fadeInUp
+      h3
+        strong End
