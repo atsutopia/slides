@@ -23,36 +23,105 @@ block content
         li スタートアップロードマップ
         li ケーススタディ
         li 実践リーン・スタートアップ
-
   section.bg-green
     span.background.dark(style="background-image:url('https://images.unsplash.com/photo-1535219241072-7d3c28a49a5c')")
     .wrap.aligncenter.fadeInUp
       h3
         strong トレーニング概要
-
   section.slide-top
     h1 トレーニング概要
     p
       | リーン・スタートアップを学んでプロトタイプを作成しよう！
-
   section.bg-green
     span.background.dark(style="background-image:url('https://images.unsplash.com/photo-1535219241072-7d3c28a49a5c')")
     .wrap.aligncenter.fadeInUp
       h3
         strong スタートアップロードマップ
-
   section.slide-top
     h1 スタートアップロードマップ
     img.vertxcenter(src="images/prototype/sketch.svg" width="1000")
+  section.slide-top
+    h1 スタートアップロードマップ
+    img.vertxcenter(src="images/prototype/map.svg" width="1500")
+  section.slide-top
+    h1 Step1: Idearation
+    p
+      | スタートアップのはじめのコアアイデアを見つけるステップです。
+      | コアアイデアとはすなわち、「誰のどんな問題をどうやって解決するか」
+    h2 スタートアップ思考
+    p
+      | Peter Thiel の言う「誰もが信じていない自分だけの大切な真実」を見つけて、誰もが見落としているからこそ、それが正しければ短期間に一気にスケールが可能である
+    li 自分の想像する未来の仮説に賭けること
+    li 誰もが見落としている、一見不合理で狂ったアイデアに賭けること
+    li 他人が見ていない場所を見ようとすること
+    li まだ築かれていない、価値ある企業とは何かを考えること
+  section.slide-top
+    h1 Step2: Lean Startup (リーンスタートアップ)
+    p
+      | アイデアの前提となるユーザーの課題が本当に存在するか、アプローチ方法が間違った前提に立脚していないかを検証するステップ
+    h2 ジャベリンボード
+    img.vertxcenter(src="images/prototype/javelin.png" width="1500")
+    h2 MVP (Minimum Viable Product)
+    p
+      | MVPとは Minimum Viable Product の略で、「最低限実用に足る製品」などと訳される。
+      | ここでいう「実用に足る」というのは、「仮説検証から学びを得るために過不足がない」という意味。
 
+    li ペーパープロトタイプ
+      li: a(href="https://prottapp.com" target="_blank") https://prottapp.com
+    li プロトタイプ（β版）
+      p
+        | 試験やデモ用に作られる実験機。完成版ではないものの、実際に動作する製品を作り、クローズドβ版などテストユーザに使用してもらいフィードバックを得る
+    li オズの魔法使い
+      p
+        | システム化されているように見えるが、実際は生身の人間が手動で実行することで、大掛かりなシステム開発の前にユーザニーズを確かめる手法
 
+  section.slide-top
+    h1 Step3: Lean Canvas (リーンキャンバス)
+    p
+      | サービスアイデアをビジネスモデルへと昇華させるステップ。 そのアイデアがきちんとビジネスとしてスケールするものかを検証
+    img.vertxcenter(src="images/prototype/original.png" width="1500")
 
+  section.slide-top
+    h1 Step4: Lean UX
+    p
+      | サービスのコアの体験（Unique Value Proposition）は何かを定義
+    h2 ペルソナ
+    p
+      | ペルソナとは、商品やサービスのターゲットとなる架空のユーザー像
+    img.vertxcenter(src="images/prototype/persona.png" width="1500")
+  section.slide-top
+    h1 Step5: Agile Development
+    p
+      | 効率的にそのサービスを開発しローンチするステップ
+  section.slide-top
+    // http://growiz.us/the-definitive-guide-to-pmf/
+    h1 Step6: Product Market Fit
+    p
+      | ローンチしたサービスが目指しているマーケットに対して最適なものになっているかを検証
+    h2(style="margin: 60px 0 60px;") プロダクトマーケットフィットの検証
+    li Market Fit Survey
+    p
+      | 「あなたは、このプロダクトが使えなくなったらどう感じますか？」
+      | この質問への回答に対して、40％以上の人が「とても残念に思う」と回答した場合に、PMFを達成したとみなします。
+    li エンゲージメント検証
+    p
+      | 顧客が「実際に何をしているか」というデータを基にPMFを検証
+      | ex
+      | インスタなどのサービスでは、エンゲージメントデータは週、または日に、１ユーザーあたり何枚の写真をシェアしたか
+      | メッセージグサービスでは、1ユーザーあたり1日に何枚のメッセージを送ったか
+      | 注意点
+      | - PV数ではなく、イベントやアクションの回数で計測
+      | - エンゲージメントデータは、必ずそのプロダクトのコアな体験に関わるデータであること
+    li リテンションカーブ
+    p
+      | アクティブ率を縦軸に、期間を横軸にとってリテンションカーブを作成
+      | もしそのカーブが以下の図のようにどこかの点でフラットになるなら、あなたのプロダクトは「ある特定のマーケットにおいて」PMFを達成したと言える
+    img.vertxcenter(src="images/prototype/c.png" width="800")
 
-
-
-
-
-
+  section.slide-top
+    h1 Step7: Growth Hack
+    p
+      | サービスのユーザー数や収益を指数関数的に伸ばしていくステップ
 
 
 
