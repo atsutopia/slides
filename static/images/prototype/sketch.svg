@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1417px" height="426px" viewBox="0 0 1417 426" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
+    <title>Artboard</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Artboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect id="Rectangle" stroke="#979797" fill="#FFFFFF" transform="translate(108.994949, 201.000000) rotate(-315.000000) translate(-108.994949, -201.000000) " x="39.4949494" y="131.5" width="139" height="139"></rect>
+        <text id="Idearation-(アイデア)" font-family="RoundedMplus1c-Regular, Rounded Mplus 1c" font-size="14" font-weight="normal" fill="#000000">
+            <tspan x="75.337" y="193">Idearation</tspan>
+            <tspan x="75.918" y="212">(アイデア)</tspan>
+        </text>
+        <rect id="Rectangle" stroke="#979797" fill="#FFFFFF" transform="translate(306.672619, 200.672619) rotate(-315.000000) translate(-306.672619, -200.672619) " x="237.172619" y="131.172619" width="139" height="139"></rect>
+        <text id="Lean-Startup-(リーンスター" font-family="RoundedMplus1c-Regular, Rounded Mplus 1c" font-size="14" font-weight="normal" fill="#000000">
+            <tspan x="263.87" y="193">Lean Startup</tspan>
+            <tspan x="231.418" y="212">(リーンスタートアップ)</tspan>
+        </text>
+        <rect id="Rectangle" stroke="#979797" fill="#FFFFFF" transform="translate(502.994949, 200.672619) rotate(-315.000000) translate(-502.994949, -200.672619) " x="433.494949" y="131.172619" width="139" height="139"></rect>
+        <text id="Lean-Canvas-(リーンキャンバ" font-family="RoundedMplus1c-Regular, Rounded Mplus 1c" font-size="14" font-weight="normal" fill="#000000">
+            <tspan x="462.768" y="193">Lean Canvas</tspan>
+            <tspan x="441.418" y="212">(リーンキャンバス)</tspan>
+        </text>
+        <rect id="Rectangle" stroke="#979797" fill="#FFFFFF" transform="translate(698.994949, 200.672619) rotate(-315.000000) translate(-698.994949, -200.672619) " x="629.494949" y="131.172619" width="139" height="139"></rect>
+        <text id="Lean-UX-(リーンUX)" font-family="RoundedMplus1c-Regular, Rounded Mplus 1c" font-size="14" font-weight="normal" fill="#000000">
+            <tspan x="673.058" y="193">Lean UX</tspan>
+            <tspan x="664.301" y="212">(リーンUX)</tspan>
+        </text>
+        <rect id="Rectangle" stroke="#979797" fill="#FFFFFF" transform="translate(896.994949, 200.672619) rotate(-315.000000) translate(-896.994949, -200.672619) " x="827.494949" y="131.172619" width="139" height="139"></rect>
+        <text id="Agile-Development-(ア" font-family="RoundedMplus1c-Regular, Rounded Mplus 1c" font-size="14" font-weight="normal" fill="#000000">
+            <tspan x="837.433" y="193">Agile Development</tspan>
+            <tspan x="843.418" y="212">(アジャイル開発)</tspan>
+        </text>
+        <rect id="Rectangle" stroke="#979797" fill="#FFFFFF" transform="translate(1094.994949, 200.672619) rotate(-315.000000) translate(-1094.994949, -200.672619) " x="1025.49495" y="131.172619" width="139" height="139"></rect>
+        <text id="PMF-(プロダクト・マーケット・フィッ" font-family="RoundedMplus1c-Regular, Rounded Mplus 1c" font-size="14" font-weight="normal" fill="#000000">
+            <tspan x="1080.584" y="193">PMF</tspan>
+            <tspan x="1019.233" y="212" font-size="9">(プロダクト・マーケット・フィット)</tspan>
+        </text>
+        <rect id="Rectangle" stroke="#979797" fill="#FFFFFF" transform="translate(1292.994949, 200.672619) rotate(-315.000000) translate(-1292.994949, -200.672619) " x="1223.49495" y="131.172619" width="139" height="139"></rect>
+        <text id="Growth-Hack-(グロースハック" font-family="RoundedMplus1c-Regular, Rounded Mplus 1c" font-size="14" font-weight="normal" fill="#000000">
+            <tspan x="1251.493" y="193">Growth Hack</tspan>
+            <tspan x="1239.418" y="212">(グロースハック)</tspan>
+        </text>
+    </g>
+</svg>
