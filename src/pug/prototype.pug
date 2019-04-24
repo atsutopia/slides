@@ -1,19 +1,16 @@
 extends /layout/_application
 
 prepend Config
-  - title = 'ゼロ・トュ・ワン'
+  - title = 'ZERO to ONE'
 
 block content
   section.bg-red
     span.background.dark(style="background-image:url('https://source.unsplash.com/R1J6Z1cnJZc/1600x800')")
-    // .wrap = container (width: 90%)
     .wrap.aligncenter
       h1
-        strong ゼロ・トュ・ワン
+        strong ZERO to ONE
       h5.text-symbols ***
-    // .end .wrap
   section
-    // .wrap = container (width: 90%)
     .wrap.size-70
       h2
         strong Agenda
@@ -59,33 +56,31 @@ block content
     h1 Step2: Lean Startup (リーンスタートアップ)
     p
       | アイデアの前提となるユーザーの課題が本当に存在するか、アプローチ方法が間違った前提に立脚していないかを検証するステップ
-    h2 ジャベリンボード
-    img.vertxcenter(src="images/prototype/javelin.png" width="1500")
     h2 MVP (Minimum Viable Product)
     p
       | MVPとは Minimum Viable Product の略で、「最低限実用に足る製品」などと訳される。
       | ここでいう「実用に足る」というのは、「仮説検証から学びを得るために過不足がない」という意味。
+    img.vertxcenter(src="images/prototype/mvp.jpg" width="1500")
 
     li ペーパープロトタイプ
       li: a(href="https://prottapp.com" target="_blank") https://prottapp.com
-    li プロトタイプ（β版）
+    li プロトタイプ（β 版）
       p
         | 試験やデモ用に作られる実験機。完成版ではないものの、実際に動作する製品を作り、クローズドβ版などテストユーザに使用してもらいフィードバックを得る
     li オズの魔法使い
       p
         | システム化されているように見えるが、実際は生身の人間が手動で実行することで、大掛かりなシステム開発の前にユーザニーズを確かめる手法
-
   section.slide-top
     h1 Step3: Lean Canvas (リーンキャンバス)
     p
       | サービスアイデアをビジネスモデルへと昇華させるステップ。 そのアイデアがきちんとビジネスとしてスケールするものかを検証
     img.vertxcenter(src="images/prototype/original.png" width="1500")
-
   section.slide-top
     h1 Step4: Lean UX
     p
       | サービスのコアの体験（Unique Value Proposition）は何かを定義
     h2 ペルソナ
+    // https://goodpatch.com/blog/persona/
     p
       | ペルソナとは、商品やサービスのターゲットとなる架空のユーザー像
     img.vertxcenter(src="images/prototype/persona.png" width="1500")
@@ -117,11 +112,118 @@ block content
       | アクティブ率を縦軸に、期間を横軸にとってリテンションカーブを作成
       | もしそのカーブが以下の図のようにどこかの点でフラットになるなら、あなたのプロダクトは「ある特定のマーケットにおいて」PMFを達成したと言える
     img.vertxcenter(src="images/prototype/c.png" width="800")
-
   section.slide-top
+    // http://growthhack.vasily.jp/2014/05/ultimate-guide-for-growthhack/
     h1 Step7: Growth Hack
     p
       | サービスのユーザー数や収益を指数関数的に伸ばしていくステップ
+    li ファネルを可視化する
+    p
+      | ファネルとは、行動がより深くなるにつれて、その行動を行うユーザーが段々減っていく
+      | 様が漏斗(ろうと)に似ていることから、 グロースハックやマーケティングの領域で用いられる概念
+      |
+      |　- AARRRという５ステップ間でのファネル可視化
+      |　　　- … 獲得、活性化、継続、紹介、収益、どこがネックになっているのかを視覚化
+      |　- 登録フロー周りでのファネル可視化
+      |　　　- 一度は登録しようと思ったユーザーがどのステップで離脱しているのかを視覚化
+      |　- Retention周りでのファネル可視化
+      |　　　- ユーザー体験を数ステップに分け、どの段階でユーザーが離脱してしまっているのかを可視化
+    li 改善感度の優先付け
+    p
+      | インパクトの高い順に改善優先度決定
+    li 仮説リストアップ
+    p
+      | ボトルネックとなっている課題の原因を発見する
+    li 施策リストアップ
+    p
+      | 課題を解決する施策をリストアップし、 インパクトが大きく、工数が少ないものから高速で施策を打っていく
+    li 仮説・実験・学習
+    p
+      | 仮説 → 実験(施策実行)に、学習を加えたサイクルを高速で回す
+    li レバレッジを見つける
+    p
+      | レバレッジとは、テコの原理のように、その部分に力を加えると、全体に数倍の作用するもの
+      | Facebookの例では初日に、7人以上と友達になると、継続率が数倍に上がるデータをもとに、
+      | そこにレバレッジをかけて施策をして最終的に高い継続率を達成していった。
+  section.bg-green
+    span.background.dark(style="background-image:url('https://images.unsplash.com/photo-1535219241072-7d3c28a49a5c')")
+    .wrap.aligncenter.fadeInUp
+      h3
+        strong ZERO to ONE
+  section.slide-top
+    // https://mttkd1394.com/zero-to-one
+    h1 ZERO to ONE
+    li プロプライエタリテクノロジー
+    p
+      | ２番手より１０倍優れている技術を持っていること
+    li ネットワーク効果
+    p
+      | 「友達が使っていれば自分も使う」のような、利用者が増えるほど利便性が高まるサービスのこと
+    li 規模の経済
+    p
+      | 規模の経済の影響を多大に受けるように、
+      | 規模拡大の可能性を最初のデザインに組み込んでいること
+    li ブランディング
+    p
+      | その企業を象徴する独自のブランドイメージを持っていること
+    li 独占するために小さな市場から始めよ
+  section.bg-green
+    span.background.dark(style="background-image:url('https://images.unsplash.com/photo-1535219241072-7d3c28a49a5c')")
+    .wrap.aligncenter.fadeInUp
+      h3
+        strong ケーススタディ
+  section.slide-top
+    h1 ケーススタディ
+    img.vertxcenter(src="images/prototype/logo.svg" width="1400")
+  section.slide-top
+    h1 MVPキャンバス
+    img.vertxcenter(src="images/prototype/mvp-canvas.svg" width="1400")
+  section.slide-top
+    h1 MVPキャンバス
+    p
+      | プロゲート / 他スクール終了者も実践スキルとは程遠い...
+    img.vertxcenter(src="images/prototype/slamdunk_22_016.jpg" width="400")
+  section.slide-top
+    h1 MVP
+    img.vertxcenter(src="images/prototype/mvp-scan.png" width="800")
+  section.slide-top
+    h1 リーンUX
+    li オンライン実行環境
+    li オフラインのフォローアップ
+    li オンラインでの継続施策 (コミュニティ)
+    li 実践的スキル習得
+    li 採用へシームレスに接続
+  section.slide-top
+    h1 アジャイル開発
+    li 週間スプリント
+    img.vertxcenter(src="images/prototype/sprint.png" width="800")
+    img.vertxcenter(src="images/prototype/issues.png" width="800")
+  section.slide-top
+    h1 PMF
+    li エンゲージメント計測 (3ヶ月)
+    p
+      | アーリーアダプター獲得
+      | - 週の課題終了数
+      | - ベロシティ計測 - 3ヶ月で終了予定のカリキュラムでの進捗率
+  section.slide-top
+    h1 Growth Hack
+    p
+      | Next - レバレッジを見つける
+  section.bg-green
+    span.background.dark(style="background-image:url('https://images.unsplash.com/photo-1535219241072-7d3c28a49a5c')")
+    .wrap.aligncenter.fadeInUp
+      h3
+        strong 実践リーン・スタートアップ
+  section.slide-top
+    h1 MVPキャンバスを埋めてみよう
+    img.vertxcenter(src="images/prototype/mvp-canvas.svg" width="1400")
+  section.slide-top
+    h1 MVPを作成しよう
+    li: a(href="https://prottapp.com" target="_blank") https://prottapp.com
+
+
+
+
 
 
 
