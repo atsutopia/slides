@@ -1,0 +1,52 @@
+extends /layout/_application
+
+prepend Config
+  - title = 'Nuxt.js実践入門'
+
+block content
+  section.bg-red
+    span.background.dark(style="background-image:url('https://source.unsplash.com/R1J6Z1cnJZc/1600x800')")
+    // .wrap = container (width: 90%)
+    .wrap.aligncenter
+      h1
+        strong Nuxt.js実践入門
+      h5.text-symbols ***
+    // .end .wrap
+  section
+    // .wrap = container (width: 90%)
+    .wrap.size-70
+      h2
+        strong Agenda
+      hr
+      ol.text-cols
+        li トレーニング概要
+        li 自己紹介
+        li About Trunk
+        li About Nuxt.js
+        li JavaScriptフレームワーク比較
+        li BFFフレームワーク比較
+        li Nuxt.jsハンズオン
+        li Nuxt.js RealWorld usage li まとめ
+  section.bg-green
+    span.background.dark(style="background-image:url('https://images.unsplash.com/photo-1535219241072-7d3c28a49a5c')")
+    .wrap.aligncenter.fadeInUp: h3: strong トレーニング概要
+  section.slide-top
+    .wrap: div: h2 JSトレンドのキャッチアップとNuxt.js ハンズオン！
+  section.bg-green
+    span.background.dark(style="background-image:url('https://images.unsplash.com/photo-1535219241072-7d3c28a49a5c')")
+    .wrap.aligncenter.fadeInUp: h3: strong 自己紹介
+  section.fullscreen
+    span.background.dark(style="background-image:url('./images/cover/profile.png'); width: 60%; height: 120%; top: 50%; left: 50%; transform: translate(-50%, -50%); opacity: .4;")
+    h2(style="position: relative; font-weight: bold;") WHAT I'M ABOUT
+    p(style="position: relative; font-weight: bold;")
+      | 株式会社TRUNK TL Kawasaki Atsushi<br>
+      | 2013年じげんグループHRメディア事業のPMやバックエンドを担当。<br>
+      | 新規事業立ち上げの経験を経てエンジニアリングユニットのマネージャーに従事。<br>
+      |
+      | 2015年に株式会社カヤックへ入社。<br>
+      | クライアントワークや自社サービス(Lobi)のフロントエンド、バックエンドおよびインフラ設計、構築、運用を担当。<br>
+  section.bg-green
+    span.background.dark(style="background-image:url('https://images.unsplash.com/photo-1535219241072-7d3c28a49a5c')")
+    .wrap.aligncenter.fadeInUp: h3: strong About Trunk
+  section.slide-top
+    iframe(src="https://docs.google.com/presentation/d/e/2PACX-1vQn-Bh21l-m5bNi52n09dlQm1iS4lAbJkAdYa0QQ1T8VVHpummahqjw-pxXEJa-sbCyB6WfaT8P7-bB/embed?start=false&loop=false&delayms=3000" frameborder="0" width="1440" height="839" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;")
