@@ -1,0 +1,184 @@
+extends /layout/_application
+
+prepend Config
+  - title = 'Nuxt.js実践入門'
+
+block content
+  section.bg-red
+    span.background.dark(style="background-image:url('https://source.unsplash.com/R1J6Z1cnJZc/1600x800')")
+    // .wrap = container (width: 90%)
+    .wrap.aligncenter
+      h1
+        strong Nuxt.js実践入門
+      h5.text-symbols ***
+    // .end .wrap
+  section
+    // .wrap = container (width: 90%)
+    .wrap.size-70
+      h2
+        strong Agenda
+      hr
+      ol.text-cols
+        li トレーニング概要
+        li 自己紹介
+        li About Trunk
+        li About Nuxt.js
+        li JavaScriptフレームワーク比較
+        li BFFフレームワーク比較
+        li Nuxt.jsハンズオン
+  section.bg-green
+    span.background.dark(style="background-image:url('https://images.unsplash.com/photo-1535219241072-7d3c28a49a5c')")
+    .wrap.aligncenter.fadeInUp: h3: strong トレーニング概要
+  section.slide-top
+    .wrap: div: h2 JSトレンドのキャッチアップとNuxt.js ハンズオン！
+  section.bg-green
+    span.background.dark(style="background-image:url('https://images.unsplash.com/photo-1535219241072-7d3c28a49a5c')")
+    .wrap.aligncenter.fadeInUp: h3: strong 自己紹介
+  section.fullscreen
+    span.background.dark(style="background-image:url('./images/cover/profile.png'); width: 60%; height: 120%; top: 50%; left: 50%; transform: translate(-50%, -50%); opacity: .4;")
+    h2(style="position: relative; font-weight: bold;") WHAT I'M ABOUT
+    p(style="position: relative; font-weight: bold;")
+      | 株式会社TRUNK TL Kawasaki Atsushi<br>
+      | 2013年じげんグループHRメディア事業のPMやバックエンドを担当。<br>
+      | 新規事業立ち上げの経験を経てエンジニアリングユニットのマネージャーに従事。<br>
+      |
+      | 2015年に株式会社カヤックへ入社。<br>
+      | クライアントワークや自社サービス(Lobi)のフロントエンド、バックエンドおよびインフラ設計、構築、運用を担当。<br>
+  section.bg-green
+    span.background.dark(style="background-image:url('https://images.unsplash.com/photo-1535219241072-7d3c28a49a5c')")
+    .wrap.aligncenter.fadeInUp: h3: strong About Trunk
+  section.slide-top
+    iframe(src="https://docs.google.com/presentation/d/e/2PACX-1vQn-Bh21l-m5bNi52n09dlQm1iS4lAbJkAdYa0QQ1T8VVHpummahqjw-pxXEJa-sbCyB6WfaT8P7-bB/embed?start=false&loop=false&delayms=3000" frameborder="0" width="1440" height="839" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;")
+  section.bg-green
+    span.background.dark(style="background-image:url('https://images.unsplash.com/photo-1535219241072-7d3c28a49a5c')")
+    .wrap.aligncenter.fadeInUp: h3: strong About Nuxt.js
+  section.slide-top
+    h2 About Nuxt.js
+    p
+      | Nuxt.js は Vue アプリケーションを作成するフレームワークです.
+      | ユニバーサルアプリケーション,静的に生成されるアプリケーション,シングルページアプリケーションの中から作成するアプリケーションを選ぶことができます.
+    h2 Nuxt.js採用の理由
+    li SSR対応 - handle meta deta
+    li ファイルベースRouter
+    li コードの自動分割 - モダンな高速化テクニックのプリセット
+
+    small ref
+    small: a(href="https://ja.nuxtjs.org/guide/") https://ja.nuxtjs.org/guide/
+  section.bg-green
+    span.background.dark(style="background-image:url('https://images.unsplash.com/photo-1535219241072-7d3c28a49a5c')")
+    .wrap.aligncenter.fadeInUp: h3: strong JavaScriptフレームワーク比較
+  section.slide-top
+    h2 Vue vs React vs Angular
+    p
+      | SPAフレームワークでも有名なReactやAngularと比較していく.
+      | 留意しておきたいのはフレームワークの取捨選択はあくまでケースバイケースとなる.
+    h3 with React
+    li JSX vs Templates
+    p
+      | Reactでは,すべてのコンポーネントは JSX を用いた 描画関数 (render) の中でそれらの UI を表現する.
+      | これはVueにおけるTemplatesのそれとは違い,独自のDSLが含まれる.
+    li コミュニティ
+    p
+      | Vue.jsではvuexやvue-routerなどのメジャーなライブラリは公式orgにおいて開発されている.
+      | 一方,Reactではreduxやreact-routerなどメジャーなライブラリもfacebookではなく独自に開発されている.
+      | fluxなどの公式に提供されているものが逆に流行っていないということもある.
+      | GitHub Star数では 138k > 129k でvueに軍配が上がる
+    h3 with Angular
+    li Typescript
+    p
+      | ほとんどすべてのドキュメントと学習リソースがTypeScriptベースのため,実質TypeScript を使用する必要がある.
+    li コミュニティ
+    p
+      | GitHub Star数では 138k > 48k でvueに軍配が上がる
+  section.bg-green
+    span.background.dark(style="background-image:url('https://images.unsplash.com/photo-1535219241072-7d3c28a49a5c')")
+    .wrap.aligncenter.fadeInUp: h3: strong BFFフレームワーク比較
+  section.slide-top
+    h2 About BFF (Backends For Frontends)
+    p
+      | BFFとは名前の通り,フロントエンドのためのバックエンド（サーバ）のことを指す.
+      | BFFのアーキテクチャパターンにより「フロントエンド専用のサーバを設けることでUIを構築しやすくする」効果と,
+      | 「フロントエンドとバックエンドの境界を設けてアーキテクチャのレイヤーを分割することで役割を明確にし、独立して開発を進めやすくする」効果が
+      | 期待できる.
+    small: a(href="https://samnewman.io/patterns/architectural/bff/") https://samnewman.io/patterns/architectural/bff/
+  section.slide-top
+    h2 Nuxt.js vs Next.js
+    p
+      | Nuxt.js は Vueベースで作成されたフレームワークでNext.jsはReactベースで作成されたフレームワークである.
+      | どちらもSSRを実現するためにできていて,BFFが実現可能.
+      | プリセットの豊富さや周辺ライブラの豊富さはNuxt.jsに軍配があがる.
+  section.bg-green
+    span.background.dark(style="background-image:url('https://images.unsplash.com/photo-1535219241072-7d3c28a49a5c')")
+      .wrap.aligncenter.fadeInUp: h3: strong Nuxt.jsハンズオン
+  section.slide-top
+    h2 雛形のインストール
+    p
+      |スターターキットは
+      a(href="https://github.com/pocke777/nuxt-starterkit") こちら
+  section.slide-top
+    h2 ステップ1
+    p
+      | 市区町村一覧をjsonから表示しよう！
+      | Jsonは 【http://www.land.mlit.go.jp/webland/api/CitySearch?area=13】を利用してください
+    h3 サンプル
+    img(src="/images/nuxt/list-sample.png")
+  section.slide-top
+    h2 都道府県のセレクトボックスを選択して表示する市区町村データを変えていこう！
+    h3 サンプル
+    img(src="/images/nuxt/select-sample.png")
+  section.slide-top
+    h2 都道府県コード
+    pre
+      | const PREFECTURES = [
+      |   { id: "01", name: "北海道" },
+      |   { id: "02", name: "青森県" },
+      |   { id: "03", name: "岩手県" },
+      |   { id: "04", name: "宮城県" },
+      |   { id: "05", name: "秋田県" },
+      |   { id: "06", name: "山形県" },
+      |   { id: "07", name: "福島県" },
+      |   { id: "08", name: "茨城県" },
+      |   { id: "09", name: "栃木県" },
+      |   { id: "10", name: "群馬県" },
+      |   { id: "11", name: "埼玉県" },
+      |   { id: "12", name: "千葉県" },
+      |   { id: "13", name: "東京都" },
+      |   { id: "14", name: "神奈川県" },
+      |   { id: "15", name: "新潟県" },
+      |   { id: "16", name: "富山県" },
+      |   { id: "17", name: "石川県" },
+      |   { id: "18", name: "福井県" },
+      |   { id: "19", name: "山梨県" },
+      |   { id: "20", name: "長野県" },
+      |   { id: "21", name: "岐阜県" },
+      |   { id: "22", name: "静岡県" },
+      |   { id: "23", name: "愛知県" },
+      |   { id: "24", name: "三重県" },
+      |   { id: "25", name: "滋賀県" },
+      |   { id: "26", name: "京都府" },
+      |   { id: "27", name: "大阪府" },
+      |   { id: "28", name: "兵庫県" },
+      |   { id: "29", name: "奈良県" },
+      |   { id: "30", name: "和歌山県" },
+      |   { id: "31", name: "鳥取県" },
+      |   { id: "32", name: "島根県" },
+      |   { id: "33", name: "岡山県" },
+      |   { id: "34", name: "広島県" },
+      |   { id: "35", name: "山口県" },
+      |   { id: "36", name: "徳島県" },
+      |   { id: "37", name: "香川県" },
+      |   { id: "38", name: "愛媛県" },
+      |   { id: "39", name: "高知県" },
+      |   { id: "40", name: "福岡県" },
+      |   { id: "41", name: "佐賀県" },
+      |   { id: "42", name: "長崎県" },
+      |   { id: "43", name: "熊本県" },
+      |   { id: "44", name: "大分県" },
+      |   { id: "45", name: "宮崎県" },
+      |   { id: "46", name: "鹿児島県" },
+      |   { id: "47", name: "沖縄県" },
+      | ]
+  section.slide-top
+  h2 自分なりにアレンジしてみよう！
+
+
