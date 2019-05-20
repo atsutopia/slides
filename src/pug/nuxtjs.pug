@@ -50,3 +50,44 @@ block content
     .wrap.aligncenter.fadeInUp: h3: strong About Trunk
   section.slide-top
     iframe(src="https://docs.google.com/presentation/d/e/2PACX-1vQn-Bh21l-m5bNi52n09dlQm1iS4lAbJkAdYa0QQ1T8VVHpummahqjw-pxXEJa-sbCyB6WfaT8P7-bB/embed?start=false&loop=false&delayms=3000" frameborder="0" width="1440" height="839" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;")
+  section.bg-green
+    span.background.dark(style="background-image:url('https://images.unsplash.com/photo-1535219241072-7d3c28a49a5c')")
+    .wrap.aligncenter.fadeInUp: h3: strong About Nuxt.js
+  section.slide-top
+    h2 About Nuxt.js
+    p
+      | Nuxt.js は Vue アプリケーションを作成するフレームワークです.
+      | ユニバーサルアプリケーション,静的に生成されるアプリケーション,シングルページアプリケーションの中から作成するアプリケーションを選ぶことができます.
+    h2 Nuxt.js採用の理由
+    li SSR対応 - handle meta deta
+    li ファイルベースRouter
+    li コードの自動分割 - モダンな高速化テクニックのプリセット
+
+    small ref
+    small: a(href="https://ja.nuxtjs.org/guide/") https://ja.nuxtjs.org/guide/
+  section.bg-green
+    span.background.dark(style="background-image:url('https://images.unsplash.com/photo-1535219241072-7d3c28a49a5c')")
+    .wrap.aligncenter.fadeInUp: h3: strong JavaScriptフレームワーク比較
+  section.slide-top
+    h2 Vue vs React vs Angular
+    p
+      | SPAフレームワークでも有名なReactやAngularと比較していく.
+      | 留意しておきたいのはフレームワークの取捨選択はあくまでケースバイケースとなる.
+    h3 with React
+    li JSX vs Templates
+    p
+      | Reactでは,すべてのコンポーネントは JSX を用いた 描画関数 (render) の中でそれらの UI を表現する.
+      | これはVueにおけるTemplatesのそれとは違い,独自のDSLが含まれる.
+    li コミュニティ
+    p
+      | Vue.jsではvuexやvue-routerなどのメジャーなライブラリは公式orgにおいて開発されている.
+      | 一方,Reactではreduxやreact-routerなどメジャーなライブラリもfacebookではなく独自に開発されている.
+      | fluxなどの公式に提供されているものが逆に流行っていないということもある.
+      | GitHub Star数では 138k > 129k でvueに軍配が上がる
+    h3 with Angular
+    li Typescript
+    p
+      | ほとんどすべてのドキュメントと学習リソースがTypeScriptベースのため,実質TypeScript を使用する必要がある.
+    li コミュニティ
+    p
+      | GitHub Star数では 138k > 48k でvueに軍配が上がる
