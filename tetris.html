@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns#">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--
+    CLEAN MARKUP = GOOD KARMA.
+    Hi source code lover,
+    you're a curious person and a fast learner ;)
+    Let's make something beautiful together. Contribute on Github:
+    https://github.com/webslides/webslides
+    Thanks!
+    -->
+    <!-- SEO-->
+    <title>TETRIS with ES2015</title>
+    <meta name="description" content="">
+    <!-- URL CANONICAL-->
+    <!-- <link rel="canonical" href="http://your-url.com/permalink">-->
+    <!-- Google Fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,700,700i%7CMaitree:200,300,400,600,700&amp;subset=latin-ext" rel="stylesheet">
+    <!-- CSS Base-->
+    <link rel="stylesheet" type="text/css" media="all" href="./css/webslides.css">
+    <link rel="stylesheet" type="text/css" media="all" href="./css/default.css">
+    <!-- link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css")-->
+    <!-- Optional - CSS SVG Icons (Font Awesome)-->
+    <link rel="stylesheet" type="text/css" media="all" href="./css/svg-icons.css">
+    <!-- SOCIAL CARDS (ADD YOUR INFO)-->
+    <!-- FACEBOOK-->
+    <!-- EDIT-->
+    <meta property="og:url" content="https://source.unsplash.com/R1J6Z1cnJZc/1600x800">
+    <!-- EDIT-->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="WebSlides: Trunk Study">
+    <meta property="og:description" content="created by Atsushi.">
+    <!-- EDIT-->
+    <meta property="og:updated_time" content="2017-04-16T16:24:56">
+    <!-- EDIT-->
+    <meta property="og:image:width" content="800">
+    <meta property="og:image:height" content="429">
+    <!-- TWITTER-->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@webslides">
+    <!-- FAVICONS-->
+    <link rel="shortcut icon" sizes="16x16" href="../static/images/favicons/favicon.png">
+    <link rel="shortcut icon" sizes="32x32" href="../static/images/favicons/favicon-32.png">
+    <link rel="apple-touch-icon icon" sizes="76x76" href="../static/images/favicons/favicon-76.png">
+    <link rel="apple-touch-icon icon" sizes="120x120" href="../static/images/favicons/favicon-120.png">
+    <link rel="apple-touch-icon icon" sizes="152x152" href="../static/images/favicons/favicon-152.png">
+    <link rel="apple-touch-icon icon" sizes="180x180" href="../static/images/favicons/favicon-180.png">
+    <link rel="apple-touch-icon icon" sizes="192x192" href="../static/images/favicons/favicon-192.png">
+    <!-- Android-->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#333333">
+  </head>
+  <body>
+    <!-- header(role='banner')-->
+    <!--   nav(role='navigation')-->
+    <!--     p.logo-->
+    <!--       a(href='../index.html', title='WebSlides') WebSlides-->
+    <!--     ul-->
+    <!--       li.github-->
+    <!--         a(rel='external', href='https://github.com/webslides/webslides', title='Github')-->
+    <!--           svg.fa-github-->
+    <!--             use(xlink:href='#fa-github')-->
+    <!--           em WebSlides-->
+    <!--       li.twitter-->
+    <!--         a(rel='external', href='https://twitter.com/webslides', title='Twitter')-->
+    <!--           svg.fa-twitter-->
+    <!--             use(xlink:href='#fa-twitter')-->
+    <!--           em @WebSlides-->
+    <!--       // <li class="dribbble"><a rel="external" href="http://dribbble.com/webslides" title="Dribbble"><svg class="fa-dribbble"><use xlink:href="#fa-dribbble"></use></svg> <em>webslides</em></a></li>-->
+    <main role="main">
+      <article id="webslides">
+        <!--
+        Quick Guide
+        - Each parent <section> in the <article id="webslides"> element is an individual slide.
+        - Vertical sliding = <article id="webslides" class="vertical">
+        - <div class="wrap"> = container 90% / <div class="wrap size-50"> = 45%;
+        -->
+        <section class="bg-red"><span class="background dark" style="background-image:url('https://source.unsplash.com/R1J6Z1cnJZc/1600x800')"></span>
+          <!-- .wrap = container (width: 90%)-->
+          <div class="wrap aligncenter">
+            <h1><strong>TETRIS with ES2015</strong></h1>
+            <h5 class="text-symbols">***</h5>
+          </div>
+          <!-- .end .wrap-->
+        </section>
+        <section>
+          <!-- .wrap = container (width: 90%)-->
+          <div class="wrap size-70">
+            <h2><strong>Agenda</strong></h2>
+            <hr>
+            <ol class="text-cols">
+              <li>トレーニング概要</li>
+              <li>自己紹介</li>
+              <li>開発環境構築</li>
+              <li>About Canavs</li>
+              <li>実装要件</li>
+              <li>Build Game Logic</li>
+            </ol>
+          </div>
+        </section>
+        <section class="bg-green"><span class="background dark" style="background-image:url('https://images.unsplash.com/photo-1535219241072-7d3c28a49a5c')"></span>
+          <!-- .wrap = container (width: 90%)-->
+          <div class="wrap aligncenter fadeInUp">
+            <h3><strong>トレーニング概要</strong></h3>
+          </div>
+          <!-- .end .wrap-->
+        </section>
+        <section class="slide-top">
+          <!-- .wrap = container (width: 90%)-->
+          <div class="wrap">
+            <div>
+              <h1>JavascriptでTETRISをつくろう</h1>
+              <h4><a href="https://github.com/atsutopia/tetris/tree/v-0.0.1-template" target="_blank">Demo</a></h4>
+            </div>
+          </div>
+        </section>
+        <section class="fullscreen"><span class="background dark" style="background-image:url('./images/cover/profile.png'); width: 60%; height: 120%; top: 50%; left: 50%; transform: translate(-50%, -50%); opacity: .4;"></span>
+          <h2 style="position: relative; font-weight: bold;">WHAT I'M ABOUT</h2>
+          <p style="position: relative; font-weight: bold;">
+            株式会社TRUNK TL Kawasaki Atsushi<br>
+            2013年じげんグループHRメディア事業のPMやバックエンドを担当。<br>
+            新規事業立ち上げの経験を経てエンジニアリングユニットのマネージャーに従事。<br>
+            
+            2015年に株式会社カヤックへ入社。<br>
+            クライアントワークや自社サービス(Lobi)のフロントエンド、バックエンドおよびインフラ設計、構築、運用を担当。<br>
+          </p>
+        </section>
+        <section class="bg-green"><span class="background dark" style="background-image:url('https://images.unsplash.com/photo-1535219241072-7d3c28a49a5c')"></span>
+          <!-- .wrap = container (width: 90%)-->
+          <div class="wrap aligncenter fadeInUp">
+            <h3><strong>開発環境構築</strong></h3>
+          </div>
+          <!-- .end .wrap-->
+        </section>
+        <section class="slide-top">
+          <h3>Parcel</h3>
+          <p>Repository
+            <h4><a href="https://github.com/atsutopia/tetris/tree/v-0.0.1-template" target="_blank">https://github.com/atsutopia/tetris/tree/v-0.0.1-template</a></h4>
+          </p>
+          <p>About Parcel
+            <h4><a href="https://parceljs.org/" target="_blank">https://parceljs.org/</a></h4>
+          </p>
+        </section>
+        <section class="bg-green"><span class="background dark" style="background-image:url('https://images.unsplash.com/photo-1535219241072-7d3c28a49a5c')"></span>
+          <div class="wrap aligncenter fadeInUp">
+            <h3><strong>About Canavs</strong></h3>
+          </div>
+        </section>
+        <section class="slide-top">
+          <div class="wrap">
+            <div>
+              <h2>Canvas API</h2>
+              <p>HTML5 で導入された canvas 要素は、JavaScript によるスクリプティングによって図形などを描画するために使用します。例えば、グラフを描く、写真を合成する、アニメーションを作成する、動画のリアルタイム加工やレンダリングに用いる事が出来ます。</p><a href="https://developer.mozilla.org/ja/docs/Web/HTML/Canvas" target="_blank">https://developer.mozilla.org/ja/docs/Web/HTML/Canvas</a>
+            </div>
+          </div>
+          <!-- .end .wrap-->
+        </section>
+        <section class="slide-top">
+          <div class="wrap">
+            <div>
+              <h2>Canvas API</h2>
+              <p>図形の作成 <br><a href="http://cheatsheetworld.com/programming/html5-canvas-cheat-sheet/" target="_blank">http://cheatsheetworld.com/programming/html5-canvas-cheat-sheet/</a>
+                <ol>
+                  <li>色を変えてみよう</li>
+                  <li>座標を変えてみよう</li>
+                  <li>大きさを変えてみよう</li>
+                </ol>
+              </p><p data-height="465" data-width="640" data-theme-id="0" data-slug-hash="dqGLLX" data-default-tab="js,result" data-user="pickrusu" data-pen-title="Canvas API" class="codepen">See the Pen <a href="https://codepen.io/pickrusu/pen/dqGLLX/">Canvas API</a> by pickrusu (<a href="https://codepen.io/pickrusu">@pickrusu</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+              <p>Ref:<a href="https://simon.html5.org/dump/html5-canvas-cheat-sheet.html">Canvas Cheat Sheet</a></p>
+            </div>
+          </div>
+        </section>
+        <section class="bg-green"><span class="background dark" style="background-image:url('https://images.unsplash.com/photo-1535219241072-7d3c28a49a5c')"></span>
+          <div class="wrap aligncenter fadeInUp">
+            <h3><strong>実装要件</strong></h3>
+          </div>
+        </section>
+        <section class="slide-top">
+          <!-- .wrap = container (width: 90%)-->
+          <div class="wrap">
+            <div>
+              <h3>極力シンプルなテトリスの実装を目指す</h3><a href="https://ja.wikipedia.org/wiki/%E3%83%86%E3%83%88%E3%83%AA%E3%82%B9">テトリス ルール参照</a>
+            </div>
+            <p>
+              <ol>
+                <li>4つの正方形で構成されるテトリミノ7種がランダムに落下してくる</li>
+                <li>テトリミノがフィールド最下段、または他のテトリミノの上に着地するか引っかかると、そのテトリミノはブロックとしてフィールドに固定される。そして新しいテトリミノがフィールド上方に出現する。</li>
+                <li>上左右下キーカーソルでのテトリミノが移動可能。上キーカーソルで時計回りにテトリミノを回転</li>
+                <li>行がすべてブロックで埋め尽くされると、その段が消滅する</li>
+                <li>テトリミノによって新しいテトリミノがフィールド上方に出現不可になった時点でゲームオーバー</li>
+              </ol>
+            </p>
+          </div>
+        </section>
+        <section class="bg-green"><span class="background dark" style="background-image:url('https://images.unsplash.com/photo-1535219241072-7d3c28a49a5c')"></span>
+          <div class="wrap aligncenter fadeInUp">
+            <h3><strong>Build Step</strong></h3>
+          </div>
+        </section>
+        <section class="slide-top">
+          <!-- .wrap = container (width: 90%)-->
+          <div class="wrap">
+            <div>
+              <h3>実装ステップ</h3>
+            </div>
+            <p>
+              <ol>
+                <li>Canvasを利用してステージを描画</li>
+                <li>4つの正方形で構成されるテトリミノをランダムに出現</li>
+                <li>テトリミノの落下アニメーション</li>
+                <li>衝突判定</li>
+                <li>キーカーソルでテトリミノの操作</li>
+                <li>行の削除処理</li>
+              </ol>
+            </p>
+          </div>
+        </section>
+        <section class="bg-green"><span class="background dark" style="background-image:url('https://images.unsplash.com/photo-1535219241072-7d3c28a49a5c')"></span>
+          <div class="wrap aligncenter fadeInUp">
+            <h3><strong>Step.1 Canvasを利用してステージを描画</strong></h3>
+          </div>
+        </section>
+        <section class="slide-top">
+          <div class="wrap">
+            <div>
+              <h3>2次元配列でテトリスのステージを定義してcanvasに描画する</h3>
+            </div>
+            <p>
+              <pre>import _ from "lodash"
+
+const BLOCK_SIZE = 24
+const BLOCK_ROWS = 22
+const BLOCK_COLS = 12
+
+const SCREEN_WIDTH = BLOCK_SIZE * BLOCK_COLS
+const SCREEN_HEIGHT = BLOCK_SIZE * BLOCK_ROWS
+
+const NON_BLOCK = 0
+const WALL = 9
+
+const BACK_COLOR = "#f5f5f5"
+const WALL_COLOR = "#000000"
+
+const STAGE = [
+  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9],
+  [9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9],
+  [9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9],
+  [9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9],
+  [9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9],
+  [9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9],
+  [9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9],
+  [9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9],
+  [9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9],
+  [9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9],
+  [9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9],
+  [9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9],
+  [9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9],
+  [9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9],
+  [9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9],
+  [9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9],
+  [9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9],
+  [9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9],
+  [9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9],
+  [9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+]
+
+
+
+
+export default class Tetris {
+  constructor (canvas) {
+    canvas.width = SCREEN_WIDTH
+    canvas.height = SCREEN_HEIGHT
+    this.cxt = canvas.getContext("2d")
+
+    this.stage = _.cloneDeep(STAGE)
+    this.draw()
+  }
+
+  draw () {
+    for (let row = 0; row < BLOCK_ROWS; row++) {
+      for (let col = 0; col < BLOCK_COLS; col++) {
+        switch(this.stage[row][col]){
+          case NON_BLOCK:
+            this.cxt.fillStyle = BACK_COLOR
+            break
+        }
+        this.cxt.fillRect(col * BLOCK_SIZE, row * BLOCK_SIZE, BLOCK_SIZE -1, BLOCK_SIZE - 1)
+      }
+    }
+  }
+}</pre>
+            </p>
+          </div>
+        </section>
+        <section class="slide-top">
+          <div class="wrap">
+            <div>
+              <h3>セルがWALLのときのカラーも設定しましょう</h3>
+            </div>
+            <p>
+              <h4>完成図</h4><img src="images/tetris/wall.png">
+            </p>
+          </div>
+        </section>
+        <section class="bg-green"><span class="background dark" style="background-image:url('https://images.unsplash.com/photo-1535219241072-7d3c28a49a5c')"></span>
+          <div class="wrap aligncenter fadeInUp">
+            <h3><strong>Step.2 4つの正方形で構成されるテトリミノをランダムに出現</strong></h3>
+          </div>
+        </section>
+        <section class="slide-top">
+          <div class="wrap">
+            <div>
+              <h3>ランダムにブロックを取得して値をセット</h3>
+            </div>
+            <pre>
+
+const NON_BLOCK = 0
+const NORMAL_BLOCK = 1
+const WALL = 9
+
+
+const BLOCK_COLOR = "#00ffff"
+const BACK_COLOR = "#f5f5f5"
+const WALL_COLOR = "#000000"
+
+const	BLOCKS = [
+  [
+    [0, 0, 0, 0],
+    [0, 1, 1, 0],
+    [0, 1, 1, 0],
+    [0, 0, 0, 0],
+ ],
+ [
+   [0, 0, 1, 0],
+   [0, 0, 1, 0],
+   [0, 0, 1, 0],
+   [0, 0, 1, 0],
+ ],
+]
+
+export default class Tetris {
+  constructor (canvas) {
+    ...省略
+    this.x = 0
+    this.y = 0
+    this.beforeX = 0
+    this.beforeY = 0
+    this.block = []
+
+    this.createBlock()
+    this.updateBlock()
+    this.draw()
+  }
+
+  // ランダムにブロックを取得
+  // 座標の初期値をセット
+  createBlock () {
+  }
+
+  // this.stageへblockの値を反映
+  updateBlock () {
+  }
+}</pre>
+          </div>
+        </section>
+        <section class="slide-top">
+          <div class="wrap">
+            <h4>完成図</h4><img src="images/tetris/step2.gif">
+          </div>
+        </section>
+        <section class="bg-green"><span class="background dark" style="background-image:url('https://images.unsplash.com/photo-1535219241072-7d3c28a49a5c')"></span>
+          <div class="wrap aligncenter fadeInUp">
+            <h3><strong>Step.3 テトリミノの落下アニメーション</strong></h3>
+          </div>
+        </section>
+        <section class="slide-top">
+          <div class="wrap">
+            <div>
+              <h3>requestAnimationFrameを利用してdrawを定期実行</h3>
+            </div>
+            <pre>const speed = 500
+let lastUpdate = 0
+// 定期実行処理
+this.ticker = (timestamp) => {
+  this.beforeX = this.x
+  this.beforeY = this.y
+  const diff = timestamp - lastUpdate
+  // 500msごとにy座標をずらして落下させる
+  if (diff > speed) {
+    lastUpdate = timestamp
+    this.y++
+  }
+  requestAnimationFrame(this.ticker)
+}
+requestAnimationFrame(this.ticker)</pre>
+          </div>
+        </section>
+        <section class="slide-top">
+          <div class="wrap">
+            <h4>実行例</h4><img src="images/tetris/step3-1.gif">
+          </div>
+        </section>
+        <section class="slide-top">
+          <div class="wrap">
+            <div>
+              <h3>残像が残ってしまうので更新時にブロックを消す</h3>
+            </div>
+            <pre>const speed = 500
+let lastUpdate = 0
+// 定期実行処理
+this.ticker = (timestamp) => {
+  this.beforeX = this.x
+  this.beforeY = this.y
+
+  const diff = timestamp - lastUpdate
+  // 500msごとにy座標をずらして落下させる
+  if (diff > speed) {
+    lastUpdate = timestamp
+    this.clearBlock()
+    this.y++
+  }
+
+  requestAnimationFrame(this.ticker)
+}
+requestAnimationFrame(this.ticker)
+
+
+// ブロックを0に戻す
+clearBlock () {
+}
+</pre>
+          </div>
+        </section>
+        <section class="slide-top">
+          <div class="wrap">
+            <h4>完成図</h4><img src="images/tetris/step3-2.gif">
+          </div>
+        </section>
+        <section class="bg-green"><span class="background dark" style="background-image:url('https://images.unsplash.com/photo-1535219241072-7d3c28a49a5c')"></span>
+          <div class="wrap aligncenter fadeInUp">
+            <h3><strong>衝突判定</strong></h3>
+          </div>
+        </section>
+        <section class="slide-top">
+          <div class="wrap">
+            <h4>ステージの座標とブロックの座標を取得し、両方ゼロじゃない場合は衝突と判定</h4>
+            <pre>const speed = 500
+let lastUpdate = 0
+// 定期実行処理
+this.ticker = (timestamp) => {
+  this.beforeX = this.x
+  this.beforeY = this.y
+
+  const diff = timestamp - lastUpdate
+  // 500msごとにy座標をずらして落下させる
+  if (diff > speed) {
+    lastUpdate = timestamp
+    this.clearBlock()
+    this.y++
+
+    // 衝突の場合は座標を戻して、新しくブロックを作成
+    if (this.isHit()) {
+      this.y = this.beforeY
+      this.createBlock()
+    }
+    this.updateBlock()
+  }
+
+  requestAnimationFrame(this.ticker)
+}
+requestAnimationFrame(this.ticker)
+
+
+// 衝突判定
+isHit () {
+}</pre>
+          </div>
+        </section>
+        <section class="slide-top">
+          <div class="wrap">
+            <h4>実行例</h4><img src="images/tetris/step4-1.gif">
+          </div>
+        </section>
+        <section class="slide-top">
+          <div class="wrap">
+            <h4>衝突したブロックを保持</h4>
+            <pre>const NON_BLOCK = 0
+const NORMAL_BLOCK = 1
+const WALL = 9
+const LOCK_BLOCK = 2
+
+const BLOCK_COLOR = "#00ffff"
+const BACK_COLOR = "#f5f5f5"
+const WALL_COLOR = "#000000"
+const LOCK_COLOR = "#c0c0c0"
+
+export default class Tetris {
+  constructor (canvas) {
+    this.ticker = (timestamp) => {
+      ...省略
+      if (diff > speed) {
+        lastUpdate = timestamp
+
+        this.clearBlock()
+        this.y++
+        if (this.isHit()) {
+          this.y = this.beforeY
+          this.lockBlock()
+          this.createBlock()
+        }
+        this.updateBlock()
+      }
+      this.draw()
+
+      requestAnimationFrame(this.ticker)
+    }
+  }
+
+  // LOCK_BLOCKの値を座標に代入
+  lockBlock () {
+  }
+}</pre>
+          </div>
+        </section>
+        <section class="slide-top">
+          <div class="wrap">
+            <h4>完成図</h4><img src="images/tetris/step4-2.gif">
+          </div>
+        </section>
+        <section class="bg-green"><span class="background dark" style="background-image:url('https://images.unsplash.com/photo-1535219241072-7d3c28a49a5c')"></span>
+          <div class="wrap aligncenter fadeInUp">
+            <h3><strong>Step.5 キーカーソルでテトリミノの操作</strong></h3>
+          </div>
+        </section>
+        <section class="slide-top">
+          <div class="wrap">
+            <div>
+              <h3>左右/下の移動</h3>
+            </div>
+            <p></p>
+            <pre>const KEY_LEFT = 37
+const KEY_UP = 38
+const KEY_RIGHT = 39
+const KEY_DOWN = 40
+
+
+export default class Tetris {
+  constructor (canvas) {
+    window.addEventListener("keydown", (evt) => {
+      this.keyHandler(evt)
+    })
+  }
+
+  keyHandler (e) {
+    this.clearBlock()
+    this.beforeX = this.x
+    this.beforeY = this.y
+
+    // キーを入力したときに座標を移動
+    switch (e.keyCode) {
+    }
+
+    if (this.isHit()) {
+      this.x = this.beforeX
+      this.y = this.beforeY
+    }
+
+    this.updateBlock()
+  }
+}</pre>
+          </div>
+        </section>
+        <section class="slide-top">
+          <div class="wrap">
+            <div>
+              <h3>上カーソルで回転処理</h3>
+            </div>
+            <p>
+              <pre>rotateBlock () {
+  this.clearBlock()
+
+  const beforeBlock = _.cloneDeep(this.block)
+  const copy = new Array(this.block)
+  // 回転処理
+
+  this.block = copy
+
+  if (this.isHit()) {
+    this.block = beforeBlock
+  }
+}</pre>
+            </p>
+          </div>
+        </section>
+        <section class="slide-top">
+          <div class="wrap">
+            <h4>完成図</h4><img src="images/tetris/step5-1.gif">
+          </div>
+        </section>
+        <section class="bg-green"><span class="background dark" style="background-image:url('https://images.unsplash.com/photo-1535219241072-7d3c28a49a5c')"></span>
+          <div class="wrap aligncenter fadeInUp">
+            <h3><strong>行の削除処理 / ゲームオーバー処理</strong></h3>
+          </div>
+        </section>
+        <section class="slide-top">
+          <div class="wrap">
+            <h4>isHitに入ってきたときに行の削除チェック</h4>
+            <pre>export default class Tetris {
+  constructor (canvas) {
+    this.ticker = (timestamp) => {
+      ...省略
+      if (diff > speed) {
+        lastUpdate = timestamp
+
+        this.clearBlock()
+        this.y++
+        if (this.isHit()) {
+          this.y = this.beforeY
+          this.lockBlock()
+          this.deleteLine()
+          this.createBlock()
+        }
+        this.updateBlock()
+      }
+      this.draw()
+
+      requestAnimationFrame(this.ticker)
+    }
+  }
+
+  // 行の削除処理
+  deleteLine () {
+  }
+}</pre>
+          </div>
+        </section>
+        <section class="slide-top">
+          <div class="wrap">
+            <h4>実行例</h4><img src="images/tetris/step6-1.gif">
+          </div>
+        </section>
+        <section class="slide-top">
+          <div class="wrap">
+            <h4>createBlockした瞬間にisHitした場合はゲームオーバー</h4>
+            <pre>const GAMEOVER = 0
+
+export default class Tetris {
+  constructor (canvas) {
+    this.ticker = (timestamp) => {
+      if (this.mode === GAMEOVER) return
+      ...省略
+    }
+  }
+}
+
+createBlock () {
+  ...省略
+
+  if (this.isHit()) {
+    this.mode = GAMEOVER
+  }
+}</pre>
+          </div>
+        </section>
+        <section class="slide-top">
+          <div class="wrap">
+            <h4>ブロックの種類を追加</h4>
+            <pre>const	BLOCKS = [
+ [
+    [0, 0, 0, 0],
+    [0, 1, 1, 0],
+    [0, 1, 1, 0],
+    [0, 0, 0, 0],
+ ],
+ [
+   [0, 0, 1, 0],
+   [0, 0, 1, 0],
+   [0, 0, 1, 0],
+   [0, 0, 1, 0],
+ ],
+ [
+   [0, 0, 1, 0],
+   [0, 1, 1, 0],
+   [0, 1, 0, 0],
+   [0, 0, 0, 0],
+ ],
+ [
+   [0, 1, 0, 0],
+   [0, 1, 1, 0],
+   [0, 0, 1, 0],
+   [0, 0, 0, 0],
+ ],
+ [
+   [0, 0, 0, 0],
+   [0, 1, 1, 0],
+   [0, 1, 0, 0],
+   [0, 1, 0, 0],
+ ],
+ [
+   [0, 0, 0, 0],
+   [0, 1, 1, 0],
+   [0, 0, 1, 0],
+   [0, 0, 1, 0],
+ ],
+ [
+   [0, 0, 0, 0],
+   [0, 1, 0, 0],
+   [1, 1, 1, 0],
+   [0, 0, 0, 0],
+ ]
+]</pre>
+          </div>
+        </section>
+        <section class="slide-top">
+          <div class="wrap">
+            <h4>完成！</h4><img src="images/tetris/step7.gif">
+          </div>
+        </section><script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+      </article>
+    </main>
+    <!-- main-->
+    <footer>
+      <div class="wrap">
+        <p><span class="alignright"><a href="https://trunk.fm/" title="Trunk"><img src="./images/logos/trunk.svg" alt="Trunk"></a></span></p>
+      </div>
+    </footer>
+    <!-- Required-->
+    <script src="./js/webslides.js"></script>
+    <script src="./js/highlight.pack.js"></script>
+    <script>
+      window.ws = new WebSlides();
+      hljs.initHighlightingOnLoad();
+    </script>
+    <!-- Autoslide? window.ws = new WebSlides({ autoslide: 8000 });-->
+    <!-- OPTIONAL - svg-icons.js (fontastic.me - Font Awesome as svg icons)-->
+    <script defer="" src="../static/js/svg-icons.js"></script>
+  </body>
+</html>
