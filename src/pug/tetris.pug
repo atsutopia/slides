@@ -135,13 +135,12 @@ block content
           li 衝突判定
           li キーカーソルでテトリミノの操作
           li 行の削除処理
-          li ゲームオーバー処理
 
   section.bg-green
     span.background.dark(style="background-image:url('https://images.unsplash.com/photo-1535219241072-7d3c28a49a5c')")
     .wrap.aligncenter.fadeInUp
       h3
-        strong Canvasを利用してステージを描画
+        strong Step.1 Canvasを利用してステージを描画
 
   section.slide-top
     .wrap
@@ -225,4 +224,421 @@ block content
       p
         h4 完成図
         img(src="images/tetris/wall.png")
+
+  section.bg-green
+    span.background.dark(style="background-image:url('https://images.unsplash.com/photo-1535219241072-7d3c28a49a5c')")
+    .wrap.aligncenter.fadeInUp
+      h3
+        strong Step.2 4つの正方形で構成されるテトリミノをランダムに出現
+
+  section.slide-top
+    .wrap
+      div
+        h3 ランダムにブロックを取得して値をセット
+      pre
+        |
+        |
+        | const NON_BLOCK = 0
+        | const NORMAL_BLOCK = 1
+        | const WALL = 9
+        |
+        |
+        | const BLOCK_COLOR = "#00ffff"
+        | const BACK_COLOR = "#f5f5f5"
+        | const WALL_COLOR = "#000000"
+        |
+        | const	BLOCKS = [
+        |   [
+        |     [0, 0, 0, 0],
+        |     [0, 1, 1, 0],
+        |     [0, 1, 1, 0],
+        |     [0, 0, 0, 0],
+        |  ],
+        |  [
+        |    [0, 0, 1, 0],
+        |    [0, 0, 1, 0],
+        |    [0, 0, 1, 0],
+        |    [0, 0, 1, 0],
+        |  ],
+        | ]
+        |
+        | export default class Tetris {
+        |   constructor (canvas) {
+        |     ...省略
+        |     this.x = 0
+        |     this.y = 0
+        |     this.beforeX = 0
+        |     this.beforeY = 0
+        |     this.block = []
+        |
+        |     this.createBlock()
+        |     this.updateBlock()
+        |     this.draw()
+        |   }
+        |
+        |   // ランダムにブロックを取得
+        |   // 座標の初期値をセット
+        |   createBlock () {
+        |   }
+        |
+        |   // this.stageへblockの値を反映
+        |   updateBlock () {
+        |   }
+        | }
+  section.slide-top
+    .wrap
+      h4 完成図
+      img(src="images/tetris/step2.gif")
+
+  section.bg-green
+    span.background.dark(style="background-image:url('https://images.unsplash.com/photo-1535219241072-7d3c28a49a5c')")
+    .wrap.aligncenter.fadeInUp
+      h3
+        strong Step.3 テトリミノの落下アニメーション
+
+  section.slide-top
+    .wrap
+      div
+        h3 requestAnimationFrameを利用してdrawを定期実行
+
+      pre
+        | const speed = 500
+        | let lastUpdate = 0
+        | // 定期実行処理
+        | this.ticker = (timestamp) => {
+        |   this.beforeX = this.x
+        |   this.beforeY = this.y
+
+        |   const diff = timestamp - lastUpdate
+        |   // 500msごとにy座標をずらして落下させる
+        |   if (diff > speed) {
+        |     lastUpdate = timestamp
+        |     this.y++
+        |   }
+
+        |   requestAnimationFrame(this.ticker)
+        | }
+        | requestAnimationFrame(this.ticker)
+
+  section.slide-top
+    .wrap
+      h4 実行例
+      img(src="images/tetris/step3-1.gif")
+
+  section.slide-top
+    .wrap
+      div
+        h3 残像が残ってしまうので更新時にブロックを消す
+      pre
+        | const speed = 500
+        | let lastUpdate = 0
+        | // 定期実行処理
+        | this.ticker = (timestamp) => {
+        |   this.beforeX = this.x
+        |   this.beforeY = this.y
+        |
+        |   const diff = timestamp - lastUpdate
+        |   // 500msごとにy座標をずらして落下させる
+        |   if (diff > speed) {
+        |     lastUpdate = timestamp
+        |     this.clearBlock()
+        |     this.y++
+        |   }
+        |
+        |   requestAnimationFrame(this.ticker)
+        | }
+        | requestAnimationFrame(this.ticker)
+        |
+        |
+        | // ブロックを0に戻す
+        | clearBlock () {
+        | }
+        |
+  section.slide-top
+    .wrap
+      h4 完成図
+      img(src="images/tetris/step3-2.gif")
+
+  section.bg-green
+    span.background.dark(style="background-image:url('https://images.unsplash.com/photo-1535219241072-7d3c28a49a5c')")
+    .wrap.aligncenter.fadeInUp
+      h3
+        strong 衝突判定
+
+  section.slide-top
+    .wrap
+      h4 ステージの座標とブロックの座標を取得し、両方ゼロじゃない場合は衝突と判定
+
+      pre
+        | const speed = 500
+        | let lastUpdate = 0
+        | // 定期実行処理
+        | this.ticker = (timestamp) => {
+        |   this.beforeX = this.x
+        |   this.beforeY = this.y
+        |
+        |   const diff = timestamp - lastUpdate
+        |   // 500msごとにy座標をずらして落下させる
+        |   if (diff > speed) {
+        |     lastUpdate = timestamp
+        |     this.clearBlock()
+        |     this.y++
+        |
+        |     // 衝突の場合は座標を戻して、新しくブロックを作成
+        |     if (this.isHit()) {
+        |       this.y = this.beforeY
+        |       this.createBlock()
+        |     }
+        |     this.updateBlock()
+        |   }
+        |
+        |   requestAnimationFrame(this.ticker)
+        | }
+        | requestAnimationFrame(this.ticker)
+        |
+        |
+        | // 衝突判定
+        | isHit () {
+        | }
+
+  section.slide-top
+    .wrap
+      h4 実行例
+      img(src="images/tetris/step4-1.gif")
+
+  section.slide-top
+    .wrap
+      h4 衝突したブロックを保持
+
+      pre
+        | const NON_BLOCK = 0
+        | const NORMAL_BLOCK = 1
+        | const WALL = 9
+        | const LOCK_BLOCK = 2
+        |
+        | const BLOCK_COLOR = "#00ffff"
+        | const BACK_COLOR = "#f5f5f5"
+        | const WALL_COLOR = "#000000"
+        | const LOCK_COLOR = "#c0c0c0"
+        |
+        | export default class Tetris {
+        |   constructor (canvas) {
+        |     this.ticker = (timestamp) => {
+        |       ...省略
+        |       if (diff > speed) {
+        |         lastUpdate = timestamp
+        |
+        |         this.clearBlock()
+        |         this.y++
+        |         if (this.isHit()) {
+        |           this.y = this.beforeY
+        |           this.lockBlock()
+        |           this.createBlock()
+        |         }
+        |         this.updateBlock()
+        |       }
+        |       this.draw()
+        |
+        |       requestAnimationFrame(this.ticker)
+        |     }
+        |   }
+        |
+        |   // LOCK_BLOCKの値を座標に代入
+        |   lockBlock () {
+        |   }
+        | }
+
+  section.slide-top
+    .wrap
+      h4 完成図
+      img(src="images/tetris/step4-2.gif")
+
+  section.bg-green
+    span.background.dark(style="background-image:url('https://images.unsplash.com/photo-1535219241072-7d3c28a49a5c')")
+    .wrap.aligncenter.fadeInUp
+      h3
+        strong Step.5 キーカーソルでテトリミノの操作
+
+  section.slide-top
+    .wrap
+      div
+        h3 左右/下の移動
+      p
+      pre
+        | const KEY_LEFT = 37
+        | const KEY_UP = 38
+        | const KEY_RIGHT = 39
+        | const KEY_DOWN = 40
+        |
+        |
+        | export default class Tetris {
+        |   constructor (canvas) {
+        |     window.addEventListener("keydown", (evt) => {
+        |       this.keyHandler(evt)
+        |     })
+        |   }
+        |
+        |   keyHandler (e) {
+        |     this.clearBlock()
+        |     this.beforeX = this.x
+        |     this.beforeY = this.y
+        |
+        |     // キーを入力したときに座標を移動
+        |     switch (e.keyCode) {
+        |     }
+        |
+        |     if (this.isHit()) {
+        |       this.x = this.beforeX
+        |       this.y = this.beforeY
+        |     }
+        |
+        |     this.updateBlock()
+        |   }
+        | }
+
+  section.slide-top
+    .wrap
+      div
+        h3 上カーソルで回転処理
+      p
+        pre
+
+          | rotateBlock () {
+          |   this.clearBlock()
+          |
+          |   const beforeBlock = _.cloneDeep(this.block)
+          |   const copy = new Array(this.block)
+          |   // 回転処理
+          |
+          |   this.block = copy
+          |
+          |   if (this.isHit()) {
+          |     this.block = beforeBlock
+          |   }
+          | }
+
+  section.slide-top
+    .wrap
+      h4 完成図
+      img(src="images/tetris/step5-1.gif")
+
+  section.bg-green
+    span.background.dark(style="background-image:url('https://images.unsplash.com/photo-1535219241072-7d3c28a49a5c')")
+    .wrap.aligncenter.fadeInUp
+      h3
+        strong 行の削除処理 / ゲームオーバー処理
+  section.slide-top
+    .wrap
+      h4 isHitに入ってきたときに行の削除チェック
+      pre
+        | export default class Tetris {
+        |   constructor (canvas) {
+        |     this.ticker = (timestamp) => {
+        |       ...省略
+        |       if (diff > speed) {
+        |         lastUpdate = timestamp
+        |
+        |         this.clearBlock()
+        |         this.y++
+        |         if (this.isHit()) {
+        |           this.y = this.beforeY
+        |           this.lockBlock()
+        |           this.deleteLine()
+        |           this.createBlock()
+        |         }
+        |         this.updateBlock()
+        |       }
+        |       this.draw()
+        |
+        |       requestAnimationFrame(this.ticker)
+        |     }
+        |   }
+        |
+        |   // 行の削除処理
+        |   deleteLine () {
+        |   }
+        | }
+
+  section.slide-top
+    .wrap
+      h4 実行例
+      img(src="images/tetris/step6-1.gif")
+
+  section.slide-top
+    .wrap
+      h4 createBlockした瞬間にisHitした場合はゲームオーバー
+      pre
+        | const GAMEOVER = 0
+        |
+        | export default class Tetris {
+        |   constructor (canvas) {
+        |     this.ticker = (timestamp) => {
+        |       if (this.mode === GAMEOVER) return
+        |       ...省略
+        |     }
+        |   }
+        | }
+        |
+        | createBlock () {
+        |   ...省略
+        |
+        |   if (this.isHit()) {
+        |     this.mode = GAMEOVER
+        |   }
+        | }
+  section.slide-top
+    .wrap
+      h4 ブロックの種類を追加
+      pre
+        | const	BLOCKS = [
+        |  [
+        |     [0, 0, 0, 0],
+        |     [0, 1, 1, 0],
+        |     [0, 1, 1, 0],
+        |     [0, 0, 0, 0],
+        |  ],
+        |  [
+        |    [0, 0, 1, 0],
+        |    [0, 0, 1, 0],
+        |    [0, 0, 1, 0],
+        |    [0, 0, 1, 0],
+        |  ],
+        |  [
+        |    [0, 0, 1, 0],
+        |    [0, 1, 1, 0],
+        |    [0, 1, 0, 0],
+        |    [0, 0, 0, 0],
+        |  ],
+        |  [
+        |    [0, 1, 0, 0],
+        |    [0, 1, 1, 0],
+        |    [0, 0, 1, 0],
+        |    [0, 0, 0, 0],
+        |  ],
+        |  [
+        |    [0, 0, 0, 0],
+        |    [0, 1, 1, 0],
+        |    [0, 1, 0, 0],
+        |    [0, 1, 0, 0],
+        |  ],
+        |  [
+        |    [0, 0, 0, 0],
+        |    [0, 1, 1, 0],
+        |    [0, 0, 1, 0],
+        |    [0, 0, 1, 0],
+        |  ],
+        |  [
+        |    [0, 0, 0, 0],
+        |    [0, 1, 0, 0],
+        |    [1, 1, 1, 0],
+        |    [0, 0, 0, 0],
+        |  ]
+        | ]
+  section.slide-top
+    .wrap
+      h4 完成！
+      img(src="images/tetris/step7.gif")
+
+
+
   <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
