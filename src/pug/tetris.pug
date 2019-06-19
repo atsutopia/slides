@@ -23,6 +23,7 @@ block content
         li 自己紹介
         li 開発環境構築
         li About Canavs
+        li 実装要件
         li Build Game Logic
   section.bg-green
     span.background.dark(style="background-image:url('https://images.unsplash.com/photo-1535219241072-7d3c28a49a5c')")
@@ -35,5 +36,193 @@ block content
     // .wrap = container (width: 90%)
     .wrap
       div
-        h1 JavascriptでTETRISを作ってみよう
-        a(href="https://github.com/atsutopia/tetris" target="_blank") Demo
+        h1 JavascriptでTETRISをつくろう
+        h4: a(href="https://github.com/atsutopia/tetris/tree/v-0.0.1-template" target="_blank") Demo
+  section.fullscreen
+    span.background.dark(style="background-image:url('./images/cover/profile.png'); width: 60%; height: 120%; top: 50%; left: 50%; transform: translate(-50%, -50%); opacity: .4;")
+    h2(style="position: relative; font-weight: bold;") WHAT I'M ABOUT
+    p(style="position: relative; font-weight: bold;")
+      | 株式会社TRUNK TL Kawasaki Atsushi<br>
+      | 2013年じげんグループHRメディア事業のPMやバックエンドを担当。<br>
+      | 新規事業立ち上げの経験を経てエンジニアリングユニットのマネージャーに従事。<br>
+      |
+      | 2015年に株式会社カヤックへ入社。<br>
+      | クライアントワークや自社サービス(Lobi)のフロントエンド、バックエンドおよびインフラ設計、構築、運用を担当。<br>
+
+  section.bg-green
+    span.background.dark(style="background-image:url('https://images.unsplash.com/photo-1535219241072-7d3c28a49a5c')")
+    // .wrap = container (width: 90%)
+    .wrap.aligncenter.fadeInUp
+      h3
+        strong 開発環境構築
+    // .end .wrap
+
+  section.slide-top
+    h3 Parcel
+    p
+      | Repository
+      h4: a(href="https://github.com/atsutopia/tetris/tree/v-0.0.1-template" target="_blank") https://github.com/atsutopia/tetris/tree/v-0.0.1-template
+    p
+      | About Parcel
+      h4: a(href="https://parceljs.org/" target="_blank") https://parceljs.org/
+  section.bg-green
+    span.background.dark(style="background-image:url('https://images.unsplash.com/photo-1535219241072-7d3c28a49a5c')")
+    .wrap.aligncenter.fadeInUp
+      h3
+        strong About Canavs
+  section.slide-top
+    .wrap
+      div
+        h2 Canvas API
+        p
+          | HTML5 で導入された canvas 要素は、JavaScript によるスクリプティングによって図形などを描画するために使用します。例えば、グラフを描く、写真を合成する、アニメーションを作成する、動画のリアルタイム加工やレンダリングに用いる事が出来ます。
+        a(href="https://developer.mozilla.org/ja/docs/Web/HTML/Canvas" target="_blank") https://developer.mozilla.org/ja/docs/Web/HTML/Canvas
+    // .end .wrap
+
+  section.slide-top
+    .wrap
+      div
+        h2 Canvas API
+        p
+          | 図形の作成 <br>
+          a(href="http://cheatsheetworld.com/programming/html5-canvas-cheat-sheet/" target="_blank") http://cheatsheetworld.com/programming/html5-canvas-cheat-sheet/
+          ol
+            li 色を変えてみよう
+            li 座標を変えてみよう
+            li 大きさを変えてみよう
+        <p data-height="465" data-width="640" data-theme-id="0" data-slug-hash="dqGLLX" data-default-tab="js,result" data-user="pickrusu" data-pen-title="Canvas API" class="codepen">See the Pen <a href="https://codepen.io/pickrusu/pen/dqGLLX/">Canvas API</a> by pickrusu (<a href="https://codepen.io/pickrusu">@pickrusu</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+
+        p
+          | Ref:
+          a(href="https://simon.html5.org/dump/html5-canvas-cheat-sheet.html") Canvas Cheat Sheet
+
+  section.bg-green
+    span.background.dark(style="background-image:url('https://images.unsplash.com/photo-1535219241072-7d3c28a49a5c')")
+    .wrap.aligncenter.fadeInUp
+      h3
+        strong 実装要件
+
+  section.slide-top
+    // .wrap = container (width: 90%)
+    .wrap
+      div
+        h3 極力シンプルなテトリスの実装を目指す
+        a(href="https://ja.wikipedia.org/wiki/%E3%83%86%E3%83%88%E3%83%AA%E3%82%B9") テトリス ルール参照
+      p
+        ol
+          li 4つの正方形で構成されるテトリミノ7種がランダムに落下してくる
+          li テトリミノがフィールド最下段、または他のテトリミノの上に着地するか引っかかると、そのテトリミノはブロックとしてフィールドに固定される。そして新しいテトリミノがフィールド上方に出現する。
+          li 上左右下キーカーソルでのテトリミノが移動可能。上キーカーソルで時計回りにテトリミノを回転
+          li 行がすべてブロックで埋め尽くされると、その段が消滅する
+          li テトリミノによって新しいテトリミノがフィールド上方に出現不可になった時点でゲームオーバー
+
+  section.bg-green
+    span.background.dark(style="background-image:url('https://images.unsplash.com/photo-1535219241072-7d3c28a49a5c')")
+    .wrap.aligncenter.fadeInUp
+      h3
+        strong Build Step
+
+  section.slide-top
+    // .wrap = container (width: 90%)
+    .wrap
+      div
+        h3 実装ステップ
+      p
+        ol
+          li Canvasを利用してステージを描画
+          li 4つの正方形で構成されるテトリミノをランダムに出現
+          li テトリミノの落下アニメーション
+          li 衝突判定
+          li キーカーソルでテトリミノの操作
+          li 行の削除処理
+          li ゲームオーバー処理
+
+  section.bg-green
+    span.background.dark(style="background-image:url('https://images.unsplash.com/photo-1535219241072-7d3c28a49a5c')")
+    .wrap.aligncenter.fadeInUp
+      h3
+        strong Canvasを利用してステージを描画
+
+  section.slide-top
+    .wrap
+      div
+        h3 2次元配列でテトリスのステージを定義してcanvasに描画する
+      p
+        pre
+          | import _ from "lodash"
+          |
+          | const BLOCK_SIZE = 24
+          | const BLOCK_ROWS = 22
+          | const BLOCK_COLS = 12
+          |
+          | const SCREEN_WIDTH = BLOCK_SIZE * BLOCK_COLS
+          | const SCREEN_HEIGHT = BLOCK_SIZE * BLOCK_ROWS
+          |
+          | const NON_BLOCK = 0
+          | const WALL = 9
+          |
+          | const BACK_COLOR = "#f5f5f5"
+          | const WALL_COLOR = "#000000"
+          |
+          | const STAGE = [
+          |   [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+          |   [9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9],
+          |   [9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9],
+          |   [9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9],
+          |   [9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9],
+          |   [9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9],
+          |   [9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9],
+          |   [9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9],
+          |   [9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9],
+          |   [9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9],
+          |   [9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9],
+          |   [9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9],
+          |   [9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9],
+          |   [9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9],
+          |   [9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9],
+          |   [9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9],
+          |   [9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9],
+          |   [9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9],
+          |   [9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9],
+          |   [9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9],
+          |   [9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9],
+          |   [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+          |   [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+          |   [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+          | ]
+          |
+          |
+          |
+          |
+          | export default class Tetris {
+          |   constructor (canvas) {
+          |     canvas.width = SCREEN_WIDTH
+          |     canvas.height = SCREEN_HEIGHT
+          |     this.cxt = canvas.getContext("2d")
+          |
+          |     this.stage = _.cloneDeep(STAGE)
+          |     this.draw()
+          |   }
+          |
+          |   draw () {
+          |     for (let row = 0; row < BLOCK_ROWS; row++) {
+          |       for (let col = 0; col < BLOCK_COLS; col++) {
+          |         switch(this.stage[row][col]){
+          |           case NON_BLOCK:
+          |             this.cxt.fillStyle = BACK_COLOR
+          |             break
+          |         }
+          |         this.cxt.fillRect(col * BLOCK_SIZE, row * BLOCK_SIZE, BLOCK_SIZE -1, BLOCK_SIZE - 1)
+          |       }
+          |     }
+          |   }
+          | }
+
+  section.slide-top
+    .wrap
+      div
+        h3 セルがWALLのときのカラーも設定しましょう
+      p
+        h4 完成図
+        img(src="images/tetris/wall.png")
+  <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
