@@ -1,0 +1,39 @@
+extends /layout/_application
+
+prepend Config
+  - title = 'TETRIS with ES2015'
+
+block content
+  section.bg-red
+    span.background.dark(style="background-image:url('https://source.unsplash.com/R1J6Z1cnJZc/1600x800')")
+    // .wrap = container (width: 90%)
+    .wrap.aligncenter
+      h1
+        strong TETRIS with ES2015
+      h5.text-symbols ***
+    // .end .wrap
+  section
+    // .wrap = container (width: 90%)
+    .wrap.size-70
+      h2
+        strong Agenda
+      hr
+      ol.text-cols
+        li トレーニング概要
+        li 自己紹介
+        li 開発環境構築
+        li About Canavs
+        li Build Game Logic
+  section.bg-green
+    span.background.dark(style="background-image:url('https://images.unsplash.com/photo-1535219241072-7d3c28a49a5c')")
+    // .wrap = container (width: 90%)
+    .wrap.aligncenter.fadeInUp
+      h3
+        strong トレーニング概要
+    // .end .wrap
+  section.slide-top
+    // .wrap = container (width: 90%)
+    .wrap
+      div
+        h1 JavascriptでTETRISを作ってみよう
+        a(href="https://github.com/atsutopia/tetris" target="_blank") Demo
