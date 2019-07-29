@@ -1,0 +1,92 @@
+extends /layout/_application
+
+block content
+  section.bg-red
+    span.background.dark(style="background-image:url('https://source.unsplash.com/R1J6Z1cnJZc/1600x800')")
+    .wrap.aligncenter
+      h1
+        strong JavaScript Primer
+      p.text-symbols * * *
+  section
+    .wrap.size-70
+      h2
+        strong Agenda
+      hr
+      ol.text-cols
+        li トレーニング概要
+        li 自己紹介
+        li プラットフォーム
+        li Javascripイントロダクション
+        li 実践Javascript
+  section.bg-green
+    span.background.dark(style="background-image:url('https://images.unsplash.com/photo-1535219241072-7d3c28a49a5c')")
+    .wrap.aligncenter.fadeInUp
+      h3
+        strong トレーニング概要
+  section.bg-green
+    span.background.dark(style="background-image:url('https://images.unsplash.com/photo-1535219241072-7d3c28a49a5c')")
+    .wrap.aligncenter.fadeInUp
+      h3
+        strong 自己紹介
+  section.fullscreen
+    span.background.dark(style="background-image:url('./images/cover/profile.png'); width: 60%; height: 120%; top: 50%; left: 50%; transform: translate(-50%, -50%); opacity: .4;")
+    h2(style="position: relative; font-weight: bold;") WHAT I'M ABOUT
+    p(style="position: relative; font-weight: bold;")
+      | 株式会社TRUNK TL Kawasaki Atsushi<br>
+      | 2013年じげんグループHRメディア事業のPMやバックエンドを担当。<br>
+      | 新規事業立ち上げの経験を経てエンジニアリングユニットのマネージャーに従事。<br>
+      |
+      | 2015年に株式会社カヤックへ入社。<br>
+      | クライアントワークや自社サービス(Lobi)のフロントエンド、バックエンドおよびインフラ設計、構築、運用を担当。<br>
+  section.bg-green
+    span.background.dark(style="background-image:url('https://images.unsplash.com/photo-1535219241072-7d3c28a49a5c')")
+    .wrap.aligncenter.fadeInUp
+      h3
+        strong プラットフォーム
+
+  section.slide-top
+    h2 フロントエンド技術の対応プラットフォーム
+    img(src="./images/jsprimer/frontend.svg")
+
+  section.bg-green
+    span.background.dark(style="background-image:url('https://images.unsplash.com/photo-1535219241072-7d3c28a49a5c')")
+    .wrap.aligncenter.fadeInUp
+      h3
+        strong Javascripイントロダクション
+  section.slide-top
+    h2 Javascripエンジン
+    ul
+      li Chrome: V8 (V8はNode.jsでも利用されている)
+      li Safari: JavaScriptCore
+      li Firefox: SpiderMonkey
+
+  section.slide-top
+    h2 How to work?
+    p
+      | JavaScript や他の高レベルのプログラミング言語は機械語への翻訳が必要
+      | プログラミングでは、機械語に翻訳するには一般的に 2 つの方法がある
+      | １つはインタープリタで、この翻訳は直ちに一行一行実施します
+    img(src="https://2r4s9p1yi1fa2jd7j43zph8r-wpengine.netdna-ssl.com/files/2017/02/02-02-interp02.png" width="800")
+    p
+      | 一方コンパイラは直ちに翻訳を行いません。翻訳を作成して、それを書きとめるために、事前に動作する
+    img(src="https://2r4s9p1yi1fa2jd7j43zph8r-wpengine.netdna-ssl.com/files/2017/02/02-03-compile02.png" width="800")
+
+    h3 インタープリタの長所と短所
+    p
+      | インタープリタはすぐに起動して実行可能
+      | ただし、実行速度は翻訳しないといけない分、遅くなる
+    h3 コンパイラの長所と短所
+    p
+      | 予め翻訳してあるため、実行速度が速くなる。
+      | また、翻訳時のエラーは事前に気づくことができる。
+      | ただし、全てを翻訳するため起動に少し時間がかかる。
+    h3 JITコンパイラ
+    p
+      | インタプリタの非効率性を取り除き、
+      | すぐに起動して実行可能かつ、早い実効速度を実現
+      |
+  section.bg-green
+    span.background.dark(style="background-image:url('https://images.unsplash.com/photo-1535219241072-7d3c28a49a5c')")
+    .wrap.aligncenter.fadeInUp
+      h3
+        strong 実践Javascrip
