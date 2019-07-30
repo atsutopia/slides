@@ -122,10 +122,21 @@ block content
     .wrap.aligncenter.fadeInUp
       h3
         strong 実践Javascrip
-
-
-
-
-
-
-
+  section.slide-top
+    h2 連番画像を使ってアニメーションを作成しよう
+    img(src="./images/jsprimer/chara.gif")
+  section.slide-top
+    h2  要件
+    ul
+      li あらかじめ用意された連番画像を利用してアニメーションを実装
+      li 各フレームは100 ~ 500milliseconds程度で切り替える
+      li 画像の読み込み時間は100milliseconds以内の想定でよいが、フレーム挿入時に読み込みは完了しておくこと (すべてをあらかじめロードする必要はない)
+    h3 雛形のソースコードはこちら
+    [sprite-animation](https://github.com/atsutopia/sprite-animation)
+  section.slide-top
+    h2  ヒント
+    ul
+      li DOMはすでに用意しているimgタグを利用する
+      li 非同期処理はPromiseを利用する
+      li Imageインスタンスを利用すれば読み込みのハンドリングは可能
+      li フレーム間隔のハンドリングはsetTimeoutで行う
