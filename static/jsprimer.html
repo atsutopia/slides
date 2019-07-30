@@ -101,6 +101,9 @@
             <h3><strong>トレーニング概要</strong></h3>
           </div>
         </section>
+        <section class="slide-top">
+          <h2>Javascrip基礎</h2><img src="./images/jsprimer/chara.gif">
+        </section>
         <section class="bg-green"><span class="background dark" style="background-image:url('https://images.unsplash.com/photo-1535219241072-7d3c28a49a5c')"></span>
           <div class="wrap aligncenter fadeInUp">
             <h3><strong>自己紹介</strong></h3>
@@ -203,14 +206,24 @@
           </div>
         </section>
         <section class="slide-top">
-          <h2>Javascripを利用してスプライトアニメーションを作成しよう</h2><img src="./images/jsprimer/chara.gif">
+          <h2>連番画像を使ってアニメーションを作成しよう</h2><img src="./images/jsprimer/chara.gif" width="400">
         </section>
         <section class="slide-top">
           <h2> 要件</h2>
           <ul>
             <li>あらかじめ用意された連番画像を利用してアニメーションを実装</li>
             <li>各フレームは100 ~ 500milliseconds程度で切り替える</li>
-            <li>画像の読み込み時間は100milliseconds以内の想定でよい (すべてをあらかじめロードする必要はない)</li>
+            <li>画像の読み込み時間は100milliseconds以内の想定でよいが、フレーム挿入時に読み込みは完了しておくこと (すべてをあらかじめロードする必要はない)</li>
+          </ul>
+          <h3>雛形のソースコードはこちら</h3><a href="https://github.com/atsutopia/sprite-animation" target="_blank">sprite-animation</a>
+        </section>
+        <section class="slide-top">
+          <h2> ヒント</h2>
+          <ul>
+            <li>DOMはすでに用意しているimgタグを利用する</li>
+            <li>非同期処理はPromiseを利用する</li>
+            <li>Imageインスタンスを利用すれば読み込みのハンドリングは可能</li>
+            <li>フレーム間隔のハンドリングはsetTimeoutで行う</li>
           </ul>
         </section>
       </article>
